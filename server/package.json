@@ -1,0 +1,17 @@
+{
+  "name": "spellslistapi",
+  "version": "1.0.0",
+  "description": "RESTful api",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Nik Gunawan",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  }
+}
