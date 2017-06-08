@@ -1,0 +1,19 @@
+{
+  "name": "dnd-player-helper",
+  "version": "1.0.0",
+  "author": "Nik Gunawan",
+  "description": "A web tool to help d&d players organize all their info",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngunawan/dnd-player-helper.git"
+  },
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
