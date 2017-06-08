@@ -1,0 +1,12 @@
+{
+    "name": "spells-scraper",
+    "version": "1.0.0",
+    "description": "scrapes http://blog.onslow-web.co.uk/5e/gameplay/spell-descriptions.html#animate-objects",
+    "main": "server.js",
+    "author": "ngunawan",
+    "dependencies": {
+        "express": "latest",
+        "request": "latest",
+        "cheerio": "latest"
+    }
+}
