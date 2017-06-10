@@ -1,5 +1,5 @@
 {
-  "name": "spellslistapi",
+  "name": "dnd-player-helper-api",
   "version": "1.0.0",
   "description": "RESTful api",
   "main": "server.js",
@@ -11,7 +11,9 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
     "express": "^4.15.3",
-    "mongoose": "^4.10.4"
+    "mongoose": "^4.10.4",
+    "request": "^2.81.0"
   }
 }
