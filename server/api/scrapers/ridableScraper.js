@@ -10,162 +10,155 @@ const fs = require('fs'),
 //end
 
 
-    var json = {};
+var json = [];
+let type; //mount or land_vehicle or water_vehicle
 
-    let url = 'http://blog.onslow-web.co.uk/5e/characters/equipment/mounts.html';
+let url = 'http://blog.onslow-web.co.uk/5e/characters/equipment/mounts.html';
 
-    request(url, (error, response, html) => {
-        if (!error) {
-            const $ = cheerio.load(html);
+request(url, (error, response, html) => {
+    if (!error) {
+        const $ = cheerio.load(html);
 
-            let ridable = {
-                "mounts": "",
-                "land_vehicles": "",
-                "water_vehicles": "",
+
+        //mounts
+        type = "mount";
+        $('div.section#mounts table tbody tr').each(function () {
+
+            let row_data = $(this);
+
+            let object = {
+                "name": "",
+                "cost": "",
+                "speed": "",
+                "carrying_capacity": "",
+                "type": ""
             };
 
-            let array = [];
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-            //mounts
-            $('div.section#mounts table tbody tr').each(function () {
-
-                let row_data = $(this);
-
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "speed": "",
-                    "carrying_capacity": ""
-                };
-
-                 //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
-
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
-
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let speed = cell_data.text().trim();
-                            object.speed = speed;
-                            break;
-                        case 3:
-                            let carrying_capacity = cell_data.text().trim();
-                            object.carrying_capacity = carrying_capacity;
-                            break;
-                    }
-
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
-
-            }); //end
-            ridable.mounts = array;
-            array = [];
-
-            //land vehicles
-            $('div.section#tack-harnesses-and-drawn-vehicles table tbody tr').each(function () {
-
-                let row_data = $(this);
-
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
-
-                 //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
-
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
-
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let speed = cell_data.text().trim();
+                        object.speed = speed;
+                        break;
+                    case 3:
+                        let carrying_capacity = cell_data.text().trim();
+                        object.carrying_capacity = carrying_capacity;
+                        break;
                 }
 
-                array.push(object);
+            }
 
-            }); //end
-            ridable.land_vehicles = array;
-            array = [];
+            object.type = type;
+            json.push(object);
+
+        }); //end
 
 
-            //water vehicles
-            $('div.section#waterborne-vehicles table tbody tr').each(function () {
+        //land vehicles
+        type = "land_vehicle";
+        $('div.section#tack-harnesses-and-drawn-vehicles table tbody tr').each(function () {
 
-                let row_data = $(this);
+            let row_data = $(this);
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "speed": ""
-                };
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
-
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let speed = cell_data.text().trim();
-                            object.speed = speed;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            ridable.water_vehicles = array;
+            object.type = type;
+            json.push(object);
 
-            
-            json = ridable;
+        }); //end
 
-        }
+        //water vehicles
+        type = "water_vehicle";
+        $('div.section#waterborne-vehicles table tbody tr').each(function () {
+
+            let row_data = $(this);
+
+            let object = {
+                "name": "",
+                "cost": "",
+                "speed": "",
+                "type": ""
+            };
+
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
+
+                if (j != 0) {
+                    cell_data = cell_data.next();
+                }
+
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let speed = cell_data.text().trim();
+                        object.speed = speed;
+                        break;
+                }
+            }
+
+            object.type = type;
+            json.push(object);
+
+        }); //end
+
+    }
 
 
 
-        fs.writeFile('../json/ridable.json', JSON.stringify(json, null, 4), function (err)  {
-            console.log('ridable.json successfully written');
-        })
+    fs.writeFile('../json/ridables.json', JSON.stringify(json, null, 4), function (err) {
+        console.log('ridables.json successfully written');
+    })
 
-    });
-
-
+});

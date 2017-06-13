@@ -143,8 +143,8 @@ request(url, (error, response, html) => {
     //JSON.stringify(json, null, 4) - make json easier to read
     //callback to let us know the status of our function
 
-    fs.writeFile('../json/spell.json', JSON.stringify(json, null, 4), function (err) {
-        console.log('spell.json successfully written');
+    fs.writeFile('../json/spells.json', JSON.stringify(json, null, 4), function (err) {
+        console.log('spells.json successfully written');
     })
 
 });

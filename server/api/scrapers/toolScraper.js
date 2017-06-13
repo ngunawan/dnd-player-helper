@@ -10,407 +10,419 @@ const fs = require('fs'),
 //end
 
 
-    var json = {};
+var json = {};
+let type;
+//artisans_tools
+//disguise_kit
+//forgery_kit
+//gaming_set
+//herbalism_kit
+//musical_instruments
+//navigators_tools
+//poisoners_kit
+//thieves_tools
 
-    let url = 'http://blog.onslow-web.co.uk/5e/characters/equipment/tools.html';
 
-    request(url, (error, response, html) => {
-        if (!error) {
-            const $ = cheerio.load(html);
 
-            let tools = {
-                "artisans_tools": "",
-                "disguise_kit": "",
-                "forgery_kit": "",
-                "gaming_set": "",
-                "herbalism_kit": "",
-                "musical_instruments": "",
-                "navigators_tools": "",
-                "poisoners_kit": "",
-                "thieves_tools": ""
+let url = 'http://blog.onslow-web.co.uk/5e/characters/equipment/tools.html';
+
+request(url, (error, response, html) => {
+    if (!error) {
+        const $ = cheerio.load(html);
+
+
+        //artisans tools
+        type = "artisans_tools";
+        $('div.section#artisan-s-tools table tbody tr').each(function () {
+
+            let row_data = $(this);
+
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
             };
 
-            let array = [];
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-            //artisans tools
-            $('div.section#artisan-s-tools table tbody tr').each(function() {
-
-                let row_data = $(this);
-
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
-
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
-
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
-
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
+            object.type = type;
+            json.push(object);
 
-            }); //end
-            tools.artisans_tools = array;
-            array = [];
+        }); //end
 
-            //disguise-kit
-            $('div.section#disguise-kit table tbody tr').each(function () {
 
-                let row_data = $(this);
+        //disguise-kit
+        type = "disguise_kit";
+        $('div.section#disguise-kit table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.disguise_kit = array;
-            array = [];
+            object.type = type;
+            json.push(object);
+
+        }); //end
 
 
-            //forgery kit
-            $('div.section#forgery-kit table tbody tr').each(function () {
 
-                let row_data = $(this);
+        //forgery kit
+        type = "forgery_kit"
+        $('div.section#forgery-kit table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.forgery_kit = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //gaming set
-            $('div.section#gaming-set table tbody tr').each(function () {
+        }); //end
+        
 
-                let row_data = $(this);
+        //gaming set
+        type = "gaming_set";
+        $('div.section#gaming-set table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-               //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.gaming_set = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //herbalism kit
-            $('div.section#herbalism-kit table tbody tr').each(function () {
+        }); //end
+        
 
-                let row_data = $(this);
+        //herbalism kit
+        type = "herbalism_kit";
+        $('div.section#herbalism-kit table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.herbalism_kit = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //musical instruments
-            $('div.section#musical-instruments table tbody tr').each(function () {
+        }); //end
+      
 
-                let row_data = $(this);
+        //musical instruments
+        type = "musical_instruments"
+        $('div.section#musical-instruments table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.musical_instruments = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //navigators tools
-            $('div.section#navigators-tools table tbody tr').each(function () {
+        }); //end
 
-                let row_data = $(this);
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+        //navigators tools
+        type = "navigators_tools";
+        $('div.section#navigators-tools table tbody tr').each(function () {
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let row_data = $(this);
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
+
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.navigators_tools = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //poisoner's kit
-            $('div.section#poisoners-kit table tbody tr').each(function () {
+        }); //end
+       
 
-                let row_data = $(this);
+        //poisoner's kit
+        type = "poisoners_kit";
+        $('div.section#poisoners-kit table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.poisoners_kit = array;
-            array = [];
+            object.type = type;
+            json.push(object);
 
-            //thieve's tools
-            $('div.section#thieves-tools table tbody tr').each(function() {
+        }); //end
+ 
 
-                let row_data = $(this);
+        //thieve's tools
+        type = "thieves_tools";
+        $('div.section#thieves-tools table tbody tr').each(function () {
 
-                let object = {
-                    "name": "",
-                    "cost": "",
-                    "weight": ""
-                };
+            let row_data = $(this);
 
-                //iterates through cells from row
-                let cell_data = row_data.children().first();
-                for (let j = 0; j < row_data.children().length; j++) {
+            let object = {
+                "name": "",
+                "cost": "",
+                "weight": "",
+                "type": ""
+            };
 
-                    if (j != 0) {
-                        cell_data = cell_data.next();
-                    }
+            //iterates through cells from row
+            let cell_data = row_data.children().first();
+            for (let j = 0; j < row_data.children().length; j++) {
 
-                    switch (j) {
-                        case 0:
-                            let name = cell_data.text();
-                            object.name = name;
-                            break;
-                        case 1:
-                            let cost = cell_data.text().trim();
-                            object.cost = cost;
-                            break;
-                        case 2:
-                            let weight = cell_data.text().trim();
-                            object.weight = weight;
-                            break;
-                    }
+                if (j != 0) {
+                    cell_data = cell_data.next();
                 }
 
-                array.push(object);
+                switch (j) {
+                    case 0:
+                        let name = cell_data.text();
+                        object.name = name;
+                        break;
+                    case 1:
+                        let cost = cell_data.text().trim();
+                        object.cost = cost;
+                        break;
+                    case 2:
+                        let weight = cell_data.text().trim();
+                        object.weight = weight;
+                        break;
+                }
+            }
 
-            }); //end
-            tools.thieves_tools = array;
+            object.type = type;
+            json.push(object);
+
+        }); //end
+
+    }
 
 
-            json = tools;
 
-        }
+    fs.writeFile('../json/tools.json', JSON.stringify(json, null, 4), function (err) {
+        console.log('tools.json successfully written');
+    })
 
-
-
-        fs.writeFile('../json/tool.json', JSON.stringify(json, null, 4), function (err) {
-            console.log('tool.json successfully written');
-        })
-
-    });
-
+});

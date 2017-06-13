@@ -8,7 +8,9 @@
 
     <title></title>
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+
 
     <!--=================== without browserify =====================-->
     <!--
@@ -23,9 +25,10 @@
 
 </head>
 
-<body ng-app="app" ng-controller="mainController">
+<body ng-app="app" ng-cloak ng-controller="mainController">
 
     <!--navbar-->
+    <!--
     <div id="navbar">
         <a href="/">Character</a>
         <a href="#">Compendium</a>
@@ -33,9 +36,31 @@
         <a href="#">Equipment</a>
         <a href="#">Notes</a>
     </div>
+-->
+
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="/" name="page1">
+            Character
+        </md-nav-item>
+        <md-nav-item md-nav-click="goto('page2')" name="page2">
+            Compendium
+        </md-nav-item>
+        <md-nav-item md-nav-href="spells">
+            Spells
+        </md-nav-item>
+        <md-nav-item md-nav-click="goto('page4')" name="page4">
+            Equipments
+        </md-nav-item>
+        <md-nav-item md-nav-click="goto('page5')" name="page5">
+            Notes
+        </md-nav-item>
+    </md-nav-bar>
 
     <!--ng-view-->
-    <ng-view></ng-view>
+    <md-content class="md-padding">
+        <ng-view></ng-view>
+    </md-content>
+
 
 </body>
 

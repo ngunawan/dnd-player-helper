@@ -11,7 +11,7 @@ const fs = require('fs'),
 
 //end
 
-var json = {};
+var json = [];
 
 let url = 'http://blog.onslow-web.co.uk/5e/characters/equipment/armor-shields.html';
 
@@ -19,15 +19,8 @@ request(url, (error, response, html) => {
     if (!error) {
         const $ = cheerio.load(html);
 
-        let armor = {
-            "light": "",
-            "medium": "",
-            "heavy": "",
-            "shield": ""
-        };
-
         let row_counter = 0; //keep track of row #
-        let array = [];
+        let type; // row 0-3 "light" row 5-9 "medium" row 11-14 "heavy" row  row 16 "shield
 
         $('div.section#armor-summary table tbody tr').each(function () {
 
@@ -38,34 +31,33 @@ request(url, (error, response, html) => {
                 "ac": "",
                 "strength": "",
                 "stealth": "",
-                "weight": ""
+                "weight": "",
+                "type": ""
             };
 
             if (row_counter == 0) { //when blank row with light armor
+                type = "light";
                 row_counter++;
                 return true;
 
             } else if (row_counter == 4) { //when blank row with medium armor
-                armor.light = array;
-                array = [];
+                type = "medium";
                 row_counter++;
                 return true;
 
             } else if (row_counter == 10) { //when blank row with heavy armor
-                armor.medium = array;
-                array = [];
+                type = "heavy";
                 row_counter++;
                 return true;
 
             } else if (row_counter == 15) { //when blank row with shield
-                armor.heavy = array;
-                array = [];
+                type = "shield";
                 row_counter++;
                 return true;
 
             }
 
-            
+
             //iterates through cells from row
             let cell_data = row_data.children().first();
             for (let j = 0; j < row_data.children().length; j++) {
@@ -100,24 +92,19 @@ request(url, (error, response, html) => {
                         object.weight = weight;
                         break;
                 }
-            }
 
-            array.push(object);
-
-            if (row_counter == 16) { //when last row
-                armor.shield = array;
             }
+            
+            object.type = type;
+            json.push(object);
 
             row_counter++;
 
         });
-
-        json = armor;
-
     }
 
-    fs.writeFile('../json/armor.json', JSON.stringify(json, null, 4), function (err) {
-        console.log('armor.json successfully written');
+    fs.writeFile('../json/armors.json', JSON.stringify(json, null, 4), function (err) {
+        console.log('armors.json successfully written');
     })
 
 });

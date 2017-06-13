@@ -1,10 +1,10 @@
 'use strict';
 const mongoose = require('mongoose'),
-    Spell = mongoose.model('Spell');
+    Spell = mongoose.model('Spells');
 
 
-//list all spells
-exports.list_all_spell = (req, res) => {
+//list all
+exports.list_all_spells = function (req, res) {
     Spell.find({}, (err, spell) => {
         if (err)
             res.send(err);
@@ -12,18 +12,19 @@ exports.list_all_spell = (req, res) => {
     });
 };
 
-//create a spell
-exports.create_a_spell = (req, res) => {
-    var new_spell = new Spell(req.body);
-    new_spell.save((err, spell) => {
+
+//create
+exports.create_spell = function (req, res) {
+    var newSpell = new Spell(req.body);
+    newSpell.save((err, spell) => {
         if (err)
             res.send(err);
         res.json(spell);
     });
 };
 
-//read a spell
-exports.read_a_spell = (req, res) => {
+//read
+exports.read_spell = function (req, res) {
     Spell.findById(req.params.spellId, function (err, spell) {
         if (err)
             res.send(err);
@@ -31,8 +32,8 @@ exports.read_a_spell = (req, res) => {
     });
 };
 
-//update a spell
-exports.update_a_spell = (req, res) => {
+//update
+exports.update_spell = function (req, res) {
     Spell.findOneAndUpdate(req.params.spellId, req.body, {
         new: true
     }, (err, spell) => {
@@ -42,15 +43,15 @@ exports.update_a_spell = (req, res) => {
     });
 };
 
-//delete a spell
-exports.delete_a_spell = (req, res) => {
+//delete
+exports.delete_spell = function (req, res) {
     Spell.remove({
         _id: req.params.spellId
     }, (err, spell) => {
         if (err)
             res.send(err);
         res.json({
-            message: 'spell deleted'
+            message: 'spell deleted.'
         });
     });
 };

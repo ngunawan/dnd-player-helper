@@ -21,7 +21,7 @@ request(url, (error, response, html) => {
 
         let item = [];
 
-        $('div.section#equipment-table table tbody tr').each(() => {
+        $('div.section#equipment-table table tbody tr').each(function () {
 
             let row_data = $(this);
 
@@ -64,8 +64,8 @@ request(url, (error, response, html) => {
 
     }
 
-    fs.writeFile('../json/item.json', JSON.stringify(json, null, 4), function (err) {
-        console.log('item.json successfully written');
+    fs.writeFile('../json/items.json', JSON.stringify(json, null, 4), function (err) {
+        console.log('items.json successfully written');
     })
 
 });

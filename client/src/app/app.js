@@ -1,8 +1,14 @@
 var angular = require('angular');
 require('angular-sanitize');
 require('angular-route');
+require('angular-animate');
+require('angular-aria');
+require('angular-messages');
+require('angular-material');
 
-var app = angular.module('app', ['ngRoute', 'ngSanitize']);
+
+
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
 
 
 
@@ -29,7 +35,8 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: "characterController"
         })
         .when("/spells", {
-            templateUrl: "spells.html"
+            templateUrl: "spells.html",
+            controller:"spellsListController"
         })
 
     // use the HTML5 History API

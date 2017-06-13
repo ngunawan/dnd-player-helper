@@ -1,13 +1,13 @@
 'use strict';
 module.exports = function (app) {
-    const spell = require('../controllers/spellController');
+    const spellController = require('../controllers/spellController');
 
-    app.route('/spell')
-        .get(spell.list_all_spells)
-        .post(spell.create_a_spell);
+    app.route('/spells')
+        .get(spellController.list_all_spells)
+        .post(spellController.create_spell);
 
-    app.route('/spell/:spellId')
-        .get(spell.read_a_spell)
-        .put(spell.update_a_spell)
-        .delete(spell.delete_a_spell);
+    app.route('/spells/:spellId')
+        .get(spellController.read_spell)
+        .put(spellController.update_spell)
+        .delete(spellController.delete_spell);
 };

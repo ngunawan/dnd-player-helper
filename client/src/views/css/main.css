@@ -1,3 +1,16 @@
 .block {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+span {
+    width: 13vw;
+    padding: 0.5vw;
+}
+
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+md-card, span {
+    cursor: pointer;
 }
