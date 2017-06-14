@@ -2,7 +2,6 @@ const express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
-    Spell = require('./api/models/spellModel'),
     bodyParser = require('body-parser'),
     path = require('path');
 
@@ -20,17 +19,64 @@ app.get('/dist/bundle.js', function (req, res) {
 });
 
 
-//initiate routes ====================================================
+//initiate models ====================================================
+const Spell = require('./api/models/spellModel'),
+    Pack = require('./api/models/packModel'),
+    Weapon = require('./api/models/weaponModel'),
+    Armor = require('./api/models/armorModel'),
+    Good = require('./api/models/goodModel'),
+    Item = require('./api/models/itemModel'),
+    Ridable = require('./api/models/ridableModel'),
+    Tool = require('./api/models/toolModel');
 
-var routes = require('./api/routes/spellRoutes');
-routes(app);
+//add datas ==========================================================
+const addSpells = require('./api/scripts/addSpells'),
+    addPacks = require('./api/scripts/addPacks'),
+    addWeapons = require('./api/scripts/addWeapons'),
+    addArmors = require('./api/scripts/addArmors'),
+    addGoods = require('./api/scripts/addGoods'),
+    addItems = require('./api/scripts/addItems'),
+    addRidables = require('./api/scripts/addRidables'),
+    addTools = require('./api/scripts/addTools');
+
+
+addSpells();
+addPacks();
+addWeapons();
+addArmors();
+addGoods();
+addItems();
+addRidables();
+addTools();
+
+
+
+//initiate routes ====================================================
+const spellRoutes = require('./api/routes/spellRoutes'),
+    packRoutes = require('./api/routes/packRoutes'),
+    weaponRoutes = require('./api/routes/weaponRoutes'),
+    armorRoutes = require('./api/routes/armorRoutes'),
+    goodRoutes = require('./api/routes/goodRoutes'),
+    itemRoutes = require('./api/routes/itemRoutes'),
+    ridableRoutes = require('./api/routes/ridableRoutes'),
+    toolRoutes = require('./api/routes/toolRoutes');
+
+
+
+spellRoutes(app);
+packRoutes(app);
+weaponRoutes(app);
+armorRoutes(app);
+goodRoutes(app);
+itemRoutes(app);
+ridableRoutes(app);
+toolRoutes(app);
 
 
 //default route
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('../client/src/views/index.html'));
 });
-
 
 
 //error handling 
@@ -43,4 +89,4 @@ app.use(function (req, res) {
 
 //listen to port =====================================================
 app.listen(port);
-console.log('spells list RESTful API server started on: ' + port);
+console.log('RESTful API server started on: ' + port);

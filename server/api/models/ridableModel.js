@@ -2,14 +2,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ArmorSchema = new Schema({
+const RidableSchema = new Schema({
     name: String,
     cost: String,
-    ac: String,
-    strength: String,
-    stealth: String,
     weight: String,
+    speed: String,
+    carrying_capacity: String,
     type: String
 });
 
-module.exports = mongoose.model('Armors', ArmorSchema);
+module.exports = mongoose.model('Ridables', RidableSchema);

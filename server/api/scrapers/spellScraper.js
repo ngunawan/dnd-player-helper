@@ -132,7 +132,6 @@ request(url, (error, response, html) => {
             desc = eval('`' + desc + '`'); //keep all the html in description
             object.description = desc;
 
-
             json.push(object);
 
         });

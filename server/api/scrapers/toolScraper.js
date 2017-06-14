@@ -10,7 +10,7 @@ const fs = require('fs'),
 //end
 
 
-var json = {};
+var json = [];
 let type;
 //artisans_tools
 //disguise_kit

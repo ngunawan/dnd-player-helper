@@ -5,10 +5,10 @@ const mongoose = require('mongoose'),
 
 //list all
 exports.list_all_goods = function (req, res) {
-    Good.find({}, (err, item) => {
+    Good.find({}, (err, goods) => {
         if (err)
             res.send(err);
-        res.json(good);
+        res.json(goods);
     });
 };
 
@@ -24,10 +24,10 @@ exports.create_good = function (req, res) {
 
 //read
 exports.read_good = function (req, res) {
-    Good.findById(req.params.itemId, function (err, item) {
+    Good.findById(req.params.goodId, function (err, good) {
         if (err)
             res.send(err);
-        res.json(item);
+        res.json(good);
     });
 };
 

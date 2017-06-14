@@ -1,21 +1,21 @@
 'use strict';
 const mongoose = require('mongoose'),
-    Spell = mongoose.model('Spells');
+    Pack = mongoose.model('Packs');
 
 
 
 module.exports = function () {
 
-    const removePromise = Spell.remove({});
-    let array = require('../json/spells.json');
+    const removePromise = Pack.remove({});
+    let array = require('../json/packs.json');
 
     removePromise.then(function () {
-        console.log("spells removed");
-        Spell.insertMany(array, function (error, spells) {
+        console.log("packs removed");
+        Pack.insertMany(array, function (error, packs) {
             if (error) {
                 console.log(error)
             } else {
-                console.log("spells added");
+                console.log("packs added");
                 //                mongoose.connection.close();
             }
 
@@ -33,7 +33,7 @@ module.exports = function () {
 
 
 
-
+//
 //
 //const mongoose = require('mongoose'),
 //    connection = mongoose.connect('mongodb://localhost/Dndb'),
@@ -41,26 +41,20 @@ module.exports = function () {
 //
 //mongoose.Promise = global.Promise;
 //
-//const SpellSchema = new Schema({
+//const PackSchema = new Schema({
 //    name: String,
-//    level: String,
-//    school: String,
-//    casting_time: String,
-//    range: String,
-//    component: String,
-//    duration: String,
-//    description: String,
-//    class: Array
+//    cost: String,
+//    description: String
 //});
 //
-//const Spell = mongoose.model('Spells', SpellSchema);
-//var array = require('../json/spells.json');
+//const Pack = mongoose.model('Packs', PackSchema);
+//var array = require('../json/packs.json');
 //
-//var removePromise = Spell.remove({});
+//var removePromise = Pack.remove({});
 //
 //removePromise.then(function () {
 //    console.log("removed");
-//    Spell.insertMany(array, function (error, spells) {
+//    Pack.insertMany(array, function (error, packs) {
 //        if (error) {
 //            console.log(error)
 //        } else {
@@ -73,14 +67,4 @@ module.exports = function () {
 //}).catch(function(err) {
 //    console.log(err);
 //})
-//
-
-//Spell.remove({}, function (err) {
-//    if (err) {
-//        console.log(err);
-//    } else {
-//        console.log('removed spells');
-//    }
-//});
-
 

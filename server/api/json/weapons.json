@@ -93,7 +93,7 @@
         "damage": "1d8 piercing",
         "weight": "5 lb.",
         "properties": "Ammunition (range 80/320), loading, two-handed",
-        "type": ""
+        "type": "simple_ranged"
     },
     {
         "name": "Dart",
@@ -101,7 +101,7 @@
         "damage": "1d4 piercing",
         "weight": "1/4 lb.",
         "properties": "Finesse, thrown (range 20/60)",
-        "type": ""
+        "type": "simple_ranged"
     },
     {
         "name": "Shortbow",
@@ -109,7 +109,7 @@
         "damage": "1d6 piercing",
         "weight": "2 lb.",
         "properties": "Ammunition (range 80/320), two—handed",
-        "type": ""
+        "type": "simple_ranged"
     },
     {
         "name": "Sling",
@@ -117,7 +117,7 @@
         "damage": "1d4 bludgeoning",
         "weight": "",
         "properties": "Ammunition (range 30/120)",
-        "type": ""
+        "type": "simple_ranged"
     },
     {
         "name": "Battleaxe",

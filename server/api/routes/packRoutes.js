@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (app) {
-    const packController = require('../controllers/equipmentPackController');
+    const packController = require('../controllers/packController');
 
     app.route('/packs')
         .get(packController.list_all_packs)

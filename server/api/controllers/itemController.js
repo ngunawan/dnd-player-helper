@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose'),
-    Item = mongoose.model('Item');
+    Item = mongoose.model('Items');
 
 
 //list all
@@ -14,8 +14,8 @@ exports.list_all_items = function (req, res) {
 
 //create
 exports.create_item = function (req, res) {
-    var new_item = new Item(req.body);
-    new_item.save((err, item) => {
+    var newItem = new Item(req.body);
+    newItem.save((err, item) => {
         if (err)
             res.send(err);
         res.json(item);

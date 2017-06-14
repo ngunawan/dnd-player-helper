@@ -5,16 +5,7 @@ const mongoose = require('mongoose'),
 
 //list all
 exports.list_all_armors = function (req, res) {
-    Armor.find({}, (err, item) => {
-        if (err)
-            res.send(err);
-        res.json(armor);
-    });
-};
-
-//list all light armor
-exports.list_all_armors = function (req, res) {
-    Armor.find({}, (err, item) => {
+    Armor.find({}, (err, armor) => {
         if (err)
             res.send(err);
         res.json(armor);
@@ -23,7 +14,7 @@ exports.list_all_armors = function (req, res) {
 
 //create
 exports.create_armor = function (req, res) {
-    var newArmor = new Good(req.body);
+    var newArmor = new Armor(req.body);
     newArmor.save((err, armor) => {
         if (err)
             res.send(err);
@@ -33,10 +24,10 @@ exports.create_armor = function (req, res) {
 
 //read
 exports.read_armor = function (req, res) {
-    Armor.findById(req.params.itemId, function (err, item) {
+    Armor.findById(req.params.armorId, function (err, armor) {
         if (err)
             res.send(err);
-        res.json(item);
+        res.json(armor);
     });
 };
 

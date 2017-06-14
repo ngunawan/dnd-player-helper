@@ -1,14 +1,14 @@
 'use strict';
 const mongoose = require('mongoose'),
-    Pack = mongoose.model('Packs');
+      Pack = mongoose.model('Packs');
 
 
 //list all
 exports.list_all_packs = function (req, res) {
-    Pack.find({}, (err, item) => {
+    Pack.find({}, (err, packs) => {
         if (err)
             res.send(err);
-        res.json(pack);
+        res.json(packs);
     });
 };
 
@@ -24,10 +24,10 @@ exports.create_pack = function (req, res) {
 
 //read
 exports.read_pack = function (req, res) {
-    Pack.findById(req.params.itemId, function (err, item) {
+    Pack.findById(req.params.itemId, function (err, pack) {
         if (err)
             res.send(err);
-        res.json(item);
+        res.json(pack);
     });
 };
 
@@ -54,7 +54,3 @@ exports.delete_pack = function (req, res) {
         });
     });
 };
-
-
-
-

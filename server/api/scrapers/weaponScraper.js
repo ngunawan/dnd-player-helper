@@ -121,7 +121,7 @@ request(url, (error, response, html) => {
                         break;
                 }
             }
-
+            object.type = type;
             json.push(object);
 
 
