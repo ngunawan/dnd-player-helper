@@ -1,9 +1,10 @@
 angular.module('app').controller('spellsListController', function spellsListController($scope, $http) {
 
     $scope.query = {
-        "class": ''
+        class: ''
     };
     $scope.queryBy = "";
+
 
     $http({
         method: 'GET',
