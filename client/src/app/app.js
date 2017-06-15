@@ -10,6 +10,13 @@ require('angular-material');
 
 var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
 
+//services =========================================
+require('./services/noteService.js');
+
+
+//factories =========================================
+require('./factories/noteFactory.js');
+
 
 
 //controllers ======================================
@@ -27,6 +34,10 @@ require('./controllers/itemsListController.js');
 require('./controllers/toolsListController.js');
 
 
+require('./controllers/notesController.js');
+require('./controllers/noteEditorController.js');
+
+
 
 
 //components =======================================
@@ -39,11 +50,15 @@ require('./components/ridablesList.js');
 require('./components/itemsList.js');
 require('./components/toolsList.js');
 
+require('./components/noteEditor.js');
+
 
 //require('./components/containerComponent.js');
 
 
-//services =========================================
+//directives =======================================
+require('./directives/contentEditable.js');
+
 
 
 
@@ -52,14 +67,18 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "character.html",
-//            controller: "characterController"
+            //            controller: "characterController"
         })
         .when("/spells", {
             templateUrl: "spells.html",
         })
         .when("/equipments", {
             templateUrl: "equipments.html",
-//            controller: "equipmentsController"
+            //            controller: "equipmentsController"
+        })
+        .when("/notes", {
+            templateUrl: "notes.html",
+            controller: "notesController"
         })
 
 

@@ -1,0 +1,190 @@
+<!--
+<md-content layout-gt-sm="row" layout-padding>
+    <div>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="query['name']">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Cost</label>
+            <input ng-model="query['cost']">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Damage</label>
+            <input ng-model="query['damage']">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Weight</label>
+            <input ng-model="query['weight']">
+        </md-input-container>
+
+
+        <md-input-container>
+            <label>Properties</label>
+            <md-select ng-model="query['properties']">
+                <md-option value="">
+                    All
+                </md-option>
+                <md-option value="Light">
+                    Light
+                </md-option>
+                <md-option value="Finesse">
+                    Finesse
+                </md-option>
+                <md-option value="Thrown">
+                    Thrown
+                </md-option>
+                <md-option value="Two-handed">
+                    Two-handed
+                </md-option>
+                <md-option value="Versatile">
+                    Versatile
+                </md-option>
+                <md-option value="Ammunition">
+                    Ammunition
+                </md-option>
+                <md-option value="Heavy">
+                    Heavy
+                </md-option>
+                <md-option value="Reach">
+                    Reach
+                </md-option>
+                <md-option value="Special">
+                    Special
+                </md-option>
+                <md-option value="Loading">
+                    Loading
+                </md-option>
+            </md-select>
+        </md-input-container>
+
+       
+    </div>
+</md-content>
+-->
+
+<!--SIMPLE MELEE ==================================================-->
+<div class="md-padding">
+    <h3>Simple Melee</h3>
+
+    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
+        <md-card-content layout="row" layout-align="space-between">
+            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+            <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
+            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_melee'} | orderBy: sortVal: sortDir">
+        <md-card-content layout="column">
+            <div layout="row" layout-align="space-between">
+                <span>{{weapon.name}}</span>
+                <span>{{weapon.cost}}</span>
+                <span>{{weapon.damage}}</span>
+                <span>{{weapon.weight}}</span>
+                <span>{{weapon.properties}}</span>
+            </div>
+
+
+        </md-card-content>
+    </md-card>
+</div>
+
+
+<!--SIMPLE RANGED ==================================================-->
+<div class="md-padding">
+    <h3>Simple Ranged</h3>
+
+    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
+        <md-card-content layout="row" layout-align="space-between">
+            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+            <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
+            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_ranged'} | orderBy: sortVal: sortDir">
+        <md-card-content layout="column">
+            <div layout="row" layout-align="space-between">
+                <span>{{weapon.name}}</span>
+                <span>{{weapon.cost}}</span>
+                <span>{{weapon.damage}}</span>
+                <span>{{weapon.weight}}</span>
+                <span>{{weapon.properties}}</span>
+            </div>
+
+
+        </md-card-content>
+    </md-card>
+</div>
+
+
+<!--MARTIAL MELEE ==================================================-->
+<div class="md-padding">
+    <h3>Martial Melee</h3>
+
+    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
+        <md-card-content layout="row" layout-align="space-between">
+            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+            <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
+            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_melee'} | orderBy: sortVal: sortDir">
+        <md-card-content layout="column">
+            <div layout="row" layout-align="space-between">
+                <span>{{weapon.name}}</span>
+                <span>{{weapon.cost}}</span>
+                <span>{{weapon.damage}}</span>
+                <span>{{weapon.weight}}</span>
+                <span>{{weapon.properties}}</span>
+            </div>
+
+
+        </md-card-content>
+    </md-card>
+</div>
+
+
+<!--MARTIAL RANGED ==================================================-->
+<div class="md-padding">
+    <h3>Martial Ranged</h3>
+
+    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
+        <md-card-content layout="row" layout-align="space-between">
+            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+            <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
+            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_ranged'} | orderBy: sortVal: sortDir">
+        <md-card-content layout="column">
+            <div layout="row" layout-align="space-between">
+                <span>{{weapon.name}}</span>
+                <span>{{weapon.cost}}</span>
+                <span>{{weapon.damage}}</span>
+                <span>{{weapon.weight}}</span>
+                <span>{{weapon.properties}}</span>
+            </div>
+
+
+        </md-card-content>
+    </md-card>
+</div>
