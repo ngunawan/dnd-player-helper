@@ -1,3 +1,4 @@
+<!--CLASS FILTER ===================================================-->
 <md-content layout-gt-sm="row">
     <md-button ng-class="{'md-accent': query['class'] == ''}" ng-click="query = {};query['class'] = ''" class="md-raised md-primary">All Class</md-button>
     <md-button ng-class="{'md-accent': query['class'] == 'bard'}" ng-click="query = {};query['class'] = 'bard'" class="md-raised md-primary">Bard</md-button>
@@ -11,6 +12,7 @@
 </md-content>
 
 
+<!--SORT ==============================================================-->
 <md-content layout="row">
     <div>
         <md-input-container>
@@ -148,7 +150,7 @@
     </div>
 </md-content>
 
-
+<!--SPELLS LIST ===================================================-->
 
 <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
     <md-card-content layout="row" layout-align="space-between">
@@ -159,6 +161,7 @@
         <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
         <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
         <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
+        <span style="display:flex;width:133.38px"></span>
     </md-card-content>
 </md-card>
 
@@ -173,6 +176,7 @@
             <span>{{spell.range}}</span>
             <span>{{spell.component}}</span>
             <span>{{spell.duration}}</span>
+            <md-button ng-click="showAddSpell(spell.name);$event.stopPropagation()" class="md-accent">Add Spell</md-button>
         </div>
         <div ng-if="spell.show">
             <md-divider></md-divider>

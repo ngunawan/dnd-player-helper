@@ -27,32 +27,24 @@
 
 <body ng-app="app" ng-cloak ng-controller="mainController">
 
-    <!--navbar-->
-    <!--
-    <div id="navbar">
-        <a href="/">Character</a>
-        <a href="#">Compendium</a>
-        <a href="/spells">Spells</a>
-        <a href="#">Equipment</a>
-        <a href="#">Notes</a>
-    </div>
--->
-
     <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-href="/">
+        <md-nav-item md-nav-href="/" name="charactersList">
             Character
         </md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="page2">
+        <md-nav-item md-nav-href="compendium" name="compendium">
             Compendium
         </md-nav-item>
-        <md-nav-item md-nav-href="spells">
+        <md-nav-item md-nav-href="spells" name="spells">
             Spells
         </md-nav-item>
-        <md-nav-item md-nav-href="equipments">
+        <md-nav-item md-nav-href="equipments" name="equipments">
             Equipments
         </md-nav-item>
-        <md-nav-item md-nav-href="notes">
+        <md-nav-item md-nav-href="notes" name="notes">
             Notes
+        </md-nav-item>
+         <md-nav-item md-nav-href="character/123">
+            Sample Character
         </md-nav-item>
     </md-nav-bar>
 

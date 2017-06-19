@@ -14,7 +14,7 @@ exports.list_all_weapons = function (req, res) {
 
 //create
 exports.create_weapon = function (req, res) {
-    var newWeapon = new Good(req.body);
+    var newWeapon = new Weapon(req.body);
     newWeapon.save((err, weapon) => {
         if (err)
             res.send(err);

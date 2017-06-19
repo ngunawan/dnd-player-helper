@@ -18,10 +18,10 @@ require('./services/noteService.js');
 require('./factories/noteFactory.js');
 
 
-
 //controllers ======================================
 require('./controllers/mainController.js');
-//require('./controllers/characterController.js');
+require('./controllers/charactersListController.js');
+require('./controllers/characterController.js');
 //require('./controllers/equipmentsController.js');
 
 require('./controllers/spellsListController.js');
@@ -33,11 +33,8 @@ require('./controllers/ridablesListController.js');
 require('./controllers/itemsListController.js');
 require('./controllers/toolsListController.js');
 
-
 require('./controllers/notesController.js');
 require('./controllers/noteEditorController.js');
-
-
 
 
 //components =======================================
@@ -53,36 +50,36 @@ require('./components/toolsList.js');
 require('./components/noteEditor.js');
 
 
-//require('./components/containerComponent.js');
-
-
 //directives =======================================
 require('./directives/contentEditable.js');
-
-
 
 
 //routes ===========================================
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "character.html",
-            //            controller: "characterController"
+            templateUrl: "charactersList.html",
+            controller: "charactersListController"
         })
         .when("/spells", {
             templateUrl: "spells.html",
         })
         .when("/equipments", {
             templateUrl: "equipments.html",
-            //            controller: "equipmentsController"
         })
         .when("/notes", {
             templateUrl: "notes.html",
             controller: "notesController"
         })
+        .when("/character/:characterId", {
+            templateUrl: "character.html",
+            controller: "characterController"
+        })
+        .otherwise({
+            redirectTo: "/"
+        })
 
-
-    // use the HTML5 History API
+    // use the HTML5 History API: allows routing w/o refreshing page
     $locationProvider.html5Mode(true);
 
 });

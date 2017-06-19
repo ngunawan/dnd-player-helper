@@ -1,11 +1,38 @@
 @box-shadow: 0 0 5px rgba(0,0,0,0.1);
-@width: 500px;
+
+
+span {
+    width: 13vw;
+}
 
 .block {
-    width: 500px;
-    box-shadow: @box-shadow; 
+    box-shadow: @box-shadow;
 }
 
 span {
     width: 13vw;
+    padding: 0.5vw;
+    text-transform: capitalize;
+}
+
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+md-card,
+span {
+    cursor: pointer;
+}
+
+md-nav-bar .md-nav-bar {
+  background: white;
+}
+
+md-sidenav.md-closed.md-locked-open-add-active {
+    width: 220px !important;
+    min-width: 220px !important;
+}
+
+.toolbar {
+    margin-bottom: 25px;
 }

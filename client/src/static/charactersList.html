@@ -1,0 +1,178 @@
+<div layout-padding>
+
+    <!--CHARACTER CREATOR ============================================-->
+    <h2>Create Character</h2>
+    <div layout="row">
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="name">
+        </md-input-container>
+        
+         <md-input-container>
+            <label>Race</label>
+            <md-select ng-model="race">
+                <md-option value="dragonborn">
+                    Dragonborn
+                </md-option>
+                <md-option value="hill-dwarf">
+                    Hill Dwarf
+                </md-option>
+                <md-option value="mountain-dwarf">
+                    Mountain Dwarf
+                </md-option>
+                <md-option value="high-elf">
+                    High Elf
+                </md-option>
+                <md-option value="wood-elf">
+                    Wood Elf
+                </md-option>
+                 <md-option value="dark-elf">
+                    Dark Elf (Drow)
+                </md-option>
+                 <md-option value="deep-gnome">
+                    Deep Gnome
+                </md-option>
+                <md-option value="half-elf">
+                    Half-Elf
+                </md-option>
+                <md-option value="lightfoot-halfling">
+                    Lightfoot Halfling
+                </md-option>
+                <md-option value="stout-halfling">
+                    Stout Halfling
+                </md-option>
+                <md-option value="half-orc">
+                    Half-Orc
+                </md-option>
+                <md-option value="human">
+                    Human
+                </md-option>
+                <md-option value="variant-human">
+                    Variant Human
+                </md-option>
+                <md-option value="tiefling">
+                    Tiefling
+                </md-option>
+            </md-select>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Class</label>
+            <md-select ng-model="class">
+                <md-option value="barbarian">
+                    Barbarian
+                </md-option>
+                <md-option value="bard">
+                    Bard
+                </md-option>
+                <md-option value="cleric">
+                    Cleric
+                </md-option>
+                 <md-option value="druid">
+                    Druid
+                </md-option>
+                <md-option value="fighter">
+                    Fighter
+                </md-option>
+                <md-option value="monk">
+                    Monk
+                </md-option>
+                 <md-option value="paladin">
+                    Paladin
+                </md-option>
+                <md-option value="ranger">
+                    Ranger
+                </md-option>
+                <md-option value="rogue">
+                    Rogue
+                </md-option>
+                 <md-option value="sorcerer">
+                    Sorcerer
+                </md-option>
+                <md-option value="warlock">
+                    Warlock
+                </md-option>
+                <md-option value="wizard">
+                    Wizard
+                </md-option>
+            </md-select>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Background</label>
+            <md-select ng-model="background">
+                <md-option value="acolyte">
+                    Acolyte
+                </md-option>
+                <md-option value="charlatan">
+                    Charlatan
+                </md-option>
+                <md-option value="criminal">
+                    Criminal
+                </md-option>
+                <md-option value="spy">
+                    Criminal: Spy
+                </md-option>
+                <md-option value="entertainor">
+                    Entertainer
+                </md-option>
+                <md-option value="gladiator">
+                    Entertainer: Gladiator
+                </md-option>
+                   <md-option value="folk-hero">
+                    Folk Hero
+                </md-option>
+                <md-option value="guild-artisan">
+                    Guild Artisan
+                </md-option>
+                <md-option value="guild-merchant">
+                    Guild Artisan: Guild Merchant
+                </md-option>
+                <md-option value="hermit">
+                    Hermit
+                </md-option>
+                <md-option value="noble">
+                    Noble
+                </md-option>
+                <md-option value="knight">
+                    Noble: Knight
+                </md-option>
+                 <md-option value="sage">
+                    Sage
+                </md-option>
+                <md-option value="sailor">
+                    Sailor
+                </md-option>
+                <md-option value="pirate">
+                    Sailor: Pirate
+                </md-option>
+                <md-option value="soldier">
+                    Soldier
+                </md-option>
+                 <md-option value="urchin">
+                    Urchin
+                </md-option>
+            </md-select>
+        </md-input-container>
+        
+         <md-input-container>
+            <label>Gold</label>
+            <input ng-model="gold">
+        </md-input-container>
+        
+    </div>
+
+    <md-button ng-click="createCharacter()" class="md-raised md-primary">Create</md-button>
+
+    <md-divider style="margin:16px 0;"></md-divider>
+
+
+    <!--CHARACTERS LIST ============================================-->
+    <md-card ng-click="currentNavItem = '';redirectTo(character._id)" ng-repeat="character in charactersList">
+        <md-card-content layout="row" layout-align="space-between">
+            <span>{{character.name}}</span>
+            <md-button ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn md-raised">Remove</md-button>
+        </md-card-content>
+    </md-card>
+
+</div>

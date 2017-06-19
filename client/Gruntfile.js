@@ -10,7 +10,7 @@ module.exports = function (grunt) {
         browserify: {
             options: {
                 watch: true,
-                keepAlive: true,
+//                keepAlive: true,
                 browserifyOptions: {
                     debug: true
                 }
@@ -34,19 +34,19 @@ module.exports = function (grunt) {
             options: {
                 cleancss: true, //prettify css
                 syncImport: true, //reads @import synchronously
-                paths: ['src/view/css/less']
+                paths: ['src/static/css/less']
             },
             src: {
                 expand: true,
-                cwd: "src/views/css/less", //all src matches are relative to this path
+                cwd: "src/static/css/less", //all src matches are relative to this path
                 src: "main.less", //pattern to match
-                dest: "src/views/css", //destination path prefix
+                dest: "src/static/css", //destination path prefix
                 ext: ".css" //replace any existing value with this extension in generated dest path
             }
         },
         watch: {
             less: {
-                files: 'src/views/css/less/*.less',
+                files: 'src/static/css/less/*.less',
                 tasks: 'less'
             }
         }
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
     });
 
     //Register an "alias task" or a task function.  
-    grunt.registerTask('default', ['browserify']);
+    grunt.registerTask('default', ['browserify','watch']);
     grunt.registerTask('min', ['uglify']);
 
 };

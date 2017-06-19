@@ -28,7 +28,8 @@ const Spell = require('./api/models/spellModel'),
     Item = require('./api/models/itemModel'),
     Ridable = require('./api/models/ridableModel'),
     Tool = require('./api/models/toolModel'),
-    Note = require('./api/models/noteModel');
+    Note = require('./api/models/noteModel'),
+    Character = require('./api/models/characterModel');
 
 //add datas from json ================================================
 //const addSpells = require('./api/scripts/addSpells'),
@@ -61,7 +62,8 @@ const spellRoutes = require('./api/routes/spellRoutes'),
     itemRoutes = require('./api/routes/itemRoutes'),
     ridableRoutes = require('./api/routes/ridableRoutes'),
     toolRoutes = require('./api/routes/toolRoutes'),
-    noteRoutes = require('./api/routes/noteRoutes');
+    noteRoutes = require('./api/routes/noteRoutes'),
+    characterRoutes = require('./api/routes/characterRoutes');
 
 spellRoutes(app);
 packRoutes(app);
@@ -72,6 +74,7 @@ itemRoutes(app);
 ridableRoutes(app);
 toolRoutes(app);
 noteRoutes(app);
+characterRoutes(app);
 
 
 //default route

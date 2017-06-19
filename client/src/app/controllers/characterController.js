@@ -1,14 +1,22 @@
-angular.module('app').controller('characterController', function characterController($scope, $compile) {
+angular.module('app').controller('characterController', function characterController($routeParams, $http, $scope) {
     
-  $scope.addComponent = function(tag) {
-      //create new scope
-      var newScope = $scope.$new(true, $scope);
-      //create template
-      var html = '<' + tag + '></' + tag + '>';
-      //bind scope to template
-      var container = angular.element(document.querySelector('container'));
-      container.append($compile(html)(newScope));   
-  }
-    
-    
+
+
+    $http({
+        method: 'GET',
+        url: '/characters/' + $routeParams.characterId
+    }).then(function successCallback(response) {
+        $scope.currentCharacter = response.data;
+        console.log(response);
+        console.log($scope.currentCharacter);
+
+    }, function errorCallback(response) {
+        console.log(response);
+    });
+
+
+
+
+
+
 });
