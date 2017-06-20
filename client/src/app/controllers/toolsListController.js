@@ -1,4 +1,4 @@
-angular.module('app').controller('toolsListController', function toolsListController($scope, $http) {
+angular.module('app').controller('toolsListController', function toolsListController($scope, $http, addToCharacterService) {
 
     $scope.query = {};
     $scope.queryBy = "";
@@ -14,6 +14,7 @@ angular.module('app').controller('toolsListController', function toolsListContro
         console.log(response);
     });
 
+    $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 
 });

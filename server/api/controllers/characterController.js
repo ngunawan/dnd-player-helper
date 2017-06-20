@@ -46,6 +46,19 @@ exports.update_character_spells = function (req, res) {
         });
 };
 
+//update equipments
+exports.update_character_equipments = function (req, res) {
+    Character.findOneAndUpdate(req.params.characterId, {
+            $push: {
+                equipments: req.body
+            }
+        },
+        (err, character) => {
+            if (err)
+                res.send(err);
+            res.json(character);
+        });
+};
 
 //update
 exports.update_character = function (req, res) {

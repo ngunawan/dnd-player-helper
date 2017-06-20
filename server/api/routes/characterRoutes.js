@@ -10,7 +10,12 @@ module.exports = function (app) {
         .get(characterController.read_character)
         .put(characterController.update_character)
         .delete(characterController.delete_character);
-    
-     app.route('/characters/:characterId/spells')
+
+    app.route('/characters/:characterId/spells')
         .put(characterController.update_character_spells);
+
+    app.route('/characters/:characterId/equipments')
+        .put(characterController.update_character_equipments);
+
+
 };

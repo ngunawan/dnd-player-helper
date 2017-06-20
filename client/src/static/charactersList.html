@@ -168,10 +168,11 @@
 
 
     <!--CHARACTERS LIST ============================================-->
-    <md-card ng-click="currentNavItem = '';redirectTo(character._id)" ng-repeat="character in charactersList">
+    <md-card ng-repeat="character in charactersList">
         <md-card-content layout="row" layout-align="space-between">
-            <span>{{character.name}}</span>
-            <md-button ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn md-raised">Remove</md-button>
+            <span flex="80">{{character.name}}</span>
+            <md-button flex="10" ng-click="redirectTo(character._id); $event.stopPropagation()" class="md-primary">Show Info</md-button>
+            <md-button flex="10" ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn md-raised">Remove</md-button>
         </md-card-content>
     </md-card>
 

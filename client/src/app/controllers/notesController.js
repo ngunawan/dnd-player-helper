@@ -1,6 +1,6 @@
-angular.module('app').controller('notesController', function notesController($scope, $http, $document, noteFactory, $mdDialog) {
+angular.module('app').controller('notesController', function notesController($scope, $http, $document, Note, $mdDialog) {
 
-    $scope.Note = noteFactory;
+    $scope.Note = Note;
 
     $http({
         method: 'GET',
@@ -16,13 +16,15 @@ angular.module('app').controller('notesController', function notesController($sc
 
 
     $scope.saveNote = function (note) {
+            console.log("ID: " + note._id);
+
             $http({ //find note by id
                 method: 'GET',
                 url: '/notes/' + note._id
 
             }).then(function successCallback(response) {
-                    if (response.data !== undefined) { //if found, update note
-
+                    if (!(Array.isArray(response.data))) { //if found, update note
+                        console.log(response.data);
                         let confirm = $mdDialog.confirm()
                             .title('Would you like to create new or update?')
                             .ok('Create New')
@@ -39,6 +41,7 @@ angular.module('app').controller('notesController', function notesController($sc
                                 }
                             }).then(function successCallback(response) {
                                 console.log("success");
+                                $scope.Note._id = response.data._id;
                                 $scope.notesList.push({
                                     "name": response.data.name,
                                     "content": response.data.content,
@@ -74,6 +77,28 @@ angular.module('app').controller('notesController', function notesController($sc
                             });
                         });
 
+
+                    } else {
+
+                        $http({ //create new note
+                            method: 'POST',
+                            url: '/notes',
+                            data: {
+                                name: note.name,
+                                content: note.content
+                            }
+                        }).then(function successCallback(response) {
+                            console.log("success");
+                            $scope.Note._id = response.data._id;
+                            $scope.notesList.push({
+                                "name": response.data.name,
+                                "content": response.data.content,
+                                "_id": response.data._id
+                            })
+
+                        }, function errorCallback(response) {
+                            console.log(response);
+                        });
 
                     }
 

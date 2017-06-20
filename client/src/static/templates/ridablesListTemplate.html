@@ -8,6 +8,8 @@
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Speed</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Carrying Capacity</span>
+            <span style="display:flex;width:98.31px"></span>
+
         </md-card-content>
     </md-card>
 
@@ -19,6 +21,8 @@
                 <span>{{ridable.cost}}</span>
                 <span>{{ridable.speed}}</span>
                 <span>{{ridable.carrying_capacity}}</span>
+                <md-button ng-click="showAddEquipment(ridable.name);$event.stopPropagation()" class="md-accent">Add Mount</md-button>
+
             </div>
 
 
@@ -36,6 +40,8 @@
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Weight</span>
+            <span style="display:flex;width:105.33px"></span>
+
         </md-card-content>
     </md-card>
 
@@ -46,6 +52,8 @@
                 <span>{{ridable.name}}</span>
                 <span>{{ridable.cost}}</span>
                 <span>{{ridable.weight}}</span>
+                <md-button ng-click="showAddEquipment(ridable.name);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
+
             </div>
 
 
@@ -63,6 +71,8 @@
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Speed</span>
+            <span style="display:flex;width:105.33px"></span>
+
         </md-card-content>
     </md-card>
 
@@ -73,6 +83,8 @@
                 <span>{{ridable.name}}</span>
                 <span>{{ridable.cost}}</span>
                 <span>{{ridable.speed}}</span>
+                <md-button ng-click="showAddEquipment(ridable.name);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
+
             </div>
 
 

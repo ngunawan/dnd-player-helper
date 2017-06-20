@@ -7,6 +7,8 @@
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span style="display:flex;width:88px"></span>
+
         </md-card-content>
     </md-card>
 
@@ -17,6 +19,7 @@
                 <span>{{item.name}}</span>
                 <span>{{item.cost}}</span>
                 <span>{{item.weight}}</span>
+                <md-button ng-click="showAddEquipment(item.name);$event.stopPropagation()" class="md-accent">Add Item</md-button>
             </div>
         </md-card-content>
     </md-card>

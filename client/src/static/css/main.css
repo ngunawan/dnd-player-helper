@@ -12,10 +12,6 @@ span {
 md-input-container .md-errors-spacer {
   min-height: 0;
 }
-md-card,
-span {
-  cursor: pointer;
-}
 md-nav-bar .md-nav-bar {
   background: white;
 }

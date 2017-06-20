@@ -6,23 +6,19 @@ require('angular-aria');
 require('angular-messages');
 require('angular-material');
 
+//modules ==========================================
+require('./js/addToCharacter.js');
 
-
-var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'addToCharacter']);
 
 //services =========================================
-require('./services/noteService.js');
-
-
-//factories =========================================
-require('./factories/noteFactory.js');
+require('./services/Note.js');
 
 
 //controllers ======================================
 require('./controllers/mainController.js');
 require('./controllers/charactersListController.js');
 require('./controllers/characterController.js');
-//require('./controllers/equipmentsController.js');
 
 require('./controllers/spellsListController.js');
 require('./controllers/weaponsListController.js');
@@ -35,6 +31,7 @@ require('./controllers/toolsListController.js');
 
 require('./controllers/notesController.js');
 require('./controllers/noteEditorController.js');
+
 
 
 //components =======================================

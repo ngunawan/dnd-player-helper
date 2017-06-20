@@ -4,12 +4,14 @@
     <span><strong>Race: </strong> {{currentCharacter.race}}</span>
     <span><strong>Background: </strong> {{currentCharacter.background}}</span>
     <span><strong>Gold: </strong> {{currentCharacter.gold}}</span>
-    
-    
+
+
     <md-divider style="margin: 16px 0"></md-divider>
     
- 
-        <div style="background:white" class="md-whiteframe-4dp" flex="20" layout="column">
+    <div layout="row" style="padding: 16px">
+        
+        <!--SPELLS ================================================ -->
+        <div style="background:white" class="md-whiteframe-4dp" flex="33" layout="column">
 
             <md-toolbar class="md-primary md-padding">
                 Spells
@@ -20,12 +22,34 @@
                     <div flex="80" class="md-list-item-text" layout="column">
                         {{spell}}
                     </div>
-                    <md-button flex="20" ng-show="hover" class="md-warn md-raised">Remove</md-button>
-                    <md-divider></md-divider>
+                    <md-button flex="20" class="md-accent">Info</md-button>
+<!--                    <md-divider></md-divider>-->
                 </md-list-item>
             </md-list>
 
+        </div>
+
+        <!--EQUIPMENTS ================================================ -->
+        <div style="background:white; margin-left:16px;" class="md-whiteframe-4dp" flex="33" layout="column">
+
+            <md-toolbar class="md-primary md-padding">
+                Equipments
+            </md-toolbar>
+
+            <md-list>
+                <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="equipment in currentCharacter.equipments" layout="row">
+                    <div flex="80" class="md-list-item-text" layout="column">
+                        {{equipment}}
+                    </div>
+                    <md-button flex="20" class="md-accent">Info</md-button>
+<!--                    <md-divider></md-divider>-->
+                </md-list-item>
+            </md-list>
 
         </div>
+        
+    </div>
+
+
 
 </md-content>

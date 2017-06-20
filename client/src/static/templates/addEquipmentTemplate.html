@@ -1,0 +1,31 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Add Equipment</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="./images/ic_close_white_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content class="md-dialog-content">
+            <h3>Pick a Character</h3>
+            <md-input-container>
+                <label>Character</label>
+                <md-select ng-model="characterObj">
+                    <md-option ng-repeat="character in charactersList" ng-value="character">
+                        {{character.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="add(characterObj)">
+                Add Equipment
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

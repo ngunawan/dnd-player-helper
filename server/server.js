@@ -32,25 +32,25 @@ const Spell = require('./api/models/spellModel'),
     Character = require('./api/models/characterModel');
 
 //add datas from json ================================================
-//const addSpells = require('./api/scripts/addSpells'),
-//    addPacks = require('./api/scripts/addPacks'),
-//    addWeapons = require('./api/scripts/addWeapons'),
-//    addArmors = require('./api/scripts/addArmors'),
-//    addGoods = require('./api/scripts/addGoods'),
-//    addItems = require('./api/scripts/addItems'),
-//    addRidables = require('./api/scripts/addRidables'),
-//    addTools = require('./api/scripts/addTools');
-//
-//
-//addSpells();
-//addPacks();
-//addWeapons();
-//addArmors();
-//addGoods();
-//addItems();
-//addRidables();
-//addTools();
-//
+const addSpells = require('./api/scripts/addSpells'),
+    addPacks = require('./api/scripts/addPacks'),
+    addWeapons = require('./api/scripts/addWeapons'),
+    addArmors = require('./api/scripts/addArmors'),
+    addGoods = require('./api/scripts/addGoods'),
+    addItems = require('./api/scripts/addItems'),
+    addRidables = require('./api/scripts/addRidables'),
+    addTools = require('./api/scripts/addTools');
+
+
+addSpells();
+addPacks();
+addWeapons();
+addArmors();
+addGoods();
+addItems();
+addRidables();
+addTools();
+
 
 
 //initiate routes ====================================================
@@ -93,4 +93,4 @@ app.use(function (req, res) {
 
 //listen to port =====================================================
 app.listen(port);
-console.log('RESTful API server started on: ' + port);
+console.log('server started on port: ' + port);

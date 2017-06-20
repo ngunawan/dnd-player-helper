@@ -1,10 +1,10 @@
-angular.module('app').controller('noteEditorController', function noteEditorController($scope, noteFactory) {
+angular.module('app').controller('noteEditorController', function noteEditorController($scope, Note) {
 
     $scope.format = function (command) {
         document.execCommand(command, false, null);
     }
 
-    $scope.Note = noteFactory;
+    $scope.Note = Note;
     
 
 });

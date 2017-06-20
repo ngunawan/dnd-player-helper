@@ -1,4 +1,4 @@
-angular.module('app').controller('goodsListController', function goodsListController($scope, $http) {
+angular.module('app').controller('goodsListController', function goodsListController($scope, $http, addToCharacterService) {
 
     $scope.query = {};
     $scope.queryBy = "";
@@ -13,6 +13,8 @@ angular.module('app').controller('goodsListController', function goodsListContro
     }, function errorCallback(response) {
         console.log(response);
     });
+    
+    $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 
 

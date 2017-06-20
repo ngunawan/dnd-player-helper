@@ -5,6 +5,8 @@
         <md-card-content layout="row" layout-align="space-between">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+            <span style="display:flex;width:88px"></span>
+
         </md-card-content>
     </md-card>
 
@@ -13,6 +15,7 @@
             <div layout="row" layout-align="space-between">
                 <span>{{good.name}}</span>
                 <span>{{good.cost}}</span>
+                <md-button ng-click="showAddEquipment(good.name);$event.stopPropagation()" class="md-accent">Add Good</md-button>
             </div>
         </md-card-content>
     </md-card>
