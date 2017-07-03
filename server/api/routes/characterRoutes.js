@@ -16,6 +16,12 @@ module.exports = function (app) {
 
     app.route('/characters/:characterId/equipments')
         .put(characterController.update_character_equipments);
+    
+    app.route('/characters/:characterId/weapons')
+        .put(characterController.update_character_weapons);
+    
+    app.route('/characters/:characterId/armors')
+        .put(characterController.update_character_armors);
 
 
 };

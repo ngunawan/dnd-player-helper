@@ -60,6 +60,34 @@ exports.update_character_equipments = function (req, res) {
         });
 };
 
+//update weapons
+exports.update_character_weapons = function (req, res) {
+    Character.findOneAndUpdate(req.params.characterId, {
+            $push: {
+                weapons: req.body
+            }
+        },
+        (err, character) => {
+            if (err)
+                res.send(err);
+            res.json(character);
+        });
+};
+
+//update armors
+exports.update_character_armors = function (req, res) {
+    Character.findOneAndUpdate(req.params.characterId, {
+            $push: {
+                armors: req.body
+            }
+        },
+        (err, character) => {
+            if (err)
+                res.send(err);
+            res.json(character);
+        });
+};
+
 //update
 exports.update_character = function (req, res) {
     Character.findOneAndUpdate(req.params.characterId, req.body, {

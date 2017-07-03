@@ -202,7 +202,7 @@
     {
         "name": "Pike",
         "cost": "10 gp",
-        "damage": "1d1O piercing",
+        "damage": "1d10 piercing",
         "weight": "18 lb.",
         "properties": "Heavy, reach, two-handed",
         "type": "martial_melee"

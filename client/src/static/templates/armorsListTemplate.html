@@ -10,6 +10,7 @@
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Strength</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span style="width:93.47px"></span>
         </md-card-content>
     </md-card>
 
@@ -23,6 +24,7 @@
                 <span>{{armor.strength}}</span>
                 <span>{{armor.stealth}}</span>
                 <span>{{armor.weight}}</span>
+                <md-button ng-click="showAddArmor(armor.name, armor.ac);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
             </div>
 
 
@@ -42,6 +44,7 @@
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Strength</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span style="width:93.47px"></span>
         </md-card-content>
     </md-card>
 
@@ -55,6 +58,7 @@
                 <span>{{armor.strength}}</span>
                 <span>{{armor.stealth}}</span>
                 <span>{{armor.weight}}</span>
+                <md-button ng-click="showAddArmor(armor.name, armor.ac);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
             </div>
 
 
@@ -74,6 +78,7 @@
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Strength</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span style="width:93.47px"></span>
         </md-card-content>
     </md-card>
 
@@ -87,6 +92,7 @@
                 <span>{{armor.strength}}</span>
                 <span>{{armor.stealth}}</span>
                 <span>{{armor.weight}}</span>
+                <md-button ng-click="showAddArmor(armor.name, armor.ac);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
             </div>
 
 
@@ -106,6 +112,7 @@
             <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Strength</span>
             <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
+            <span style="width:93.47px"></span>
         </md-card-content>
     </md-card>
 
@@ -119,13 +126,10 @@
                 <span>{{armor.strength}}</span>
                 <span>{{armor.stealth}}</span>
                 <span>{{armor.weight}}</span>
+                <md-button ng-click="showAddArmor(armor.name, armor.ac);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
             </div>
 
 
         </md-card-content>
     </md-card>
 </div>
-
-
-
-

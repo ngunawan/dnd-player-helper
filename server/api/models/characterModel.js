@@ -6,7 +6,10 @@ const CharacterSchema = new Schema({
     name: String,
     class: [{
         class_name: String,
-        level: {type: Number, default: 1}
+        level: {
+            type: Number,
+            default: 1
+        }
     }],
     race: String,
     background: String,
@@ -15,6 +18,10 @@ const CharacterSchema = new Schema({
         name: String,
         damage: String,
         damage_type: String
+    }],
+    armors: [{
+        name: String,
+        ac: String
     }],
     equipments: [String],
     gold: Number

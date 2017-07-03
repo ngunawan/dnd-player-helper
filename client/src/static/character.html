@@ -48,6 +48,47 @@
 
         </div>
         
+         <!--WEAPONS ================================================ -->
+        <div style="background:white; margin-left:16px;" class="md-whiteframe-4dp" flex="33" layout="column">
+
+            <md-toolbar class="md-primary md-padding">
+                Weapons
+            </md-toolbar>
+
+            <md-list>
+                <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="weapon in currentCharacter.weapons" layout="row">
+                    <div flex="80" class="md-list-item-text" layout="column">
+                        {{weapon.name}}
+                        {{weapon.damage}}
+                        {{weapon.damage_type}}
+                    </div>
+                    <md-button flex="20" class="md-accent">Info</md-button>
+<!--                    <md-divider></md-divider>-->
+                </md-list-item>
+            </md-list>
+
+        </div>
+        
+          <!--ARMORS ================================================ -->
+        <div style="background:white; margin-left:16px;" class="md-whiteframe-4dp" flex="33" layout="column">
+
+            <md-toolbar class="md-primary md-padding">
+                Armors
+            </md-toolbar>
+
+            <md-list>
+                <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="armor in currentCharacter.armors" layout="row">
+                    <div flex="80" class="md-list-item-text" layout="column">
+                        {{armor.name}}
+                        {{armor.ac}}
+                    </div>
+                    <md-button flex="20" class="md-accent">Info</md-button>
+<!--                    <md-divider></md-divider>-->
+                </md-list-item>
+            </md-list>
+
+        </div>
+        
     </div>
 
 

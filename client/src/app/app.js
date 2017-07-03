@@ -7,12 +7,13 @@ require('angular-messages');
 require('angular-material');
 
 //modules ==========================================
-require('./js/addToCharacter.js');
+//require('./js/addToCharacter.js');
 
-var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'addToCharacter']);
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
 
 //services =========================================
 require('./services/Note.js');
+require('./services/addToCharacterService.js');
 
 
 //controllers ======================================
@@ -31,6 +32,8 @@ require('./controllers/toolsListController.js');
 
 require('./controllers/notesController.js');
 require('./controllers/noteEditorController.js');
+
+require('./controllers/addToCharacterController.js');
 
 
 

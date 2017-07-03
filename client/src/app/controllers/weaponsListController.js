@@ -1,4 +1,4 @@
-angular.module('app').controller('weaponsListController', function weaponsListController($scope, $http) {
+angular.module('app').controller('weaponsListController', function weaponsListController($scope, $http, addToCharacterService) {
 
     $scope.query = {};
     $scope.queryBy = "";
@@ -14,6 +14,7 @@ angular.module('app').controller('weaponsListController', function weaponsListCo
         console.log(response);
     });
 
+    $scope.showAddWeapon = addToCharacterService.showAddWeapon;
 
 
 });
