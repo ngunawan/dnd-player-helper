@@ -1,6 +1,5 @@
-<div ng-app="addToCharacter">
     <!--CLASS FILTER ===================================================-->
-    <md-content layout="row">
+    <md-content class="flex-row-wrap">
         <md-button ng-class="{'md-accent': query['class'] == ''}" ng-click="query = {};query['class'] = ''" class="md-raised md-primary">All Class</md-button>
         <md-button ng-class="{'md-accent': query['class'] == 'bard'}" ng-click="query = {};query['class'] = 'bard'" class="md-raised md-primary">Bard</md-button>
         <md-button ng-class="{'md-accent': query['class'] == 'cleric'}" ng-click="query = {};query['class'] = 'cleric' " class="md-raised md-primary">Cleric</md-button>
@@ -161,7 +160,7 @@
             <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
             <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
             <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
-            <span style="display:block;"></span>
+            <span></span>
         </md-card-content>
     </md-card>
 
@@ -192,5 +191,3 @@
             </div>
         </md-card-content>
     </md-card>
-
-</div>

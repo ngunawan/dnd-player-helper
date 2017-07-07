@@ -1,0 +1,166 @@
+[
+    {
+        "name": "Alert",
+        "description": "<p>Always on the lookout for danger, you gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You gain a +5 bonus to initiative.</li>\n<li>You can&#x2019;t be surprised while you are conscious.</li>\n<li>Other creatures don&#x2019;t gain advantage on attack rolls\nagainst you as a result of being hidden from you.</li>\n</ul>"
+    },
+    {
+        "name": "Athlete",
+        "description": "<p>You have undergone extensive physical training to gain\nthe following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength or Dexterity score by 1, to a\nmaximum of 20.</li>\n<li>When you are prone, standing up uses only 5 feet of\nyour movement.</li>\n<li>Climbing doesn&#x2019;t halve your speed.</li>\n<li>You can make a running longjump or a running high\njump after moving only 5 feet on foot, rather than\n10 feet.</li>\n</ul>"
+    },
+    {
+        "name": "Actor",
+        "description": "<p>Skilled at mimicry and dramatics, you gain the\nfollowing benefits:</p><p>Increase your Charisma score by 1, to a maximum of 20.\nYou have advantage on Charisma (Deception) and\nCharisma (Performance) checks when trying to pass\nyourself off as a different person.</p><p>You can mimic the speech of another person or the\nsounds made by other creatures. You must have\nheard the person speaking, or heard the creature\nmake the sound. for at least 1 minute. A successful\nWisdom (Insight) check contested by your Charisma\n(Deception) check allows a listener to determine that\nthe effect is faked.</p>"
+    },
+    {
+        "name": "Charger",
+        "description": "<p>When you use your action to Dash, you can use a\nbonus action to make one melee weapon attack or to\nshove a creature.</p><p>If you move at least 10 feet in a straight line\nimmediately before taking this bonus action, you either\ngain a +5 bonus to the attacks damage roll (if you chose\nto make a melee attack and hit) or push the target up\nto 10 feet away from you (if you chose to shove and\nyou succeed).</p>"
+    },
+    {
+        "name": "Crossbow Expert",
+        "description": "<p>Thanks to extensive practice with the crossbow, you\ngain the following benefits:</p><ul class=\"simple\">\n<li>You ignore the loading quality of crossbows with\nwhich you are proficient.</li>\n<li>Being within 5 feet of a hostile creature doesn&#x2019;t\nimpose disadvantage on your ranged attack rolls.</li>\n<li>When you use the Attack action and attack with a one&#x2014;\nhanded weapon, you can use a bonus action to attack\nwith a loaded hand crossbow you are holding.</li>\n</ul>"
+    },
+    {
+        "name": "Defensive Duelist",
+        "description": "<p><em>Prerequisite: Dexterity 13 or higher</em></p><p>When you are wielding a finesse weapon with which\nyou are proficient and another creature hits you with\na melee attack, you can use your reaction to add your\nproficiency bonus to your AC for that attack. potentially\ncausing the attack to miss you.</p>"
+    },
+    {
+        "name": "Dual Wielder",
+        "description": "<p>You master fighting with two weapons, gaining the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You gain a +1 bonus to AC while you are wielding a\nseparate melee weapon in each hand.</li>\n<li>You can use two&#x2014;weapon fighting even when the one-\nhanded melee weapons you are wielding aren&#x2019;t light.</li>\n<li>You can draw or stow two one&#x2014;handed weapons when\nyou would normally be able to draw or stow only one.</li>\n</ul>"
+    },
+    {
+        "name": "Dungeon Delver",
+        "description": "<p>Alert to the hidden traps and secret doors found in ma\ndungeons, you gain the following benefits:</p><ul class=\"simple\">\n<li>You have advantage on Wisdom (Perception) and\nIntelligence (Investigation) checks made to detect the\npresence of secret doors.</li>\n<li>You have advantage on saving throws made to avoid\nor resist traps.</li>\n<li>You have resistance to the damage dealt by traps.</li>\n<li>You can search for traps while traveling at a normal\npace, instead of only at a slow pace.</li>\n</ul>"
+    },
+    {
+        "name": "Durable",
+        "description": "<p>Hardy and resilient, you gain the following benefits:</p><ul class=\"simple\">\n<li>Increase your Constitution score by l, to a\nmaximum of 20.</li>\n<li>When you roll a Hit Die to regain hit points, the\nminimum number of hit points you regain from\nthe roll equals twice your Constitution modifier\n(minimum of 2).</li>\n</ul>"
+    },
+    {
+        "name": "Elemental Adept",
+        "description": "<p><em>Prerequisite: The ability to cast at least one spell</em></p><p>When you gain this feat, choose one of the following\ndamage types: acid, cold, fire, lightning, or thunder.</p><p>Spells you cast ignore resistance to damage of the\nchosen type. In addition, When you roll damage for a\nspell you cast that deals damage of that type, you can\ntreat any 1 on a damage die as a 2.</p><p>You can select this feat multiple times. Each time\nyou do so, you must choose a different damage type.</p>"
+    },
+    {
+        "name": "Grappler",
+        "description": "<p><em>Prerequisite: Strength 13 or higher</em></p><p>You&#x2019;ve developed the skills necessary to hold your\nown in close&#x2014;quarters grappling. You gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You have advantage on attack rolls against a creature\nyou are grappling.</li>\n<li>You can use your action to try to pin a creature grappled\nby you. To do so, make another grapple check. If\nyou succeed, you and the creature are both restrained\nuntil the grapple ends.</li>\n<li>Creatures that are one size larger than you don&#x2019;t\nautomatically succeed on checks to escape your grapple.</li>\n</ul>"
+    },
+    {
+        "name": "Great Weapon Master",
+        "description": "<p>You&#x2019;ve learned to put the weight of a weapon to your\nadvantage, letting its momentum empower your strikes.\nYou gain the following benefits:</p><ul class=\"simple\">\n<li>On your turn, when you score a critical hit with a\nmelee weapon or reduce a creature to 0 hit points\nwith one, you can make one melee weapon attack as a\nbonus action.</li>\n<li>Before you make a melee attack with a heavy weapon\nthat you are proficient with, you can choose to take a\n&#x2014;5 penalty to the attack roll. If the attack hits, you add\n+10 to the attacks damage.</li>\n</ul>"
+    },
+    {
+        "name": "Healer",
+        "description": "<p>You are an able physician, allowing you to mend wounds\nquickly and get your allies back in the fight. You gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>When you use a healer&#x2019;s kit to stabilize a dying creature,\nthat creature also regains 1 hit point.</li>\n<li>As an action, you can spend one use of a healer&#x2019;s kit to\ntend to a creature and restore 1d6 + 4 hit points to it.\nplus additional hit points equal to the creature&#x2019;s maximum\nnumber of Hit Dice. The creature can&#x2019;t regain\nhit points from this feat again until it finishes a short\nor long rest.</li>\n</ul>"
+    },
+    {
+        "name": "Heavily Armored",
+        "description": "<p><em>Prerequisite: Proficiency With medium armor</em></p><p>You have trained to master the use of heavy armor,\ngaining the following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength score by 1, to a maximum of 20</li>\n<li>You gain proficiency with heavy armor.</li>\n</ul>"
+    },
+    {
+        "name": "Heavy Armor Master",
+        "description": "<p><em>Prerequisite: Proficiency With heavy armor</em></p><p>You can use your armor to deflect strikes that would kill\nothers. You gain the following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength score by 1, to a maximum of 20</li>\n<li>While you are wearing heavy armor, bludgeoning,\npiercing, and slashing damage that you take from non\nmagical weapons is reduced by 3.</li>\n</ul>"
+    },
+    {
+        "name": "Inspiring Leader",
+        "description": "<p><em>Prerequisite: Charisma 13 or higher</em></p><p>You can spend 10 minutes inspiring your companions,\nshoring up their resolve to fight. When you do so, choose\nup to six friendly creatures (which can include yourself)\nwithin 30 feet of you who can see or hear you and who\ncan understand you. Each creature can gain temporary\nhit points equal to your level + your Charisma modifier.\nA creature can&#x2019;t gain temporary hit points from this feat\nagain until it has finished a short or long rest.</p>"
+    },
+    {
+        "name": "Keen Mind",
+        "description": "<p>You have a mind that can track time, direction,\nand detail with uncanny precision. You gain the\nfollowing benefits.</p><ul class=\"simple\">\n<li>Increase your Intelligence score by 1, to a maximum\nof 20.</li>\n<li>You always know which way is north.</li>\n<li>You always know the number of hours left before the\nnext sunrise or sunset.</li>\n<li>You can accurately recall anything you have seen or\nheard within the past month.</li>\n</ul>"
+    },
+    {
+        "name": "Lightly Armored",
+        "description": "<p>You have trained to master the use of light armor,\ngaining the following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength or Dexterity score by 1, to a\nmaximum of 20.</li>\n<li>You gain proficiency with light armor.</li>\n</ul>"
+    },
+    {
+        "name": "Linguist",
+        "description": "<p>You have studied languages and codes, gaining the\nfollowing benefits:</p><ul class=\"simple\">\n<li>Increase your Intelligence score by l, to a maximum of 20.</li>\n<li>You learn three languages of your choice.</li>\n<li>You can ably create written ciphers. Others can&#x2019;t decipher\na code you create unless you teach them, they\nsucceed on an Intelligence check (DC equal to your\nIntelligence score + your proficiency bonus), or they\nuse magic to decipher it.</li>\n</ul>"
+    },
+    {
+        "name": "Lucky",
+        "description": "<p>You have inexplicable luck that seems to kick in at just\nthe right moment.</p><p>You have 3 luck points. Whenever you make an attack\nroll. an ability check, or a saving throw, you can spend\none luck point to roll an additional d20. You can choose\nto spend one of your luck points after you roll the die,\nbut before the outcome is determined. You choose which\nof the d205 is used for the attack roll, ability check, or\nsaving throw.</p><p>You can also spend one luck point when an attack\nroll is made against you. Roll a d20, and then choose\nwhether the attack uses the attackers roll or yours.</p><p>If more than one creature sperds a luck point to\ninfluence the outcome of a roll, :&#x2018;ne points cancel each\nother out; no add1t1onal dice are rolled.</p><p>You regain your expended luck points when you\nfinish a long rest.</p>"
+    },
+    {
+        "name": "Mage Slayer",
+        "description": "<p>You have practiced techniques useful in melee combat\nagainst spellcasters, gaining the following benefits:</p><ul class=\"simple\">\n<li>When a creature within 5 feet of you casts a spell, yo\ncan use your reaction to make a melee weapon attack\nagainst that creature.</li>\n<li>When you damage a creature that is concentrating on\na spell, that creature has disadvantage on the saving\nthrow it makes to maintain its concentration.</li>\n<li>You have advantage on saving throws against spells\ncast by creatures within 5 feet of you.</li>\n</ul>"
+    },
+    {
+        "name": "Magic Initiate",
+        "description": "<p>Choose a class: bard, cleric, druid, sorcerer, warlock, or\nwizard. You learn two cantrips of your choice from that\nclass&#x2019;s spell list.</p><p>In addition, choose one 1st&#x2014;level spell from that same\nlist. You learn that spell and can cast it at its lowest\nlevel. Once you cast it, you must finish a long rest before\nyou can cast it again.</p><p>Your spellcasting ability for these spells depends\non the class you chose: Charisma for bard,\nsorcerer, or warlock; Wisdom for cleric or druid: or\nIntelligence for wizard.</p>"
+    },
+    {
+        "name": "Martial Adept",
+        "description": "<p>You have martial training that allows you to\nperform special combat maneuvers. You gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You learn two maneuvers of your choice from among\nthose available to the Battle Master archetype in the\nfighter class. If a maneuver you use requires your target\nto make a saving throw to resist the maneuver&#x2019;s\neffects, the saving throw DC equals 8 + your proficiency\nbonus + your Strength or Dexterity modifier\n(your choice).</li>\n<li>If you already have superiority dice, you gain one\nmore; otherwise, you have one superiority die, which\nis a d6. This die is used to fuel your maneuvers. A\nsuperiority die is expended when you use it. You\nregain your expended superiority dice when you\nfinish a short or long rest.</li>\n</ul>"
+    },
+    {
+        "name": "Medium Armor Master",
+        "description": "<p><em>Prerequisite: Proficiency With medium armor</em></p><p>You have practiced moving in medium armor to gain th\nfollowing benefits:</p><ul class=\"simple\">\n<li>Wearing medium armor doesn&#x2019;t impose disadvantage\non your Dexterity (Stealth) checks.</li>\n<li>When you wear medium armor, you can add 3,\nrather than 2, to your AC if you have a Dexterity of\n16 or higher.</li>\n</ul>"
+    },
+    {
+        "name": "Mobile",
+        "description": "<p>You are exceptionally speedy and agile. You gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>Your speed increases by 10 feet.</li>\n<li>When you use the Dash action, difficult terrain doesn&#x2019;t\ncost you extra movement on that turn.</li>\n<li>When you make a melee attack against a creature, you\ndon&#x2019;t provoke opportunity attacks from that creature\nfor the rest of the turn, whether you hit or not.</li>\n</ul>"
+    },
+    {
+        "name": "Moderately Armored",
+        "description": "<p><em>Prerequisite: Proficiency with light armor</em></p><p>You have trained to master the use of medium armor\nand shields, gaining the following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength or Dexterity score by 1, to a\nmaximum of 20.</li>\n<li>You gain proficiency with medium armor and shields.</li>\n</ul>"
+    },
+    {
+        "name": "Mounted Combatant",
+        "description": "<p>You are a dangerous foe to face while mounted. While\nyou are mounted and aren&#x2019;t incapacitated, you gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You have advantage on melee attack rolls against any\nunmounted creature that is smaller than your mount.</li>\n<li>You can force an attack targeted at your mount to tar-\nget you instead.</li>\n<li>If your mount is subjected to an effect that allows it to\nmake a Dexterity saving throw to take only half damage,\nit instead takes no damage if it succeeds on the\nsaving throw, and only half damage if it fails.</li>\n</ul>"
+    },
+    {
+        "name": "Observant",
+        "description": "<p>Quick to notice details of your environment, you gain\nthe following benefits:</p><ul class=\"simple\">\n<li>Increase your Intelligence or Wisdom score by 1, to a\nmaximum of 20.</li>\n<li>If you can see a creature&#x2019;s mouth while it is speaking\na language you understand, you can interpret what it is\nsaying by reading its lips.</li>\n<li>You have a +5 bonus to your passive Wisdom\n(Perception) and passive Intelligence (Investigation)\nscores.</li>\n</ul>"
+    },
+    {
+        "name": "Polearm Master",
+        "description": "<p>You can keep your enemies at bay with reach weapons.\nYou gain the following benefits:</p><ul class=\"simple\">\n<li>When you take the Attack action and attack with only\na glaive, halberd, or quarterstaff, you can use a bonus\naction to make a melee attack with the opposite end of\nthe weapon. The weapon&#x2019;s damage die for this attack\nis a d4, and the attack deals bludgeoning damage.</li>\n<li>While you are wielding a glaive, halberd, pike, or quarterstaff,\nother creatures provoke an opportunity attack\nfrom you when they enter your reach.</li>\n</ul>"
+    },
+    {
+        "name": "Resilient",
+        "description": "<p>Choose one ability score. You gain the following benefits:</p><ul class=\"simple\">\n<li>Increase the chosen ability score by 1, to a maximum\nof 20.</li>\n<li>You gain proficiency in saving throws using the\nchosen ability.</li>\n</ul>"
+    },
+    {
+        "name": "Ritual Caster",
+        "description": "<p><em>Prerequisite: Intelligence or Wisdom 13 or higher</em></p><p>You have learned a number of spells that you can cast .\nrituals. These spells are written in a ritual book, which\nyou must have in hand while casting one of them.</p><p>When you choose this feat, you acquire a ritual book\nholding two 1st&#x2014;level spells of your choice. Choose one\nof the following classes: bard, cleric, druid, sorcerer,\nwarlock, or wizard. You must choose your spells\nfrom that class&#x2019;s spell list, and the spells you choose\nmust have the ritual tag. The class you choose also\ndetermines your spellcasting ability for these spells:\nCharisma for bard, sorcerer, or warlock; Wisdom for\ncleric or druid; or Intelligence for wizard.</p><p>If you come across a spell in written form, such as a\nmagical spell scroll or a Wizard&#x2019;s spellbook, you might\nbe able to add it to your ritual book. The spell must be\non the spell list for the class you chose, the spell&#x2019;s level\ncan be no higher than half your level (rounded up), and\nit must have the ritual tag. The process of copying the\nspell into your ritual book takes 2 hours per level of the\nspell, and costs 50 gp per level. The cost represents\nmaterial components you expend as you experiment\nwith the spell to master it, as well as the fine inks you\nneed to record it.</p>"
+    },
+    {
+        "name": "Savage Attacker",
+        "description": "<p>Once per turn when you roll damage for a melee weapon\nattack, you can reroll the weapon&#x2019;s damage dice and use\neither total.</p>"
+    },
+    {
+        "name": "Sentinel",
+        "description": "<p>You have mastered techniques to take advantage\nof every drop in any enemy&#x2019;s guard, gaining the\nfollowing benefits:</p><ul class=\"simple\">\n<li>When you hit a creature with an opportunity attack,\nthe creature&#x2019;s speed becomes 0 for the rest of\nthe turn.</li>\n<li>Creatures within 5 feet ofyou provoke opportunity\nattacks from you even if they take the Disengage\naction before leaving your reach.</li>\n<li>When a creature within 5 feet of you makes an attack\nagainst a target other than you (and that target doesn&#x2019;t\nhave this feat), you can use your reaction to make a\nmelee weapon attack against the attacking creature.</li>\n</ul>"
+    },
+    {
+        "name": "Sharpshooter",
+        "description": "<p>You have mastered ranged weapons and can make\nshots that others find impossible. You gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>Attacking at long range doesn&#x2019;t impose disadvantage\non your ranged weapon attack rolls.</li>\n<li>Your ranged weapon attacks ignore half cover and\nthree&#x2014;quarters cover.</li>\n<li>Before you make an attack with a ranged weapon that\nyou are proficient with, you can choose to take a &#x2014;5\npenalty to the attack roll. If the attack hits. you add +1\nto the attacks damage.</li>\n</ul>"
+    },
+    {
+        "name": "Shield Master",
+        "description": "<p>You use shields not just for protection but also for\noffense. You gain the following benefits while you are\nwielding a shield:</p><ul class=\"simple\">\n<li>If you take the Attack action on your turn, you can use\na bonus action to try to shove a creature within 5 feet\nof you with your shield.</li>\n<li>If you aren&#x2018;t incapacitated, you can add your shield&#x2018;s AC\nbonus to any Dexterity saving throw you make against\na spell or other harmful effect that targets only you.</li>\n<li>If you are subjected to an effect that allows you to\nmake a Dexterity saving throw to take only half damage,\nyou can use your reaction to take no damage if\nyou succeed on the saving throw, interposing your\nshield between yourself and the source of the effect.</li>\n</ul>"
+    },
+    {
+        "name": "Skiled",
+        "description": "<p>You gain proficiency in any combination of three skills\nor tools of your choice.</p>"
+    },
+    {
+        "name": "Skulker",
+        "description": "<p><em>Prerequisite: Dexterity 13 or higher</em></p><p>You are expert at slinking through shadows. You gain\nthe following benefits:</p><ul class=\"simple\">\n<li>You can try to hide when you are lightly obscured\nfrom the creature from which you are hiding.</li>\n<li>When you are hidden from a creature and miss it with\na ranged weapon attack, making the attack doesn&#x2019;t\nreveal your position.</li>\n<li>Dim light doesn&#x2019;t impose disadvantage on your\nWisdom (Perception) checks relying on sight.</li>\n</ul><p>Spell Sniper</p><p><em>Prerequisite: The ability to cast at least one spell</em></p><p>You have learned techniques to enhance your\nattacks with certain kinds of spells, gaining the\nfollowing benefits:</p><ul class=\"simple\">\n<li>When you cast a spell that requires you to make an\nattack roll. the spell&#x2019;s range is doubled.</li>\n<li>Your ranged spell attacks ignore half cover and\nthree-quarters cover.</li>\n<li>You learn one cantrip that requires an attack roll.\nChoose the cantrip from the bard, cleric. druid. sorcerer,\nwarlock, or wizard spell list. Your spellcasting\nability for this cantrip depends on the spell list you\nchose from: Charisma for bard, sorcerer, or warlock;\nWisdom for cleric or druid; or Intelligence for wizard.</li>\n</ul>"
+    },
+    {
+        "name": "Tavern Brawler",
+        "description": "<p>Accustomed to rough-and&#x2014;tumble fighting using\nwhatever weapons happen to be at hand, you gain the\nfollowing benefits:</p><ul class=\"simple\">\n<li>Increase your Strength or Constitution score by 1,\nto a maximum of 20.</li>\n<li>You are proficient with improvised weapons and\nunarmed strikes.</li>\n<li>Your unarmed strike uses a d4 for damage.</li>\n<li>When you hit a creature with an unarmed strike or an\nimprovised weapon on your turn, you can use a bonus\naction to attempt to grapple the target.</li>\n</ul>"
+    },
+    {
+        "name": "Tough",
+        "description": "<p>Your hit point maximum increases by an amount equal\nto twice your level when you gain this feat. Whenever\nyou gain a level thereafter, your hit point maximum\nincreases by an additional 2 hit points.</p>"
+    },
+    {
+        "name": "War Caster",
+        "description": "<p><em>Prerequisite: The ability to cast at least one spell</em></p><p>You have practiced casting spells in the midst of\ncombat. learning techniques that grant you the\nfollowing benefits:</p><ul class=\"simple\">\n<li>You have advantage on Constitution saving throws\nthat you make to maintain your concentration on a\nspell when you take damage.</li>\n<li>You can perform the somatic components of spells\neven when you have weapons or a shield in one or\nboth hands.</li>\n<li>When a hostile creature&#x2019;s movement provokes an\nopportunity attack from you, you can use your reaction\nto cast a spell at the creature, rather than making\nan opportunity attack. The spell must have a casting\ntime of 1 action and must target only that creature.</li>\n</ul>"
+    },
+    {
+        "name": "Weapon Master",
+        "description": "<p>You have practiced extensively with a variety of\nweapons, gaining the following benefits:</p><ul class=\"simple\">\n<li>Increase your Strength or Dexterity score by 1, to a\nmaximum of 20.</li>\n<li>You gain proficiency with four weapons of your choice.</li>\n</ul>"
+    }
+]

@@ -24,6 +24,7 @@ require('./services/Purchase.js');
 require('./controllers/mainController.js');
 require('./controllers/charactersListController.js');
 require('./controllers/characterController.js');
+require('./controllers/compendiumController.js');
 
 require('./controllers/spellsListController.js');
 require('./controllers/weaponsListController.js');
@@ -33,6 +34,7 @@ require('./controllers/goodsListController.js');
 require('./controllers/ridablesListController.js');
 require('./controllers/itemsListController.js');
 require('./controllers/toolsListController.js');
+require('./controllers/featsListController.js');
 
 require('./controllers/notesController.js');
 require('./controllers/noteEditorController.js');
@@ -49,6 +51,7 @@ require('./components/goodsList.js');
 require('./components/ridablesList.js');
 require('./components/itemsList.js');
 require('./components/toolsList.js');
+require('./components/featsList.js');
 
 require('./components/noteEditor.js');
 
@@ -59,6 +62,13 @@ app.config(function ($routeProvider, $locationProvider) {
         .when("/", {
             templateUrl: "charactersList.html",
             controller: "charactersListController"
+        })
+        .when("/compendium", {
+            templateUrl: "compendium.html",
+            controller: "compendiumController"
+        })
+        .when("/feats", {
+            templateUrl: "feats.html"
         })
         .when("/spells", {
             templateUrl: "spells.html",

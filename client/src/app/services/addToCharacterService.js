@@ -42,6 +42,37 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
+    //add feat ---------------------------------
+    function addFeatToCharacter(feat, character) {
+        $http({
+            method: 'POST',
+            url: '/characters/' + character._id + '/feats',
+            data: feat
+        }).then(function successCallback(response) {
+            console.log("added feat to character");
+        }, function errorCallback(response) {
+            console.log("error adding feat to character");
+        });
+    }
+
+    this.showAddFeat = function (feat) {
+        $mdDialog.show({
+                controller: 'addToCharacterController',
+                templateUrl: 'templates/addFeatTemplate.html',
+                parent: angular.element(document.body),
+                clickOutsideToClose: true,
+            })
+            .then(function (arg) {
+                    character = arg.character;
+                    option = arg.option;
+
+                    addFeatToCharacter(feat, character);
+                },
+                function () {
+                    console.log("feat not added")
+                });
+    }
+
     //add equipment ---------------------------------
     function addEquipmentToCharacter(equipment, character, amount) {
         let purchase_array = [];
@@ -150,7 +181,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(armor);
         }
-        
+
         console.log(purchase_array);
         $http({
             method: 'POST',

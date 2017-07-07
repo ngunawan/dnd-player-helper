@@ -30,7 +30,11 @@ const CharacterSchema = new Schema({
     gold: {
         type: Number,
         default: 0
-    }
+    },
+    feats: [{
+        name: String,
+        description: String
+    }]
 });
 
 module.exports = mongoose.model('Characters', CharacterSchema);

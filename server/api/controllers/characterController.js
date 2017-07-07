@@ -32,8 +32,8 @@ exports.read_character = function (req, res) {
     });
 };
 
-//add spells
-exports.add_spells = function (req, res) {
+//add spell
+exports.add_spell = function (req, res) {
     let query = {
         _id: req.params.characterId
     };
@@ -91,6 +91,23 @@ exports.add_armors = function (req, res) {
     Character.update(query, {
             $push: {
                 armors: {$each:req.body}
+            }
+        },
+        (err, character) => {
+            if (err)
+                res.send(err);
+            res.json(character);
+        });
+};
+
+//add feat
+exports.add_feat = function (req, res) {
+    let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
+            $push: {
+                feats: req.body
             }
         },
         (err, character) => {

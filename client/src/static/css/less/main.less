@@ -1,3 +1,5 @@
+// setup ===============================
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +7,8 @@
 md-dialog {
     width: 40%;
 }
+
+// reusables ===============================
 
 .warning-msg {
     color: #c60008;
@@ -53,6 +57,20 @@ md-dialog {
     grid-template-rows: auto;
 }
 
+.grid-column-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto;
+}
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+// specifics ===============================
+
 .database-description-block {
     padding: 20px 0;
 }
@@ -73,10 +91,15 @@ md-dialog {
     padding: 10px;
 }
 
-.flex-row-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.compendium-card {
+    width:20%;
+}
+
+// temporary trash work ===============================
+
+.md-subhead {
+    color: rgba(0,0,0,0.54);
+    display:none;
 }
 
 span {
@@ -97,13 +120,6 @@ span {
 label {
     font-weight: 700;
 }
-
-//md-card md-card-content {
-//    display: grid;
-//    width: 100%;
-//    grid-template-columns: repeat(8, 12.5%);
-//    grid-template-rows: auto;
-//}
 
 md-input-container .md-errors-spacer {
     min-height: 0;

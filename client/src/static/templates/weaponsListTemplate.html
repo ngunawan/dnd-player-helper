@@ -1,70 +1,7 @@
-<!--
-<md-content layout-gt-sm="row" layout-padding>
-    <div>
-        <md-input-container>
-            <label>Name</label>
-            <input ng-model="query['name']">
-        </md-input-container>
-        
-        <md-input-container>
-            <label>Cost</label>
-            <input ng-model="query['cost']">
-        </md-input-container>
-        
-        <md-input-container>
-            <label>Damage</label>
-            <input ng-model="query['damage']">
-        </md-input-container>
-        
-        <md-input-container>
-            <label>Weight</label>
-            <input ng-model="query['weight']">
-        </md-input-container>
-
-
-        <md-input-container>
-            <label>Properties</label>
-            <md-select ng-model="query['properties']">
-                <md-option value="">
-                    All
-                </md-option>
-                <md-option value="Light">
-                    Light
-                </md-option>
-                <md-option value="Finesse">
-                    Finesse
-                </md-option>
-                <md-option value="Thrown">
-                    Thrown
-                </md-option>
-                <md-option value="Two-handed">
-                    Two-handed
-                </md-option>
-                <md-option value="Versatile">
-                    Versatile
-                </md-option>
-                <md-option value="Ammunition">
-                    Ammunition
-                </md-option>
-                <md-option value="Heavy">
-                    Heavy
-                </md-option>
-                <md-option value="Reach">
-                    Reach
-                </md-option>
-                <md-option value="Special">
-                    Special
-                </md-option>
-                <md-option value="Loading">
-                    Loading
-                </md-option>
-            </md-select>
-        </md-input-container>
-
-       
-    </div>
-</md-content>
--->
+<md-input-container>
+    <label>Name</label>
+    <input ng-model="query['name']">
+</md-input-container>
 
 <md-input-container>
     <label>Damage Type</label>
@@ -85,36 +22,16 @@
 </md-input-container>
 
 <md-content class="flex-row-wrap">
-        <md-button ng-class="{'md-accent': queryProperty.includes('light')}"
-                   ng-click="toggleQueryProperty('light')"
-                   class="md-raised md-primary">Light</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('finesse')}"
-                   ng-click="toggleQueryProperty('finesse')"
-                   class="md-raised md-primary">Finesse</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('thrown')}"
-                   ng-click="toggleQueryProperty('thrown')"
-                   class="md-raised md-primary">Thrown</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('two-handed')}"
-                   ng-click="toggleQueryProperty('two-handed')"
-                   class="md-raised md-primary">Two-handed</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('versatile')}"
-                   ng-click="toggleQueryProperty('versatile')"
-                   class="md-raised md-primary">Versatile</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('ammunition')}"
-                   ng-click="toggleQueryProperty('ammunition')"
-                   class="md-raised md-primary">Ammunition</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('heavy')}"
-                   ng-click="toggleQueryProperty('heavy')"
-                   class="md-raised md-primary">Heavy</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('reach')}"
-                   ng-click="toggleQueryProperty('reach')"
-                   class="md-raised md-primary">Reach</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('special')}"
-                   ng-click="toggleQueryProperty('special')"
-                   class="md-raised md-primary">Special</md-button>
-        <md-button ng-class="{'md-accent': queryProperty.includes('loading')}"
-                   ng-click="toggleQueryProperty('loading')"
-                   class="md-raised md-primary">Loading</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('light')}" ng-click="toggleQueryProperty('light')" class="md-raised md-primary">Light</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('finesse')}" ng-click="toggleQueryProperty('finesse')" class="md-raised md-primary">Finesse</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('thrown')}" ng-click="toggleQueryProperty('thrown')" class="md-raised md-primary">Thrown</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('two-handed')}" ng-click="toggleQueryProperty('two-handed')" class="md-raised md-primary">Two-handed</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('versatile')}" ng-click="toggleQueryProperty('versatile')" class="md-raised md-primary">Versatile</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('ammunition')}" ng-click="toggleQueryProperty('ammunition')" class="md-raised md-primary">Ammunition</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('heavy')}" ng-click="toggleQueryProperty('heavy')" class="md-raised md-primary">Heavy</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('reach')}" ng-click="toggleQueryProperty('reach')" class="md-raised md-primary">Reach</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('special')}" ng-click="toggleQueryProperty('special')" class="md-raised md-primary">Special</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('loading')}" ng-click="toggleQueryProperty('loading')" class="md-raised md-primary">Loading</md-button>
 </md-content>
 
 

@@ -43,6 +43,16 @@ md-dialog {
   grid-template-columns: repeat(3, 33.3%);
   grid-template-rows: auto;
 }
+.grid-column-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+}
+.flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .database-description-block {
   padding: 20px 0;
 }
@@ -60,10 +70,12 @@ md-dialog {
   max-width: 50%;
   padding: 10px;
 }
-.flex-row-wrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.compendium-card {
+  width: 20%;
+}
+.md-subhead {
+  color: rgba(0, 0, 0, 0.54);
+  display: none;
 }
 span {
   display: flex;

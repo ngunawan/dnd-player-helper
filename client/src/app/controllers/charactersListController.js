@@ -1,4 +1,8 @@
 angular.module('app').controller('charactersListController', function charactersListController($scope, $compile, $http, $location) {
+    
+    $scope.unNav = function() {
+        $scope.$parent.currentNavItem = '';
+    }
 
     $http({
         method: 'GET',

@@ -171,7 +171,7 @@
     <md-card ng-repeat="character in charactersList">
         <md-card-content layout="row" layout-align="space-between">
             <span flex="80">{{character.name}}</span>
-            <md-button flex="10" ng-click="redirectTo(character._id); $event.stopPropagation()" class="md-primary">Show Info</md-button>
+            <md-button flex="10" ng-click="unNav();redirectTo(character._id); $event.stopPropagation()" class="md-primary">Show Info</md-button>
             <md-button flex="10" ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn md-raised">Remove</md-button>
         </md-card-content>
     </md-card>
