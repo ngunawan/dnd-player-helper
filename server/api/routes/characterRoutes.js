@@ -12,16 +12,15 @@ module.exports = function (app) {
         .delete(characterController.delete_character);
 
     app.route('/characters/:characterId/spells')
-        .put(characterController.update_character_spells);
-
+        .post(characterController.add_spells);
     app.route('/characters/:characterId/equipments')
-        .put(characterController.update_character_equipments);
-    
+        .post(characterController.add_equipments);
     app.route('/characters/:characterId/weapons')
-        .put(characterController.update_character_weapons);
-    
+        .post(characterController.add_weapons);
     app.route('/characters/:characterId/armors')
-        .put(characterController.update_character_armors);
-
-
+        .post(characterController.add_armors);
+    
+    app.route('/characters/:characterId/gold/:newGold')
+        .put(characterController.update_character_gold);
+    
 };

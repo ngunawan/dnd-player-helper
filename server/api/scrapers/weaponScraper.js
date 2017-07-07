@@ -238,7 +238,7 @@ request(url, (error, response, html) => {
 
     }
 
-    fs.writeFile('../json/weapons.json', JSON.stringify(json, null, 4), function (err) {
+    fs.writeFile('../backup_json/weapons.json', JSON.stringify(json, null, 4), function (err) {
         console.log('weapons.json successfully written');
     })
 

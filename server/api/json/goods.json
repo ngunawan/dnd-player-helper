@@ -1,54 +1,54 @@
 [
     {
         "name": "1 lb. of wheat",
-        "cost": "1 cp"
+        "cost": ".01"
     },
     {
         "name": "1 lb. of flour or one chicken",
-        "cost": "2 cp"
+        "cost": ".02"
     },
     {
         "name": "1 lb. of salt",
-        "cost": "5 cp"
+        "cost": ".05"
     },
     {
         "name": "1 lb. of iron or 1 sq. yd. of canvas",
-        "cost": "1 sp"
+        "cost": ".1"
     },
     {
         "name": "1 lb. of copper or 1 sq. yd. of cotton cloth",
-        "cost": "5 sp"
+        "cost": ".5"
     },
     {
         "name": "1 lb. of ginger or one goat",
-        "cost": "1 gp"
+        "cost": "1"
     },
     {
         "name": "1 lb. of cinnamon or pepper, or one sheep",
-        "cost": "2 gp"
+        "cost": "2"
     },
     {
         "name": "1 lb. of cloves or one pig",
-        "cost": "3 gp"
+        "cost": "3"
     },
     {
         "name": "1 lb. of silver or 1 sq. yd. of linen",
-        "cost": "5 gp"
+        "cost": "5"
     },
     {
         "name": "1 sq. yd.of silk or one cow",
-        "cost": "1 gp"
+        "cost": "1"
     },
     {
         "name": "1 lb. of saffron or one ox",
-        "cost": "15 gp"
+        "cost": "15"
     },
     {
         "name": "1 lb. of gold",
-        "cost": "50 gp"
+        "cost": "50"
     },
     {
         "name": "1 lb. of platinum",
-        "cost": "500 gp"
+        "cost": "500"
     }
 ]

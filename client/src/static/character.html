@@ -1,5 +1,5 @@
 <md-content style="padding:20px;">
-    <h1>{{currentCharacter.name}}</h1>
+    <h1>{{currentCharacter.name}} ({{currentCharacter._id}})</h1>
     <span><strong>Class: </strong> {{currentCharacter.class[0].class_name}}</span>
     <span><strong>Race: </strong> {{currentCharacter.race}}</span>
     <span><strong>Background: </strong> {{currentCharacter.background}}</span>
@@ -20,7 +20,7 @@
             <md-list>
                 <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="spell in currentCharacter.spells" layout="row">
                     <div flex="80" class="md-list-item-text" layout="column">
-                        {{spell}}
+                        {{spell._id}}
                     </div>
                     <md-button flex="20" class="md-accent">Info</md-button>
 <!--                    <md-divider></md-divider>-->
@@ -39,7 +39,7 @@
             <md-list>
                 <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="equipment in currentCharacter.equipments" layout="row">
                     <div flex="80" class="md-list-item-text" layout="column">
-                        {{equipment}}
+                        {{equipment._id}}
                     </div>
                     <md-button flex="20" class="md-accent">Info</md-button>
 <!--                    <md-divider></md-divider>-->
@@ -58,9 +58,7 @@
             <md-list>
                 <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="weapon in currentCharacter.weapons" layout="row">
                     <div flex="80" class="md-list-item-text" layout="column">
-                        {{weapon.name}}
-                        {{weapon.damage}}
-                        {{weapon.damage_type}}
+                        {{weapon}}
                     </div>
                     <md-button flex="20" class="md-accent">Info</md-button>
 <!--                    <md-divider></md-divider>-->
@@ -79,8 +77,7 @@
             <md-list>
                 <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-repeat="armor in currentCharacter.armors" layout="row">
                     <div flex="80" class="md-list-item-text" layout="column">
-                        {{armor.name}}
-                        {{armor.ac}}
+                        {{armor._id}}
                     </div>
                     <md-button flex="20" class="md-accent">Info</md-button>
 <!--                    <md-divider></md-divider>-->

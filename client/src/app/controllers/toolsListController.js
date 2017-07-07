@@ -1,4 +1,4 @@
-angular.module('app').controller('toolsListController', function toolsListController($scope, $http, addToCharacterService) {
+angular.module('app').controller('toolsListController', function toolsListController($scope, $http, addToCharacterService, Purchase) {
 
     $scope.query = {};
     $scope.queryBy = "";
@@ -13,6 +13,14 @@ angular.module('app').controller('toolsListController', function toolsListContro
     }, function errorCallback(response) {
         console.log(response);
     });
+
+    $scope.Purchase = Purchase;
+    $scope.editPurchase = function (tool) {
+        $scope.Purchase.name = tool.name;
+        $scope.Purchase._id = tool._id;
+        $scope.Purchase.unit_cost = tool.cost;
+        $scope.Purchase.amount = 1;
+    }
 
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 

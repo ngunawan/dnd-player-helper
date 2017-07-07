@@ -1,56 +1,56 @@
 [
     {
         "name": "Camel",
-        "cost": "50 gp",
+        "cost": "50",
         "speed": "50 ft.",
         "carrying_capacity": "480 lb.",
         "type": "mount"
     },
     {
         "name": "Donkey or mule",
-        "cost": "8 gp",
+        "cost": "8",
         "speed": "40 ft.",
         "carrying_capacity": "420 lb.",
         "type": "mount"
     },
     {
         "name": "Elephant",
-        "cost": "200 gp",
+        "cost": "200",
         "speed": "40 ft.",
         "carrying_capacity": "1,320 lb.",
         "type": "mount"
     },
     {
         "name": "Horse, draft",
-        "cost": "50 gp",
+        "cost": "50",
         "speed": "40 ft.",
         "carrying_capacity": "540 lb.",
         "type": "mount"
     },
     {
         "name": "Horse, riding",
-        "cost": "75 gp",
+        "cost": "75",
         "speed": "60 ft.",
         "carrying_capacity": "480 lb.",
         "type": "mount"
     },
     {
         "name": "Mastiff",
-        "cost": "25 gp",
+        "cost": "25",
         "speed": "40 ft.",
         "carrying_capacity": "195 lb.",
         "type": "mount"
     },
     {
         "name": "Pony",
-        "cost": "30 gp",
+        "cost": "30",
         "speed": "40 ft.",
         "carrying_capacity": "225 lb.",
         "type": "mount"
     },
     {
         "name": "Warhorse",
-        "cost": "400 gp",
+        "cost": "400",
         "speed": "60 ft.",
         "carrying_capacity": "540 lb.",
         "type": "mount"
@@ -63,115 +63,115 @@
     },
     {
         "name": "Bit and bridle",
-        "cost": "2 gp",
+        "cost": "2",
         "weight": "1 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Carriage",
-        "cost": "100 gp",
+        "cost": "100",
         "weight": "600 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Cart",
-        "cost": "15 gp",
+        "cost": "15",
         "weight": "200 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Chariot",
-        "cost": "250 gp",
+        "cost": "250",
         "weight": "100 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Feed (per day)",
-        "cost": "5 cp",
+        "cost": ".05",
         "weight": "10 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Saddle, Exotic",
-        "cost": "6O gp",
+        "cost": "60",
         "weight": "40 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Saddle, Military",
-        "cost": "20 gp",
+        "cost": "20",
         "weight": "30 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Saddle, Pack",
-        "cost": "5 gp",
+        "cost": "5",
         "weight": "15 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Saddle, Riding",
-        "cost": "10 gp",
+        "cost": "10",
         "weight": "25 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Saddlebags",
-        "cost": "4 gp",
+        "cost": "4",
         "weight": "8 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Sled",
-        "cost": "20 gp",
+        "cost": "20",
         "weight": "300 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Stabling (per day)",
-        "cost": "5 sp",
+        "cost": ".5",
         "weight": "",
         "type": "land_vehicle"
     },
     {
         "name": "Wagon",
-        "cost": "35 gp",
+        "cost": "35",
         "weight": "400 lb.",
         "type": "land_vehicle"
     },
     {
         "name": "Galley",
-        "cost": "30,000 gp",
+        "cost": "30000",
         "speed": "4 mph",
         "type": "water_vehicle"
     },
     {
         "name": "Keelboat",
-        "cost": "3,000 gp",
+        "cost": "3000",
         "speed": "1 mph",
         "type": "water_vehicle"
     },
     {
         "name": "Longship",
-        "cost": "10,000 gp",
+        "cost": "10000",
         "speed": "3 mph",
         "type": "water_vehicle"
     },
     {
         "name": "Rowboat",
-        "cost": "50 gp",
+        "cost": "50",
         "speed": "1 1/2 mph",
         "type": "water_vehicle"
     },
     {
         "name": "Sailing ship",
-        "cost": "10,000 gp",
+        "cost": "10000",
         "speed": "2 mph",
         "type": "water_vehicle"
     },
     {
         "name": "Warship",
-        "cost": "25,000 gp",
+        "cost": "25000",
         "speed": "2 1/2 mph",
         "type": "water_vehicle"
     }

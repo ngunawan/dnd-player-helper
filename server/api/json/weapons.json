@@ -1,82 +1,82 @@
 [
     {
         "name": "Club",
-        "cost": "1 sp",
+        "cost": "0.1",
         "damage": "1d4 bludgeoning",
         "weight": "2 lb.",
-        "properties": "Light",
+        "properties": "light",
         "type": "simple_melee"
     },
     {
         "name": "Dagger",
-        "cost": "2 gp",
+        "cost": "2",
         "damage": "1d4 piercing",
         "weight": "1 lb.",
-        "properties": "Finesse, light, thrown (range 20/60)",
+        "properties": "finesse, light, thrown (range 20/60)",
         "type": "simple_melee"
     },
     {
         "name": "Greatclub",
-        "cost": "2 sp",
+        "cost": ".2",
         "damage": "1d8 bludgeoning",
         "weight": "10 lb.",
-        "properties": "Two-handed",
+        "properties": "two-handed",
         "type": "simple_melee"
     },
     {
         "name": "Handaxe",
-        "cost": "5 gp",
+        "cost": "5",
         "damage": "1d6 slashing",
         "weight": "2 lb.",
-        "properties": "Light, thrown (range 20/60)",
+        "properties": "light, thrown (range 20/60)",
         "type": "simple_melee"
     },
     {
         "name": "Javelin",
-        "cost": "5 sp",
+        "cost": ".5",
         "damage": "1d6 piercing",
         "weight": "2 lb.",
-        "properties": "Thrown (range 30/120)",
+        "properties": "thrown (range 30/120)",
         "type": "simple_melee"
     },
     {
         "name": "Light hammer",
-        "cost": "2 gp",
+        "cost": "2",
         "damage": "1d4 bludgeoning",
         "weight": "2 lb.",
-        "properties": "Light, thrown (range 20/60)",
+        "properties": "light, thrown (range 20/60)",
         "type": "simple_melee"
     },
     {
         "name": "Mace",
-        "cost": "5 gp",
+        "cost": "5",
         "damage": "1d6 bludgeoning",
         "weight": "4 lb.",
-        "properties": " ",
+        "properties": "",
         "type": "simple_melee"
     },
     {
         "name": "Quarterstaff",
-        "cost": "2 sp",
+        "cost": ".2",
         "damage": "1d6 bludgeoning",
         "weight": "4 lb.",
-        "properties": "Versatile (1d8)",
+        "properties": "versatile (1d8)",
         "type": "simple_melee"
     },
     {
         "name": "Sickle",
-        "cost": "1 gp",
+        "cost": "1",
         "damage": "1d4 slashing",
         "weight": "2 lb.",
-        "properties": "Light",
+        "properties": "light",
         "type": "simple_melee"
     },
     {
         "name": "Spear",
-        "cost": "1 gp",
+        "cost": "1",
         "damage": "1d6 piercing",
         "weight": "3 lb.",
-        "properties": "Thrown (range 20/60), versatile (1d8)",
+        "properties": "thrown (range 20/60), versatile (1d8)",
         "type": "simple_melee"
     },
     {
@@ -89,47 +89,47 @@
     },
     {
         "name": "Crossbow, light",
-        "cost": "25 gp",
+        "cost": "25",
         "damage": "1d8 piercing",
         "weight": "5 lb.",
-        "properties": "Ammunition (range 80/320), loading, two-handed",
+        "properties": "ammunition (range 80/320), loading, two-handed",
         "type": "simple_ranged"
     },
     {
         "name": "Dart",
-        "cost": "5 cp",
+        "cost": ".05",
         "damage": "1d4 piercing",
         "weight": "1/4 lb.",
-        "properties": "Finesse, thrown (range 20/60)",
+        "properties": "finesse, thrown (range 20/60)",
         "type": "simple_ranged"
     },
     {
         "name": "Shortbow",
-        "cost": "25 gp",
+        "cost": "25",
         "damage": "1d6 piercing",
         "weight": "2 lb.",
-        "properties": "Ammunition (range 80/320), two—handed",
+        "properties": "ammunition (range 80/320), two—handed",
         "type": "simple_ranged"
     },
     {
         "name": "Sling",
-        "cost": "1 sp",
+        "cost": ".1",
         "damage": "1d4 bludgeoning",
         "weight": "",
-        "properties": "Ammunition (range 30/120)",
+        "properties": "ammunition (range 30/120)",
         "type": "simple_ranged"
     },
     {
         "name": "Battleaxe",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1d8 slashing",
         "weight": "4 lb.",
-        "properties": "Versatile (1d10)",
+        "properties": "versatile (1d10)",
         "type": "martial_melee"
     },
     {
         "name": "Flail",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1d8 bludgeoning",
         "weight": "2 lb.",
         "properties": " ",
@@ -137,170 +137,170 @@
     },
     {
         "name": "Glaive",
-        "cost": "20 gp",
+        "cost": "20",
         "damage": "1d10 slashing",
         "weight": "6 lb.",
-        "properties": "Heavy, reach, two-handed",
+        "properties": "heavy, reach, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Greataxe",
-        "cost": "30 gp",
+        "cost": "30",
         "damage": "1d12 slashing",
         "weight": "7 lb.",
-        "properties": "Heavy, two-handed",
+        "properties": "heavy, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Greatsword",
-        "cost": "50 gp",
+        "cost": "50",
         "damage": "2d6 slashing",
         "weight": "6 lb.",
-        "properties": "Heavy, two-handed",
+        "properties": "heavy, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Halberd",
-        "cost": "20 gp",
+        "cost": "20",
         "damage": "1d10 slashing",
         "weight": "6 lb.",
-        "properties": "Heavy, reach, two-handed",
+        "properties": "heavy, reach, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Lance",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1d12 piercing",
         "weight": "6 lb.",
-        "properties": "Reach, special",
+        "properties": "reach, special",
         "type": "martial_melee"
     },
     {
         "name": "Longsword",
-        "cost": "15 gp",
+        "cost": "15",
         "damage": "1d8 slashing",
         "weight": "3 lb.",
-        "properties": "Versatile (1d10)",
+        "properties": "versatile (1d10)",
         "type": "martial_melee"
     },
     {
         "name": "Maul",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "2d6 bludgeoning",
         "weight": "10 lb.",
-        "properties": "Heavy, two-handed",
+        "properties": "heavy, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Morningstar",
-        "cost": "15 gp",
+        "cost": "15",
         "damage": "1d8 piercing",
         "weight": "4 lb.",
-        "properties": " ",
+        "properties": "",
         "type": "martial_melee"
     },
     {
         "name": "Pike",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1d10 piercing",
         "weight": "18 lb.",
-        "properties": "Heavy, reach, two-handed",
+        "properties": "heavy, reach, two-handed",
         "type": "martial_melee"
     },
     {
         "name": "Rapier",
-        "cost": "25 gp",
+        "cost": "25",
         "damage": "1d8 piercing",
         "weight": "2 lb.",
-        "properties": "Finesse",
+        "properties": "finesse",
         "type": "martial_melee"
     },
     {
         "name": "Scimitar",
-        "cost": "25 gp",
+        "cost": "25",
         "damage": "1d6 slashing",
         "weight": "3 lb.",
-        "properties": "Finesse, light",
+        "properties": "finesse, light",
         "type": "martial_melee"
     },
     {
         "name": "Shortsword",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1d6 piercing",
         "weight": "2 lb.",
-        "properties": "Finesse, light",
+        "properties": "finesse, light",
         "type": "martial_melee"
     },
     {
         "name": "Trident",
-        "cost": "5 gp",
+        "cost": "5",
         "damage": "1d6 piercing",
         "weight": "4 lb.",
-        "properties": "Thrown (range 20/60), versatile (1d8)",
+        "properties": "thrown (range 20/60), versatile (1d8)",
         "type": "martial_melee"
     },
     {
         "name": "War pick",
-        "cost": "5 gp",
+        "cost": "5",
         "damage": "1d8 piercing",
         "weight": "2 lb.",
-        "properties": " ",
+        "properties": "",
         "type": "martial_melee"
     },
     {
         "name": "Warhammer",
-        "cost": "15 gp",
+        "cost": "15",
         "damage": "1d8 bludgeoning",
         "weight": "2 lb.",
-        "properties": "Versatile (1d10)",
+        "properties": "versatile (1d10)",
         "type": "martial_melee"
     },
     {
         "name": "Whip",
-        "cost": "2 gp",
+        "cost": "2",
         "damage": "1d4 slashing",
         "weight": "3 lb.",
-        "properties": "Finesse, reach",
+        "properties": "finesse, reach",
         "type": "martial_melee"
     },
     {
         "name": "Blowgun",
-        "cost": "10 gp",
+        "cost": "10",
         "damage": "1 piercing",
         "weight": "1 lb.",
-        "properties": "Ammunition (range 25/100), loading",
+        "properties": "ammunition (range 25/100), loading",
         "type": "martial_ranged"
     },
     {
         "name": "Crossbow, hand",
-        "cost": "75 gp",
+        "cost": "75",
         "damage": "1d6 piercing",
         "weight": "3 lb.",
-        "properties": "Ammunition (range 30/120), light, loading",
+        "properties": "ammunition (range 30/120), light, loading",
         "type": "martial_ranged"
     },
     {
         "name": "Crossbow, heavy",
-        "cost": "50 gp",
+        "cost": "50",
         "damage": "1d10 piercing",
         "weight": "18 lb.",
-        "properties": "Ammunition (range 100/400), heavy, loading, two-handed",
+        "properties": "ammunition (range 100/400), heavy, loading, two-handed",
         "type": "martial_ranged"
     },
     {
         "name": "Longbow",
-        "cost": "50 gp",
+        "cost": "50",
         "damage": "1d8 piercing",
         "weight": "2 lb.",
-        "properties": "Ammunition (range 150/600), heavy, two-handed",
+        "properties": "ammunition (range 150/600), heavy, two-handed",
         "type": "martial_ranged"
     },
     {
         "name": "Net",
-        "cost": "1 gp",
+        "cost": "1",
         "damage": "",
         "weight": "3 lb.",
-        "properties": "Special, thrown (range 5/15)",
+        "properties": "special, thrown (range 5/15)",
         "type": "martial_ranged"
     }
 ]

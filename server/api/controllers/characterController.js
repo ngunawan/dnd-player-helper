@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
     fs = require('fs');
 
 
-//list all
+//list all characters
 exports.list_all_characters = function (req, res) {
     Character.find({}, (err, characters) => {
         if (err)
@@ -13,7 +13,7 @@ exports.list_all_characters = function (req, res) {
     });
 };
 
-//create
+//create a new character
 exports.create_character = function (req, res) {
     var newCharacter = new Character(req.body);
     newCharacter.save((err, character) => {
@@ -23,7 +23,7 @@ exports.create_character = function (req, res) {
     });
 };
 
-//read
+//read a character by id
 exports.read_character = function (req, res) {
     Character.findById(req.params.characterId, function (err, character) {
         if (err)
@@ -32,9 +32,12 @@ exports.read_character = function (req, res) {
     });
 };
 
-//update spells
-exports.update_character_spells = function (req, res) {
-    Character.findOneAndUpdate(req.params.characterId, {
+//add spells
+exports.add_spells = function (req, res) {
+    let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
             $push: {
                 spells: req.body
             }
@@ -46,11 +49,14 @@ exports.update_character_spells = function (req, res) {
         });
 };
 
-//update equipments
-exports.update_character_equipments = function (req, res) {
-    Character.findOneAndUpdate(req.params.characterId, {
+//add equipments
+exports.add_equipments = function (req, res) {
+    let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
             $push: {
-                equipments: req.body
+                equipments: {$each:req.body}
             }
         },
         (err, character) => {
@@ -60,11 +66,14 @@ exports.update_character_equipments = function (req, res) {
         });
 };
 
-//update weapons
-exports.update_character_weapons = function (req, res) {
-    Character.findOneAndUpdate(req.params.characterId, {
+//add weapons
+exports.add_weapons = function (req, res) {
+    let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
             $push: {
-                weapons: req.body
+                weapons: {$each:req.body}
             }
         },
         (err, character) => {
@@ -74,11 +83,14 @@ exports.update_character_weapons = function (req, res) {
         });
 };
 
-//update armors
-exports.update_character_armors = function (req, res) {
-    Character.findOneAndUpdate(req.params.characterId, {
+//add armors
+exports.add_armors = function (req, res) {
+    let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
             $push: {
-                armors: req.body
+                armors: {$each:req.body}
             }
         },
         (err, character) => {
@@ -88,7 +100,24 @@ exports.update_character_armors = function (req, res) {
         });
 };
 
-//update
+//update gold
+exports.update_character_gold = function (req, res) {
+     let query = {
+        _id: req.params.characterId
+    };
+    Character.update(query, {
+            $set: {
+                gold: req.params.newGold
+            }
+        },
+        (err, character) => {
+            if (err)
+                res.send(err);
+            res.json(character);
+        });
+};
+
+//update a character
 exports.update_character = function (req, res) {
     Character.findOneAndUpdate(req.params.characterId, req.body, {
         new: true
@@ -99,7 +128,7 @@ exports.update_character = function (req, res) {
     });
 };
 
-//delete 
+//delete a character
 exports.delete_character = function (req, res) {
     Character.remove({
         _id: req.params.characterId

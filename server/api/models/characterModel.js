@@ -13,18 +13,24 @@ const CharacterSchema = new Schema({
     }],
     race: String,
     background: String,
-    spells: [String],
-    weapons: [{
+    spells: [{
         name: String,
-        damage: String,
-        damage_type: String
+        level: String,
+        school: String,
+        casting_time: String,
+        range: String,
+        component: String,
+        duration: String,
+        description: String,
+        class: Array
     }],
-    armors: [{
-        name: String,
-        ac: String
-    }],
-    equipments: [String],
-    gold: Number
+    armors: [Schema.Types.Mixed],
+    weapons: [Schema.Types.Mixed],
+    equipments: [Schema.Types.Mixed],
+    gold: {
+        type: Number,
+        default: 0
+    }
 });
 
 module.exports = mongoose.model('Characters', CharacterSchema);

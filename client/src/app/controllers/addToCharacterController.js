@@ -1,4 +1,8 @@
-angular.module('app').controller('addToCharacterController', function addToCharacterController($scope, $mdDialog, $http) {
+angular.module('app').controller('addToCharacterController', function addToCharacterController($scope, $mdDialog, $http, Purchase) {
+
+    $scope.option = 'buy';
+    $scope.Purchase = Purchase;
+    $scope.warning = "";
 
     $http({
         method: 'GET',
@@ -20,8 +24,22 @@ angular.module('app').controller('addToCharacterController', function addToChara
         $mdDialog.cancel();
     };
 
-    $scope.add = function (character) {
-        $mdDialog.hide(character);
+    $scope.add = function (character, option) {
+        if (option == 'buy') {
+            if (character.gold >= Purchase.total_cost) {
+                $mdDialog.hide({
+                    character: character,
+                    option: option
+                })
+            } else {
+                $scope.warning = "Not enough gold."
+            }
+        } else {
+            $mdDialog.hide({
+                character: character,
+                option: option
+            })
+        }
     };
 
 });

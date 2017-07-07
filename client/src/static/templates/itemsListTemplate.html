@@ -3,23 +3,24 @@
     <h3>Items</h3>
 
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-4">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
-            <span style="display:flex;width:88px"></span>
-
+            <span></span>
         </md-card-content>
     </md-card>
 
 
     <md-card ng-repeat="item in itemsList | filter:query | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="item.show = !item.show" layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{item.name}}</span>
-                <span>{{item.cost}}</span>
-                <span>{{item.weight}}</span>
-                <md-button ng-click="showAddEquipment(item.name);$event.stopPropagation()" class="md-accent">Add Item</md-button>
+        <md-card-content ng-click="description.show = !description.show" class="grid-column-4">
+            <span>{{item.name}}</span>
+            <span>{{item.cost | convertCurrency}}</span>
+            <span>{{item.weight}}</span>
+            <md-button ng-click="editPurchase(item);showAddEquipment(item);$event.stopPropagation()" class="md-accent">Add Item</md-button>
+            <div ng-if="description.show" style="grid-column-start:1;grid-column-end:5">
+                <md-divider></md-divider>
+                <div class="database-description-block" ng-bind-html="item.description"></div>
             </div>
         </md-card-content>
     </md-card>

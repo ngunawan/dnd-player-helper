@@ -1,6 +1,6 @@
 <div ng-app="addToCharacter">
     <!--CLASS FILTER ===================================================-->
-    <md-content layout-gt-sm="row">
+    <md-content layout="row">
         <md-button ng-class="{'md-accent': query['class'] == ''}" ng-click="query = {};query['class'] = ''" class="md-raised md-primary">All Class</md-button>
         <md-button ng-class="{'md-accent': query['class'] == 'bard'}" ng-click="query = {};query['class'] = 'bard'" class="md-raised md-primary">Bard</md-button>
         <md-button ng-class="{'md-accent': query['class'] == 'cleric'}" ng-click="query = {};query['class'] = 'cleric' " class="md-raised md-primary">Cleric</md-button>
@@ -152,9 +152,8 @@
     </md-content>
 
     <!--SPELLS LIST ===================================================-->
-
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-8">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'level'; sortDir = !sortDir">Level</span>
             <span ng-click="sortVal = 'school'; sortDir = !sortDir">School</span>
@@ -162,34 +161,36 @@
             <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
             <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
             <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
-            <span style="display:flex;width:133.38px"></span>
+            <span style="display:block;"></span>
         </md-card-content>
     </md-card>
 
 
     <md-card ng-repeat="spell in spellsList | filter: query | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="spell.show = !spell.show" layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{spell.name}}</span>
-                <span>{{spell.level}}</span>
-                <span>{{spell.school}}</span>
-                <span>{{spell.casting_time}}</span>
-                <span>{{spell.range}}</span>
-                <span>{{spell.component}}</span>
-                <span>{{spell.duration}}</span>
-                <md-button ng-click="showAddSpell(spell.name);$event.stopPropagation()" class="md-accent">Add Spell</md-button>
-            </div>
-            <div ng-if="spell.show">
+        <md-card-content class="grid-column-8" ng-click="spell.show = !spell.show">
+            <span>{{spell.name}}</span>
+            <span>{{spell.level}}</span>
+            <span>{{spell.school}}</span>
+            <span>{{spell.casting_time}}</span>
+            <span>{{spell.range}}</span>
+            <span>{{spell.component|deleteParentheses}}</span>
+            <span>{{spell.duration}}</span>
+            <md-button ng-click="showAddSpell(spell);$event.stopPropagation()" class="md-accent">Add Spell</md-button>
+            <div style="grid-column-start: 1;
+  grid-column-end: 9;" ng-if="spell.show">
                 <md-divider></md-divider>
-                <span ng-bind-html="spell.description"></span>
+                <div class="database-statsblock-list">
+                    <div class="database-statsblock"><label>Level: </label>{{spell.level}}</div>
+                    <div class="database-statsblock"><label>School: </label>{{spell.school}}</div>
+                    <div class="database-statsblock"><label>Casting Time: </label>{{spell.casting_time}}</div>
+                    <div class="database-statsblock"><label>Range: </label>{{spell.range}}</div>
+                    <div class="database-statsblock"><label>Component: </label>{{spell.component}}</div>
+                    <div class="database-statsblock"><label>Duration: </label>{{spell.duration}}</div>
+                </div>
+                <md-divider></md-divider>
+                <div ng-bind-html="spell.description"></div>
             </div>
-
         </md-card-content>
-        <!--
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button>Action 1</md-button>
-        <md-button>Action 2</md-button>
-    </md-card-actions>
--->
     </md-card>
+
 </div>

@@ -7,14 +7,18 @@ require('angular-messages');
 require('angular-material');
 
 //modules ==========================================
-//require('./js/addToCharacter.js');
-
 var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
+
+//others =======================================
+require('./js/filters.js');
+
+//directives =======================================
+require('./directives/contentEditable.js');
 
 //services =========================================
 require('./services/Note.js');
 require('./services/addToCharacterService.js');
-
+require('./services/Purchase.js');
 
 //controllers ======================================
 require('./controllers/mainController.js');
@@ -36,7 +40,6 @@ require('./controllers/noteEditorController.js');
 require('./controllers/addToCharacterController.js');
 
 
-
 //components =======================================
 require('./components/spellsList.js');
 require('./components/weaponsList.js');
@@ -48,10 +51,6 @@ require('./components/itemsList.js');
 require('./components/toolsList.js');
 
 require('./components/noteEditor.js');
-
-
-//directives =======================================
-require('./directives/contentEditable.js');
 
 
 //routes ===========================================

@@ -66,34 +66,84 @@
 </md-content>
 -->
 
+<md-input-container>
+    <label>Damage Type</label>
+    <md-select ng-model="query['damage']">
+        <md-option value="">
+            All
+        </md-option>
+        <md-option value="bludgeoning">
+            Bludgeoning
+        </md-option>
+        <md-option value="piercing">
+            Piercing
+        </md-option>
+        <md-option value="slashing">
+            Slashing
+        </md-option>
+    </md-select>
+</md-input-container>
+
+<md-content class="flex-row-wrap">
+        <md-button ng-class="{'md-accent': queryProperty.includes('light')}"
+                   ng-click="toggleQueryProperty('light')"
+                   class="md-raised md-primary">Light</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('finesse')}"
+                   ng-click="toggleQueryProperty('finesse')"
+                   class="md-raised md-primary">Finesse</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('thrown')}"
+                   ng-click="toggleQueryProperty('thrown')"
+                   class="md-raised md-primary">Thrown</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('two-handed')}"
+                   ng-click="toggleQueryProperty('two-handed')"
+                   class="md-raised md-primary">Two-handed</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('versatile')}"
+                   ng-click="toggleQueryProperty('versatile')"
+                   class="md-raised md-primary">Versatile</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('ammunition')}"
+                   ng-click="toggleQueryProperty('ammunition')"
+                   class="md-raised md-primary">Ammunition</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('heavy')}"
+                   ng-click="toggleQueryProperty('heavy')"
+                   class="md-raised md-primary">Heavy</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('reach')}"
+                   ng-click="toggleQueryProperty('reach')"
+                   class="md-raised md-primary">Reach</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('special')}"
+                   ng-click="toggleQueryProperty('special')"
+                   class="md-raised md-primary">Special</md-button>
+        <md-button ng-class="{'md-accent': queryProperty.includes('loading')}"
+                   ng-click="toggleQueryProperty('loading')"
+                   class="md-raised md-primary">Loading</md-button>
+</md-content>
+
+
+
+
 <!--SIMPLE MELEE ==================================================-->
 <div class="md-padding">
     <h3>Simple Melee</h3>
 
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-6">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
             <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
-            <span style="width:108.31px"></span>
+            <span></span>
         </md-card-content>
     </md-card>
 
 
-    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_melee'} | orderBy: sortVal: sortDir">
-        <md-card-content layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{weapon.name}}</span>
-                <span>{{weapon.cost}}</span>
-                <span>{{weapon.damage}}</span>
-                <span>{{weapon.weight}}</span>
-                <span>{{weapon.properties}}</span>
-                <md-button ng-click="showAddWeapon(weapon.name, weapon.damage);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
-            </div>
-
-
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_melee'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
+        <md-card-content class="grid-column-6">
+            <span>{{weapon.name}}</span>
+            <span>{{weapon.cost | convertCurrency}}</span>
+            <span>{{weapon.damage}}</span>
+            <span>{{weapon.weight}}</span>
+            <span>{{weapon.properties}}</span>
+            <md-button ng-click="editPurchase(weapon);showAddWeapon(weapon);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
         </md-card-content>
     </md-card>
 </div>
@@ -104,29 +154,25 @@
     <h3>Simple Ranged</h3>
 
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-6">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
             <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
-            <span style="width:108.31px"></span>
+            <span></span>
         </md-card-content>
     </md-card>
 
 
-    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_ranged'} | orderBy: sortVal: sortDir">
-        <md-card-content layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{weapon.name}}</span>
-                <span>{{weapon.cost}}</span>
-                <span>{{weapon.damage}}</span>
-                <span>{{weapon.weight}}</span>
-                <span>{{weapon.properties}}</span>
-                <md-button ng-click="showAddWeapon(weapon.name, weapon.damage);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
-            </div>
-
-
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_ranged'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
+        <md-card-content class="grid-column-6">
+            <span>{{weapon.name}}</span>
+            <span>{{weapon.cost | convertCurrency}}</span>
+            <span>{{weapon.damage}}</span>
+            <span>{{weapon.weight}}</span>
+            <span>{{weapon.properties}}</span>
+            <md-button ng-click="editPurchase(weapon);showAddWeapon(weapon);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
         </md-card-content>
     </md-card>
 </div>
@@ -137,29 +183,25 @@
     <h3>Martial Melee</h3>
 
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-6">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
             <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
-            <span style="width:108.31px"></span>
+            <span></span>
         </md-card-content>
     </md-card>
 
 
-    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_melee'} | orderBy: sortVal: sortDir">
-        <md-card-content layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{weapon.name}}</span>
-                <span>{{weapon.cost}}</span>
-                <span>{{weapon.damage}}</span>
-                <span>{{weapon.weight}}</span>
-                <span>{{weapon.properties}}</span>
-                <md-button ng-click="showAddWeapon(weapon.name, weapon.damage);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
-            </div>
-
-
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_melee'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
+        <md-card-content class="grid-column-6">
+            <span>{{weapon.name}}</span>
+            <span>{{weapon.cost | convertCurrency}}</span>
+            <span>{{weapon.damage}}</span>
+            <span>{{weapon.weight}}</span>
+            <span>{{weapon.properties}}</span>
+            <md-button ng-click="editPurchase(weapon);showAddWeapon(weapon);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
         </md-card-content>
     </md-card>
 </div>
@@ -170,29 +212,25 @@
     <h3>Martial Ranged</h3>
 
     <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content layout="row" layout-align="space-between">
+        <md-card-content class="grid-column-6">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
             <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
             <span ng-click="sortVal = 'properties'; sortDir = !sortDir">Properties</span>
-            <span style="width:108.31px"></span>
+            <span></span>
         </md-card-content>
     </md-card>
 
 
-    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_ranged'} | orderBy: sortVal: sortDir">
-        <md-card-content layout="column">
-            <div layout="row" layout-align="space-between">
-                <span>{{weapon.name}}</span>
-                <span>{{weapon.cost}}</span>
-                <span>{{weapon.damage}}</span>
-                <span>{{weapon.weight}}</span>
-                <span>{{weapon.properties}}</span>
-                <md-button ng-click="showAddWeapon(weapon.name, weapon.damage);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
-            </div>
-
-
+    <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_ranged'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
+        <md-card-content class="grid-column-6">
+            <span>{{weapon.name}}</span>
+            <span>{{weapon.cost | convertCurrency}}</span>
+            <span>{{weapon.damage}}</span>
+            <span>{{weapon.weight}}</span>
+            <span>{{weapon.properties}}</span>
+            <md-button ng-click="editPurchase(weapon);showAddWeapon(weapon);$event.stopPropagation()" class="md-accent">Add Weapon</md-button>
         </md-card-content>
     </md-card>
 </div>

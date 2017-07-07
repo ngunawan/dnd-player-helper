@@ -95,7 +95,7 @@ request(url, (error, response, html) => {
 
     }
 
-    fs.writeFile('../json/packs.json', JSON.stringify(json, null, 4), function (err) {
+    fs.writeFile('../backup_json/packs.json', JSON.stringify(json, null, 4), function (err) {
         console.log('packs.json successfully written');
     })
 });

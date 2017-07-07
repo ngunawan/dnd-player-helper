@@ -1,4 +1,4 @@
-angular.module('app').controller('packsListController', function packsListController($scope, $http, addToCharacterService) {
+angular.module('app').controller('packsListController', function packsListController($scope, $http, addToCharacterService, Purchase) {
 
     $scope.query = {};
     $scope.queryBy = "";
@@ -13,7 +13,15 @@ angular.module('app').controller('packsListController', function packsListContro
     }, function errorCallback(response) {
         console.log(response);
     });
-    
+
+    $scope.Purchase = Purchase;
+    $scope.editPurchase = function (pack) {
+        $scope.Purchase.name = pack.name;
+        $scope.Purchase._id = pack._id;
+        $scope.Purchase.unit_cost = pack.cost;
+        $scope.Purchase.amount = 1;
+    }
+
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 

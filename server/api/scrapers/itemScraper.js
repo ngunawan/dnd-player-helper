@@ -64,7 +64,7 @@ request(url, (error, response, html) => {
 
     }
 
-    fs.writeFile('../json/items.json', JSON.stringify(json, null, 4), function (err) {
+    fs.writeFile('../backup_json/items.json', JSON.stringify(json, null, 4), function (err) {
         console.log('items.json successfully written');
     })
 

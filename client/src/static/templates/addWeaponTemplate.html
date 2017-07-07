@@ -12,18 +12,31 @@
 
         <md-dialog-content class="md-dialog-content">
             <h3>Pick a Character</h3>
-            <md-input-container>
+
+            <div class="warning-msg" ng-if="warning">{{warning}}</div>
+
+            <md-radio-group ng-model="option" layout="row">
+                <md-radio-button value="buy">Buy ({{Purchase.total_cost | convertCurrency}})</md-radio-button>
+                <md-radio-button value="no-buy">Just Add</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container class="one-input-block">
+                <label>Amount</label>
+                <input ng-model="Purchase.amount" type="number" step="1">
+            </md-input-container>
+
+            <md-input-container class="one-input-block">
                 <label>Character</label>
                 <md-select ng-model="characterObj">
                     <md-option ng-repeat="character in charactersList" ng-value="character">
-                        {{character.name}}
+                        {{character.name}} ({{character.gold | convertCurrency}})
                     </md-option>
                 </md-select>
             </md-input-container>
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
-            <md-button ng-click="add(characterObj)">
+            <md-button ng-click="add(characterObj, option)">
                 Add Weapon
             </md-button>
         </md-dialog-actions>
