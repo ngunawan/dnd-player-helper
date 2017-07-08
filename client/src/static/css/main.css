@@ -4,15 +4,6 @@
 md-dialog {
   width: 40%;
 }
-.warning-msg {
-  color: #c60008;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.one-input-block {
-  display: block;
-  margin: 40px 0;
-}
 .grid-column-8 {
   display: grid;
   grid-template-columns: repeat(8, 12.5%);
@@ -52,6 +43,15 @@ md-dialog {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.warning-msg {
+  color: #c60008;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.one-input-block {
+  display: block;
+  margin: 40px 0;
 }
 .database-description-block {
   padding: 20px 0;

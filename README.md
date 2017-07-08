@@ -1,11 +1,11 @@
 # D&D Player Helper
 
-Playing Dungeons and Dragons require a heavy doze of reading from the Player's Handbook. This can be daunting for the novice player. This web tool attempts to compile all the relevant information you need to start playing the game.
+Playing Dungeons and Dragons require a lot of reading from the Player's Handbook. This can be daunting for the inexperienced players. This web tool attempts at visualizing frequently used and relevant information for quick access and easy readability.
 
 ### Features
 
   * Character creation and management [in progress]
-  * Searchable and sortable spells and equipments table
+  * Searchable spells, equipments, weapons, armors, and feats table
   * Note editor to compile campaign notes
   * Compendium to quickly look up information in the Player's Handbook [in progress]
   
