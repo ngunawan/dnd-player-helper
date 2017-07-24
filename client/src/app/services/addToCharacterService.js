@@ -75,6 +75,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
 
     //add equipment ---------------------------------
     function addEquipmentToCharacter(equipment, character, amount) {
+        console.log("PURCHASING " + equipment);
         let purchase_array = [];
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(equipment);
@@ -92,6 +93,9 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
     }
 
     this.showAddEquipment = function (equipment) {
+                console.log("PURCHASING2 " + equipment);
+
+        
         $mdDialog.show({
                 controller: 'addToCharacterController',
                 templateUrl: 'templates/addEquipmentTemplate.html',

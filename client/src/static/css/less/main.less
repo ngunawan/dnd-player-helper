@@ -1,4 +1,4 @@
-// setup ===============================
+// setup --------------------------
 
 * {
     box-sizing: border-box;
@@ -8,7 +8,17 @@ md-dialog {
     width: 40%;
 }
 
-// layout reusables ===============================
+a {
+    text-decoration: none;
+    color: #2962FF;
+}
+
+// layout reusables ---------------
+//
+//[class ^= grid] {
+//    align-items: center;
+//    justify-content: center;
+//}
 
 .grid-column-8 {
     display: grid;
@@ -46,9 +56,21 @@ md-dialog {
     grid-template-rows: auto;
 }
 
+.grid-column-3-revised {
+     display: grid;
+    grid-template-columns: 60% repeat(2, 20%);
+    grid-template-rows: auto;
+}
+
 .grid-column-2 {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto;
+}
+
+.grid-column-2-revised {
+     display: grid;
+    grid-template-columns: 80% 20%;
     grid-template-rows: auto;
 }
 
@@ -56,9 +78,41 @@ md-dialog {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-// styling and blocking reusables ==================================
+.margin-right-20 {
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+md-divider {
+    margin-bottom:16px;
+    margin-top: 16px;
+}
+
+.align-middle {
+    align-items: center;
+    justify-content: center;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.small-80 {
+    font-size: 80%;
+}
+
+.small-90 {
+    font-size: 90%;
+}
+
+// styling and blocking reusables -----------
 
 .warning-msg {
     color: #c60008;
@@ -71,8 +125,77 @@ md-dialog {
     margin: 40px 0;
 }
 
+.stat-block {
+    label {
+        display: block;
+        margin-bottom:10px;
+        font-size: 90%;
+    }
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 
-// specifics ===============================
+.stat-block-list {
+    .md-button {
+        font-size: 50%;
+        padding: 5px 10px;
+        min-height: initial;
+        min-width: initial;
+        line-height: 1.0;
+    }
+}
+
+.item1 {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.item2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.item3 {
+    grid-column: 2;
+    grid-row: 2; 
+}
+
+.character-heading {
+    font-size: 75%;
+    margin-bottom: 12px;
+}
+
+.character-item {
+    margin-bottom: 13px;
+    
+    md-divider {
+        margin-bottom: 10px;
+    }
+    
+    .md-button {
+        margin: 0;
+        padding: 0 5px;
+        line-height: 1.0;
+        min-height: 0;
+        min-width: 0;
+    }
+    
+    .md-button:hover {
+        background: transparent;
+    }
+}
+
+.character-item-description {
+    font-size: 85%;
+    margin-bottom:20px;
+}
+
+.character-backstory {
+    line-height: 1.7;
+}
+
+// specifics ---------------------------------
 
 .database-description-block {
     padding: 20px 0;
@@ -98,20 +221,20 @@ md-dialog {
     width:20%;
 }
 
-// temporary prototyping trash ===============================
+// temporary prototyping trash ----------------
 
 .md-subhead {
     color: rgba(0,0,0,0.54);
     display:none;
 }
 
-span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    padding: 0.5vw 0;
-}
+//span {
+//    display: flex;
+//    align-items: center;
+//    justify-content: space-between;
+//    text-align: left;
+//    padding: 0.5vw 0;
+//}
 
 #container {
     display: grid;

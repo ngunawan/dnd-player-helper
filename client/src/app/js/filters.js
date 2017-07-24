@@ -47,3 +47,67 @@ angular.module('app').filter('convertCurrency', function () {
         return accumulated.join(" ");
     };
 });
+
+
+angular.module('app').filter('convertStringData', function () {
+    function replaceDash(string) {
+        string = string.replace(/-/g, " ");
+        return string
+    }
+
+    function capitalize(string) {
+        string = string.replace(/\w\S*/g,
+            function (word) {
+                return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+            });
+        return string;
+    }
+
+    return function (str) {
+        str = replaceDash(str);
+        str = capitalize(str);
+        return str;
+    }
+});
+
+angular.module('app').filter('grabDice', function () {
+    return function takeFirstWord(string) {
+        let index = string.indexOf(' ');
+        return string.slice(0, index);
+    }
+
+})
+
+angular.module('app').filter('grabDamage', function () {
+    return function takeSecondWord(string) {
+        let index = string.indexOf(' ');
+        return string.slice(index, string.length);
+    }
+
+})
+
+angular.module('app').filter('iif', function () {
+   return function(input, trueValue, falseValue) {
+        return input ? trueValue : falseValue;
+   };
+});
+
+angular.module('app').filter('levelConvert', function() {
+    function capitalize(string) {
+        string = string.replace(/\w\S*/g,
+            function (word) {
+                return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+            });
+        return string;
+    }
+    
+    return function(string) {
+        let temp_array = string.split(" ");
+        let final_string = "Lvl " + temp_array[0];
+        if(temp_array[1]) {
+            final_string += (" " + temp_array[1]);
+        }
+        
+        return capitalize(final_string);
+    }
+})

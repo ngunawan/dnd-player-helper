@@ -84,6 +84,12 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "character.html",
             controller: "characterController"
         })
+        .when("/compendium/rogue", {
+            templateUrl: "compendium-rogue.html"
+        })
+        .when("/compendium/elf", {
+            templateUrl: "compendium-elf.html"
+        })
         .otherwise({
             redirectTo: "/"
         })
