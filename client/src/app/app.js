@@ -84,11 +84,17 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "character.html",
             controller: "characterController"
         })
-        .when("/compendium/rogue", {
-            templateUrl: "compendium-rogue.html"
+        .when("/compendium/races/:raceName*", {
+            templateUrl: function (urlattr) {
+                return "compendium-races-" + urlattr.raceName + ".html";
+            },
+            controller: "compendiumController"
         })
-        .when("/compendium/elf", {
-            templateUrl: "compendium-elf.html"
+        .when("/compendium/classes/:className*", {
+            templateUrl: function (urlattr) {
+                return "compendium-classes-" + urlattr.className + ".html";
+            },
+            controller: "compendiumController"
         })
         .otherwise({
             redirectTo: "/"
