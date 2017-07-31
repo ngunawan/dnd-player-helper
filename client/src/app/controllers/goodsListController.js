@@ -3,6 +3,8 @@ angular.module('app').controller('goodsListController', function goodsListContro
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all goods
+    //-------------------------
     $http({
         method: 'GET',
         url: '/goods'
@@ -14,6 +16,8 @@ angular.module('app').controller('goodsListController', function goodsListContro
         console.log(response);
     });
 
+    //to keep track of good purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (good) {
         $scope.Purchase.name = good.name;
@@ -21,6 +25,9 @@ angular.module('app').controller('goodsListController', function goodsListContro
         $scope.Purchase.unit_cost = good.cost;
         $scope.Purchase.amount = 1;
     }
+    
+    //to show add good dialogue
+    //-------------------------
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 

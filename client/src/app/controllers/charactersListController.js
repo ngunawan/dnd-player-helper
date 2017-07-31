@@ -1,9 +1,13 @@
 angular.module('app').controller('charactersListController', function charactersListController($scope, $compile, $http, $location) {
     
+    //to blur focus in nav bar
+    //-------------------------
     $scope.unNav = function() {
         $scope.$parent.currentNavItem = '';
     }
 
+    //get all characters
+    //-------------------------
     $http({
         method: 'GET',
         url: '/characters'
@@ -19,7 +23,8 @@ angular.module('app').controller('charactersListController', function characters
         $location.url('/character/' + characterId);
     }
 
-
+    //create a new character
+    //-------------------------
     $scope.createCharacter = function () {
         $http({
             method: 'POST',
@@ -43,9 +48,10 @@ angular.module('app').controller('charactersListController', function characters
         }, function errorCallback(response) {
             console.log(response);
         });
-
     }
 
+    //remove character
+    //-------------------------
     $scope.removeCharacter = function (id) {
         $http({
             method: 'DELETE',
@@ -65,7 +71,6 @@ angular.module('app').controller('charactersListController', function characters
 
     }
 
-
     //add component dynamically to page    
     //  $scope.addComponent = function(tag) {
     //      //create new scope
@@ -76,6 +81,5 @@ angular.module('app').controller('charactersListController', function characters
     //      var container = angular.element(document.querySelector('container'));
     //      container.append($compile(html)(newScope));   
     //  }
-
 
 });

@@ -6,21 +6,31 @@ require('angular-aria');
 require('angular-messages');
 require('angular-material');
 
-//modules ==========================================
+//modules
+//-------------------------
+
 var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial']);
 
-//others =======================================
+//filters
+//-------------------------
+
 require('./js/filters.js');
 
-//directives =======================================
+//directives
+//-------------------------
+
 require('./directives/contentEditable.js');
 
-//services =========================================
+//services
+//-------------------------
+
 require('./services/Note.js');
 require('./services/addToCharacterService.js');
 require('./services/Purchase.js');
 
-//controllers ======================================
+//controllers
+//-------------------------
+
 require('./controllers/mainController.js');
 require('./controllers/charactersListController.js');
 require('./controllers/characterController.js');
@@ -42,7 +52,9 @@ require('./controllers/noteEditorController.js');
 require('./controllers/addToCharacterController.js');
 
 
-//components =======================================
+//components
+//-------------------------
+
 require('./components/spellsList.js');
 require('./components/weaponsList.js');
 require('./components/armorsList.js');
@@ -56,7 +68,9 @@ require('./components/featsList.js');
 require('./components/noteEditor.js');
 
 
-//routes ===========================================
+//routes 
+//-------------------------
+
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
@@ -86,15 +100,18 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when("/compendium/races/:raceName*", {
             templateUrl: function (urlattr) {
-                return "compendium-races-" + urlattr.raceName + ".html";
+                return "compendium/races/" + urlattr.raceName + ".html";
             },
-            controller: "compendiumController"
         })
         .when("/compendium/classes/:className*", {
             templateUrl: function (urlattr) {
-                return "compendium-classes-" + urlattr.className + ".html";
+                return "compendium/classes/" + urlattr.className + ".html";
             },
-            controller: "compendiumController"
+        })
+        .when("/compendium/backgrounds/:backgroundName*", {
+            templateUrl: function (urlattr) {
+                return "compendium/backgrounds/" + urlattr.backgroundName + ".html";
+            },
         })
         .otherwise({
             redirectTo: "/"

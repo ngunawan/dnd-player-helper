@@ -1,3 +1,4 @@
+<!-- queries -->
 <md-input-container>
     <label>Name</label>
     <input ng-model="query['name']">
@@ -22,27 +23,45 @@
 </md-input-container>
 
 <md-content class="flex-row-wrap">
-    <md-button ng-class="{'md-accent': queryProperty.includes('light')}" ng-click="toggleQueryProperty('light')" class="md-raised md-primary">Light</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('finesse')}" ng-click="toggleQueryProperty('finesse')" class="md-raised md-primary">Finesse</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('thrown')}" ng-click="toggleQueryProperty('thrown')" class="md-raised md-primary">Thrown</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('two-handed')}" ng-click="toggleQueryProperty('two-handed')" class="md-raised md-primary">Two-handed</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('versatile')}" ng-click="toggleQueryProperty('versatile')" class="md-raised md-primary">Versatile</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('ammunition')}" ng-click="toggleQueryProperty('ammunition')" class="md-raised md-primary">Ammunition</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('heavy')}" ng-click="toggleQueryProperty('heavy')" class="md-raised md-primary">Heavy</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('reach')}" ng-click="toggleQueryProperty('reach')" class="md-raised md-primary">Reach</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('special')}" ng-click="toggleQueryProperty('special')" class="md-raised md-primary">Special</md-button>
-    <md-button ng-class="{'md-accent': queryProperty.includes('loading')}" ng-click="toggleQueryProperty('loading')" class="md-raised md-primary">Loading</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('light')}"
+               ng-click="toggleQueryProperty('light')"
+               class="md-raised md-primary">Light</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('finesse')}"
+               ng-click="toggleQueryProperty('finesse')"
+               class="md-raised md-primary">Finesse</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('thrown')}"
+               ng-click="toggleQueryProperty('thrown')"
+               class="md-raised md-primary">Thrown</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('two-handed')}"
+               ng-click="toggleQueryProperty('two-handed')"
+               class="md-raised md-primary">Two-handed</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('versatile')}"
+               ng-click="toggleQueryProperty('versatile')"
+               class="md-raised md-primary">Versatile</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('ammunition')}"
+               ng-click="toggleQueryProperty('ammunition')"
+               class="md-raised md-primary">Ammunition</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('heavy')}"
+               ng-click="toggleQueryProperty('heavy')"
+               class="md-raised md-primary">Heavy</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('reach')}"
+               ng-click="toggleQueryProperty('reach')"
+               class="md-raised md-primary">Reach</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('special')}"
+               ng-click="toggleQueryProperty('special')"
+               class="md-raised md-primary">Special</md-button>
+    <md-button ng-class="{'md-accent': queryProperty.includes('loading')}"
+               ng-click="toggleQueryProperty('loading')"
+               class="md-raised md-primary">Loading</md-button>
 </md-content>
 
 
-
-
-<!--SIMPLE MELEE ==================================================-->
+<!-- simple melee -->
 <div class="md-padding">
     <h3>Simple Melee</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
@@ -51,8 +70,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_melee'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
         <md-card-content class="grid-column-6">
             <span>{{weapon.name}}</span>
@@ -66,12 +83,12 @@
 </div>
 
 
-<!--SIMPLE RANGED ==================================================-->
+<!-- simple ranged -->
 <div class="md-padding">
     <h3>Simple Ranged</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
@@ -80,8 +97,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="weapon in weaponsList | filter: {type: 'simple_ranged'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
         <md-card-content class="grid-column-6">
             <span>{{weapon.name}}</span>
@@ -95,12 +110,12 @@
 </div>
 
 
-<!--MARTIAL MELEE ==================================================-->
+<!-- martial melee -->
 <div class="md-padding">
     <h3>Martial Melee</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
@@ -109,8 +124,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_melee'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
         <md-card-content class="grid-column-6">
             <span>{{weapon.name}}</span>
@@ -124,12 +137,12 @@
 </div>
 
 
-<!--MARTIAL RANGED ==================================================-->
+<!-- martial ranged -->
 <div class="md-padding">
     <h3>Martial Ranged</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'damage'; sortDir = !sortDir">Damage</span>
@@ -138,8 +151,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="weapon in weaponsList | filter: {type: 'martial_ranged'} | filter: query | filter: isProperty | orderBy: sortVal: sortDir">
         <md-card-content class="grid-column-6">
             <span>{{weapon.name}}</span>

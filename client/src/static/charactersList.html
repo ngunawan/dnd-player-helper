@@ -1,14 +1,15 @@
 <div layout-padding>
 
-    <!--CHARACTER CREATOR ============================================-->
+    <!-- create character  -->
     <h2>Create Character</h2>
+
     <div layout="row">
         <md-input-container>
             <label>Name</label>
             <input ng-model="name">
         </md-input-container>
-        
-         <md-input-container>
+
+        <md-input-container>
             <label>Race</label>
             <md-select ng-model="race">
                 <md-option value="Dragonborn">
@@ -18,15 +19,15 @@
                     Dwarf
                 </md-option>
                 <md-option value="Elf">
-                   Elf
+                    Elf
                 </md-option>
                 <md-option value="Gnome">
                     Gnome
                 </md-option>
-                 <md-option value="Human">
+                <md-option value="Human">
                     Human
                 </md-option>
-                 <md-option value="Half-Elf">
+                <md-option value="Half-Elf">
                     Half-Elf
                 </md-option>
                 <md-option value="Half-Orc">
@@ -40,7 +41,7 @@
                 </md-option>
             </md-select>
         </md-input-container>
-        
+
         <md-input-container>
             <label>Class</label>
             <md-select ng-model="class">
@@ -53,7 +54,7 @@
                 <md-option value="Cleric">
                     Cleric
                 </md-option>
-                 <md-option value="Druid">
+                <md-option value="Druid">
                     Druid
                 </md-option>
                 <md-option value="Fighter">
@@ -62,7 +63,7 @@
                 <md-option value="Monk">
                     Monk
                 </md-option>
-                 <md-option value="Paladin">
+                <md-option value="Paladin">
                     Paladin
                 </md-option>
                 <md-option value="Ranger">
@@ -71,7 +72,7 @@
                 <md-option value="Rogue">
                     Rogue
                 </md-option>
-                 <md-option value="Sorcerer">
+                <md-option value="Sorcerer">
                     Sorcerer
                 </md-option>
                 <md-option value="Warlock">
@@ -82,7 +83,7 @@
                 </md-option>
             </md-select>
         </md-input-container>
-        
+
         <md-input-container>
             <label>Background</label>
             <md-select ng-model="background">
@@ -104,7 +105,7 @@
                 <md-option value="gladiator">
                     Entertainer: Gladiator
                 </md-option>
-                   <md-option value="folk-hero">
+                <md-option value="folk-hero">
                     Folk Hero
                 </md-option>
                 <md-option value="guild-artisan">
@@ -122,7 +123,7 @@
                 <md-option value="knight">
                     Noble: Knight
                 </md-option>
-                 <md-option value="sage">
+                <md-option value="sage">
                     Sage
                 </md-option>
                 <md-option value="sailor">
@@ -134,25 +135,26 @@
                 <md-option value="soldier">
                     Soldier
                 </md-option>
-                 <md-option value="urchin">
+                <md-option value="urchin">
                     Urchin
                 </md-option>
             </md-select>
         </md-input-container>
-        
-         <md-input-container>
+
+        <md-input-container>
             <label>Gold</label>
             <input ng-model="gold">
         </md-input-container>
-        
     </div>
 
     <md-button ng-click="createCharacter()" class="md-raised md-primary">Create</md-button>
 
-    <md-divider style="margin:16px 0;"></md-divider>
 
 
-    <!--CHARACTERS LIST ============================================-->
+    <md-divider></md-divider>
+
+
+    <!-- character list  -->
     <md-card ng-repeat="character in charactersList">
         <md-card-content layout="row" layout-align="space-between">
             <span flex="80">{{character.name}}</span>

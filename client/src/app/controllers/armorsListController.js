@@ -3,6 +3,8 @@ angular.module('app').controller('armorsListController', function armorsListCont
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all armors
+    //-------------------------
     $http({
         method: 'GET',
         url: '/armors'
@@ -14,6 +16,8 @@ angular.module('app').controller('armorsListController', function armorsListCont
         console.log(response);
     });
 
+    //to keep track of armor purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (armor) {
         $scope.Purchase.name = armor.name;
@@ -21,6 +25,9 @@ angular.module('app').controller('armorsListController', function armorsListCont
         $scope.Purchase.unit_cost = armor.cost;
         $scope.Purchase.amount = 1;
     }
+    
+    //to show add armor dialogue
+    //-------------------------
     $scope.showAddArmor = addToCharacterService.showAddArmor;
 
 

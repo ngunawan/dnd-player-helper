@@ -1,9 +1,9 @@
-<!--LIGHT ==================================================-->
+<!-- light armor -->
 <div class="md-padding">
     <h3>Light Armor</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
@@ -12,8 +12,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="armor in armorsList | filter: {type: 'light'} | orderBy: sortVal: sortDir">
         <md-card-content ng-click="description.show = !description.show" class="grid-column-6">
             <span>{{armor.name}}</span>
@@ -31,12 +29,13 @@
     </md-card>
 </div>
 
-<!--MEDIUM ==================================================-->
+
+<!-- medium armor -->
 <div class="md-padding">
     <h3>Medium Armor</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-6">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-6 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
@@ -45,8 +44,6 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="armor in armorsList | filter: {type: 'medium'} | orderBy: sortVal: sortDir">
         <md-card-content ng-click="description.show = !description.show" class="grid-column-6">
             <span>{{armor.name}}</span>
@@ -64,12 +61,13 @@
     </md-card>
 </div>
 
-<!--HEAVY ==================================================-->
+
+<!-- heavy armor -->
 <div class="md-padding">
     <h3>Heavy Armor</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-7">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-7 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
@@ -79,18 +77,16 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="armor in armorsList | filter: {type: 'heavy'} | orderBy: sortVal: sortDir">
         <md-card-content ng-click="description.show = !description.show" class="grid-column-7">
-                <span>{{armor.name}}</span>
-                <span>{{armor.cost | convertCurrency}}</span>
-                <span>{{armor.ac}}</span>
-                <span>{{armor.strength}}</span>
-                <span>{{armor.stealth}}</span>
-                <span>{{armor.weight}}</span>
-                <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-                <div style="grid-column-start: 1;
+            <span>{{armor.name}}</span>
+            <span>{{armor.cost | convertCurrency}}</span>
+            <span>{{armor.ac}}</span>
+            <span>{{armor.strength}}</span>
+            <span>{{armor.stealth}}</span>
+            <span>{{armor.weight}}</span>
+            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+            <div style="grid-column-start: 1;
   grid-column-end: 8;" ng-if="description.show">
                 <md-divider></md-divider>
                 <div class="database-description-block" ng-bind-html="armor.description"></div>
@@ -99,12 +95,13 @@
     </md-card>
 </div>
 
-<!--SHIELD ==================================================-->
+
+<!-- shield -->
 <div class="md-padding">
     <h3>Shield</h3>
 
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-5">
+    <md-card class="transparent">
+        <md-card-content class="grid-column-5 strong-700">
             <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
             <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
             <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
@@ -112,16 +109,14 @@
             <span></span>
         </md-card-content>
     </md-card>
-
-
     <md-card ng-repeat="armor in armorsList | filter: {type: 'shield'} | orderBy: sortVal: sortDir">
         <md-card-content ng-click="description.show = !description.show" class="grid-column-5">
-                <span>{{armor.name}}</span>
-                <span>{{armor.cost | convertCurrency}}</span>
-                <span>{{armor.ac}}</span>
-                <span>{{armor.weight}}</span>
-                <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-             <div style="grid-column-start: 1;
+            <span>{{armor.name}}</span>
+            <span>{{armor.cost | convertCurrency}}</span>
+            <span>{{armor.ac}}</span>
+            <span>{{armor.weight}}</span>
+            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+            <div style="grid-column-start: 1;
   grid-column-end: 6;" ng-if="description.show">
                 <md-divider></md-divider>
                 <div class="database-description-block" ng-bind-html="armor.description"></div>

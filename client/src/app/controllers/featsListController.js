@@ -2,9 +2,10 @@ angular.module('app').controller('featsListController', function featsListContro
 
     $scope.search = "";
     $scope.query = {};
-    
     $scope.showAll = false;
 
+    //get all feats
+    //-------------------------
     $http({
         method: 'GET',
         url: '/feats'
@@ -16,6 +17,8 @@ angular.module('app').controller('featsListController', function featsListContro
         console.log(response);
     });
 
+    //to show add feat dialogue
+    //-------------------------
     $scope.showAddFeat = addToCharacterService.showAddFeat;
 
 

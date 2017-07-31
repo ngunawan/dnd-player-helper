@@ -4,6 +4,8 @@ angular.module('app').controller('addToCharacterController', function addToChara
     $scope.Purchase = Purchase;
     $scope.warning = "";
 
+    //get all character
+    //-------------------------
     $http({
         method: 'GET',
         url: '/characters'
@@ -16,14 +18,14 @@ angular.module('app').controller('addToCharacterController', function addToChara
     });
 
 
+    //dialogue functions
+    //-------------------------
     $scope.hide = function () {
         $mdDialog.hide();
     };
-
     $scope.cancel = function () {
         $mdDialog.cancel();
     };
-
     $scope.add = function (character, option) {
         if (option == 'buy') {
             if (character.gold >= Purchase.total_cost) {

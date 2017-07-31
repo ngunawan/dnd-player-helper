@@ -19,7 +19,9 @@ app.get('/dist/bundle.js', function (req, res) {
 });
 
 
-//initiate models ====================================================
+//initiate models
+//-------------------
+
 const Spell = require('./api/models/spellModel'),
     Pack = require('./api/models/packModel'),
     Weapon = require('./api/models/weaponModel'),
@@ -35,7 +37,9 @@ const Spell = require('./api/models/spellModel'),
     Class = require('./api/models/classModel');
 
 
-//add datas from json ================================================
+//add datas from json
+//----------------------
+
 const addSpells = require('./api/scripts/addSpells'),
     addPacks = require('./api/scripts/addPacks'),
     addWeapons = require('./api/scripts/addWeapons'),
@@ -47,7 +51,6 @@ const addSpells = require('./api/scripts/addSpells'),
     addFeats = require('./api/scripts/addFeats'),
     addRaces = require('./api/scripts/addRaces'),
     addClasses = require('./api/scripts/addClasses');
-
 
 addSpells();
 addPacks();
@@ -62,8 +65,8 @@ addClasses();
 addRaces();
 
 
-
-//initiate routes ====================================================
+//initiate routes
+//---------------------
 const spellRoutes = require('./api/routes/spellRoutes'),
     packRoutes = require('./api/routes/packRoutes'),
     weaponRoutes = require('./api/routes/weaponRoutes'),
@@ -94,12 +97,16 @@ classRoutes(app);
 
 
 //default route
+//--------------------
+
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('../client/src/static/index.html'));
 });
 
 
 //error handling 
+//--------------------
+
 app.use(function (req, res) {
     res.status(404).send({
         url: req.originalUrl + ' not found'
@@ -107,6 +114,8 @@ app.use(function (req, res) {
 });
 
 
-//listen to port =====================================================
+//listen to port
+//--------------------
+
 app.listen(port);
 console.log('server started on port: ' + port);

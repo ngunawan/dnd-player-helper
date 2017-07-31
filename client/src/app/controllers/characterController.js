@@ -1,15 +1,17 @@
 angular.module('app').controller('characterController', function characterController($routeParams, $http, $scope) {
-    
-    $scope.showall = false;
 
+    $scope.showAll = false;
+    $scope.classFeatures = [];
+    $scope.racialTraits = [];
+
+    //get current character
+    //-------------------------
     $http({
         method: 'GET',
         url: '/characters/' + $routeParams.characterId
     }).then(function successCallback(response) {
-                        console.log(response.data);
-
+        console.log(response);
         $scope.currentCharacter = response.data;
-        console.log(response.data);
         cumulateFeatures($scope.currentCharacter.class);
         cumulateTraits($scope.currentCharacter.race);
 
@@ -17,19 +19,14 @@ angular.module('app').controller('characterController', function characterContro
         console.log(response);
     });
 
-    $scope.classFeatures = [];
-    $scope.racialTraits = [];
-
+    //cumulate class features
+    //-------------------------
     function cumulateFeatures(classes) {
-        console.log(classes.length);
         for (let i = 0; i < classes.length; i++) {
-            console.log(i);
-            
             $http({
                 method: 'GET',
                 url: '/classes/name/' + classes[i].name
             }).then(function successCallback(response) {
-                console.log(response.data);
                 for (let j = 0; j < response.data[0].features.length; j++) {
                     $scope.classFeatures.push(response.data[0].features[j]);
                 }
@@ -41,6 +38,8 @@ angular.module('app').controller('characterController', function characterContro
         }
     }
 
+    //cumulate racial traits
+    //-------------------------
     function cumulateTraits(race) {
         $http({
             method: 'GET',
@@ -55,12 +54,5 @@ angular.module('app').controller('characterController', function characterContro
             console.log(response);
         });
     }
-
-
-
-
-
-
-
 
 });

@@ -3,6 +3,8 @@ angular.module('app').controller('ridablesListController', function ridablesList
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all ridables
+    //-------------------------
     $http({
         method: 'GET',
         url: '/ridables'
@@ -14,6 +16,8 @@ angular.module('app').controller('ridablesListController', function ridablesList
         console.log(response);
     });
 
+    //to keep track of ridable purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (ridable) {
         $scope.Purchase.name = ridable.name;
@@ -22,8 +26,8 @@ angular.module('app').controller('ridablesListController', function ridablesList
         $scope.Purchase.amount = 1;
     }
 
+    //to show add equipment dialogue
+    //-------------------------
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
-
-
 
 });

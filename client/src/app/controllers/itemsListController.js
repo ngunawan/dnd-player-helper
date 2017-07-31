@@ -3,6 +3,8 @@ angular.module('app').controller('itemsListController', function itemsListContro
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all items
+    //-------------------------
     $http({
         method: 'GET',
         url: '/items'
@@ -14,6 +16,8 @@ angular.module('app').controller('itemsListController', function itemsListContro
         console.log(response);
     });
 
+    //to keep track of item purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (item) {
         $scope.Purchase.name = item.name;
@@ -22,6 +26,8 @@ angular.module('app').controller('itemsListController', function itemsListContro
         $scope.Purchase.amount = 1;
     }
 
+    //to show add item dialogue
+    //-------------------------
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 });

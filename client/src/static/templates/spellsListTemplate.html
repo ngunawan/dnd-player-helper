@@ -1,193 +1,212 @@
-    <!--CLASS FILTER ===================================================-->
-    <md-content class="flex-row-wrap">
-        <md-button ng-class="{'md-accent': query['class'] == ''}" ng-click="query = {};query['class'] = ''" class="md-raised md-primary">All Class</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'bard'}" ng-click="query = {};query['class'] = 'bard'" class="md-raised md-primary">Bard</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'cleric'}" ng-click="query = {};query['class'] = 'cleric' " class="md-raised md-primary">Cleric</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'druid'}" ng-click="query = {};query['class'] = 'druid'" class="md-raised md-primary">Druid</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'paladin'}" ng-click="query = {};query['class'] = 'paladin'" class="md-raised md-primary">Paladin</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'ranger'}" ng-click="query = {};query['class'] = 'ranger'" class="md-raised md-primary">Ranger</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'sorcerer'}" ng-click="query = {};query['class'] = 'sorcerer'" class="md-raised md-primary">Sorcerer</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'warlock'}" ng-click="query = {};query['class'] = 'warlock'" class="md-raised md-primary">Warlock</md-button>
-        <md-button ng-class="{'md-accent': query['class'] == 'wizard'}" ng-click="query = {};query['class'] = 'wizard'" class="md-raised md-primary">Wizard</md-button>
-    </md-content>
+<!-- queries -->
+<md-content class="flex-row-wrap">
+    <md-button ng-class="{'md-accent': query['class'] == ''}"
+               ng-click="query = {};query['class'] = ''"
+               class="md-raised md-primary">All Class</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'bard'}"
+               ng-click="query = {};query['class'] = 'bard'"
+               class="md-raised md-primary">Bard</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'cleric'}"
+               ng-click="query = {};query['class'] = 'cleric' "
+               class="md-raised md-primary">Cleric</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'druid'}"
+               ng-click="query = {};query['class'] = 'druid'"
+               class="md-raised md-primary">Druid</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'paladin'}"
+               ng-click="query = {};query['class'] = 'paladin'"
+               class="md-raised md-primary">Paladin</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'ranger'}"
+               ng-click="query = {};query['class'] = 'ranger'"
+               class="md-raised md-primary">Ranger</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'sorcerer'}"
+               ng-click="query = {};query['class'] = 'sorcerer'"
+               class="md-raised md-primary">Sorcerer</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'warlock'}"
+               ng-click="query = {};query['class'] = 'warlock'"
+               class="md-raised md-primary">Warlock</md-button>
+    <md-button ng-class="{'md-accent': query['class'] == 'wizard'}"
+               ng-click="query = {};query['class'] = 'wizard'"
+               class="md-raised md-primary">Wizard</md-button>
+</md-content>
 
+<md-content layout="row">
+    <div>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="query['name']">
+        </md-input-container>
 
-    <!--SORT ==============================================================-->
-    <md-content layout="row">
-        <div>
-            <md-input-container>
-                <label>Name</label>
-                <input ng-model="query['name']">
-            </md-input-container>
-
-            <!--
+        <!--
         <md-input-container md-no-float>
             <label>Name</label>
             <input ng-model="query[queryBy]" placeholder="">
         </md-input-container>
 -->
 
-            <md-input-container>
-                <label>Level</label>
-                <md-select ng-model="query['level']">
-                    <md-option value="">
-                        All
-                    </md-option>
-                    <md-option value="Cantrip">
-                        Cantrip
-                    </md-option>
-                    <md-option value="1st">
-                        1st
-                    </md-option>
-                    <md-option value="2nd">
-                        2nd
-                    </md-option>
-                    <md-option value="3rd">
-                        3rd
-                    </md-option>
-                    <md-option value="4th">
-                        4th
-                    </md-option>
-                    <md-option value="5th">
-                        5th
-                    </md-option>
-                    <md-option value="6th">
-                        6th
-                    </md-option>
-                    <md-option value="7th">
-                        7th
-                    </md-option>
-                    <md-option value="8th">
-                        8th
-                    </md-option>
-                    <md-option value="9th">
-                        9th
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        <md-input-container>
+            <label>Level</label>
+            <md-select ng-model="query['level']">
+                <md-option value="">
+                    All
+                </md-option>
+                <md-option value="Cantrip">
+                    Cantrip
+                </md-option>
+                <md-option value="1st">
+                    1st
+                </md-option>
+                <md-option value="2nd">
+                    2nd
+                </md-option>
+                <md-option value="3rd">
+                    3rd
+                </md-option>
+                <md-option value="4th">
+                    4th
+                </md-option>
+                <md-option value="5th">
+                    5th
+                </md-option>
+                <md-option value="6th">
+                    6th
+                </md-option>
+                <md-option value="7th">
+                    7th
+                </md-option>
+                <md-option value="8th">
+                    8th
+                </md-option>
+                <md-option value="9th">
+                    9th
+                </md-option>
+            </md-select>
+        </md-input-container>
 
-            <md-input-container>
-                <label>Casting Time</label>
-                <md-select ng-model="query['casting_time']">
-                    <md-option value="">
-                        All
-                    </md-option>
-                    <md-option value="1 action">
-                        1 action
-                    </md-option>
-                    <md-option value="1 bonus action">
-                        1 bonus action
-                    </md-option>
-                    <md-option value="1 reaction">
-                        1 reaction
-                    </md-option>
-                    <md-option value="1 minute">
-                        1 minute
-                    </md-option>
-                    <md-option value="1 hour">
-                        1 hour
-                    </md-option>
-                    <md-option value="8 hours">
-                        8 hours
-                    </md-option>
-                    <md-option value="12 hours">
-                        12 hours
-                    </md-option>
-                    <md-option value="24 hours">
-                        24 hours
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        <md-input-container>
+            <label>Casting Time</label>
+            <md-select ng-model="query['casting_time']">
+                <md-option value="">
+                    All
+                </md-option>
+                <md-option value="1 action">
+                    1 action
+                </md-option>
+                <md-option value="1 bonus action">
+                    1 bonus action
+                </md-option>
+                <md-option value="1 reaction">
+                    1 reaction
+                </md-option>
+                <md-option value="1 minute">
+                    1 minute
+                </md-option>
+                <md-option value="1 hour">
+                    1 hour
+                </md-option>
+                <md-option value="8 hours">
+                    8 hours
+                </md-option>
+                <md-option value="12 hours">
+                    12 hours
+                </md-option>
+                <md-option value="24 hours">
+                    24 hours
+                </md-option>
+            </md-select>
+        </md-input-container>
 
-            <md-input-container>
-                <label>Range</label>
-                <md-select ng-model="query['range']">
-                    <md-option value="">
-                        All
-                    </md-option>
-                    <md-option value="10 feet">
-                        10 feet
-                    </md-option>
-                    <md-option value="30 feet">
-                        30 feet
-                    </md-option>
-                    <md-option value="60 feet">
-                        60 feet
-                    </md-option>
-                    <md-option value="Self">
-                        Self
-                    </md-option>
-                    <md-option value="120 feet">
-                        120 feet
-                    </md-option>
-                    <md-option value="Self (10-foot radius)">
-                        Self (10-foot radius)
-                    </md-option>
-                    <md-option value="Self (10-foot radius sphere)">
-                        Self (10-foot radius sphere)
-                    </md-option>
-                    <md-option value="Touch">
-                        Touch
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        <md-input-container>
+            <label>Range</label>
+            <md-select ng-model="query['range']">
+                <md-option value="">
+                    All
+                </md-option>
+                <md-option value="10 feet">
+                    10 feet
+                </md-option>
+                <md-option value="30 feet">
+                    30 feet
+                </md-option>
+                <md-option value="60 feet">
+                    60 feet
+                </md-option>
+                <md-option value="Self">
+                    Self
+                </md-option>
+                <md-option value="120 feet">
+                    120 feet
+                </md-option>
+                <md-option value="Self (10-foot radius)">
+                    Self (10-foot radius)
+                </md-option>
+                <md-option value="Self (10-foot radius sphere)">
+                    Self (10-foot radius sphere)
+                </md-option>
+                <md-option value="Touch">
+                    Touch
+                </md-option>
+            </md-select>
+        </md-input-container>
 
-            <md-input-container>
-                <label>Duration</label>
-                <md-select ng-model="query['duration']">
-                    <md-option value="">
-                        All
-                    </md-option>
-                    <md-option value="Concentration">
-                        Concentration
-                    </md-option>
-                    <md-option value="Instantaneous">
-                        Instantaneous
-                    </md-option>
-                </md-select>
-            </md-input-container>
+        <md-input-container>
+            <label>Duration</label>
+            <md-select ng-model="query['duration']">
+                <md-option value="">
+                    All
+                </md-option>
+                <md-option value="Concentration">
+                    Concentration
+                </md-option>
+                <md-option value="Instantaneous">
+                    Instantaneous
+                </md-option>
+            </md-select>
+        </md-input-container>
 
-        </div>
-    </md-content>
-
-    <!--SPELLS LIST ===================================================-->
-    <md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-        <md-card-content class="grid-column-8">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'level'; sortDir = !sortDir">Level</span>
-            <span ng-click="sortVal = 'school'; sortDir = !sortDir">School</span>
-            <span ng-click="sortVal = 'casting_time'; sortDir = !sortDir">Casting Time</span>
-            <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
-            <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
-            <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
+    </div>
+</md-content>
 
 
-    <md-card ng-repeat="spell in spellsList | filter: query | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-8" ng-click="spell.show = !spell.show">
-            <span>{{spell.name}}</span>
-            <span>{{spell.level}}</span>
-            <span>{{spell.school}}</span>
-            <span>{{spell.casting_time}}</span>
-            <span>{{spell.range}}</span>
-            <span>{{spell.component|deleteParentheses}}</span>
-            <span>{{spell.duration}}</span>
-            <md-button ng-click="showAddSpell(spell);$event.stopPropagation()" class="md-accent">Add Spell</md-button>
-            <div style="grid-column-start: 1;
-  grid-column-end: 9;" ng-if="spell.show">
-                <md-divider></md-divider>
-                <div class="database-statsblock-list">
-                    <div class="database-statsblock"><label>Level: </label>{{spell.level}}</div>
-                    <div class="database-statsblock"><label>School: </label>{{spell.school}}</div>
-                    <div class="database-statsblock"><label>Casting Time: </label>{{spell.casting_time}}</div>
-                    <div class="database-statsblock"><label>Range: </label>{{spell.range}}</div>
-                    <div class="database-statsblock"><label>Component: </label>{{spell.component}}</div>
-                    <div class="database-statsblock"><label>Duration: </label>{{spell.duration}}</div>
-                </div>
-                <md-divider></md-divider>
-                <div ng-bind-html="spell.description"></div>
+<!-- spells list -->
+<md-card class="transparent">
+    <md-card-content class="grid-column-8 strong-700">
+        <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+        <span ng-click="sortVal = 'level'; sortDir = !sortDir">Level</span>
+        <span ng-click="sortVal = 'school'; sortDir = !sortDir">School</span>
+        <span ng-click="sortVal = 'casting_time'; sortDir = !sortDir">Casting Time</span>
+        <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
+        <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
+        <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
+        <span></span>
+    </md-card-content>
+</md-card>
+
+<md-card ng-repeat="spell in spellsList | filter: query | orderBy: sortVal: sortDir">
+    <md-card-content class="grid-column-8"
+                     ng-click="spell.show = !spell.show">
+        <span>{{spell.name}}</span>
+        <span>{{spell.level}}</span>
+        <span>{{spell.school}}</span>
+        <span>{{spell.casting_time}}</span>
+        <span>{{spell.range}}</span>
+        <span>{{spell.component|deleteParentheses}}</span>
+        <span>{{spell.duration}}</span>
+        <md-button ng-click="showAddSpell(spell);$event.stopPropagation()"
+                   class="md-accent">Add Spell</md-button>
+        <div class="span-8" ng-if="spell.show">
+            <md-divider></md-divider>
+            <div class="database-statsblock-list">
+                <div class="database-statsblock"><label>Level: </label>{{spell.level}}</div>
+                <div class="database-statsblock"><label>School: </label>{{spell.school}}</div>
+                <div class="database-statsblock"><label>Casting Time: </label>{{spell.casting_time}}</div>
+                <div class="database-statsblock"><label>Range: </label>{{spell.range}}</div>
+                <div class="database-statsblock"><label>Component: </label>{{spell.component}}</div>
+                <div class="database-statsblock"><label>Duration: </label>{{spell.duration}}</div>
             </div>
-        </md-card-content>
-    </md-card>
+            
+            <md-divider></md-divider>
+            
+            <div ng-bind-html="spell.description"></div>
+        </div>
+    </md-card-content>
+</md-card>

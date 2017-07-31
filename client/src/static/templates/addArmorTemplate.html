@@ -10,6 +10,7 @@
             </div>
         </md-toolbar>
 
+        
         <md-dialog-content class="md-dialog-content">
             <h3>Pick a Character</h3>
 
@@ -27,6 +28,7 @@
 
             <md-input-container class="one-input-block">
                 <label>Character</label>
+                
                 <md-select ng-model="characterObj">
                     <md-option ng-repeat="character in charactersList" ng-value="character">
                         {{character.name}} ({{character.gold | convertCurrency}})
@@ -34,6 +36,7 @@
                 </md-select>
             </md-input-container>
         </md-dialog-content>
+        
 
         <md-dialog-actions layout="row">
             <md-button ng-click="add(characterObj, option)">

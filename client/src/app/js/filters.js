@@ -1,5 +1,8 @@
-//filter: delete first occurence of parentheses
-angular.module('app').filter('deleteParentheses', function () {
+var app = angular.module('app');
+
+//delete first occurence of parentheses
+//-------------------------
+app.filter('deleteParentheses', function () {
     return function (string) {
         let start_index, end_index;
         start_index = string.indexOf('(');
@@ -12,8 +15,9 @@ angular.module('app').filter('deleteParentheses', function () {
     };
 });
 
-//filter: convert 5.23 to 5gp 2sp 3cp
-angular.module('app').filter('convertCurrency', function () {
+//convert 5.23 -> 5gp 2sp 3cp
+//-------------------------
+app.filter('convertCurrency', function () {
     function commaSeparateNumber(val) {
         while (/(\d+)(\d{3})/.test(val.toString())) {
             val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
@@ -48,8 +52,9 @@ angular.module('app').filter('convertCurrency', function () {
     };
 });
 
-
-angular.module('app').filter('convertStringData', function () {
+//convert half-elf -> Half elf
+//-------------------------
+app.filter('convertStringData', function () {
     function replaceDash(string) {
         string = string.replace(/-/g, " ");
         return string
@@ -70,7 +75,9 @@ angular.module('app').filter('convertStringData', function () {
     }
 });
 
-angular.module('app').filter('grabDice', function () {
+//take 1d6 piercing -> 1d6
+//-------------------------
+app.filter('grabDice', function () {
     return function takeFirstWord(string) {
         let index = string.indexOf(' ');
         return string.slice(0, index);
@@ -78,7 +85,9 @@ angular.module('app').filter('grabDice', function () {
 
 })
 
-angular.module('app').filter('grabDamage', function () {
+//take 1d6 piercing -> piercing
+//-------------------------
+app.filter('grabDamage', function () {
     return function takeSecondWord(string) {
         let index = string.indexOf(' ');
         return string.slice(index, string.length);
@@ -86,13 +95,17 @@ angular.module('app').filter('grabDamage', function () {
 
 })
 
-angular.module('app').filter('iif', function () {
-   return function(input, trueValue, falseValue) {
+//immediate if 
+//-------------------------
+app.filter('iif', function () {
+    return function (input, trueValue, falseValue) {
         return input ? trueValue : falseValue;
-   };
+    };
 });
 
-angular.module('app').filter('levelConvert', function() {
+//convert 1 -> Lvl 1
+//-------------------------
+app.filter('levelConvert', function () {
     function capitalize(string) {
         string = string.replace(/\w\S*/g,
             function (word) {
@@ -100,14 +113,14 @@ angular.module('app').filter('levelConvert', function() {
             });
         return string;
     }
-    
-    return function(string) {
+
+    return function (string) {
         let temp_array = string.split(" ");
         let final_string = "Lvl " + temp_array[0];
-        if(temp_array[1]) {
+        if (temp_array[1]) {
             final_string += (" " + temp_array[1]);
         }
-        
+
         return capitalize(final_string);
     }
 })

@@ -5,6 +5,8 @@ angular.module('app').controller('spellsListController', function spellsListCont
     };
     $scope.queryBy = "";
 
+    //get all spells
+    //-------------------------
     $http({
         method: 'GET',
         url: '/spells'
@@ -16,7 +18,8 @@ angular.module('app').controller('spellsListController', function spellsListCont
         console.log(response);
     });
 
+    //to show add spell dialogue
+    //-------------------------
     $scope.showAddSpell = addToCharacterService.showAddSpell;
-
 
 });

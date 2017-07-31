@@ -2,6 +2,7 @@
     <label>Name</label>
     <input ng-model="query['name']">
 </md-input-container>
+
 <md-input-container>
     <label>Search Keyword</label>
     <input ng-model="search">
@@ -11,18 +12,17 @@
     Expand All
 </md-checkbox>
 
-<md-card style="background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0); font-weight:700">
-    <md-card-content class="grid-column-2">
+
+<md-card class="transparent">
+    <md-card-content class="grid-column-2 strong-700">
         <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
         <!--        <span ng-click="sortVal = 'description'; sortDir = !sortDir">Description</span>-->
         <span></span>
     </md-card-content>
 </md-card>
-
 <md-card ng-repeat="feat in featsList | filter: query | filter: search | orderBy: sortVal: sortDir">
     <md-card-content class="grid-column-2" ng-click="feat.show = !feat.show">
         <span>{{feat.name}}</span>
-        <!--        <div ng-bind-html="feat.description"></div>-->
         <md-button ng-click="showAddFeat(feat);$event.stopPropagation()" class="md-accent">Add Feat</md-button>
 
         <div style="grid-column-start: 1;
@@ -30,6 +30,5 @@
             <md-divider></md-divider>
             <div ng-bind-html="feat.description"></div>
         </div>
-
     </md-card-content>
 </md-card>

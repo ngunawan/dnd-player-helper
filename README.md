@@ -7,7 +7,7 @@ Playing Dungeons and Dragons require a lot of reading from the Player's Handbook
   * Character creation and management [in progress]
   * Searchable spells, equipments, weapons, armors, and feats table
   * Note editor to compile campaign notes
-  * Compendium to quickly look up information in the Player's Handbook [in progress]
+  * Compendium to quickly look up information in the Player's Handbook
   
 ### Direction
 

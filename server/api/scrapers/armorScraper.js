@@ -20,7 +20,7 @@ request(url, (error, response, html) => {
         const $ = cheerio.load(html);
 
         let row_counter = 0; //keep track of row #
-        let type; // row 0-3 "light" row 5-9 "medium" row 11-14 "heavy" row  row 16 "shield
+        let type; // row 0-3 "light" row 5-9 "medium" row 11-14 "heavy" row  row 16 "shield"
 
         $('div.section#armor-summary table tbody tr').each(function () {
 

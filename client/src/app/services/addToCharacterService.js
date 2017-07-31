@@ -2,16 +2,20 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
 
     let character, option;
 
+    //when option is 'buy' make purchase
+    //-------------------------
     var makePurchase = function (character, cost) {
         let newGold = character.gold - cost;
-        console.log(newGold);
+        
+        //return http PUT promise
         return $http({
             method: 'PUT',
             url: '/characters/' + character._id + '/gold/' + newGold
         })
     };
 
-    //add spell ---------------------------------
+    //add spell
+    //-------------------------
     function addSpellToCharacter(spell, character) {
         $http({
             method: 'POST',
@@ -42,7 +46,8 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
-    //add feat ---------------------------------
+    //add feat
+    //-------------------------
     function addFeatToCharacter(feat, character) {
         $http({
             method: 'POST',
@@ -73,9 +78,9 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
-    //add equipment ---------------------------------
+    //add equipment
+    //-------------------------
     function addEquipmentToCharacter(equipment, character, amount) {
-        console.log("PURCHASING " + equipment);
         let purchase_array = [];
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(equipment);
@@ -92,10 +97,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
         });
     }
 
-    this.showAddEquipment = function (equipment) {
-                console.log("PURCHASING2 " + equipment);
-
-        
+    this.showAddEquipment = function (equipment) {        
         $mdDialog.show({
                 controller: 'addToCharacterController',
                 templateUrl: 'templates/addEquipmentTemplate.html',
@@ -124,19 +126,13 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
-    //add weapon ---------------------------------
+    //add weapon
+    //-------------------------
     function addWeaponToCharacter(weapon, character, amount) {
         let purchase_array = [];
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(weapon);
         }
-
-        //        let damage, damage_type;
-        //        if (weapon.damage != "") {
-        //            let split_arr = weapon.damage.split(" ");
-        //            damage = split_arr[0];
-        //            damage_type = split_arr[1];
-        //        }
 
         $http({
             method: 'POST',
@@ -179,14 +175,14 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
-    //add armor ---------------------------------
+    //add armor
+    //-------------------------
     function addArmorToCharacter(armor, character, amount) {
         let purchase_array = [];
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(armor);
         }
 
-        console.log(purchase_array);
         $http({
             method: 'POST',
             url: '/characters/' + character._id + '/armors',

@@ -1,11 +1,7 @@
-// setup --------------------------
-
+// setup
+// ----------------
 * {
     box-sizing: border-box;
-}
-
-md-dialog {
-    width: 40%;
 }
 
 a {
@@ -14,11 +10,24 @@ a {
 }
 
 [contenteditable] {
-    outline:none;
+    outline: none;
 }
 
-// layout reusables ---------------
+md-nav-bar .md-nav-bar {
+    background: white;
+}
 
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+label {
+    font-weight: 700;
+}
+
+
+// layouts
+// ----------------
 .grid-column-8 {
     display: grid;
     grid-template-columns: repeat(8, 12.5%);
@@ -56,7 +65,7 @@ a {
 }
 
 .grid-column-3-revised {
-     display: grid;
+    display: grid;
     grid-template-columns: 60% repeat(2, 20%);
     grid-template-rows: auto;
 }
@@ -68,7 +77,7 @@ a {
 }
 
 .grid-column-2-revised {
-     display: grid;
+    display: grid;
     grid-template-columns: 80% 20%;
     grid-template-rows: auto;
 }
@@ -80,11 +89,37 @@ a {
     width: 100%;
 }
 
-.flex-center-align {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+.span-2 {
+    grid-column: span 2;
 }
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+.item1 {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.item2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.item3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+// alignments
+// ----------------
 
 .margin-right-30 {
     margin-right: 30px;
@@ -99,7 +134,7 @@ a {
 }
 
 md-divider {
-    margin-bottom:16px;
+    margin-bottom: 16px;
     margin-top: 16px;
 }
 
@@ -108,13 +143,15 @@ md-divider {
     justify-content: center;
 }
 
-.span-2 {
-    grid-column: span 2;
+.flex-center-align {
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.span-3 {
-    grid-column: span 3;
-}
+
+// fonts
+// ----------------
 
 .small-80 {
     font-size: 80%;
@@ -124,7 +161,31 @@ md-divider {
     font-size: 90%;
 }
 
-// styling and blocking reusables -----------
+.strong-700 {
+    font-weight: 700;
+}
+
+.character-heading {
+    font-size: 75%;
+    margin-bottom: 12px;
+}
+
+
+// styling
+// ----------------
+
+.transparent {
+    background: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+
+// blocks
+// ----------------
+
+md-dialog {
+    width: 40%;
+}
 
 .warning-msg {
     color: #c60008;
@@ -140,7 +201,7 @@ md-divider {
 .stat-block {
     label {
         display: block;
-        margin-bottom:10px;
+        margin-bottom: 10px;
         font-size: 90%;
     }
     margin-right: 20px;
@@ -157,34 +218,13 @@ md-divider {
     }
 }
 
-.item1 {
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.item2 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.item3 {
-    grid-column: 2;
-    grid-row: 2; 
-}
-
-.character-heading {
-    font-size: 75%;
-    margin-bottom: 12px;
-}
-
 .character-item {
     margin-bottom: 13px;
-    
+
     md-divider {
         margin-bottom: 10px;
     }
-    
+
     .md-button {
         margin: 0;
         padding: 0 5px;
@@ -192,7 +232,7 @@ md-divider {
         min-height: 0;
         min-width: 0;
     }
-    
+
     .md-button:hover {
         background: transparent;
     }
@@ -200,14 +240,8 @@ md-divider {
 
 .character-item-description {
     font-size: 85%;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-
-.character-backstory {
-    line-height: 1.7;
-}
-
-// specifics ---------------------------------
 
 .database-description-block {
     padding: 20px 0;
@@ -230,48 +264,5 @@ md-divider {
 }
 
 .compendium-card {
-    width:20%;
-}
-
-// temporary prototyping trash ----------------
-
-.md-subhead {
-    color: rgba(0,0,0,0.54);
-    display:none;
-}
-
-//span {
-//    display: flex;
-//    align-items: center;
-//    justify-content: space-between;
-//    text-align: left;
-//    padding: 0.5vw 0;
-//}
-
-#container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-}
-
-label {
-    font-weight: 700;
-}
-
-md-input-container .md-errors-spacer {
-    min-height: 0;
-}
-
-md-nav-bar .md-nav-bar {
-    background: white;
-}
-
-md-sidenav.md-closed.md-locked-open-add-active {
-    width: 220px !important;
-    min-width: 220px !important;
-}
-
-.toolbar {
-    margin-bottom: 25px;
+    width: 20%;
 }

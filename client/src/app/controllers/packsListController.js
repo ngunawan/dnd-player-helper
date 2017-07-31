@@ -3,6 +3,8 @@ angular.module('app').controller('packsListController', function packsListContro
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all packs
+    //-------------------------
     $http({
         method: 'GET',
         url: '/packs'
@@ -14,6 +16,8 @@ angular.module('app').controller('packsListController', function packsListContro
         console.log(response);
     });
 
+    //to keep track of pack purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (pack) {
         $scope.Purchase.name = pack.name;
@@ -22,6 +26,8 @@ angular.module('app').controller('packsListController', function packsListContro
         $scope.Purchase.amount = 1;
     }
 
+    //to show add pack dialogue
+    //-------------------------
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 

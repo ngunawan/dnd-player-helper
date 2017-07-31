@@ -1,25 +1,30 @@
 <md-card>
     <md-card-content layout="column">
-
+        <!-- note title -->
         <md-input-container>
             <label>Name</label>
             <input ng-model='Note.name'>
         </md-input-container>
 
+        <!-- toolbar -->
         <div class="toolbar">
-            
-                <md-button unselectable="on" ng-click='format("bold")' class="md-icon-button md-raised">B</md-button>
-                <md-button unselectable="on" ng-click='format("italic")' class="md-icon-button md-raised">I</md-button>
-                <md-button unselectable="on" ng-click='format("underline")' class="md-icon-button md-raised">U</md-button>
+            <md-button unselectable="on"
+                       ng-click='format("bold")'
+                       class="md-icon-button md-raised">B</md-button>
+            <md-button unselectable="on"
+                       ng-click='format("italic")'
+                       class="md-icon-button md-raised">I</md-button>
+            <md-button unselectable="on"
+                       ng-click='format("underline")'
+                       class="md-icon-button md-raised">U</md-button>
 
             <!--
                 <md-button unselectable="on" ng-click='format("insertUnorderedList")' class="md-button md-raised">Unordered</md-button>
                 <md-button unselectable="on" ng-click='format("insertOrderedList")' class="md-button md-raised">Ordered</md-button>
 -->
         </div>
-        
-        <div style="min-height:300px" ng-model='Note.content' id='editor' contenteditable>
 
-        </div>
+        <!-- note content -->
+        <div style="min-height:300px" ng-model='Note.content' id='editor' contenteditable></div>
     </md-card-content>
 </md-card>

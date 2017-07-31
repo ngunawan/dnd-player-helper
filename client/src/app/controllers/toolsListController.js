@@ -3,6 +3,8 @@ angular.module('app').controller('toolsListController', function toolsListContro
     $scope.query = {};
     $scope.queryBy = "";
 
+    //get all tools
+    //-------------------------
     $http({
         method: 'GET',
         url: '/tools'
@@ -14,6 +16,8 @@ angular.module('app').controller('toolsListController', function toolsListContro
         console.log(response);
     });
 
+    //keep track of tool purchase
+    //-------------------------
     $scope.Purchase = Purchase;
     $scope.editPurchase = function (tool) {
         $scope.Purchase.name = tool.name;
@@ -22,6 +26,8 @@ angular.module('app').controller('toolsListController', function toolsListContro
         $scope.Purchase.amount = 1;
     }
 
+    //to show add equipment dialogue
+    //-------------------------
     $scope.showAddEquipment = addToCharacterService.showAddEquipment;
 
 
