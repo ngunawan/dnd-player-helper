@@ -8,6 +8,9 @@ a {
   text-decoration: none;
   color: #2962FF;
 }
+[contenteditable] {
+  outline: none;
+}
 .grid-column-8 {
   display: grid;
   grid-template-columns: repeat(8, 12.5%);
@@ -59,9 +62,19 @@ a {
   flex-wrap: wrap;
   width: 100%;
 }
-.margin-right-20 {
+.flex-center-align {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.margin-right-30 {
   margin-right: 30px;
+}
+.margin-bottom-30 {
   margin-bottom: 30px;
+}
+.margin-bottom-18 {
+  margin-bottom: 18px;
 }
 md-divider {
   margin-bottom: 16px;

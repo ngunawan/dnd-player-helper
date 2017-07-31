@@ -4,13 +4,21 @@ const Schema = mongoose.Schema;
 
 const ClassSchema = new Schema({
     name: String,
-    hp: String,
+    hit_points: String,
     proficiencies: String,
     equipments: String,
     features: [{
         name: String,
-        prereq: String,
+        prereq: [String],
         description: String
+    }],
+    archetypes: [{
+        name: String,
+        features: [{
+            name: String,
+            prereq: [String],
+            description: String
+        }]
     }]
 });
 

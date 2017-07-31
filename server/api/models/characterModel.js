@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const CharacterSchema = new Schema({
     name: String,
     class: [{
-        class_name: String,
+        name: String,
         level: {
             type: Number,
             default: 1

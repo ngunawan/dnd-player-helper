@@ -1,4 +1,6 @@
 angular.module('app').controller('characterController', function characterController($routeParams, $http, $scope) {
+    
+    $scope.showall = false;
 
     $http({
         method: 'GET',
@@ -25,7 +27,7 @@ angular.module('app').controller('characterController', function characterContro
             
             $http({
                 method: 'GET',
-                url: '/classes/name/' + classes[i].class_name
+                url: '/classes/name/' + classes[i].name
             }).then(function successCallback(response) {
                 console.log(response.data);
                 for (let j = 0; j < response.data[0].features.length; j++) {

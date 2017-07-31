@@ -1,28 +1,93 @@
 <md-content style="padding:20px;">
-    <h1 style="margin-bottom:13px;">{{currentCharacter.name}}</h1>
-    <div layout="flex">
-        <span class="margin-right-20"><strong>Class: </strong> {{currentCharacter.class[0].class_name | convertStringData}}</span>
-        <span class="margin-right-20"><strong>Race: </strong> {{currentCharacter.race | convertStringData}}</span>
-        <span class="margin-right-20"><strong>Background: </strong> {{currentCharacter.background | convertStringData}}</span>
-        <span class="margin-right-20"><strong>Gold: </strong> {{currentCharacter.gold | convertCurrency}}</span>
+    <h1 class="margin-bottom-30">{{currentCharacter.name}}</h1>
+
+
+    <div class="md-whiteframe-4dp margin-bottom-30" layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 md-truncate>Backstory</h2>
+                <span flex></span>
+                <md-button class="md-raised md-accent">
+                    Save
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-content class="md-padding ">
+
+            <div class="margin-bottom-30" contenteditable>
+                Ijen was a wanderer who loved to wander. Ever since he was a kid he would wander to the most ambiguous places and most dangerous as well. From a dragon's cave to a small rabbit hole that heaven knows how it fits him, he ventured through all of the Dragon Empire in search of.... well nothing at all. He loved wandering. Just for the thrill of it. Not really. There was no thrill. He just does it. Sometimes he would go to the top of the mountain and as he arrived, he would turn right around. Ijen is a wanderer.
+            </div>
+
+            <div class="margin-bottom-30">
+                <label class="small-80">Background</label>
+
+                <md-input-container class="md-block">
+                    <input ng-value="currentCharacter.background" type="text">
+                </md-input-container>
+            </div>
+
+            <label class="small-80">Gold</label>
+
+            <md-input-container class="md-block">
+                <input ng-value="currentCharacter.gold" type="number">
+            </md-input-container>
+
+        </md-content>
+
     </div>
 
+    <div class="md-whiteframe-4dp margin-bottom-30" layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 md-truncate>Race and Class</h2>
+                <span flex></span>
+                <md-button class="md-raised md-accent">
+                    Save
+                </md-button>
+            </div>
+        </md-toolbar>
 
-    <md-divider></md-divider>
+        <md-content class="md-padding" layout="row">
+            <div layout="column">
+                <label class="small-80">Race:</label>
 
-    <md-card class="md-padding character-backstory">
-        <label class="small-80">Backstory:</label>
-        <p>Ijen was a wanderer who loved to wander. Ever since he was a kid he would wander to the most ambiguous places and most dangerous as well. From a dragon's cave to a small rabbit hole that heaven knows how it fits him, he ventured through all of the Dragon Empire in search of.... well nothing at all. He loved wandering. Just for the thrill of it. Not really. There was no thrill. He just does it. Sometimes he would go to the top of the mountain and as he arrived, he would turn right around. Ijen is a wanderer.</p>
-    </md-card>
+                <md-input-container class="md-block">
+                    <input ng-value="currentCharacter.race" type="text">
+                </md-input-container>
+            </div>
 
-    <md-divider></md-divider>
+            <div>
+                <label class="small-80">Class:</label>
+
+                <div ng-repeat="class in currentCharacter.class" layout="row">
+                    <md-input-container class="md-block">
+                        <!--                <label>Name</label>-->
+                        <input ng-value="class.name" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <!--                <label>Level</label>-->
+                        <input ng-value="class.level" type="number" step="1">
+                    </md-input-container>
+                </div>
+
+                <md-button class="md-accent">Add Class</md-button>
+            </div>
+        </md-content>
+    </div>
 
 
     <div class="grid-column-2">
 
-        <div style="background:white;" class="item1 md-whiteframe-4dp margin-right-20" flex="33" layout="column">
-            <md-toolbar class="md-primary md-padding">
-                Stats
+        <div style="background:white;" class="item1 md-whiteframe-4dp margin-right-30 margin-bottom-30" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 md-truncate>Stats</h2>
+                    <span flex></span>
+                    <md-button class="md-raised md-accent">
+                        Save
+                    </md-button>
+                </div>
             </md-toolbar>
 
             <md-content class="md-padding">
@@ -43,33 +108,43 @@
                     </md-input-container>
 
                     <md-input-container class="md-block">
-                        <label>Armor Class</label>
+                        <label>AC</label>
                         <input value="16" type="number" step="1">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Passive Perception</label>
+                        <input value="21" type="number" step="1">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Proficiency Bonus</label>
+                        <input value="3" type="number" step="1">
                     </md-input-container>
                 </div>
                 <div class="grid-column-2">
                     <div class="stat-block">
-                        <label>Strength</label>
+                        <label>STR</label>
                         <span>16 + 2</span>
                     </div>
                     <div class="stat-block">
-                        <label>Dexterity</label>
+                        <label>DEX</label>
                         <span>16 + 2</span>
                     </div>
                     <div class="stat-block">
-                        <label>Constitution</label>
+                        <label>CON</label>
                         <span>16 + 2</span>
                     </div>
                     <div class="stat-block">
-                        <label>Wisdom</label>
+                        <label>WIS</label>
                         <span>16 + 2</span>
                     </div>
                     <div class="stat-block">
-                        <label>Charisma</label>
+                        <label>CHA</label>
                         <span>16 + 2</span>
                     </div>
                     <div class="stat-block">
-                        <label>Intelligence</label>
+                        <label>INT</label>
                         <span>16 + 2</span>
                     </div>
                 </div>
@@ -110,10 +185,17 @@
             </md-content>
         </div>
 
-        <div style="background:white" class="item2 md-whiteframe-4dp margin-right-20" layout="column">
-            <md-toolbar class="md-primary md-padding">
-                Weapons
+        <div style="background:white" class="item2 md-whiteframe-4dp margin-bottom-30" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 md-truncate>Weapons</h2>
+                    <span flex></span>
+                    <md-button class="md-raised md-accent">
+                        Save
+                    </md-button>
+                </div>
             </md-toolbar>
+
             <md-content class="md-padding">
 
                 <div class="grid-column-3 character-heading">
@@ -128,13 +210,21 @@
                     <span>{{weapon.damage | grabDice}} + 5 {{weapon.damage | grabDamage}}</span>
                 </div>
 
+                <md-button class="md-accent">Add Custom</md-button>
+
             </md-content>
         </div>
 
-        <div style="background:white" class="item3 md-whiteframe-4dp margin-right-20" flex="33" layout="column">
-            <md-toolbar class="md-primary md-padding">
-                Spells
+        <div style="background:white" class="item3 md-whiteframe-4dp margin-bottom-30" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 md-truncate>Spells</h2>
+                    <md-button class="md-raised md-accent">
+                        Save
+                    </md-button>
+                </div>
             </md-toolbar>
+
             <md-content class="md-padding">
 
                 <div class="grid-column-3 character-heading">
@@ -149,13 +239,23 @@
                     <md-button class="md-accent">Expand</md-button>
                 </div>
 
+                <md-button class="md-accent">Add Custom</md-button>
+
             </md-content>
         </div>
 
-        <div style="background:white" class="md-whiteframe-4dp margin-right-20" flex="33" layout="column">
-            <md-toolbar class="md-primary md-padding">
-                Features/Traits
+        <div style="background:white" class="md-whiteframe-4dp margin-right-30 margin-bottom-30" flex="33" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 md-truncate>Traits and Features</h2>
+                    <span flex></span>
+                    <md-button ng-click="showall = !showall" class="md-raised md-accent">
+                        {{showall | iif: 'Collapse All' : 'Expand All'}}
+                    </md-button>
+                </div>
             </md-toolbar>
+
+
             <md-content class="md-padding">
 
                 <h3>Racial Traits</h3>
@@ -163,8 +263,10 @@
                 <div class="small-90 grid-column-2-revised character-item align-middle" ng-repeat="trait in racialTraits">
                     <span style="font-weight:700">{{trait.name}}</span>
                     <md-button ng-click="trait.show = !trait.show" class="md-accent">{{trait.show | iif: '-' : '+'}}</md-button>
-                    <md-divider ng-if="trait.show" class="span-2 character-item-description"></md-divider>
-                    <div ng-if="trait.show" ng-bind-html="trait.description" class="span-2 character-item-description">
+
+                    <div ng-if="trait.show || showall" class="span-2 character-item-description">
+                        <md-divider></md-divider>
+                        <div ng-bind-html="trait.description"></div>
                     </div>
                 </div>
 
@@ -174,21 +276,44 @@
 
                 <div class="small-90 grid-column-3-revised character-item align-middle" ng-repeat="feature in classFeatures">
                     <span style="font-weight:700">{{feature.name}}</span>
-                    <span>{{feature.prereq | levelConvert}}</span>
+                    <span ng-repeat="prereq in feature.prereq">{{prereq}}</span>
                     <md-button ng-click="feature.show = !feature.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
-                    <md-divider ng-if="feature.show" class="span-3 character-item-description"></md-divider>
-                    <div ng-if="feature.show" ng-bind-html="feature.description" class="span-3 character-item-description">
+                    
+                    <div ng-if="feature.show || showall" class="span-2 character-item-description">
+                        <md-divider></md-divider>
+                        <div ng-bind-html="feature.description"></div>
                     </div>
-
                 </div>
+                
+                <md-divider></md-divider>
+
+                <h3>Feats</h3>
+
+                <div class="small-90 grid-column-2-revised character-item align-middle" ng-repeat="feat in currentCharacter.feats">
+                    <span style="font-weight:700">{{feat.name}}</span>
+                    <md-button ng-click="feat.show = !feat.show" class="md-accent">{{feat.show | iif: '-' : '+'}}</md-button>
+                    
+                    <div ng-if="feat.show || showall" class="span-2 character-item-description">
+                        <md-divider></md-divider>
+                        <div ng-bind-html="feat.description"></div>
+                    </div>
+                </div>
+
 
             </md-content>
         </div>
 
-        <div style="background:white" class="md-whiteframe-4dp margin-right-20" flex="33" layout="column">
-            <md-toolbar class="md-primary md-padding">
-                Armor &amp; Equipments
+        <div style="background:white" class="md-whiteframe-4dp margin-bottom-30" flex="33" layout="column">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 md-truncate>Armors and Equipment</h2>
+                    <span flex></span>
+                    <md-button class="md-raised md-accent">
+                        Save
+                    </md-button>
+                </div>
             </md-toolbar>
+
             <md-content class="md-padding">
                 <h3>Armors</h3>
 
@@ -201,6 +326,8 @@
                     <span>{{armor.name}}</span>
                     <span>{{armor.ac}}</span>
                 </div>
+
+                <md-button class="md-accent">Add Custom</md-button>
 
                 <md-divider></md-divider>
 
@@ -218,6 +345,9 @@
                     <div ng-if="equipment.show" ng-bind-html="equipment.description" class="span-2 character-item-description">
                     </div>
                 </div>
+
+                <md-button class="md-accent">Add Custom</md-button>
+
 
             </md-content>
         </div>

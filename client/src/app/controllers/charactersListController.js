@@ -26,7 +26,7 @@ angular.module('app').controller('charactersListController', function characters
             url: '/characters',
             data: {
                 name: $scope.name,
-                class: [{class_name: $scope.class}],
+                class: [{name: $scope.class}],
                 race: $scope.race,
                 background: $scope.background,
                 gold: $scope.gold
