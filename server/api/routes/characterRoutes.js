@@ -23,6 +23,6 @@ module.exports = function (app) {
         .post(characterController.add_feat);
     
     app.route('/characters/:characterId/gold/:newGold')
-        .put(characterController.update_character_gold);
+        .put(characterController.update_gold);
     
 };

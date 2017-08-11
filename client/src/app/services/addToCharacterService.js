@@ -6,7 +6,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
     //-------------------------
     var makePurchase = function (character, cost) {
         let newGold = character.gold - cost;
-        
+
         //return http PUT promise
         return $http({
             method: 'PUT',
@@ -36,7 +36,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 clickOutsideToClose: true,
             })
             .then(function (arg) {
-                    character = arg.character;
+                    character = arg.object;
                     option = arg.option;
 
                     addSpellToCharacter(spell, character);
@@ -44,6 +44,28 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 function () {
                     console.log("spell not added")
                 });
+    }
+    
+    this.showAddCustomSpell = function (character) {
+        this.character = character;
+
+        return new Promise(function (resolve, reject) {
+            $mdDialog.show({
+                    controller: 'addToCharacterController',
+                    templateUrl: 'templates/addCustomSpellTemplate.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                })
+                .then(function (arg) {
+                        spell = arg.object;
+
+                        addSpellToCharacter(spell, character);
+                        resolve(spell);
+                    },
+                    function () {
+                        reject(Error("custom spell not added"));
+                    });
+        });
     }
 
     //add feat
@@ -68,7 +90,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 clickOutsideToClose: true,
             })
             .then(function (arg) {
-                    character = arg.character;
+                    character = arg.object;
                     option = arg.option;
 
                     addFeatToCharacter(feat, character);
@@ -97,7 +119,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
         });
     }
 
-    this.showAddEquipment = function (equipment) {        
+    this.showAddEquipment = function (equipment) {
         $mdDialog.show({
                 controller: 'addToCharacterController',
                 templateUrl: 'templates/addEquipmentTemplate.html',
@@ -105,7 +127,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 clickOutsideToClose: true,
             })
             .then(function (arg) {
-                    character = arg.character;
+                    character = arg.object;
                     option = arg.option;
                     if (option == 'buy') {
                         makePurchase(character, Purchase.total_cost).then(
@@ -126,6 +148,28 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 });
     }
 
+    this.showAddCustomEquipment = function (character) {
+        this.character = character;
+
+        return new Promise(function (resolve, reject) {
+            $mdDialog.show({
+                    controller: 'addToCharacterController',
+                    templateUrl: 'templates/addCustomEquipmentTemplate.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                })
+                .then(function (arg) {
+                        equipment = arg.object;
+
+                        addEquipmentToCharacter(equipment, character, Purchase.amount);
+                        resolve(equipment);
+                    },
+                    function () {
+                        reject(Error("custom equipment not added"));
+                    });
+        });
+    }
+
     //add weapon
     //-------------------------
     function addWeaponToCharacter(weapon, character, amount) {
@@ -133,6 +177,9 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(weapon);
         }
+
+        console.log("PURCHASE ARRAY IS");
+        console.log(purchase_array);
 
         $http({
             method: 'POST',
@@ -153,7 +200,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 clickOutsideToClose: true,
             })
             .then(function (arg) {
-                    character = arg.character;
+                    character = arg.object;
                     option = arg.option;
 
                     if (option == 'buy') {
@@ -173,6 +220,28 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 function () {
                     console.log("weapon not added")
                 });
+    }
+
+    this.showAddCustomWeapon = function (character) {
+        this.character = character;
+
+        return new Promise(function (resolve, reject) {
+            $mdDialog.show({
+                    controller: 'addToCharacterController',
+                    templateUrl: 'templates/addCustomWeaponTemplate.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                })
+                .then(function (arg) {
+                        weapon = arg.object;
+
+                        addWeaponToCharacter(weapon, character, Purchase.amount);
+                        resolve(weapon);
+                    },
+                    function () {
+                        reject(Error("custom weapon not added"));
+                    });
+        });
     }
 
     //add armor
@@ -203,7 +272,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 clickOutsideToClose: true,
             })
             .then(function (arg) {
-                    character = arg.character;
+                    character = arg.object;
                     option = arg.option;
 
                     if (option == 'buy') {
@@ -222,6 +291,28 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                 function () {
                     console.log("armor not added")
                 });
+    }
+
+    this.showAddCustomArmor = function (character) {
+        this.character = character;
+
+        return new Promise(function (resolve, reject) {
+            $mdDialog.show({
+                    controller: 'addToCharacterController',
+                    templateUrl: 'templates/addCustomArmorTemplate.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                })
+                .then(function (arg) {
+                        armor = arg.object;
+
+                        addArmorToCharacter(armor, character, Purchase.amount);
+                        resolve(armor);
+                    },
+                    function () {
+                        reject(Error("custom armor not added"));
+                    });
+        });
     }
 
 

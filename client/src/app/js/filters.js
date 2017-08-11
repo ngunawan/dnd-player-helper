@@ -123,4 +123,86 @@ app.filter('levelConvert', function () {
 
         return capitalize(final_string);
     }
-})
+});
+
+//convert 1-4 -> 2 (+2)
+//-------------------------
+app.filter('abilityMod', function () {
+    return function (number) {
+        if (number <= 1) {
+            return -5;
+        } else if (number >= 2 && number <= 3) {
+            return -4
+        } else if (number >= 4 && number <= 5) {
+            return -3
+        } else if (number >= 6 && number <= 7) {
+            return -2
+        } else if (number >= 8 && number <= 9) {
+            return -1
+        } else if (number >= 10 && number <= 11) {
+            return 0
+        } else if (number >= 12 && number <= 13) {
+            return +1
+        } else if (number >= 14 && number <= 15) {
+            return +2
+        } else if (number >= 16 && number <= 17) {
+            return +3
+        } else if (number >= 18 && number <= 19) {
+            return +4
+        } else if (number >= 20 && number <= 21) {
+            return +5
+        } else if (number >= 22 && number <= 23) {
+            return +6
+        } else if (number >= 24 && number <= 25) {
+            return +7
+        } else if (number >= 26 && number <= 27) {
+            return +8
+        } else if (number >= 28 && number <= 29) {
+            return +9
+        } else if (number >= 30) {
+            return +10
+        }
+    }
+});
+
+app.filter('addSign', function () {
+    return function (number) {
+        if (Math.sign(number) == -1) {
+            return number + ''
+        } else if (Math.sign(number) == 1) {
+            return "+" + number
+        } else if (number == 0) {
+            return '0'
+        } else {
+            return 'not valid'
+        }
+    }
+});
+
+//sum array of classes and convert to proficiency bonus
+//-------------------------
+app.filter('profBonus', function () {
+    return function (array) {
+        let total_level = 0;
+
+        for (let i = 0; i < array.length; i++) {
+            total_level += array[i].level;
+        }
+
+        if (total_level >= 1 && total_level <= 4) {
+            return +2
+        } else if (total_level >= 5 && total_level <= 8) {
+            return +3
+        } else if (total_level >= 9 && total_level <= 12) {
+            return +4
+        } else if (total_level >= 13 && total_level <= 16) {
+            return +5
+        } else if (total_level >= 17 && total_level <= 20) {
+            return +6
+        } else if (total_level > 20) {
+            return +6
+        } else {
+            return 0
+        }
+    }
+});

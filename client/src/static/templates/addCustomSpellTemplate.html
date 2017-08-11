@@ -1,0 +1,62 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Add Custom Spell</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="./images/ic_close_white_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content class="md-dialog-content">
+            <h3>Set Spell Properties</h3>
+
+            <div class="warning-msg" ng-if="warning">{{warning}}</div>
+
+            <md-input-container class="one-input-block">
+                <label>Name</label>
+                <input ng-model="spellObject.name" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Level</label>
+                <input ng-model="spellObject.level" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>School</label>
+                <input ng-model="spellObject.school" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Casting Time</label>
+                <input ng-model="spellObject.casting_time" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Range</label>
+                <input ng-model="spellObject.range" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Component</label>
+                <input ng-model="spellObject.component" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Duration</label>
+                <input ng-model="spellObject.duration" type="text">
+            </md-input-container>
+             <md-input-container class="one-input-block">
+                <label>Description</label>
+                <input ng-model="spellObject.description" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Class</label>
+                <input ng-model="spellObject.class" type="text">
+            </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="add(spellObject, option)">
+                Add Custom Spell
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

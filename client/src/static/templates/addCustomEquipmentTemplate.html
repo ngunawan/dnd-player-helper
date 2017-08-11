@@ -1,0 +1,46 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Add Custom Equipment</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="./images/ic_close_white_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content class="md-dialog-content">
+            <h3>Set Equipment Properties</h3>
+
+            <div class="warning-msg" ng-if="warning">{{warning}}</div>
+
+            <md-input-container class="one-input-block">
+                <label>Amount</label>
+                <input ng-model="Purchase.amount" type="number" step='1'>
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Name</label>
+                <input ng-model="equipmentObject.name" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Cost</label>
+                <input ng-model="equipmentObject.cost" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Weight</label>
+                <input ng-model="equipmentObject.weight" type="text">
+            </md-input-container>
+            <md-input-container class="one-input-block">
+                <label>Description</label>
+                <input ng-model="equipmentObject.description" type="text">
+            </md-input-container>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="add(equipmentObject, option)">
+                Add Custom Equipment
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,6 +1,6 @@
 angular.module('app').controller('addToCharacterController', function addToCharacterController($scope, $mdDialog, $http, Purchase) {
 
-    $scope.option = 'buy';
+    $scope.option = "";
     $scope.Purchase = Purchase;
     $scope.warning = "";
 
@@ -26,11 +26,13 @@ angular.module('app').controller('addToCharacterController', function addToChara
     $scope.cancel = function () {
         $mdDialog.cancel();
     };
-    $scope.add = function (character, option) {
+    $scope.add = function (object, option) {
+        console.log("OBJECT IS");
+        console.log(object);
         if (option == 'buy') {
             if (character.gold >= Purchase.total_cost) {
                 $mdDialog.hide({
-                    character: character,
+                    object: object,
                     option: option
                 })
             } else {
@@ -38,7 +40,7 @@ angular.module('app').controller('addToCharacterController', function addToChara
             }
         } else {
             $mdDialog.hide({
-                character: character,
+                object: object,
                 option: option
             })
         }

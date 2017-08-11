@@ -118,7 +118,7 @@ exports.add_feat = function (req, res) {
 };
 
 //update gold
-exports.update_character_gold = function (req, res) {
+exports.update_gold = function (req, res) {
      let query = {
         _id: req.params.characterId
     };
