@@ -30,6 +30,19 @@ angular.module('app').controller('characterController', function characterContro
     }, function errorCallback(response) {
         console.log(response);
     });
+    
+    
+    //get all backgrounds
+    //-------------------------
+    $http({
+        method: 'GET',
+        url: '/backgrounds'
+    }).then(function successCallback(response) {
+        console.log(response);
+        $scope.backgroundsList = response.data;
+    }, function errorCallback(response) {
+        console.log(response);
+    });
 
 
     //get current character
@@ -48,7 +61,7 @@ angular.module('app').controller('characterController', function characterContro
     });
 
 
-    //get current character
+    //save character
     //-------------------------
     $scope.save = function () {        
         $http({

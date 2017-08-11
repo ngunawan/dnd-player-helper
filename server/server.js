@@ -34,7 +34,8 @@ const Spell = require('./api/models/spellModel'),
     Character = require('./api/models/characterModel'),
     Feat = require('./api/models/featModel'),
     Race = require('./api/models/raceModel'),
-    Class = require('./api/models/classModel');
+    Class = require('./api/models/classModel'),
+    Background = require('./api/models/backgroundModel');
 
 
 //add datas from json
@@ -50,7 +51,9 @@ const addSpells = require('./api/scripts/addSpells'),
     addTools = require('./api/scripts/addTools'),
     addFeats = require('./api/scripts/addFeats'),
     addRaces = require('./api/scripts/addRaces'),
-    addClasses = require('./api/scripts/addClasses');
+    addClasses = require('./api/scripts/addClasses'),
+    addBackgrounds = require('./api/scripts/addBackgrounds');
+
 
 addSpells();
 addPacks();
@@ -63,6 +66,7 @@ addTools();
 addFeats();
 addClasses();
 addRaces();
+addBackgrounds();
 
 
 //initiate routes
@@ -79,7 +83,8 @@ const spellRoutes = require('./api/routes/spellRoutes'),
     characterRoutes = require('./api/routes/characterRoutes'),
     featRoutes = require('./api/routes/featRoutes'),
     raceRoutes = require('./api/routes/raceRoutes'),
-    classRoutes = require('./api/routes/classRoutes');
+    classRoutes = require('./api/routes/classRoutes'),
+    backgroundRoutes = require('./api/routes/backgroundRoutes');      
 
 spellRoutes(app);
 packRoutes(app);
@@ -94,6 +99,7 @@ characterRoutes(app);
 featRoutes(app);
 raceRoutes(app);
 classRoutes(app);
+backgroundRoutes(app);
 
 
 //default route

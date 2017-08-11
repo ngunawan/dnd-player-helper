@@ -48,9 +48,11 @@
                     </md-select>
                 </md-input-container>
                 <label class="small-80">Background</label>
-                <md-input-container class="md-block">
-                    <input ng-value="currentCharacter.background" type="text">
-                </md-input-container>
+                <md-select ng-model="currentCharacter.background">
+                    <md-option ng-repeat="backgroundType in backgroundsList" ng-value="backgroundType.name">
+                        {{backgroundType.name}}
+                    </md-option>
+                </md-select>
 
                 <label class="small-80">Gold</label>
                 <md-input-container class="md-block">
