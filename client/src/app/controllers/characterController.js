@@ -4,6 +4,7 @@ angular.module('app').controller('characterController', function characterContro
     $scope.classFeatures = [];
     $scope.racialTraits = [];
     $scope.proficiency_bonus = 0;
+    $scope.query = {};
 
 
     //get all classes
@@ -70,6 +71,8 @@ angular.module('app').controller('characterController', function characterContro
             data: $scope.currentCharacter
         }).then(function successCallback(response) {
             console.log(response);
+            $scope.cumulateFeatures();
+            $scope.cumulateTraits();
 
         }, function errorCallback(response) {
             console.log(response);

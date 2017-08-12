@@ -98,6 +98,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "character.html",
             controller: "characterController"
         })
+        .when("/create-character", {
+            templateUrl: "createCharacter.html",
+            controller: "createCharacterController"
+        })
         .when("/compendium/races/:raceName*", {
             templateUrl: function (urlattr) {
                 return "compendium/races/" + urlattr.raceName + ".html";

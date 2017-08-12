@@ -19,8 +19,10 @@ angular.module('app').controller('charactersListController', function characters
         console.log(response);
     });
 
-    $scope.redirectTo = function (characterId) {
-        $location.url('/character/' + characterId);
+    //redirect page to 
+    //-------------------------
+    $scope.redirectTo = function (extension) {
+        $location.url('/' + extension);
     }
 
     //create a new character

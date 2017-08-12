@@ -1,165 +1,41 @@
-<div layout-padding>
-
-    <!-- create character  -->
-    <h2>Create Character</h2>
-
-    <div layout="row">
-        <md-input-container>
-            <label>Name</label>
-            <input ng-model="name">
-        </md-input-container>
-
-        <md-input-container>
-            <label>Race</label>
-            <md-select ng-model="race">
-                <md-option value="Dragonborn">
-                    Dragonborn
-                </md-option>
-                <md-option value="Dwarf">
-                    Dwarf
-                </md-option>
-                <md-option value="Elf">
-                    Elf
-                </md-option>
-                <md-option value="Gnome">
-                    Gnome
-                </md-option>
-                <md-option value="Human">
-                    Human
-                </md-option>
-                <md-option value="Half-Elf">
-                    Half-Elf
-                </md-option>
-                <md-option value="Half-Orc">
-                    Half-Orc
-                </md-option>
-                <md-option value="Halfling">
-                    Halfling
-                </md-option>
-                <md-option value="Tiefling">
-                    Tiefling
-                </md-option>
-            </md-select>
-        </md-input-container>
-
-        <md-input-container>
-            <label>Class</label>
-            <md-select ng-model="class">
-                <md-option value="Barbarian">
-                    Barbarian
-                </md-option>
-                <md-option value="Bard">
-                    Bard
-                </md-option>
-                <md-option value="Cleric">
-                    Cleric
-                </md-option>
-                <md-option value="Druid">
-                    Druid
-                </md-option>
-                <md-option value="Fighter">
-                    Fighter
-                </md-option>
-                <md-option value="Monk">
-                    Monk
-                </md-option>
-                <md-option value="Paladin">
-                    Paladin
-                </md-option>
-                <md-option value="Ranger">
-                    Ranger
-                </md-option>
-                <md-option value="Rogue">
-                    Rogue
-                </md-option>
-                <md-option value="Sorcerer">
-                    Sorcerer
-                </md-option>
-                <md-option value="Warlock">
-                    Warlock
-                </md-option>
-                <md-option value="Wizard">
-                    Wizard
-                </md-option>
-            </md-select>
-        </md-input-container>
-
-        <md-input-container>
-            <label>Background</label>
-            <md-select ng-model="background">
-                <md-option value="Acolyte">
-                    Acolyte
-                </md-option>
-                <md-option value="Charlatan">
-                    Charlatan
-                </md-option>
-                <md-option value="Criminal">
-                    Criminal
-                </md-option>
-                <md-option value="Spy">
-                    Criminal: Spy
-                </md-option>
-                <md-option value="entertainor">
-                    Entertainer
-                </md-option>
-                <md-option value="gladiator">
-                    Entertainer: Gladiator
-                </md-option>
-                <md-option value="folk-hero">
-                    Folk Hero
-                </md-option>
-                <md-option value="guild-artisan">
-                    Guild Artisan
-                </md-option>
-                <md-option value="guild-merchant">
-                    Guild Artisan: Guild Merchant
-                </md-option>
-                <md-option value="hermit">
-                    Hermit
-                </md-option>
-                <md-option value="noble">
-                    Noble
-                </md-option>
-                <md-option value="knight">
-                    Noble: Knight
-                </md-option>
-                <md-option value="sage">
-                    Sage
-                </md-option>
-                <md-option value="sailor">
-                    Sailor
-                </md-option>
-                <md-option value="pirate">
-                    Sailor: Pirate
-                </md-option>
-                <md-option value="soldier">
-                    Soldier
-                </md-option>
-                <md-option value="urchin">
-                    Urchin
-                </md-option>
-            </md-select>
-        </md-input-container>
-
-        <md-input-container>
-            <label>Gold</label>
-            <input ng-model="gold">
-        </md-input-container>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2 md-truncate>Character List</h2>
+        <span flex></span>
+        <md-button ng-click="unNav();redirectTo('create-character')"class="md-raised md-accent">
+            Create New
+        </md-button>
     </div>
+</md-toolbar>
 
-    <md-button ng-click="createCharacter()" class="md-raised md-primary">Create</md-button>
+<div layout-padding>
+    <!--
+    <md-input-container>
+        <label>Search By Name</label>
+        <input ng-model="query['name']">
+    </md-input-container>
+-->
 
+    <md-card class="transparent">
+        <md-card-content class="grid-column-4 strong-700">
+            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span ng-click="sortVal = 'race'; sortDir = !sortDir">Race</span>
+            <span ng-click="sortVal = 'class'; sortDir = !sortDir">Class</span>
+            <span></span>
+        </md-card-content>
+    </md-card>
 
+    <md-card ng-click="unNav();redirectTo('character/' + character._id)" ng-repeat="character in charactersList | filter: query | orderBy: sortVal: sortDir">
+        <md-card-content class="grid-column-4">
+            <span>{{character.name}}</span>
+            <div>
+                <span>{{character.race}}</span>
+            </div>
+            <div>
+                <span ng-repeat="class in character.class">{{class.name}} {{class.level}}</span>
+            </div>
 
-    <md-divider></md-divider>
-
-
-    <!-- character list  -->
-    <md-card ng-repeat="character in charactersList">
-        <md-card-content layout="row" layout-align="space-between">
-            <span flex="80">{{character.name}}</span>
-            <md-button flex="10" ng-click="unNav();redirectTo(character._id); $event.stopPropagation()" class="md-primary">Show Info</md-button>
-            <md-button flex="10" ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn md-raised">Remove</md-button>
+            <md-button ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn">Remove</md-button>
         </md-card-content>
     </md-card>
 
