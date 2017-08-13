@@ -2,7 +2,7 @@
     <div class="md-toolbar-tools">
         <h2 md-truncate>{{currentCharacter.name}}</h2>
         <span flex></span>
-        <md-button ng-click="cumulateFeatures()" class="md-raised md-accent">
+        <md-button ng-click="save();cumulateFeatures();cumulateTraits()" class="md-raised md-accent">
             Save &amp; Update
         </md-button>
     </div>
@@ -37,7 +37,7 @@
                 <div class="md-toolbar-tools">
                     <h2 md-truncate>Basic Info</h2>
                     <span flex></span>
-<!--
+                    <!--
                     <md-button ng-click="cumulateTraits()" class="md-raised md-accent">
                         Update Traits
                     </md-button>
@@ -76,7 +76,7 @@
                 <div class="md-toolbar-tools">
                     <h2 md-truncate>Class</h2>
                     <span flex></span>
-<!--
+                    <!--
                     <md-button ng-click="cumulateFeatures()" class="md-raised md-accent">
                         Update Features
                     </md-button>
@@ -259,6 +259,9 @@
                 </div>
 
                 <md-divider></md-divider>
+
+                <h3 class="small-80">Saving Throws</h3>
+
 
                 <div class="stat-block-list flex-row-wrap">
                     <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.str}" ng-click="currentCharacter.stats.saving_throws.str = !currentCharacter.stats.saving_throws.str">
@@ -463,7 +466,7 @@
             </md-content>
         </div>
     </div>
-<!--
+    <!--
 
     <md-button ng-click="save()" style="width:100%;" class="margin-top-30 margin-bottom-30 md-accent md-raised">Save</md-button>
 -->

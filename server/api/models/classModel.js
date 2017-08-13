@@ -5,7 +5,13 @@ const Schema = mongoose.Schema;
 const ClassSchema = new Schema({
     name: String,
     hit_points: String,
-    proficiencies: String,
+    proficiencies: {
+        armor: String,
+        weapons: String,
+        tools: String,
+        saving_throws: String,
+        skills: String
+    },
     equipments: String,
     features: [{
         name: String,

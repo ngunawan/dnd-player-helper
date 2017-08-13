@@ -12,7 +12,7 @@ exports.scrape = function (url) {
     let classObject = {
         "name": "",
         "hit_points": "",
-        "proficiencies": "",
+        "proficiencies": {},
         "equipments": "",
         "features": [],
         "archetypes": []
@@ -35,7 +35,7 @@ exports.scrape = function (url) {
             let class_baseline = this_class.children('#class-features').children('#baseline');
 
             let hit_points = class_baseline.children('#hit-points').children('p').first().text();
-            if(hit_points.match(/[0-9]+d[0-9]+/)) {
+            if (hit_points.match(/[0-9]+d[0-9]+/)) {
                 hit_points = hit_points.match(/[0-9]+d[0-9]+/)[0];
             } else {
                 //default
@@ -43,8 +43,34 @@ exports.scrape = function (url) {
             };
             classObject.hit_points = hit_points;
 
-            let proficiencies = class_baseline.children('#proficiencies').children('p');
-            proficiencies = eval('`' + proficiencies + '`');
+            let proficiencies = {
+                "armor": "",
+                "weapons": "",
+                "tools": "",
+                "saving_throws": "",
+                "skills": ""
+            }
+            class_baseline.children('#proficiencies').children('p').each(function () {
+                let split_text = $(this).text().split(':');
+                switch (split_text[0]) {
+
+                    case "Armor":
+                        proficiencies["armor"] = split_text[1].trim();
+                        break;
+                    case "Weapons":
+                        proficiencies["weapons"] = split_text[1].trim();
+                        break;
+                    case "Tools":
+                        proficiencies["tools"] = split_text[1].trim();
+                        break;
+                    case "Saving Throws":
+                        proficiencies["saving_throws"] = split_text[1].trim();
+                        break;
+                    case "Skills":
+                        proficiencies["skills"] = split_text[1].trim();
+                        break;
+                }
+            });
             classObject.proficiencies = proficiencies;
 
             let equipments = class_baseline.children('#equipment').children('ul.simple');

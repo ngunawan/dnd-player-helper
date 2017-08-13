@@ -27,6 +27,8 @@ require('./directives/contentEditable.js');
 require('./services/Note.js');
 require('./services/addToCharacterService.js');
 require('./services/Purchase.js');
+require('./services/characterService.js');
+
 
 //controllers
 //-------------------------
@@ -50,6 +52,8 @@ require('./controllers/notesController.js');
 require('./controllers/noteEditorController.js');
 
 require('./controllers/addToCharacterController.js');
+require('./controllers/createCharacterController.js');
+
 
 
 //components

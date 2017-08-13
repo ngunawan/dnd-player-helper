@@ -183,8 +183,11 @@ app.filter('addSign', function () {
 //-------------------------
 app.filter('profBonus', function () {
     return function (array) {
+        if(array == NaN || array == undefined) {
+            return 0;
+        }
+        
         let total_level = 0;
-
         for (let i = 0; i < array.length; i++) {
             total_level += array[i].level;
         }

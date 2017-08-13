@@ -9,7 +9,7 @@ const RaceSchema = new Schema({
     alignment: String,
     size: String,
     speed: String,
-    languages: String,
+    languages: [String],
     traits: [{
         name: String,
         description: String

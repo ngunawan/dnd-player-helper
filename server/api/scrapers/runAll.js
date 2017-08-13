@@ -24,15 +24,15 @@ classScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/classes/sorcerer
 classScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/classes/warlock.html#warlock');
 classScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/classes/wizard.html#wizard');
 
-var raceScraper = require('./raceScraper.js');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/dragonborn.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/dwarf.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/elf.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halfling.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/human.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/gnome.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halfelf.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halforc.html');
-raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/tiefling.html');
+//var raceScraper = require('./raceScraper.js');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/dragonborn.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/dwarf.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/elf.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halfling.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/human.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/gnome.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halfelf.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/halforc.html');
+//raceScraper.scrape('http://blog.onslow-web.co.uk/5e/characters/races/tiefling.html');
 
 
