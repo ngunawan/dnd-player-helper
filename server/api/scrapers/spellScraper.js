@@ -25,6 +25,15 @@ function cut_level(string) {
     return string.substring(0, string.indexOf("level") - 1);
 }
 
+//function: get first number in string
+function get_number(string) {
+    if (string.match(/\d/)) {
+        return string.match(/\d/)[0];
+    } else {
+        return null
+    }
+}
+
 //function: replace double spaces with space
 function replace_dupe_spaces(string) {
     return string.replace("  ", " ");
@@ -32,27 +41,19 @@ function replace_dupe_spaces(string) {
 
 //function: separate string return object with school and level properties
 function splice_school_level(string) {
-    
+
     string = replace_dupe_spaces(string);
     let stringArray = string.split(" ");
 
     if (stringArray[1] == "cantrip") { //if cantrip order is reversed
-        
-        stringArray[0] = capitalize(stringArray[0]);
-        stringArray[1] = capitalize(stringArray[1]);
-        
         return {
-            school: stringArray[0],
-            level: stringArray[1]
+            school: capitalize(stringArray[0]),
+            level: 0
         }
     } else {
-        
-        stringArray[0] = cut_level(stringArray[0]);
-        stringArray[1] = capitalize(stringArray[1]);
-
         return {
-            school: stringArray[1],
-            level: stringArray[0]
+            school: capitalize(stringArray[1]),
+            level: parseInt(get_number(stringArray[0]))
         }
     }
 }
@@ -86,17 +87,17 @@ request(url, (error, response, html) => {
         $('div.section').not('#spell-descriptions').each(function () {
 
             let data = $(this);
-            
+
             let object = {
-                    name: "",
-                    school: "",
-                    level: "",
-                    casting_time: "",
-                    range: "",
-                    component: "",
-                    duration: "",
-                    description: "",
-                };
+                name: "",
+                school: "",
+                level: "",
+                casting_time: "",
+                range: "",
+                component: "",
+                duration: "",
+                description: "",
+            };
 
             //name
             let name = data.children('h2').text();

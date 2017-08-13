@@ -380,7 +380,7 @@
 
                 <div class="small-90 grid-column-3-revised character-item align-middle" ng-repeat="feature in classFeatures">
                     <span style="font-weight:700">{{feature.name}}</span>
-                    <span ng-repeat="prereq in feature.prereq">{{prereq}}</span>
+                    <span>{{feature.prereq}}</span>
                     <md-button ng-click="feature.show = !feature.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
 
                     <div ng-if="feature.show || showAll" class="span-3 character-item-description">

@@ -125,6 +125,25 @@ app.filter('levelConvert', function () {
     }
 });
 
+//convert 1 -> 1st, 0 -> Cantrip
+//-------------------------
+app.filter('spellLevel', function () {
+    return function (number) {
+        switch (number) {
+            case 0:
+                return "Cantrip";
+            case 1:
+                return "1st";
+            case 2:
+                return "2nd";
+            case 3:
+                return "3rd";
+            default:
+                return number + "th";
+        }
+    }
+})
+
 //convert 1-4 -> 2 (+2)
 //-------------------------
 app.filter('abilityMod', function () {
@@ -183,10 +202,10 @@ app.filter('addSign', function () {
 //-------------------------
 app.filter('profBonus', function () {
     return function (array) {
-        if(array == NaN || array == undefined) {
+        if (array == NaN || array == undefined) {
             return 0;
         }
-        
+
         let total_level = 0;
         for (let i = 0; i < array.length; i++) {
             total_level += array[i].level;

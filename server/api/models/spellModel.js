@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const SpellSchema = new Schema({
     name: String,
-    level: String,
+    level: Number,
     school: String,
     casting_time: String,
     range: String,

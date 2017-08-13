@@ -2,6 +2,16 @@ const fs = require('fs'),
     request = require('request'),
     cheerio = require('cheerio');
 
+//function: get first number in string
+function get_first_number(string) {
+    if (string.match(/\d+/)) {
+        return string.match(/\d+/)[0];
+    } else {
+        return null
+    }
+}
+
+
 exports.scrape = function (url) {
 
     //let url = "http://blog.onslow-web.co.uk/5e/characters/classes/wizard.html#wizard",
@@ -95,12 +105,17 @@ exports.scrape = function (url) {
                 feature_desc = eval('`' + feature_desc + '`');
                 featureObject.description = feature_desc;
 
+                //1st level
                 let feature_prereq = feature_desc.match(/\d+(?:st|th|rd|nd)\slevel/);
+                //1st
+                //                let feature_prereq = feature_desc.match(/\d+(?:st|th|rd|nd)/);
+                //                let feature_prereq = feature_desc.match(/\d+/);
+
                 if (feature_prereq) {
-                    featureObject.prereq = feature_prereq;
+                    featureObject.prereq = get_first_number(feature_prereq[0]);
                 } else {
                     //default
-                    featureObject.prereq = ['1st level'];
+                    featureObject.prereq = "1";
                 }
 
                 classObject.features.push(featureObject);
@@ -138,12 +153,12 @@ exports.scrape = function (url) {
                     feature_desc = eval('`' + feature_desc + '`');
                     featureObject.description = feature_desc;
 
-                    let feature_prereq = feature_desc.match(/\d+(?:st|th|rd|nd)\slevel/);
+                    let feature_prereq = feature_desc.match(/\d/);
                     if (feature_prereq) {
-                        featureObject.prereq = feature_prereq;
+                        featureObject.prereq = feature_prereq[0];
                     } else {
                         //default
-                        featureObject.prereq = ['1st level'];
+                        featureObject.prereq = 1;
                     }
 
                     archetypeObject.features.push(featureObject);

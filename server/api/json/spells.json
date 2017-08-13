@@ -2,7 +2,7 @@
     {
         "name": "Acid Splash",
         "school": "Conjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -16,7 +16,7 @@
     {
         "name": "Aid",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a tiny strip of white cloth)",
@@ -30,7 +30,7 @@
     {
         "name": "Alarm",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S, M (a tiny bell and a piece of fine silver wire)",
@@ -44,7 +44,7 @@
     {
         "name": "Alter Self",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -58,7 +58,7 @@
     {
         "name": "Animal Friendship",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a morsel of food)",
@@ -73,7 +73,7 @@
     {
         "name": "Animal Messenger",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a morsel of food)",
@@ -88,7 +88,7 @@
     {
         "name": "Animal Shapes",
         "school": "Transmutation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -101,7 +101,7 @@
     {
         "name": "Animate Dead",
         "school": "Necromancy",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 minute",
         "range": "10 feet",
         "component": "V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)",
@@ -115,7 +115,7 @@
     {
         "name": "Animate Objects",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -130,7 +130,7 @@
     {
         "name": "Antilife Shell",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self (10—foot radius)",
         "component": "V, S",
@@ -143,7 +143,7 @@
     {
         "name": "Antimagic Field",
         "school": "Abjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "Self (10—foot—radius sphere)",
         "component": "V, S, M (a pinch of powdered iron or iron filings)",
@@ -157,7 +157,7 @@
     {
         "name": "Antipathy/Sympathy",
         "school": "Enchantment",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 hour",
         "range": "60 feet",
         "component": "V, S, M (either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect)",
@@ -171,7 +171,7 @@
     {
         "name": "Arcane Eye",
         "school": "Divination",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a bit of bat fur)",
@@ -184,7 +184,7 @@
     {
         "name": "Arcane Gate",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "500 feet",
         "component": "V, S",
@@ -199,7 +199,7 @@
     {
         "name": "Arcane Lock",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (gold dust worth at least 25 gp, which the spell consumes)",
@@ -212,7 +212,7 @@
     {
         "name": "Armor of Agathys",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a cup of water)",
@@ -225,7 +225,7 @@
     {
         "name": "Arms of Hadar",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self (10—foot radius)",
         "component": "V, S",
@@ -238,7 +238,7 @@
     {
         "name": "Astral Projection",
         "school": "Necromancy",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 hour",
         "range": "10 feet",
         "component": "V, S, M (for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes)",
@@ -252,7 +252,7 @@
     {
         "name": "Augury",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V, S, M (specially marked sticks, bones, or similar tokens worth at least 25 gp)",
@@ -265,7 +265,7 @@
     {
         "name": "Aura of Life",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Self (30—foot radius)",
         "component": "V",
@@ -278,7 +278,7 @@
     {
         "name": "Aura of Purity",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Self (30-foot radius)",
         "component": "V",
@@ -291,7 +291,7 @@
     {
         "name": "Aura of Vitality",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (30-foot radius)",
         "component": "V",
@@ -304,7 +304,7 @@
     {
         "name": "Awaken",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "8 hours",
         "range": "Touch",
         "component": "V, S, M (an agate worth at least 1,000 gp. which the spell consumes)",
@@ -318,7 +318,7 @@
     {
         "name": "Bane",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a drop of blood)",
@@ -332,7 +332,7 @@
     {
         "name": "Banishing Smite",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -345,7 +345,7 @@
     {
         "name": "Banishment",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (an item distasteful t0 the target)",
@@ -362,7 +362,7 @@
     {
         "name": "Barkskin",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a handful of oak bark)",
@@ -376,7 +376,7 @@
     {
         "name": "Beacon of Hope",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -389,7 +389,7 @@
     {
         "name": "Beast Sense",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "S",
@@ -403,7 +403,7 @@
     {
         "name": "Bestow Curse",
         "school": "Necromancy",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -418,7 +418,7 @@
     {
         "name": "Bigby’s Hand",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (an eggshell and a snakeskin glove)",
@@ -429,7 +429,7 @@
     {
         "name": "Blade Barrier",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S",
@@ -442,7 +442,7 @@
     {
         "name": "Blade Ward",
         "school": "Abjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -458,7 +458,7 @@
     {
         "name": "Bless",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a sprinkling of holy water)",
@@ -472,7 +472,7 @@
     {
         "name": "Blight",
         "school": "Necromancy",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -488,7 +488,7 @@
     {
         "name": "Blinding Smite",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -501,7 +501,7 @@
     {
         "name": "Blindness/Deafness",
         "school": "Necromancy",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V",
@@ -517,7 +517,7 @@
     {
         "name": "Blink",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -531,7 +531,7 @@
     {
         "name": "Blur",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V",
@@ -545,7 +545,7 @@
     {
         "name": "Branding Smite",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -558,7 +558,7 @@
     {
         "name": "Burning Hands",
         "school": "Evocation*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self (15—foot cone)",
         "component": "V, S",
@@ -572,7 +572,7 @@
     {
         "name": "Call Lightning",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -585,7 +585,7 @@
     {
         "name": "Calm Emotions",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -599,7 +599,7 @@
     {
         "name": "Chain Lightning",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins)",
@@ -613,7 +613,7 @@
     {
         "name": "Charm Person",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -630,7 +630,7 @@
     {
         "name": "Chill Touch",
         "school": "Necromancy",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -645,7 +645,7 @@
     {
         "name": "Chromatic Orb",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (a diamond worth at least 50 gp)",
@@ -659,7 +659,7 @@
     {
         "name": "Circle of Death",
         "school": "Necromancy",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (the powder of a crushed black pearl worth at least 500 gp)",
@@ -674,7 +674,7 @@
     {
         "name": "Circle of Power",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self (30-foot radius)",
         "component": "V",
@@ -687,7 +687,7 @@
     {
         "name": "Clairvoyance",
         "school": "Divination",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "10 minutes",
         "range": "1 mile",
         "component": "V, S, M (a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing)",
@@ -702,7 +702,7 @@
     {
         "name": "Clone",
         "school": "Necromancy",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud—filled cyst in the ground, or crystal container filled with salt water)",
@@ -715,7 +715,7 @@
     {
         "name": "Cloud of Daggers",
         "school": "Conjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a sliver of glass)",
@@ -731,7 +731,7 @@
     {
         "name": "Cloudkill",
         "school": "Conjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -745,7 +745,7 @@
     {
         "name": "Color Spray",
         "school": "Illusion",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self (15—foot cone)",
         "component": "V, S, M (a pinch of powder or sand that is colored red, yellow, and blue)",
@@ -759,7 +759,7 @@
     {
         "name": "Command",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -773,7 +773,7 @@
     {
         "name": "Commune",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V, S, M (incense and a vial of holy or unholy water)",
@@ -786,7 +786,7 @@
     {
         "name": "Commune With Nature",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V. S",
@@ -800,7 +800,7 @@
     {
         "name": "Compelled Duel",
         "school": "Enchantment*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "30 feet",
         "component": "V",
@@ -813,7 +813,7 @@
     {
         "name": "Comprehend Languages",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a pinch of soot and salt)",
@@ -829,7 +829,7 @@
     {
         "name": "Compulsion",
         "school": "Enchantment",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -842,7 +842,7 @@
     {
         "name": "Cone of Cold",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self (60-foot cone)",
         "component": "V, S, M (a small crystal or glass cone)",
@@ -856,7 +856,7 @@
     {
         "name": "Confusion",
         "school": "Enchantment",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (three nut shells)",
@@ -872,7 +872,7 @@
     {
         "name": "Conjure Animals",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -886,7 +886,7 @@
     {
         "name": "Conjure Barrage",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (60—foot cone)",
         "component": "V, S, M (one piece of ammunition or a thrown weapon)",
@@ -899,7 +899,7 @@
     {
         "name": "Conjure Celestial",
         "school": "Conjuration",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 minute",
         "range": "90 feet",
         "component": "V, S",
@@ -912,7 +912,7 @@
     {
         "name": "Conjure Elemental",
         "school": "Conjuration",
-        "level": "Sth",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "90 feet",
         "component": "V, S, M (burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water)",
@@ -926,7 +926,7 @@
     {
         "name": "Conjure Fey",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "90 feet",
         "component": "V. S",
@@ -940,7 +940,7 @@
     {
         "name": "Conjure Minor Elementals",
         "school": "Coniuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 minute",
         "range": "90 feet",
         "component": "V. S",
@@ -953,7 +953,7 @@
     {
         "name": "Conjure Volley",
         "school": "Conjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V. S. M (one piece of ammunition or one thrown weapon)",
@@ -966,7 +966,7 @@
     {
         "name": "Conjure Woodland Beings",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V. S, M (one holly berry per creature summoned)",
@@ -980,7 +980,7 @@
     {
         "name": "Contact Other Plane",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V",
@@ -994,7 +994,7 @@
     {
         "name": "Contagion",
         "school": "Necromancy",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -1008,7 +1008,7 @@
     {
         "name": "Contingency",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "10 minutes",
         "range": "Self",
         "component": "V, S. M (a statuette of yourself carved from ivory and decorated with gems worth at least 1500 gp)",
@@ -1019,7 +1019,7 @@
     {
         "name": "Continual Flame",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V. S. M (ruby dust worth 50 gp. which the spell consumes)",
@@ -1033,7 +1033,7 @@
     {
         "name": "Control Water",
         "school": "Transmutation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "300 feet",
         "component": "V. S. M (a drop of water and a pinch of dust)",
@@ -1048,7 +1048,7 @@
     {
         "name": "Control Weather",
         "school": "Transmutation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "10 minutes",
         "range": "Self (5—mile radius)",
         "component": "V, S, M (burning incense and bits of eart and wood mixed in water)",
@@ -1062,7 +1062,7 @@
     {
         "name": "Cordon of Arrows",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "5 feet",
         "component": "V, S, M (four or more arrows or bolts)",
@@ -1075,7 +1075,7 @@
     {
         "name": "Counterspell",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 reaction, which you take when you see a creature within 60 feet of you casting a spell",
         "range": "60 feet",
         "component": "S",
@@ -1090,7 +1090,7 @@
     {
         "name": "Create Food and Water",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -1104,7 +1104,7 @@
     {
         "name": "Create or Destroy Water",
         "school": "Transmutation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a drop of water if creating water or a few grains of sand if destroying it)",
@@ -1118,7 +1118,7 @@
     {
         "name": "Create Undead",
         "school": "Necromancy",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "10 feet",
         "component": "V, S, M (one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 - black onyx stone for each corpse)",
@@ -1133,7 +1133,7 @@
     {
         "name": "Creation",
         "school": "Illusion",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S, M (a tiny piece of matter of the same type of the item you plan to create)",
@@ -1146,7 +1146,7 @@
     {
         "name": "Crown of Madness",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -1162,7 +1162,7 @@
     {
         "name": "CRUSADER’S MANTLE",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V",
@@ -1175,7 +1175,7 @@
     {
         "name": "Cure Wounds",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -1192,7 +1192,7 @@
     {
         "name": "Dancing Lights",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a bit of phosphorus or wychwood. or a glowworm)",
@@ -1207,7 +1207,7 @@
     {
         "name": "Darkness",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, M (bat fur and a drop of pitch or piece of coal)",
@@ -1222,7 +1222,7 @@
     {
         "name": "Darkvision",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (either a pinch of dried carrot or an agate)",
@@ -1238,7 +1238,7 @@
     {
         "name": "Daylight",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1255,7 +1255,7 @@
     {
         "name": "Death Ward",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -1269,7 +1269,7 @@
     {
         "name": "Delayed Blast Fireball",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (a tiny ball of bat guano and sulfur)",
@@ -1283,7 +1283,7 @@
     {
         "name": "Demiplane",
         "school": "Conjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "S",
@@ -1297,7 +1297,7 @@
     {
         "name": "Destructive Wave",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self (30-foot radius)",
         "component": "V",
@@ -1310,7 +1310,7 @@
     {
         "name": "Detect Evil and Good",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -1324,7 +1324,7 @@
     {
         "name": "Detect Magic",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -1343,7 +1343,7 @@
     {
         "name": "Detect Poison and Disease",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a yew leaf)",
@@ -1359,7 +1359,7 @@
     {
         "name": "Detect Thoughts",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a copper piece)",
@@ -1374,7 +1374,7 @@
     {
         "name": "Dimension Door",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "500 feet",
         "component": "V",
@@ -1390,7 +1390,7 @@
     {
         "name": "Disguise Self",
         "school": "Illusion",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -1405,7 +1405,7 @@
     {
         "name": "Disintegrate",
         "school": "Transmutation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S. M (a lodestone and a pinch of dust)",
@@ -1419,7 +1419,7 @@
     {
         "name": "Dispel Evil and Good",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (holy water or powdered silver and iron)",
@@ -1433,7 +1433,7 @@
     {
         "name": "Dispel Magic",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -1452,7 +1452,7 @@
     {
         "name": "Dissonant Whispers",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -1465,7 +1465,7 @@
     {
         "name": "Divination",
         "school": "Divination",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (incense and a sacrificial offering appropriate to your religion. together worth at least 25 gp, which the spell consumes)",
@@ -1478,7 +1478,7 @@
     {
         "name": "Divine Favor",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V, S",
@@ -1491,7 +1491,7 @@
     {
         "name": "Divine Word",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 bonus action",
         "range": "30 feet",
         "component": "V",
@@ -1504,7 +1504,7 @@
     {
         "name": "Dominate Beast",
         "school": "Enchantment",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1518,7 +1518,7 @@
     {
         "name": "Dominate Monster",
         "school": "Enchantment",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1534,7 +1534,7 @@
     {
         "name": "Dominate Person",
         "school": "Enchantment",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1549,7 +1549,7 @@
     {
         "name": "Drawmij’s Instant Summons",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V, S, M (a sapphire worth 1,000 gp)",
@@ -1562,7 +1562,7 @@
     {
         "name": "Dream",
         "school": "Illusion",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "Special",
         "component": "V, S, M (a handful of sand, a dab of ink. and a writing quill plucked from a sleeping bird)",
@@ -1577,7 +1577,7 @@
     {
         "name": "Druidcraft",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -1590,7 +1590,7 @@
     {
         "name": "Earthquake",
         "school": "Evocation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "500 feet",
         "component": "V, S, M (a pinch of dirt, a piece of rock, and a lump of clay)",
@@ -1605,7 +1605,7 @@
     {
         "name": "Eldritch Blast",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -1618,7 +1618,7 @@
     {
         "name": "Elemental Weapon",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -1631,7 +1631,7 @@
     {
         "name": "Enhance Ability",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (fur or a feather from a beast)",
@@ -1647,7 +1647,7 @@
     {
         "name": "Enlarge/Reduce",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a pinch of powdered iron)",
@@ -1661,7 +1661,7 @@
     {
         "name": "Ensnaring Strike",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -1674,7 +1674,7 @@
     {
         "name": "Entangle",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S",
@@ -1687,7 +1687,7 @@
     {
         "name": "Enthrall",
         "school": "Enchantrnent",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1701,7 +1701,7 @@
     {
         "name": "Etherealness",
         "school": "Transmutation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -1718,7 +1718,7 @@
     {
         "name": "Evard’s Black Tentacles",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (a piece of tentacle from a giant octopus or a giant squid)",
@@ -1731,7 +1731,7 @@
     {
         "name": "Expeditious Retreat",
         "school": "Transmutation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V, S",
@@ -1746,7 +1746,7 @@
     {
         "name": "Eyebite",
         "school": "Necromancy",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -1762,7 +1762,7 @@
     {
         "name": "Fabricate",
         "school": "Transmutation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "10 minutes",
         "range": "120 feet",
         "component": "V, 8",
@@ -1775,7 +1775,7 @@
     {
         "name": "Faerie Fire",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -1789,7 +1789,7 @@
     {
         "name": "False Life",
         "school": "Necromancy",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a small amount of alcohol or distilled spirits)",
@@ -1803,7 +1803,7 @@
     {
         "name": "Fear",
         "school": "Illusion",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (30—foot cone)",
         "component": "V, S, M (a white feather or the heart of a hen)",
@@ -1819,7 +1819,7 @@
     {
         "name": "Feather Fall",
         "school": "Transmutation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 reaction, which you take when you or a creature within 60 feet of you falls",
         "range": "60 feet",
         "component": "V, M (a small feather or piece of down)",
@@ -1834,7 +1834,7 @@
     {
         "name": "Feeblemind",
         "school": "Enchantment",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V. S. M (a handful of clay, crystal, glass. or mineral spheres)",
@@ -1850,7 +1850,7 @@
     {
         "name": "Feign Death",
         "school": "Necromancy",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S. M (a pinch of graveyard dirt)",
@@ -1866,7 +1866,7 @@
     {
         "name": "Find Familiar",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 hour",
         "range": "10 feet",
         "component": "V, S, M (10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier)",
@@ -1879,7 +1879,7 @@
     {
         "name": "Find Steed",
         "school": "Conjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "10 minutes",
         "range": "30 feet",
         "component": "V, S",
@@ -1892,7 +1892,7 @@
     {
         "name": "Find the Path",
         "school": "Divination",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V, S, M (a set of divinatory tools~such as bones, ivory sticks, cards, teeth, or carved runesi worth 100 gp and an object from the location you wish to find)",
@@ -1907,7 +1907,7 @@
     {
         "name": "Find Traps",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -1922,7 +1922,7 @@
     {
         "name": "Finger of Death",
         "school": "Necromancy",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -1937,7 +1937,7 @@
     {
         "name": "Fireball",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (a tiny ball of bat guano and sulfur)",
@@ -1951,7 +1951,7 @@
     {
         "name": "Fire Bolt",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -1965,7 +1965,7 @@
     {
         "name": "Fire Shield",
         "school": "Evocation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V. S. M (a bit of phosphorus or a firefly)",
@@ -1978,7 +1978,7 @@
     {
         "name": "Fire Storm",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S",
@@ -1993,7 +1993,7 @@
     {
         "name": "Flame Blade",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V, S, M (leaf of sumac)",
@@ -2006,7 +2006,7 @@
     {
         "name": "Flame Strike",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (pinch of sulfur)",
@@ -2019,7 +2019,7 @@
     {
         "name": "Flaming Sphere",
         "school": "Conjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a bit of tallow, a pinch of brimstone, and a dusting of powdered iron)",
@@ -2033,7 +2033,7 @@
     {
         "name": "Flesh to Stone",
         "school": "Transmutation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a pinch of lime, water, and earth)",
@@ -2047,7 +2047,7 @@
     {
         "name": "Fly",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a wing feather from any bird)",
@@ -2062,7 +2062,7 @@
     {
         "name": "Fog Cloud",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -2078,7 +2078,7 @@
     {
         "name": "Forbiddance",
         "school": "Abjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "10 minutes",
         "range": "Touch",
         "component": "V, S, M (a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp)",
@@ -2091,7 +2091,7 @@
     {
         "name": "Forcecage",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "100 feet",
         "component": "V, S, M (ruby dust worth 1,500 gp)",
@@ -2106,7 +2106,7 @@
     {
         "name": "Foresight",
         "school": "Divination",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V, S, M (a hummingbird feather)",
@@ -2122,7 +2122,7 @@
     {
         "name": "Freedom of Movement",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a leather strap, bound around the arm or a similar appendage)",
@@ -2138,7 +2138,7 @@
     {
         "name": "Friends",
         "school": "Enchantment",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Self",
         "component": "8, M (a small amount of makeup applied to the face as this spell is cast)",
@@ -2154,7 +2154,7 @@
     {
         "name": "Gaseous Form",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a bit of gauze and a wisp of smoke)",
@@ -2169,7 +2169,7 @@
     {
         "name": "Gate",
         "school": "Conjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a diamond worth at least 5,000 gp)",
@@ -2184,7 +2184,7 @@
     {
         "name": "Geas",
         "school": "Enchantment",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "60 feet",
         "component": "V",
@@ -2201,7 +2201,7 @@
     {
         "name": "Gentle Repose",
         "school": "Necromancy",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a pinch of salt and one copper piece placed on each of the corpses eyes, which must remain there for the duration)",
@@ -2215,7 +2215,7 @@
     {
         "name": "Giant Insect",
         "school": "Transmutation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -2228,7 +2228,7 @@
     {
         "name": "Glibness",
         "school": "Transmutation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V",
@@ -2242,7 +2242,7 @@
     {
         "name": "Globe of Invulnerability",
         "school": "Abjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "Self (10—foot radius)",
         "component": "V, S, M (a glass or crystal bead that shatters when the spell ends)",
@@ -2256,7 +2256,7 @@
     {
         "name": "Glyph of Warding",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (incense and powdered diamond worth at least 200 gp, which the spell consumes)",
@@ -2271,7 +2271,7 @@
     {
         "name": "Goodberry",
         "school": "Transmutation*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a sprig of mistletoe)",
@@ -2285,7 +2285,7 @@
     {
         "name": "Grasping Vine",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 bonus action",
         "range": "30 feet",
         "component": "V, S",
@@ -2299,7 +2299,7 @@
     {
         "name": "Grease",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a bit of pork rind or butter)",
@@ -2312,7 +2312,7 @@
     {
         "name": "Greater Invisibility",
         "school": "Illusion",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -2327,7 +2327,7 @@
     {
         "name": "Greater Restoration",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (diamond dust worth at least 100 gp, which the spell consumes)",
@@ -2342,7 +2342,7 @@
     {
         "name": "Guardian of Faith",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V",
@@ -2355,7 +2355,7 @@
     {
         "name": "Guards and Wards",
         "school": "Abjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "10 minutes",
         "range": "Touch",
         "component": "V, S, M (burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp)",
@@ -2369,7 +2369,7 @@
     {
         "name": "Guidance",
         "school": "Divination",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -2383,7 +2383,7 @@
     {
         "name": "Guiding Bolt",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -2396,7 +2396,7 @@
     {
         "name": "Gust of Wind",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self (60-foot line)",
         "component": "V, S, M (a legume seed)",
@@ -2411,7 +2411,7 @@
     {
         "name": "Hail of Thorns",
         "school": "Conjuration*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -2424,7 +2424,7 @@
     {
         "name": "Hallow",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "24 hours",
         "range": "Touch",
         "component": "V, S, M (herbs, oils, and incense worth at least 1,000 gp, which the spell consumes)",
@@ -2437,7 +2437,7 @@
     {
         "name": "Hallucinatory Terrain",
         "school": "I11usion",
-        "level": "4th",
+        "level": "4",
         "casting_time": "10 minutes",
         "range": "300 feet",
         "component": "V, S, M (a stone, a twig, and a bit of green plant)",
@@ -2453,7 +2453,7 @@
     {
         "name": "Harm",
         "school": "Necromancy",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -2466,7 +2466,7 @@
     {
         "name": "Haste",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a shaving of licorice root)",
@@ -2480,7 +2480,7 @@
     {
         "name": "Heal",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -2494,7 +2494,7 @@
     {
         "name": "Healing Word",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "60 feet",
         "component": "V",
@@ -2509,7 +2509,7 @@
     {
         "name": "Heat Metal",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a piece of iron and a flame)",
@@ -2523,7 +2523,7 @@
     {
         "name": "Hellish Rebuke",
         "school": "Evocation*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 reaction, which you take in response to being damaged by a creature within 60 feet of you that you can see",
         "range": "60 feet",
         "component": "V, S",
@@ -2536,7 +2536,7 @@
     {
         "name": "HEROES’ FEAST",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "10 minutes",
         "range": "30 feet",
         "component": "V, S , M (a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes)",
@@ -2550,7 +2550,7 @@
     {
         "name": "Heroism",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -2564,7 +2564,7 @@
     {
         "name": "Hex",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "90 feet",
         "component": "V, S, M (the petrified eye of a newt)",
@@ -2577,7 +2577,7 @@
     {
         "name": "Hold Monster",
         "school": "Enchantment",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (a small, straight piece of iron)",
@@ -2593,7 +2593,7 @@
     {
         "name": "Hold Person",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a small, straight piece of iron)",
@@ -2611,7 +2611,7 @@
     {
         "name": "Holy Aura",
         "school": "Abjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint’s robe or a piece of parchment from a religious text)",
@@ -2624,7 +2624,7 @@
     {
         "name": "Hunger of Hadar",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (a pickled octopus tentacle)",
@@ -2637,7 +2637,7 @@
     {
         "name": "Hunter’s Mark",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "90 feet",
         "component": "V",
@@ -2650,7 +2650,7 @@
     {
         "name": "Hypnotic Pattern",
         "school": "Illusion",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "S, M (a glowing stick of incense or a crystal vial filled with phosphorescent material)",
@@ -2666,7 +2666,7 @@
     {
         "name": "Ice Storm",
         "school": "Evocation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "300 feet",
         "component": "V, S, M (a pinch of dust and a few drops of water)",
@@ -2681,7 +2681,7 @@
     {
         "name": "Identify",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V, S, M (a pearl worth at least 100 gp and an owl feather)",
@@ -2695,7 +2695,7 @@
     {
         "name": "Illusory Script",
         "school": "Illusion",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "S, M (a lead—based ink worth at least 10 gp, which the spell consumes)",
@@ -2710,7 +2710,7 @@
     {
         "name": "Imprisonment",
         "school": "Abjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S, M (a vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per Hit Die of the target)",
@@ -2724,7 +2724,7 @@
     {
         "name": "Incendiary Cloud",
         "school": "Conjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S",
@@ -2738,7 +2738,7 @@
     {
         "name": "Inflict Wounds",
         "school": "Necromancy",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -2751,7 +2751,7 @@
     {
         "name": "Insect Plague",
         "school": "Conjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "300 feet",
         "component": "V, S, M (a few grains of sugar, some kernels of grain, and a smear of fat)",
@@ -2766,7 +2766,7 @@
     {
         "name": "Invisibility",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (an eyelash encased in gum arabic)",
@@ -2782,7 +2782,7 @@
     {
         "name": "Jump",
         "school": "Transmutation*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a grasshopper’s hind leg)",
@@ -2798,7 +2798,7 @@
     {
         "name": "Knock",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -2813,7 +2813,7 @@
     {
         "name": "Legend Lore",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "10 minutes",
         "range": "Self",
         "component": "V, S, M (incense worth at least 250 gp. which the spell consumes, and four ivory strips worth at least 50 gp each)",
@@ -2828,7 +2828,7 @@
     {
         "name": "Leomund’s Secret Chest",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp, and a Tiny replica made from the same materials worth at least 50 gp)",
@@ -2841,7 +2841,7 @@
     {
         "name": "Leomund’s Tiny Hut",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 minute",
         "range": "Self (10—foot—radius hemisphere)",
         "component": "V, S, M (a small crystal bead)",
@@ -2855,7 +2855,7 @@
     {
         "name": "Lesser Restoration",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -2872,7 +2872,7 @@
     {
         "name": "Levitate",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end)",
@@ -2886,7 +2886,7 @@
     {
         "name": "Light",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, M (a firefly or phosphorescent moss)",
@@ -2902,7 +2902,7 @@
     {
         "name": "Lightning Arrow",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V, S",
@@ -2915,7 +2915,7 @@
     {
         "name": "Lightning Bolt",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (lOO—foot line)",
         "component": "V, S, M (a bit of fur and a rod of amber, crystal, or glass)",
@@ -2929,7 +2929,7 @@
     {
         "name": "Locate Animals or Plants",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a bit of fur from a bloodhound)",
@@ -2944,7 +2944,7 @@
     {
         "name": "Locate Creature",
         "school": "Divination",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a bit of fur from a bloodhound)",
@@ -2962,7 +2962,7 @@
     {
         "name": "Locate Object",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a forked twig)",
@@ -2980,7 +2980,7 @@
     {
         "name": "Longstrider",
         "school": "Transmutation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a pinch of dirt)",
@@ -2996,7 +2996,7 @@
     {
         "name": "Mage Armor",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a piece of cured leather)",
@@ -3010,7 +3010,7 @@
     {
         "name": "Mage Hand",
         "school": "Conjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -3026,7 +3026,7 @@
     {
         "name": "Magic Circle",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 minute",
         "range": "10 feet",
         "component": "V, S, M (holy water or powdered silver and iron worth at least 100 gp, which the spell consumes)",
@@ -3042,7 +3042,7 @@
     {
         "name": "Magic Jar",
         "school": "Necromancy",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "Self",
         "component": "V, S, M (a gem, crystal. reliquary, or some other ornamental container worth at least 500 gp)",
@@ -3055,7 +3055,7 @@
     {
         "name": "Magic Missile",
         "school": "Evocation*",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -3069,7 +3069,7 @@
     {
         "name": "Magic Mouth",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S, M (a small bit of honeycomb andjade dust worth at least 10 gp, which the spell consumes)",
@@ -3083,7 +3083,7 @@
     {
         "name": "Magic Weapon",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 bonus action",
         "range": "Touch",
         "component": "V, S",
@@ -3097,7 +3097,7 @@
     {
         "name": "Major Image",
         "school": "Illusion",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a bit of fleece)",
@@ -3113,7 +3113,7 @@
     {
         "name": "Mass Cure Wounds",
         "school": "Conjuratz’on",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3128,7 +3128,7 @@
     {
         "name": "Mass Heal",
         "school": "Conjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3141,7 +3141,7 @@
     {
         "name": "Mass Healing Word",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 bonus action",
         "range": "60 feet",
         "component": "V",
@@ -3154,7 +3154,7 @@
     {
         "name": "Mass Suggestion",
         "school": "Enchantment",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, M (a snake’s tongue and either a bit of honeycomb or a drop of sweet oil)",
@@ -3170,7 +3170,7 @@
     {
         "name": "Maze",
         "school": "Conjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3183,7 +3183,7 @@
     {
         "name": "Meld Into Stone",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3197,7 +3197,7 @@
     {
         "name": "Melf’s Acid Arrow",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (powdered rhubarb leaf and an adder’s stomach)",
@@ -3210,7 +3210,7 @@
     {
         "name": "Mending",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V. S. M (two lodestones)",
@@ -3227,7 +3227,7 @@
     {
         "name": "Message",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V. S. M (a short piece of copper wire)",
@@ -3242,7 +3242,7 @@
     {
         "name": "Meteor Swarm",
         "school": "Evocation",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "1 mile",
         "component": "V, S",
@@ -3256,7 +3256,7 @@
     {
         "name": "Mind Blank",
         "school": "Abjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3270,7 +3270,7 @@
     {
         "name": "Minor Illusion",
         "school": "111usz’on",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "S, M (a bit of fleece)",
@@ -3286,7 +3286,7 @@
     {
         "name": "Mirage Arcane",
         "school": "Illusion",
-        "level": "7th",
+        "level": "7",
         "casting_time": "10 minutes",
         "range": "Sight",
         "component": "V, S",
@@ -3301,7 +3301,7 @@
     {
         "name": "Mirror Image",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -3316,7 +3316,7 @@
     {
         "name": "Mislead",
         "school": "Illusion",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self",
         "component": "S",
@@ -3330,7 +3330,7 @@
     {
         "name": "Misty Step",
         "school": "Conjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -3345,7 +3345,7 @@
     {
         "name": "Modify Memory",
         "school": "Enchantment",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, 8",
@@ -3359,7 +3359,7 @@
     {
         "name": "Moonbeam",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (several seeds of any moonseed plant and a piece of opalescent feldspar)",
@@ -3372,7 +3372,7 @@
     {
         "name": "Mordenkainen’s Faithful Hound",
         "school": "Conjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a tiny silver whistle, a piece of bone, and a thread)",
@@ -3385,7 +3385,7 @@
     {
         "name": "Mordenkainen’s Magnificent Mansion",
         "school": "Conjuration",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 minute",
         "range": "300 feet",
         "component": "V, S, M (a miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5 gp)",
@@ -3399,7 +3399,7 @@
     {
         "name": "Mordenkainen’s Private Sanctum",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "10 minutes",
         "range": "120 feet",
         "component": "V. S, M (a thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite)",
@@ -3412,7 +3412,7 @@
     {
         "name": "Mordenkainen’s Sword",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V. S. M (a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp)",
@@ -3426,7 +3426,7 @@
     {
         "name": "Move Earth",
         "school": "Transmutation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (an iron blade and a small bag containing a mixture of soils—clay, loam, and sand)",
@@ -3441,7 +3441,7 @@
     {
         "name": "Nondetection",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes)",
@@ -3456,7 +3456,7 @@
     {
         "name": "Nystul’s Magic Aura",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a small square of silk)",
@@ -3469,7 +3469,7 @@
     {
         "name": "Otiluke’s Freezing Sphere",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "300 feet",
         "component": "V, S, M (a small crystal sphere)",
@@ -3482,7 +3482,7 @@
     {
         "name": "Otiluke’s Resilient Sphere",
         "school": "Evocation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a hemispherical piece of clear crystal and a matching hemiSpherical piece of gum arabic)",
@@ -3495,7 +3495,7 @@
     {
         "name": "Otto’s Irresistible Dance",
         "school": "Enchantment",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V",
@@ -3509,7 +3509,7 @@
     {
         "name": "Pass Without Trace",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (ashes from a burned leaf of mistletoe and a sprig of spruce)",
@@ -3523,7 +3523,7 @@
     {
         "name": "Passwall",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a pinch of sesame seeds)",
@@ -3536,7 +3536,7 @@
     {
         "name": "Phantasmal Force",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a bit of fleece)",
@@ -3551,7 +3551,7 @@
     {
         "name": "Phantasmal Killer",
         "school": "Illusion",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -3564,7 +3564,7 @@
     {
         "name": "Phantom Steed",
         "school": "Illusion",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S",
@@ -3577,7 +3577,7 @@
     {
         "name": "Planar Ally",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "10 minutes",
         "range": "60 feet",
         "component": "V, S",
@@ -3590,7 +3590,7 @@
     {
         "name": "Planar Binding",
         "school": "Abjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 hour",
         "range": "60 feet",
         "component": "V, S, M (a jewel worth at least 1,000 gp, which the spell consumes)",
@@ -3606,7 +3606,7 @@
     {
         "name": "Plane Shift",
         "school": "Conjuration",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence)",
@@ -3623,7 +3623,7 @@
     {
         "name": "Plant Growth",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action or 8 hours",
         "range": "150 feet",
         "component": "V, S",
@@ -3638,7 +3638,7 @@
     {
         "name": "Poison Spray",
         "school": "Conjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V, S",
@@ -3654,7 +3654,7 @@
     {
         "name": "Polymorph",
         "school": "Transmutation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a caterpillar cocoon)",
@@ -3670,7 +3670,7 @@
     {
         "name": "Power Word Heal",
         "school": "Evocation",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3683,7 +3683,7 @@
     {
         "name": "Power Word Kill",
         "school": "Enchantment",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -3699,7 +3699,7 @@
     {
         "name": "Power Word Stun",
         "school": "Enchantment",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -3715,7 +3715,7 @@
     {
         "name": "Prayer of Healing",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "10 minutes",
         "range": "30 feet",
         "component": "V",
@@ -3728,7 +3728,7 @@
     {
         "name": "Prestidigitation",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V, S",
@@ -3744,7 +3744,7 @@
     {
         "name": "Prismatic Spray",
         "school": "Evocation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "Self (60-foot cone)",
         "component": "V, S",
@@ -3758,7 +3758,7 @@
     {
         "name": "Prismatic Wall",
         "school": "Abjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3771,7 +3771,7 @@
     {
         "name": "Produce Flame",
         "school": "Conjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -3784,7 +3784,7 @@
     {
         "name": "Programmed Illusion",
         "school": "Illusion",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a bit of fleece and jade dust worth at least 25 gp)",
@@ -3798,7 +3798,7 @@
     {
         "name": "Project Image",
         "school": "Illusion",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "500 miles",
         "component": "V, S, M (a small replica of you made from materials worth at least 5 gp)",
@@ -3812,7 +3812,7 @@
     {
         "name": "Protection From Energy",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3829,7 +3829,7 @@
     {
         "name": "Protection From Evil and Good",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (holy water or powdered silver and iron, which the spell consumes)",
@@ -3845,7 +3845,7 @@
     {
         "name": "Protection From Poison",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3861,7 +3861,7 @@
     {
         "name": "Purify Food and Drink",
         "school": "Transmutation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V, S",
@@ -3876,7 +3876,7 @@
     {
         "name": "Raise Dead",
         "school": "Necromancy",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (a diamond worth at least 500 gp, which the spell consumes)",
@@ -3891,7 +3891,7 @@
     {
         "name": "Rary’s Telepathic Bond",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (pieces of eggshell from two different kinds of creatures)",
@@ -3904,7 +3904,7 @@
     {
         "name": "Ray of Enfeeblement",
         "school": "Necromancy",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3918,7 +3918,7 @@
     {
         "name": "Ray of Frost",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3932,7 +3932,7 @@
     {
         "name": "Ray of Sickness",
         "school": "Necromancy",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -3946,7 +3946,7 @@
     {
         "name": "Regenerate",
         "school": "Transmutation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V, S, M (a prayer wheel and holy water)",
@@ -3961,7 +3961,7 @@
     {
         "name": "Reincarnate",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (rare oils and unguents worth at least 1,000 gp, which the spell consumes)",
@@ -3974,7 +3974,7 @@
     {
         "name": "Remove Curse",
         "school": "Abjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -3990,7 +3990,7 @@
     {
         "name": "Resistance",
         "school": "Abjuration",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a miniature cloak)",
@@ -4004,7 +4004,7 @@
     {
         "name": "Resurrection",
         "school": "Necromancy",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (a diamond worth at least 1,000 gp, which the spell consumes)",
@@ -4018,7 +4018,7 @@
     {
         "name": "Reverse Gravity",
         "school": "Transmutation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "100 feet",
         "component": "V, S, M (a lodestone and iron filings)",
@@ -4033,7 +4033,7 @@
     {
         "name": "Revivify",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (diamonds worth 300 gp, which the spell consumes)",
@@ -4047,7 +4047,7 @@
     {
         "name": "Rope Trick",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (powdered corn extract and a twisted loop of parchment)",
@@ -4060,7 +4060,7 @@
     {
         "name": "Sacred Flame",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -4073,7 +4073,7 @@
     {
         "name": "Sanctuary",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "30 feet",
         "component": "V, S, M (a small silver mirror)",
@@ -4086,7 +4086,7 @@
     {
         "name": "Scorching Ray",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -4100,7 +4100,7 @@
     {
         "name": "Scrying",
         "school": "Divination",
-        "level": "5th",
+        "level": "5",
         "casting_time": "10 minutes",
         "range": "Self",
         "component": "V, S, M (a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water)",
@@ -4117,7 +4117,7 @@
     {
         "name": "Searing Smite",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -4130,7 +4130,7 @@
     {
         "name": "See Invisibility",
         "school": "Divination",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a pinch of talc and a small sprinkling of powdered silver)",
@@ -4145,7 +4145,7 @@
     {
         "name": "Seeming",
         "school": "Illusion",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S",
@@ -4160,7 +4160,7 @@
     {
         "name": "Sending",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Unlimited",
         "component": "V, S, M (a short piece of fine copper wire)",
@@ -4175,7 +4175,7 @@
     {
         "name": "Sequester",
         "school": "Transmutation",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a powder composed of diamond, emerald, ruby, and sapphire dust worth at least 5,000 gp, which the spell consumes)",
@@ -4188,7 +4188,7 @@
     {
         "name": "Shapechange",
         "school": "Transmutation",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S, M (a jade circlet worth at least 1,500 gp, which you must place on your head before you cast the spell)",
@@ -4202,7 +4202,7 @@
     {
         "name": "Shatter",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S. M (a chip of mica)",
@@ -4218,7 +4218,7 @@
     {
         "name": "Shield",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell",
         "range": "Self",
         "component": "V, S",
@@ -4232,7 +4232,7 @@
     {
         "name": "Shield of Faith",
         "school": "Abjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "60 feet",
         "component": "V, S, M (a small parchment with a bit of holy text written on it)",
@@ -4246,7 +4246,7 @@
     {
         "name": "Shillelagh",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 bonus action",
         "range": "Touch",
         "component": "V, S, M (mistletoe. a shamrock leaf, and a club or quarterstaff)",
@@ -4259,7 +4259,7 @@
     {
         "name": "Shocking Grasp",
         "school": "Evocation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -4273,7 +4273,7 @@
     {
         "name": "Silence",
         "school": "Illusion",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -4288,7 +4288,7 @@
     {
         "name": "Silent Image",
         "school": "Illusion",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a bit of fleece)",
@@ -4303,7 +4303,7 @@
     {
         "name": "Simulacrum",
         "school": "Illusion",
-        "level": "7th",
+        "level": "7",
         "casting_time": "12 hours",
         "range": "Touch",
         "component": "V, S, M (snow or ice in quantities sufficient to made a life-size copy of the duplicated creature; some hair, fingernail clippings, or other piece of that creature’s body placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over the duplicate and consumed by the spell)",
@@ -4316,7 +4316,7 @@
     {
         "name": "Sleep",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (a pinch of fine sand, rose petals, or a cricket)",
@@ -4331,7 +4331,7 @@
     {
         "name": "Sleet Storm",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (a pinch of dust and a few drops of water)",
@@ -4346,7 +4346,7 @@
     {
         "name": "Slow",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a drop of molasses)",
@@ -4360,7 +4360,7 @@
     {
         "name": "Spare the Dying",
         "school": "Necromancy",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S",
@@ -4373,7 +4373,7 @@
     {
         "name": "Speak With Animals",
         "school": "Divination",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -4388,7 +4388,7 @@
     {
         "name": "Speak With Dead",
         "school": "Necromancy",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V, S, M (burning incense)",
@@ -4402,7 +4402,7 @@
     {
         "name": "Speak With Plants",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (30—foot radius)",
         "component": "V, S",
@@ -4417,7 +4417,7 @@
     {
         "name": "Spider Climb",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a drop of bitumen and a spider)",
@@ -4432,7 +4432,7 @@
     {
         "name": "Spike Growth",
         "school": "Transmutation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (seven sharp thorns or seven small twigs, each sharpened to a point)",
@@ -4446,7 +4446,7 @@
     {
         "name": "Spirit Guardians",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self (15—foot radius)",
         "component": "V, S, M (a holy symbol)",
@@ -4459,7 +4459,7 @@
     {
         "name": "Spiritual Weapon",
         "school": "Evocation",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 bonus action",
         "range": "60 feet",
         "component": "V, S",
@@ -4472,7 +4472,7 @@
     {
         "name": "Staggering Smite",
         "school": "Evocation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -4485,7 +4485,7 @@
     {
         "name": "Stinking Cloud",
         "school": "Conjuration",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "90 feet",
         "component": "V, S, M (a rotten egg or several skunk cabbage leaves)",
@@ -4500,7 +4500,7 @@
     {
         "name": "Stone Shape",
         "school": "Transmutation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V. S. M (soft clay, which must be worked into roughly the desired shape of the stone object)",
@@ -4515,7 +4515,7 @@
     {
         "name": "Stoneskin",
         "school": "Abjuration",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (diamond dust worth 100 gp, which the spell consumes)",
@@ -4531,7 +4531,7 @@
     {
         "name": "Storm of Vengeance",
         "school": "Conjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "Sight",
         "component": "V, S",
@@ -4544,7 +4544,7 @@
     {
         "name": "Suggestion",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, M (a snake’s tongue and either a bit of honeycomb or a drop of sweet oil)",
@@ -4560,7 +4560,7 @@
     {
         "name": "Sunbeam",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "Self (60—foot line)",
         "component": "V, S, M (a magnifying glass)",
@@ -4575,7 +4575,7 @@
     {
         "name": "Sunburst",
         "school": "Evocation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "150 feet",
         "component": "V, S, M (fire and a piece of sunstone)",
@@ -4590,7 +4590,7 @@
     {
         "name": "Swift Quiver",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 bonus action",
         "range": "Touch",
         "component": "V, S, M (a quiver containing at least one piece of ammunition)",
@@ -4603,7 +4603,7 @@
     {
         "name": "Symbol",
         "school": "Abjuration",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 minute",
         "range": "Touch",
         "component": "V, S, M (mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes)",
@@ -4618,7 +4618,7 @@
     {
         "name": "Tasha’s Hideous Laughter",
         "school": "Enchantment",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (tiny tarts and a feather that is waved in the air)",
@@ -4632,7 +4632,7 @@
     {
         "name": "Telekinesis",
         "school": "Transmutation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",
@@ -4646,7 +4646,7 @@
     {
         "name": "Telepathy",
         "school": "Evocation",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 action",
         "range": "Unlimited",
         "component": "V, S, M (a pair of linked silver rings)",
@@ -4659,7 +4659,7 @@
     {
         "name": "Teleport",
         "school": "Conjuration",
-        "level": "7th",
+        "level": "7",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V",
@@ -4674,7 +4674,7 @@
     {
         "name": "Teleportation Circle",
         "school": "Conjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 minute",
         "range": "10 feet",
         "component": "V, M (rare chalks and inks infused with precious gems with 50 gp, which the spell consumes)",
@@ -4689,7 +4689,7 @@
     {
         "name": "Tenser’s Floating Disk",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a drop of mercury)",
@@ -4702,7 +4702,7 @@
     {
         "name": "Thaumaturgy",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V",
@@ -4715,7 +4715,7 @@
     {
         "name": "Thorn Whip",
         "school": "Transmutation",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (the stem of a plant With thorns)",
@@ -4728,7 +4728,7 @@
     {
         "name": "Thunderous Smite",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -4741,7 +4741,7 @@
     {
         "name": "Thunderwave",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "Self (15-foot cube)",
         "component": "V, S",
@@ -4757,7 +4757,7 @@
     {
         "name": "Time Stop",
         "school": "Transmutation",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V",
@@ -4771,7 +4771,7 @@
     {
         "name": "Tongues",
         "school": "Divination",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, M (a small clay model of a ziggurat)",
@@ -4788,7 +4788,7 @@
     {
         "name": "Transport via Plants",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "10 feet",
         "component": "V, S",
@@ -4801,7 +4801,7 @@
     {
         "name": "Tree Stride",
         "school": "Conjuration",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -4815,7 +4815,7 @@
     {
         "name": "True Polymorph",
         "school": "Transmutation",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a drop of mercury, a dollop of gum arabic, and a wisp of smoke)",
@@ -4830,7 +4830,7 @@
     {
         "name": "True Resurrection",
         "school": "Necromancy",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 hour",
         "range": "Touch",
         "component": "V, S, M (a sprinkle of holy water and diamonds worth at least 25,000 gp. which the spell consumes)",
@@ -4844,7 +4844,7 @@
     {
         "name": "True Seeing",
         "school": "Divination",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell)",
@@ -4861,7 +4861,7 @@
     {
         "name": "True Strike",
         "school": "Divination",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "S",
@@ -4877,7 +4877,7 @@
     {
         "name": "Tsunami",
         "school": "Conjuration",
-        "level": "8th",
+        "level": "8",
         "casting_time": "1 minute",
         "range": "Sight",
         "component": "V, S",
@@ -4890,7 +4890,7 @@
     {
         "name": "Unseen Servant",
         "school": "Conjuration",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a piece of string and a bit of wood)",
@@ -4905,7 +4905,7 @@
     {
         "name": "Vampiric Touch",
         "school": "Necromancy",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V, S",
@@ -4919,7 +4919,7 @@
     {
         "name": "Vicious Mockery",
         "school": "Enchantment",
-        "level": "Cantrip",
+        "level": "0",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V",
@@ -4932,7 +4932,7 @@
     {
         "name": "Wall of Fire",
         "school": "Evocation",
-        "level": "4th",
+        "level": "4",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a small piece of phosphorus)",
@@ -4947,7 +4947,7 @@
     {
         "name": "Wall of Force",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a pinch of powder made by crushing a clear gemstone)",
@@ -4960,7 +4960,7 @@
     {
         "name": "Wall of Ice",
         "school": "Evocation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a small piece of quartz)",
@@ -4973,7 +4973,7 @@
     {
         "name": "Wall of Stone",
         "school": "Evocation",
-        "level": "5th",
+        "level": "5",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a small block of granite)",
@@ -4988,7 +4988,7 @@
     {
         "name": "Wall of Thorns",
         "school": "Conjuration",
-        "level": "orb",
+        "level": "6",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a handful of thorns)",
@@ -5001,7 +5001,7 @@
     {
         "name": "Warding Bond",
         "school": "Abjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "Touch",
         "component": "V, S, M (a pair of platinum rings worth at least 50 gp each, which you and the target must wear for the duration)",
@@ -5014,7 +5014,7 @@
     {
         "name": "Water Breathing",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a short reed or piece of straw)",
@@ -5030,7 +5030,7 @@
     {
         "name": "Water Walk",
         "school": "Transmutation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a piece of cork)",
@@ -5046,7 +5046,7 @@
     {
         "name": "Web",
         "school": "Conjuration",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S, M (a bit of Spiderweb)",
@@ -5060,7 +5060,7 @@
     {
         "name": "Weird",
         "school": "Illusion",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S",
@@ -5073,7 +5073,7 @@
     {
         "name": "Wind Walk",
         "school": "Transmutation",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 minute",
         "range": "30 feet",
         "component": "V, S, M (fire and holy water)",
@@ -5086,7 +5086,7 @@
     {
         "name": "Wind Wall",
         "school": "Evocation",
-        "level": "3rd",
+        "level": "3",
         "casting_time": "1 action",
         "range": "120 feet",
         "component": "V, S, M (a tiny fan and a feather of exotic origin)",
@@ -5100,7 +5100,7 @@
     {
         "name": "Wish",
         "school": "Conjuration",
-        "level": "9th",
+        "level": "9",
         "casting_time": "1 action",
         "range": "Self",
         "component": "V",
@@ -5114,7 +5114,7 @@
     {
         "name": "Witch Bolt",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 action",
         "range": "30 feet",
         "component": "V, S, M (a twig from a tree that has been struck by lightning)",
@@ -5129,7 +5129,7 @@
     {
         "name": "Word of Recall",
         "school": "Conjuration",
-        "level": "6th",
+        "level": "6",
         "casting_time": "1 action",
         "range": "5 feet",
         "component": "V",
@@ -5142,7 +5142,7 @@
     {
         "name": "Wrathful Smite",
         "school": "Evocation",
-        "level": "1st",
+        "level": "1",
         "casting_time": "1 bonus action",
         "range": "Self",
         "component": "V",
@@ -5155,7 +5155,7 @@
     {
         "name": "Zone of Truth",
         "school": "Enchantment",
-        "level": "2nd",
+        "level": "2",
         "casting_time": "1 action",
         "range": "60 feet",
         "component": "V, S",

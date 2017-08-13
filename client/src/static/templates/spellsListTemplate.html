@@ -185,7 +185,7 @@
     <md-card-content class="grid-column-8"
                      ng-click="spell.show = !spell.show">
         <span>{{spell.name}}</span>
-        <span>{{spell.level}}</span>
+        <span>{{spell.level | spellLevel}}</span>
         <span>{{spell.school}}</span>
         <span>{{spell.casting_time}}</span>
         <span>{{spell.range}}</span>

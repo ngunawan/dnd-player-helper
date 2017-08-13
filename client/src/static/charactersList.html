@@ -32,7 +32,7 @@
                 <span>{{character.race}}</span>
             </div>
             <div>
-                <span ng-repeat="class in character.class">{{class.name}} {{class.level}}</span>
+                <span ng-repeat="class in character.class">{{class.name}} {{class.level}}{{$last ? '' : ', '}}</span>
             </div>
 
             <md-button ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn">Remove</md-button>

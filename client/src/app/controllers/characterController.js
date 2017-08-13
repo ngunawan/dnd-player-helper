@@ -31,8 +31,8 @@ angular.module('app').controller('characterController', function characterContro
     }, function errorCallback(response) {
         console.log(response);
     });
-    
-    
+
+
     //get all backgrounds
     //-------------------------
     $http({
@@ -64,7 +64,7 @@ angular.module('app').controller('characterController', function characterContro
 
     //save character
     //-------------------------
-    $scope.save = function () {        
+    $scope.save = function () {
         $http({
             method: 'PUT',
             url: '/characters/' + $routeParams.characterId,
@@ -83,22 +83,27 @@ angular.module('app').controller('characterController', function characterContro
     //cumulate class features
     //-------------------------
     $scope.cumulateFeatures = function () {
-        let classes = $scope.currentCharacter.class;
         $scope.classFeatures = [];
 
-        for (let i = 0; i < classes.length; i++) {
+        for (let i = 0; i < $scope.currentCharacter.class.length; i++) {
+            let classObj = $scope.currentCharacter.class[i];
+
             $http({
                 method: 'GET',
-                url: '/classes/name/' + classes[i].name
+                url: '/classes/name/' + classObj.name
             }).then(function successCallback(response) {
                 for (let j = 0; j < response.data[0].features.length; j++) {
-                    $scope.classFeatures.push(response.data[0].features[j]);
-                }
-                console.log(response);
+                    let featureObj = response.data[0].features[j];
 
-            }, function errorCallback(response) {
-                console.log(response);
+                    if (featureObj.prereq <= classObj.level) {
+                        featureObj.prereq = classObj.name + " " + featureObj.prereq;
+                        $scope.classFeatures.push(featureObj);
+                    }
+                }
+            }, function errorCallback(error) {
+                console.log(error);
             });
+
         }
     }
 

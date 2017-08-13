@@ -1,6 +1,6 @@
 //const cp = require('child_process');
-//
-//
+////
+////
 //cp.fork('spellScraper.js');
 //cp.fork('armorScraper.js');
 //cp.fork('weaponScraper.js');
