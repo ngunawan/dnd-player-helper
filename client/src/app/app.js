@@ -75,7 +75,7 @@ require('./components/noteEditor.js');
 //routes 
 //-------------------------
 
-app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
+app.config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdProgressCircularProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "charactersList.html",
@@ -139,5 +139,12 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             'hue-1': '700',
             'hue-2': '900'
         });
+
+    $mdProgressCircularProvider.configure({
+        progressSize: 60,
+        strokeWidth: 10,
+        duration: 800,
+        durationIndeterminate: 800
+    });
 
 });

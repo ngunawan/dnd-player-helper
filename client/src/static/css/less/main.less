@@ -1,3 +1,5 @@
+@red: #D50000;
+
 // setup
 // ----------------
 * {
@@ -5,7 +7,7 @@
 }
 
 html {
-//    font-family: 'Mukta', sans-serif;
+    //    font-family: 'Mukta', sans-serif;
     font-size: 10px;
 }
 
@@ -31,9 +33,9 @@ md-input-container .md-errors-spacer {
     min-height: 0;
 }
 
-label {
-    font-weight: 700;
-}
+//label {
+//    font-weight: 700;
+//}
 
 .compendium-card {
     display: block;
@@ -41,7 +43,7 @@ label {
     padding: 16px;
     background: white;
     margin-bottom: 10px;
-    
+
     .compendium-card__title {
         margin: 0;
         margin-bottom: 13px;
@@ -74,7 +76,7 @@ label {
 
 .compendium-card__item-info {
     font-size: 1.5rem;
-    
+
     .compendium-card__item-title {
         font-size: 1.8rem;
         font-weight: 700;
@@ -87,27 +89,133 @@ label {
     background: white;
     padding: 16px;
     font-size: 1.5rem;
-    
+
     caption {
         font-size: 1.9rem;
         font-weight: 700;
         margin: 1em 0;
         text-align: left;
     }
-    
+
     table {
         border-collapse: collapse;
     }
-    
-    table, th, td {
+
+    table,
+    th,
+    td {
         border: 1px solid black;
     }
-    
-    table td, table th {
+
+    table td,
+    table th {
         text-align: left;
         padding: 10px;
     }
+}
+
+.md-extra-padding {
+    padding: 16px;
+    padding-top: 8px;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    color: #D50000;
+}
+
+.btn-row-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .md-button {
+        margin: 6px 8px 6px 0px;
+    }
+}
+
+.loader-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: :0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spells-list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+
+    font-size: 1.5rem;
+}
+
+.spells-list__head,
+.spells-list__item-card {
+    display: grid;
+    grid-template-columns: 16% repeat(7, 12%);
+    grid-template-rows: auto;
+    min-width: 952px;
+}
+
+.spells-list__head {
+    font-weight: 700;
+    padding: 16px;
+}
+
+.spells-list__item-card {
+    outline: 0;
+    cursor: pointer;
+}
+
+.list-item-card {
+    background: white;
+    padding: 16px;
+
+    .md-button {
+        margin: 0;
+    }
+}
+
+.list-item-card__property {
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+}
+
+.list-item-card__description {
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    table td,
+    table th {
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+.input-row-wrapper {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     
+    md-input-container {
+        margin-right: 16px;
+        min-width: 154px;
+    }
 }
 
 
@@ -354,7 +462,6 @@ md-dialog {
 //.compendium-card {
 //    width: 20%;
 //}
-
 .chargrid {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;

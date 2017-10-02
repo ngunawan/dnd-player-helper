@@ -21,9 +21,6 @@ md-nav-bar .md-button._md-nav-button.md-unselected {
 md-input-container .md-errors-spacer {
   min-height: 0;
 }
-label {
-  font-weight: 700;
-}
 .compendium-card {
   display: block;
   width: 100%;
@@ -88,6 +85,89 @@ label {
 .compendium-entry table th {
   text-align: left;
   padding: 10px;
+}
+.md-extra-padding {
+  padding: 16px;
+  padding-top: 8px;
+}
+.page-title {
+  font-size: 2.4rem;
+  color: #D50000;
+}
+.btn-row-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.btn-row-wrapper .md-button {
+  margin: 6px 8px 6px 0px;
+}
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: :0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spells-list {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  font-size: 1.5rem;
+}
+.spells-list__head,
+.spells-list__item-card {
+  display: grid;
+  grid-template-columns: 16% repeat(7, 12%);
+  grid-template-rows: auto;
+  min-width: 952px;
+}
+.spells-list__head {
+  font-weight: 700;
+  padding: 16px;
+}
+.spells-list__item-card {
+  outline: 0;
+  cursor: pointer;
+}
+.list-item-card {
+  background: white;
+  padding: 16px;
+}
+.list-item-card .md-button {
+  margin: 0;
+}
+.list-item-card__property {
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+}
+.list-item-card__description table {
+  border-collapse: collapse;
+}
+.list-item-card__description table,
+.list-item-card__description th,
+.list-item-card__description td {
+  border: 1px solid black;
+}
+.list-item-card__description table td,
+.list-item-card__description table th {
+  text-align: left;
+  padding: 10px;
+}
+.input-row-wrapper {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.input-row-wrapper md-input-container {
+  margin-right: 16px;
+  min-width: 154px;
 }
 .grid-column-8 {
   display: grid;

@@ -132,7 +132,7 @@
         "school": "Abjuration",
         "level": "5",
         "casting_time": "1 action",
-        "range": "Self (10—foot radius)",
+        "range": "Self (10-foot radius)",
         "component": "V, S",
         "duration": "Concentration, up to 1 hour",
         "description": "<p>A shimmering barrier extends out from you in a 10&#x2014;foot\nradius and moves with you, remaining centered on\nyou and hedging out creatures other than undead and\nconstructs. The barrier lasts for the duration.</p><p>The barrier prevents an affected creature from\npassing or reaching through. An affected creature\ncan cast spells or make attacks with ranged or reach\nweapons through the barrier.</p><p>If you move so that an affected creature is forced to\npass through the barrier. the spell ends.</p>",
@@ -145,7 +145,7 @@
         "school": "Abjuration",
         "level": "8",
         "casting_time": "1 action",
-        "range": "Self (10—foot—radius sphere)",
+        "range": "Self (10—foot radius sphere)",
         "component": "V, S, M (a pinch of powdered iron or iron filings)",
         "duration": "Concentration, up to 1 hour",
         "description": "<p>A 10&#x2014;foot&#x2014;radius invisible sphere of antimagic surrounds\nyou. This area is divorced from the magical energy that\nsuffuses the multiverse. Within the sphere, spells can&#x2019;t\nbe cast, summoned creatures disappear, and even magic\nitems become mundane. Until the spell ends, the sphere\nmoves with you, centered on you.</p><p>Spells and other magical effects, except those created\nby an artifact or a deity, are suppressed in the sphere\nand can&#x2019;t protrude into it. A slot expended to cast\na suppressed spell is consumed. While an effect is\nsuppressed, it doesn&#x2019;t function, but the time it spends\nsuppressed counts against its duration.</p><p><strong>Targeted Effects.</strong> Spells and other magical effects,\nsuch as magic missile and charm person, that target\na creature or an object in the sphere have no effect\non that target.</p><p><strong>Areas of Magic.</strong> The area of another spell or magical\neffect, such as fireball, can&#x2019;t extend into the sphere.\nIf the sphere overlaps an area of magic, the part of\nthe area that is covered by the sphere is suppressed.\nFor example, the flames created by a wall of fire are\nsuppressed within the sphere, creating a gap in the wall\nif the overlap is large enough.</p><p><strong>Spells.</strong> Any active spell or other magical effect on a\ncreature or an object in the sphere is suppressed while\nthe creature or object is in it.</p><p><strong>Magic Items.</strong> The properties and powers of\nmagic items are suppressed in the sphere. For\nexample, a +1 longsword in the sphere functions as a\nnonmagical longsword.</p><p>A magic weapon&#x2019;s properties and powers are\nsuppressed if it is used against a target in the sphere or\nwielded by an attacker in the sphere. If a magic weapon\nor a piece of magic ammunition fully leaves the sphere\n(for example, if you fire a magic arrow or throw a magic\nspear at a target outside the sphere), the magic of the\nitem ceases to be suppressed as soon as it exits.</p><p><strong>Magical Travel.</strong> Teleportation and planar travel\nfail to work in the sphere, whether the sphere is the\ndestination or the departure point for such magical\ntravel. A portal to another location, world, or plane of\nexistence, as well as an opening to an extradimensional\nspace such as that created by the rope trick spell,\ntemporarily closes While in the sphere.</p><p><strong>Creatures and Objects.</strong> A creature or object\nsummoned or created by magic temporarily winks out\nof existence in the sphere. Such a creature instantly\nreappears once the space the creature occupied is no\nlonger Within the sphere.</p><p><strong>Dispel Magic.</strong> Spells and magical effects such as\ndispel magic have no effect on the sphere. Likewise, the\nspheres created by different antimagic field spells don&#x2019;t\nnullify each other.</p>",
@@ -155,7 +155,7 @@
         ]
     },
     {
-        "name": "Antipathy/Sympathy",
+        "name": "Antipathy / Sympathy",
         "school": "Enchantment",
         "level": "8",
         "casting_time": "1 hour",
@@ -499,7 +499,7 @@
         ]
     },
     {
-        "name": "Blindness/Deafness",
+        "name": "Blindness / Deafness",
         "school": "Necromancy",
         "level": "2",
         "casting_time": "1 action",
@@ -550,7 +550,7 @@
         "range": "Self",
         "component": "V",
         "duration": "Concentration, up to 1 minute",
-        "description": "<p>The next time you hit a creature with a weapon attack\nbefore this spell ends, the weapon gleams with astral\nradiance as you strike. The attack deals an extra 2d6\nradiant damage to the target, which becomes visible if\nit&#x2019;s invisible, and the target sheds dim light in a 5-foot\nradius and can&#x2019;t become invisible until the spell ends.\n<strong>At Higher Levels:</strong> When you cast this spell using\na spell slot of 3rd level or higher. the extra damage\nincreases by 1d6 for each slot level above 2nd.</p>",
+        "description": "<p>The next time you hit a creature with a weapon attack\nbefore this spell ends, the weapon gleams with astral\nradiance as you strike. The attack deals an extra 2d6\nradiant damage to the target, which becomes visible if\nit&#x2019;s invisible, and the target sheds dim light in a 5-foot\nradius and can&#x2019;t become invisible until the spell ends.\n</p><p><strong>At Higher Levels:</strong> When you cast this spell using\na spell slot of 3rd level or higher. the extra damage\nincreases by 1d6 for each slot level above 2nd.</p>",
         "class": [
             "paladin"
         ]
@@ -1160,7 +1160,7 @@
         ]
     },
     {
-        "name": "CRUSADER’S MANTLE",
+        "name": "Crusader's Mantle",
         "school": "Evocation",
         "level": "3",
         "casting_time": "1 action",
@@ -1645,7 +1645,7 @@
         ]
     },
     {
-        "name": "Enlarge/Reduce",
+        "name": "Enlarge / Reduce",
         "school": "Transmutation",
         "level": "2",
         "casting_time": "1 action",
@@ -2534,7 +2534,7 @@
         ]
     },
     {
-        "name": "HEROES’ FEAST",
+        "name": "Heroes' Feast",
         "school": "Conjuration",
         "level": "6",
         "casting_time": "10 minutes",

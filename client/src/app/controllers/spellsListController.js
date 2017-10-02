@@ -4,6 +4,7 @@ angular.module('app').controller('spellsListController', function spellsListCont
         class: ''
     };
     $scope.queryBy = "";
+    $scope.loading = true;
 
     //get all spells
     //-------------------------
@@ -12,8 +13,10 @@ angular.module('app').controller('spellsListController', function spellsListCont
         url: '/spells'
     }).then(function successCallback(response) {
         $scope.spellsList = response.data;
-        console.log($scope.spellsList)
-
+        console.log($scope.spellsList);
+        
+        $scope.loading = false;
+        
     }, function errorCallback(response) {
         console.log(response);
     });
