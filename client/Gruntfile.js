@@ -5,14 +5,18 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    const notifier = require('node-notifier');
 
     grunt.initConfig({
         browserify: {
             options: {
                 watch: true,
-//                keepAlive: true,
                 browserifyOptions: {
                     debug: true
+                },
+                postBundleCB: function (err, src, next) {
+                    grunt.task.run('notify-browserify');
+                    next(err, src);
                 }
             },
             build: {
@@ -47,14 +51,28 @@ module.exports = function (grunt) {
         watch: {
             less: {
                 files: 'src/static/css/less/*.less',
-                tasks: 'less'
+                tasks: ['less', 'notify-less']
             }
         }
 
     });
 
+    grunt.task.registerTask('notify-browserify', function () {
+        notifier.notify({
+            'title': 'dnd-player-helper',
+            'message': 'Browserify created bundle'
+        });
+    })
+
+    grunt.task.registerTask('notify-less', function () {
+        notifier.notify({
+            'title': 'dnd-player-helper',
+            'message': 'CSS files created'
+        });
+    })
+
     //Register an "alias task" or a task function.  
-    grunt.registerTask('default', ['browserify','watch']);
+    grunt.registerTask('default', ['browserify', 'watch']);
     grunt.registerTask('min', ['uglify']);
 
 };

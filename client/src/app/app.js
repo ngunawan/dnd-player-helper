@@ -75,7 +75,7 @@ require('./components/noteEditor.js');
 //routes 
 //-------------------------
 
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "charactersList.html",
@@ -127,5 +127,17 @@ app.config(function ($routeProvider, $locationProvider) {
 
     // use the HTML5 History API: allows routing w/o refreshing page
     $locationProvider.html5Mode(true);
+
+    $mdThemingProvider.theme('default')
+        .accentPalette('red', {
+            'default': 'A700',
+            'hue-1': '800',
+            'hue-2': '900'
+        })
+        .primaryPalette('grey', {
+            'default': '800',
+            'hue-1': '700',
+            'hue-2': '900'
+        });
 
 });

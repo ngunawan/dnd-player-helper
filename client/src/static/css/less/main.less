@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+html {
+//    font-family: 'Mukta', sans-serif;
+    font-size: 10px;
+}
+
 a {
     text-decoration: none;
-    color: #2962FF;
+    color: #D50000;
 }
 
 [contenteditable] {
@@ -14,7 +19,12 @@ a {
 }
 
 md-nav-bar .md-nav-bar {
-    background: white;
+    background: black;
+}
+
+md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected,
+md-nav-bar .md-button._md-nav-button.md-unselected {
+    color: white;
 }
 
 md-input-container .md-errors-spacer {
@@ -23,6 +33,81 @@ md-input-container .md-errors-spacer {
 
 label {
     font-weight: 700;
+}
+
+.compendium-card {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: white;
+    margin-bottom: 10px;
+    
+    .compendium-card__title {
+        margin: 0;
+        margin-bottom: 13px;
+        font-size: 2.4rem;
+        color: #D50000;
+    }
+}
+
+.compendium-card__list-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.compendium-card__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 15px;
+    min-width: 234px;
+    margin-bottom: 16px;
+}
+
+.compendium-card__item-img {
+    background-size: cover;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.compendium-card__item-info {
+    font-size: 1.5rem;
+    
+    .compendium-card__item-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+}
+
+.compendium-entry {
+    background: white;
+    padding: 16px;
+    font-size: 1.5rem;
+    
+    caption {
+        font-size: 1.9rem;
+        font-weight: 700;
+        margin: 1em 0;
+        text-align: left;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+    
+    table, th, td {
+        border: 1px solid black;
+    }
+    
+    table td, table th {
+        text-align: left;
+        padding: 10px;
+    }
+    
 }
 
 
@@ -148,8 +233,7 @@ md-divider {
 
 .flex-center-align {
     display: flex;
-    align-content: center;
-//    justify-content: center;
+    align-content: center; //    justify-content: center;
 }
 
 
@@ -206,10 +290,9 @@ md-dialog {
     }
     margin-right: 20px;
     margin-bottom: 20px;
-    
+
     input {
-        font-size: 200%;
-//        width: 2.5em;
+        font-size: 200%; //        width: 2.5em;
     }
 }
 
@@ -244,7 +327,7 @@ md-dialog {
 }
 
 .character-item-description {
-//    font-size: 85%;
+    //    font-size: 85%;
     margin-bottom: 20px;
 }
 
@@ -268,9 +351,9 @@ md-dialog {
     padding: 10px;
 }
 
-.compendium-card {
-    width: 20%;
-}
+//.compendium-card {
+//    width: 20%;
+//}
 
 .chargrid {
     grid-template-columns: 1fr 1fr;
@@ -279,11 +362,11 @@ md-dialog {
     #chargrid-class {
         grid-column: span 2;
     }
-    
+
     #chargrid-stats {
         grid-row-end: span 2;
     }
-    
+
     #chargrid-traitsfeatures {
         grid-row-end: span 2;
     }
