@@ -1,3 +1,4 @@
+<!--
 <md-toolbar class="md-hue-2">
     <div class="md-toolbar-tools">
         <h2 md-truncate>{{currentCharacter.name}}</h2>
@@ -7,6 +8,24 @@
         </md-button>
     </div>
 </md-toolbar>
+-->
+<div class="md-padding">
+    <div class="character-header">
+        <h1 class="page-title">{{currentCharacter.name}}</h1>
+        <div class="btn-row-wrapper">
+            <md-button ng-click="save();cumulateFeatures();cumulateTraits()" class="md-raised md-accent">
+                Save &amp; Update
+            </md-button>
+        </div>
+    </div>
+
+<!--
+    <md-input-container>
+        <textarea ng-model="currentCharacter.backstory"></textarea>
+    </md-input-container>
+-->
+
+</div>
 
 <div style="padding:20px; width: 100%;">
 

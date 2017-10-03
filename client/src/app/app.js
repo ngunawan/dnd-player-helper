@@ -123,9 +123,9 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdP
                 return "compendium/backgrounds/" + urlattr.backgroundName + ".html";
             },
         })
-        .otherwise({
-            redirectTo: "/"
-        })
+//        .otherwise({
+//            redirectTo: "/"
+//        })
 
     // use the HTML5 History API: allows routing w/o refreshing page
     $locationProvider.html5Mode(true);
@@ -153,3 +153,11 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdP
     });
 
 });
+
+app.run(function($rootScope, $location, $anchorScroll) {
+    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+        if($location.hash()) {
+            $anchorScroll();
+        }
+    })
+})

@@ -262,7 +262,7 @@ md-dialog-content {
 
 .note-editor-wrapper {
     width: 100%;
-    
+
     .md-button {
         margin-left: 0;
     }
@@ -287,7 +287,7 @@ md-dialog-content {
 
 .note-editor__btn-wrapper {
     margin-top: 16px;
-    float:right;
+    float: right;
 }
 
 .btn--hover {
@@ -296,11 +296,57 @@ md-dialog-content {
     right: 0;
 }
 
-md-list-item, md-list-item .md-list-item-inner {
+md-list-item,
+md-list-item .md-list-item-inner {}
+
+md-list-item._md-button-wrap > div.md-button:first-child {
+    padding: 8px 16px;
 }
 
-md-list-item._md-button-wrap>div.md-button:first-child {
-    padding: 8px 16px;
+.create-new-card {
+    min-width: 324px;
+}
+
+.create-new-card__body {
+    padding: 16px;
+}
+
+.create-new-card__title {
+    color: #D50000;
+    font-size: 1.8rem;
+}
+
+.create-new-card__info {
+    margin-bottom: 16px;
+}
+
+.create-new-card__info-label {
+    font-weight: 700;
+}
+
+.create-new-card__footer {
+    background-color: #EEE;
+    padding: 8px;
+
+    .md-button {
+        float: right;
+    }
+}
+
+.create-new__info-card {
+    background: white;
+    padding: 16px;
+}
+
+.character-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:100%;
+    
+    .md-button {
+        height: 36px;
+    }
 }
 
 // layouts
@@ -425,7 +471,6 @@ md-list-item._md-button-wrap>div.md-button:first-child {
 //    margin-bottom: 16px;
 //    margin-top: 16px;
 //}
-
 .align-middle {
     align-items: center;
     justify-content: center;
@@ -483,22 +528,30 @@ md-dialog {
 }
 
 .stat-block {
-    label {
+    padding: 16px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    min-width: 213px;
+
+    .stat-block__label {
+        font-weight: 700;
         display: block;
         margin-bottom: 10px;
-        font-size: 90%;
     }
-    margin-right: 20px;
-    margin-bottom: 20px;
 
     input {
-        font-size: 200%; //        width: 2.5em;
+        font-size: 200%;
+        border: none;
+    }
+
+    md-input-container {
+        margin: 8px 0;
     }
 }
 
-.stat-block-list {
+.stat-block__list {
     .md-button {
-        font-size: 50%;
+        font-size: 60%;
         padding: 5px 10px;
         min-height: initial;
         min-width: initial;
@@ -569,6 +622,16 @@ md-dialog {
     #chargrid-traitsfeatures {
         grid-row-end: span 2;
     }
+}
+
+.create-new-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.create-new-stat-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .classgrid {

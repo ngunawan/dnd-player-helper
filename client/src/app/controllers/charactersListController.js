@@ -1,5 +1,7 @@
 angular.module('app').controller('charactersListController', function charactersListController($scope, $compile, $http, $location) {
     
+    $scope.loading = true;
+    
     //to blur focus in nav bar
     //-------------------------
     $scope.unNav = function() {
@@ -13,7 +15,9 @@ angular.module('app').controller('charactersListController', function characters
         url: '/characters'
     }).then(function successCallback(response) {
         $scope.charactersList = response.data;
-        console.log($scope.charactersList)
+        console.log($scope.charactersList);
+        
+        $scope.loading = false;
 
     }, function errorCallback(response) {
         console.log(response);

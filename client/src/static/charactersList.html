@@ -1,42 +1,35 @@
-<md-toolbar>
-    <div class="md-toolbar-tools">
-        <h2 md-truncate>Character List</h2>
-        <span flex></span>
-        <md-button ng-click="unNav();redirectTo('create-character')"class="md-raised md-accent">
+<div class="md-padding">
+    <h1 class="page-title">Character List</h1>
+
+    <div class="btn-row-wrapper">
+        <md-button ng-click="unNav();redirectTo('create-character')" class="md-raised md-accent">
             Create New
         </md-button>
     </div>
-</md-toolbar>
 
-<div layout-padding>
-    
-    <md-input-container style="width:100%;">
-        <label>Search By Name</label>
-        <input placeholder="Character Name" ng-model="query['name']">
-    </md-input-container>
+    <md-divider class="list-item-divider"></md-divider>
 
+    <div class="list-item-wrapper">
+        <div class="loader-wrapper" ng-show="loading">
+            <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+        </div>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-4 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'race'; sortDir = !sortDir">Race</span>
-            <span ng-click="sortVal = 'class'; sortDir = !sortDir">Class</span>
+        <div class="grid-column-4 list-item-head">
+            <span class="list-item-head__property" ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+            <span class="list-item-head__property" ng-click="sortVal = 'race'; sortDir = !sortDir">Race</span>
+            <span class="list-item-head__property" ng-click="sortVal = 'class'; sortDir = !sortDir">Class</span>
             <span></span>
-        </md-card-content>
-    </md-card>
+        </div>
 
-    <md-card ng-click="unNav();redirectTo('character/' + character._id)" ng-repeat="character in charactersList | filter: query | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-4">
-            <span>{{character.name}}</span>
-            <div>
-                <span>{{character.race}}</span>
+        <div class="grid-column-4 list-item-card md-whiteframe-4dp" ng-click="unNav();redirectTo('character/' + character._id)" ng-repeat="character in charactersList | filter: query | orderBy: sortVal: sortDir">
+            <div class="list-item-card__property">{{character.name}}</div>
+            <div class="list-item-card__property">
+                {{character.race}}
             </div>
-            <div>
+            <div class="list-item-card__property">
                 <span ng-repeat="class in character.class">{{class.name}} {{class.level}}{{$last ? '' : ', '}}</span>
             </div>
-
             <md-button ng-click="removeCharacter(character._id); $event.stopPropagation()" class="md-warn">Remove</md-button>
-        </md-card-content>
-    </md-card>
-
+        </div>
+    </div>
 </div>

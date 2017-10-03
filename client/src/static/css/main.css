@@ -232,6 +232,42 @@ md-dialog-content h3 {
 md-list-item._md-button-wrap > div.md-button:first-child {
   padding: 8px 16px;
 }
+.create-new-card {
+  min-width: 324px;
+}
+.create-new-card__body {
+  padding: 16px;
+}
+.create-new-card__title {
+  color: #D50000;
+  font-size: 1.8rem;
+}
+.create-new-card__info {
+  margin-bottom: 16px;
+}
+.create-new-card__info-label {
+  font-weight: 700;
+}
+.create-new-card__footer {
+  background-color: #EEE;
+  padding: 8px;
+}
+.create-new-card__footer .md-button {
+  float: right;
+}
+.create-new__info-card {
+  background: white;
+  padding: 16px;
+}
+.character-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+.character-header .md-button {
+  height: 36px;
+}
 .grid-column-8 {
   display: grid;
   grid-template-columns: repeat(8, 12.5%);
@@ -361,19 +397,25 @@ md-dialog {
   margin: 40px 0;
 }
 .stat-block {
-  margin-right: 20px;
-  margin-bottom: 20px;
+  padding: 16px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  min-width: 213px;
 }
-.stat-block label {
+.stat-block .stat-block__label {
+  font-weight: 700;
   display: block;
   margin-bottom: 10px;
-  font-size: 90%;
 }
 .stat-block input {
   font-size: 200%;
+  border: none;
 }
-.stat-block-list .md-button {
-  font-size: 50%;
+.stat-block md-input-container {
+  margin: 8px 0;
+}
+.stat-block__list .md-button {
+  font-size: 60%;
   padding: 5px 10px;
   min-height: initial;
   min-width: initial;
@@ -427,6 +469,14 @@ md-dialog {
 }
 .chargrid #chargrid-traitsfeatures {
   grid-row-end: span 2;
+}
+.create-new-grid {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.create-new-stat-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 .classgrid {
   grid-template-columns: 1fr 1fr;

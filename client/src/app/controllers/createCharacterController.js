@@ -1,10 +1,11 @@
-angular.module('app').controller('createCharacterController', function createCharacterController($scope, $http, characterService, $mdDialog) {
+angular.module('app').controller('createCharacterController', function createCharacterController($scope, $http, characterService, $mdDialog, $anchorScroll, $location) {
 
+    
     //object to keep track of created character
     //-------------------------
     $scope.Character = characterService.character;
 
-    
+
     //get all classes
     //-------------------------
     $http({
@@ -57,14 +58,13 @@ angular.module('app').controller('createCharacterController', function createCha
         );
     };
 
-
     //reset character fields
     //-------------------------
     $scope.resetCharacter = function () {
         $scope.Character = characterService.resetCharacter();
     }
-    
-    
+
+
     //add class to character
     //-------------------------
     $scope.addClass = function (className) {
@@ -78,6 +78,16 @@ angular.module('app').controller('createCharacterController', function createCha
     //create new character
     //-------------------------
     $scope.createNew = function () {
+        if(($scope.Character.class[0] == undefined) || ($scope.Character.race == '') || ($scope.Character.background == '') || ($scope.Character.name == '')) {
+            let alert = $mdDialog.alert()
+                .clickOutsideToClose(true)
+                .title('Please complete all the steps.')
+                .ariaLabel('complete all the steps before creating new character')
+                .ok('Ok')
+            $mdDialog.show(alert);
+            return;
+        }
+        
         $http({
             method: 'POST',
             url: '/characters',

@@ -75,6 +75,19 @@ app.filter('convertStringData', function () {
     }
 });
 
+app.filter('convertForUrl', function () {
+    function addDash(string) {
+        return string.replace(/\s/g, '-');
+    }
+    return function(string) {
+        if(typeof string != "string") {
+            return string;
+        }
+        
+        return addDash(string.toLowerCase())
+    }
+})
+
 //take 1d6 piercing -> 1d6
 //-------------------------
 app.filter('grabDice', function () {
