@@ -193,6 +193,45 @@ md-dialog-content h3 {
   color: #D50000;
   margin-bottom: 20px;
 }
+.notes-list {
+  height: 100%;
+}
+.notes-list__sidenav {
+  width: 33%;
+  min-width: 234px;
+}
+.note-editor-wrapper {
+  width: 100%;
+}
+.note-editor-wrapper .md-button {
+  margin-left: 0;
+}
+.note-editor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 324px;
+  padding: 16px;
+  background: white;
+}
+.note-editor__toolbar {
+  margin-bottom: 20px;
+}
+.note-editor__textbox {
+  min-height: 324px;
+}
+.note-editor__btn-wrapper {
+  margin-top: 16px;
+  float: right;
+}
+.btn--hover {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+}
+md-list-item._md-button-wrap > div.md-button:first-child {
+  padding: 8px 16px;
+}
 .grid-column-8 {
   display: grid;
   grid-template-columns: repeat(8, 12.5%);

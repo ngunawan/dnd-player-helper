@@ -1,31 +1,30 @@
-<div style="height:100%" layout="row">
+<div class="notes-list" layout="row">
     <!-- notes list  -->
-    <md-sidenav sytle="height:100%" flex=33 md-is-locked-open=true md-component-id="left" class="md-sidenav-left" md-whiteframe="4">
+    <md-sidenav md-is-locked-open=true md-component-id="left" class="md-sidenav-left md-whiteframe-4dp notes-list__sidenav">
         <md-toolbar class="md-primary">
-            <h1 class="md-toolbar-tools">List of Notes</h1>
+            <h1 class="md-toolbar-tools">My Notes</h1>
         </md-toolbar>
-        
+
         <md-content>
             <md-list md-whiteframe="4">
                 <md-list-item ng-mouseenter="hover = !hover" ng-mouseleave="hover = !hover" ng-click="editNote(note._id)" class="md-2-line" ng-repeat="note in notesList">
                     <div class="md-list-item-text" layout="column">
                         <h3>{{note.name}}</h3>
-                        <p ng-bind-html="note.content"></p>
+                        <p ng-bind-html="note.content | ellipsis: 50"></p>
                     </div>
-                    
-                    <md-button ng-click="removeNote(note._id)" ng-show="hover" class="md-warn md-raised">Remove</md-button>
-                    
+                    <md-button ng-click="deleteNote(note._id)" ng-show="hover" class="md-warn md-raised btn--hover">Delete</md-button>
                     <md-divider></md-divider>
                 </md-list-item>
             </md-list>
         </md-content>
     </md-sidenav>
 
-
-    <!-- note editor -->
-    <md-content flex=66>
+    <div class="md-padding note-editor-wrapper">
         <note-editor></note-editor>
-        
-        <md-button ng-click='saveNote(Note)' class="md-raised md-primary">Save</md-button>
-    </md-content>
+        <div class="btn-row-wrapper note-editor__btn-wrapper">
+            <md-button ng-click='clearNote()' class="md-raised md-primary">Clear</md-button>
+            <md-button ng-click='saveNote(Note)' class="md-raised md-accent">Save</md-button>
+        </div>
+
+    </div>
 </div>

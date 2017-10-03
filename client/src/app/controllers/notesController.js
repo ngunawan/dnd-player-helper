@@ -20,6 +20,25 @@ angular.module('app').controller('notesController', function notesController($sc
     //to save note
     //-------------------------
     $scope.saveNote = function (note) {
+        if (note.name == "") {
+            let alert = $mdDialog.alert()
+                .clickOutsideToClose(true)
+                .title('A note must have a title.')
+                .ariaLabel('note needs title')
+                .ok('Ok')
+            
+            $mdDialog.show(alert);
+            return;
+        } else if (note.content == "") {
+            let alert = $mdDialog.alert()
+                .clickOutsideToClose(true)
+                .title('A note cannot be blank.')
+                .ariaLabel('note needs content')
+                .ok('Ok')
+            
+            $mdDialog.show(alert);
+            return;
+        }
 
         $http({
             //get note by id
@@ -117,16 +136,32 @@ angular.module('app').controller('notesController', function notesController($sc
 
     }
 
-    //to remove note
+    //to clear note
     //-------------------------
-    $scope.removeNote = function (id) {
-        //remove from current notesList
+    $scope.clearNote = function () {
+        let confirm = $mdDialog.confirm()
+            .title('Are you sure?')
+            .ok('Yes')
+            .cancel('No');
+
+        $mdDialog.show(confirm).then(
+            function () {
+                Note.content = "";
+                Note.name = "";
+                Note._id = "";
+            })
+    }
+
+    //to delete note
+    //-------------------------
+    $scope.deleteNote = function (id) {
+        //delete from current notesList
         for (let i = 0; i < $scope.notesList.length; i++) {
             if ($scope.notesList[i]._id == id) {
                 $scope.notesList.splice(i, 1);
             }
         }
-        //remove from database
+        //delete from database
         $http({
             method: 'DELETE',
             url: '/notes/' + id

@@ -140,6 +140,9 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdP
             'default': '800',
             'hue-1': '700',
             'hue-2': '900'
+        })
+        .warnPalette('red', {
+            'default': '900'
         });
 
     $mdProgressCircularProvider.configure({

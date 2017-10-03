@@ -1,30 +1,26 @@
-<md-card>
-    <md-card-content layout="column">
-        <!-- note title -->
+<div class="note-editor md-whiteframe-4dp">
         <md-input-container>
-            <label>Name</label>
+            <label>Enter Title</label>
             <input ng-model='Note.name'>
         </md-input-container>
 
-        <!-- toolbar -->
-        <div class="toolbar">
-            <md-button unselectable="on"
-                       ng-click='format("bold")'
-                       class="md-icon-button md-raised">B</md-button>
-            <md-button unselectable="on"
-                       ng-click='format("italic")'
-                       class="md-icon-button md-raised">I</md-button>
-            <md-button unselectable="on"
-                       ng-click='format("underline")'
-                       class="md-icon-button md-raised">U</md-button>
-
-            <!--
-                <md-button unselectable="on" ng-click='format("insertUnorderedList")' class="md-button md-raised">Unordered</md-button>
-                <md-button unselectable="on" ng-click='format("insertOrderedList")' class="md-button md-raised">Ordered</md-button>
--->
+        <div class="note-editor__toolbar">
+            <md-button unselectable="on" ng-click='format("bold")' class="md-icon-button md-raised">
+                B
+            </md-button>
+            <md-button unselectable="on" ng-click='format("italic")' class="md-icon-button md-raised">
+                I
+            </md-button>
+            <md-button unselectable="on" ng-click='format("underline")' class="md-icon-button md-raised">
+                U
+            </md-button>
+            <md-button unselectable="on" ng-click='format("insertUnorderedList")' class="md-icon-button md-raised">
+                <md-icon ng_bind="'format_list_bulleted'"></md-icon>
+            </md-button>
+            <md-button unselectable="on" ng-click='format("insertOrderedList")' class="md-icon-button md-raised">
+            <md-icon ng_bind="'format_list_numbered'"></md-icon>
+            </md-button>
         </div>
 
-        <!-- note content -->
-        <div style="min-height:300px" ng-model='Note.content' id='editor' contenteditable></div>
-    </md-card-content>
-</md-card>
+        <div class="note-editor__textbox" ng-model='Note.content' contenteditable></div>
+</div>

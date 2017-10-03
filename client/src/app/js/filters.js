@@ -228,3 +228,14 @@ app.filter('profBonus', function () {
         }
     }
 });
+
+//limit to a certain character and insert ellipsis 
+//-------------------------
+app.filter('ellipsis', function () {
+    return function (text, length) {
+        if (text.length > length) {
+            return text.substr(0, length) + "...";
+        }
+        return text;
+    }
+});
