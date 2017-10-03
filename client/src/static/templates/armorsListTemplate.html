@@ -1,126 +1,121 @@
-<!-- light armor -->
-<div class="md-padding">
-    <h3>Light Armor</h3>
+<h2 class="page-sub-title">Light Armor</h2>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-6 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
-            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="armor in armorsList | filter: {type: 'light'} | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="description.show = !description.show" class="grid-column-6">
-            <span>{{armor.name}}</span>
-            <span>{{armor.cost | convertCurrency}}</span>
-            <span>{{armor.ac}}</span>
-            <span>{{armor.stealth}}</span>
-            <span>{{armor.weight}}</span>
-            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-            <div style="grid-column-start: 1;
-  grid-column-end: 7;" ng-if="description.show">
-                <md-divider></md-divider>
-                <div class="database-description-block" ng-bind-html="armor.description"></div>
-            </div>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="!loading" class="list-item-head grid-column-6">
+        <span class="list-item-head__property" ng-click="sortVal.lightArmor = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.lightArmor = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.lightArmor = 'ac'; sortDir = !sortDir">Armor Class</span>
+        <span class="list-item-head__property" ng-click="sortVal.lightArmor = 'stealth'; sortDir = !sortDir">Stealth</span>
+        <span class="list-item-head__property" ng-click="sortVal.lightArmor = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
+    <div class="grid-column-6 list-item-card md-whiteframe-4dp" ng-repeat="armor in armorsList | filter: {type: 'light'} | orderBy: sortVal.lightArmor: sortDir" ng-click="description.show = !description.show">
+        <div class="list-item-card__property">{{armor.name}}</div>
+        <div class="list-item-card__property">{{armor.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{armor.ac}}</div>
+        <div class="list-item-card__property">{{armor.stealth}}</div>
+        <div class="list-item-card__property">{{armor.weight}}</div>
+        <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+        <div class="span-7" ng-if="description.show">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="armor.description"></div>
+        </div>
+    </div>
 </div>
 
+<md-divider class="list-item-divider"></md-divider>
 
-<!-- medium armor -->
-<div class="md-padding">
-    <h3>Medium Armor</h3>
+<h2 class="page-sub-title">Medium Armor</h2>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-6 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
-            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="armor in armorsList | filter: {type: 'medium'} | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="description.show = !description.show" class="grid-column-6">
-            <span>{{armor.name}}</span>
-            <span>{{armor.cost | convertCurrency}}</span>
-            <span>{{armor.ac}}</span>
-            <span>{{armor.stealth}}</span>
-            <span>{{armor.weight}}</span>
-            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-            <div style="grid-column-start: 1;
-  grid-column-end: 7;" ng-if="description.show">
-                <md-divider></md-divider>
-                <div class="database-description-block" ng-bind-html="armor.description"></div>
-            </div>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="!loading" class="list-item-head grid-column-6">
+        <span class="list-item-head__property" ng-click="sortVal.medArmor = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.medArmor = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.medArmor = 'ac'; sortDir = !sortDir">Armor Class</span>
+        <span class="list-item-head__property" ng-click="sortVal.medArmor = 'stealth'; sortDir = !sortDir">Stealth</span>
+        <span class="list-item-head__property" ng-click="sortVal.medArmor = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
+    <div class="grid-column-6 list-item-card md-whiteframe-4dp" ng-repeat="armor in armorsList | filter: {type: 'medium'} | orderBy: sortVal.medArmor: sortDir" ng-click="description.show = !description.show">
+        <div class="list-item-card__property">{{armor.name}}</div>
+        <div class="list-item-card__property">{{armor.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{armor.ac}}</div>
+        <div class="list-item-card__property">{{armor.stealth}}</div>
+        <div class="list-item-card__property">{{armor.weight}}</div>
+        <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+        <div class="span-7" ng-if="description.show">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="armor.description"></div>
+        </div>
+    </div>
 </div>
 
+<md-divider class="list-item-divider"></md-divider>
 
-<!-- heavy armor -->
-<div class="md-padding">
-    <h3>Heavy Armor</h3>
+<h2 class="page-sub-title">Heavy Armor</h2>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-7 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
-            <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Strength</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Stealth</span>
-            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="armor in armorsList | filter: {type: 'heavy'} | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="description.show = !description.show" class="grid-column-7">
-            <span>{{armor.name}}</span>
-            <span>{{armor.cost | convertCurrency}}</span>
-            <span>{{armor.ac}}</span>
-            <span>{{armor.strength}}</span>
-            <span>{{armor.stealth}}</span>
-            <span>{{armor.weight}}</span>
-            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-            <div style="grid-column-start: 1;
-  grid-column-end: 8;" ng-if="description.show">
-                <md-divider></md-divider>
-                <div class="database-description-block" ng-bind-html="armor.description"></div>
-            </div>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="!loading" class="list-item-head grid-column-7">
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'ac'; sortDir = !sortDir">Armor Class</span>
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'strength'; sortDir = !sortDir">Strength</span>
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'stealth'; sortDir = !sortDir">Stealth</span>
+        <span class="list-item-head__property" ng-click="sortVal.heavyArmor = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
+    <div class="grid-column-7 list-item-card md-whiteframe-4dp" ng-repeat="armor in armorsList | filter: {type: 'heavy'} | orderBy: sortVal.heavyArmor: sortDir" ng-click="description.show = !description.show">
+        <div class="list-item-card__property">{{armor.name}}</div>
+        <div class="list-item-card__property">{{armor.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{armor.ac}}</div>
+        <div class="list-item-card__property">{{armor.strength}}</div>
+        <div class="list-item-card__property">{{armor.stealth}}</div>
+        <div class="list-item-card__property">{{armor.weight}}</div>
+        <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+        <div class="span-8" ng-if="description.show">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="armor.description"></div>
+        </div>
+    </div>
 </div>
 
+<md-divider class="list-item-divider"></md-divider>
 
-<!-- shield -->
-<div class="md-padding">
-    <h3>Shield</h3>
+<h2 class="page-sub-title">Shield</h2>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-5 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'ac'; sortDir = !sortDir">Armor Class</span>
-            <span ng-click="sortVal = 'weight'; sortDir = !sortDir">Weight</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="armor in armorsList | filter: {type: 'shield'} | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="description.show = !description.show" class="grid-column-5">
-            <span>{{armor.name}}</span>
-            <span>{{armor.cost | convertCurrency}}</span>
-            <span>{{armor.ac}}</span>
-            <span>{{armor.weight}}</span>
-            <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
-            <div style="grid-column-start: 1;
-  grid-column-end: 6;" ng-if="description.show">
-                <md-divider></md-divider>
-                <div class="database-description-block" ng-bind-html="armor.description"></div>
-            </div>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="!loading" class="list-item-head grid-column-5">
+        <span class="list-item-head__property" ng-click="sortVal.shield = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.shield = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.shield = 'ac'; sortDir = !sortDir">Armor Class</span>
+        <span class="list-item-head__property" ng-click="sortVal.shield = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
+    <div class="grid-column-5 list-item-card md-whiteframe-4dp" ng-repeat="armor in armorsList | filter: {type: 'shield'} | orderBy: sortVal.shield: sortDir" ng-click="description.show = !description.show">
+        <div class="list-item-card__property">{{armor.name}}</div>
+        <div class="list-item-card__property">{{armor.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{armor.ac}}</div>
+        <div class="list-item-card__property">{{armor.weight}}</div>
+        <md-button ng-click="editPurchase(armor);showAddArmor(armor);$event.stopPropagation()" class="md-accent">Add Armor</md-button>
+        <div class="span-5" ng-if="description.show">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="armor.description"></div>
+        </div>
+    </div>
 </div>

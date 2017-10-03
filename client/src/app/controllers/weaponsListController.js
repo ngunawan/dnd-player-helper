@@ -17,6 +17,12 @@ angular.module('app').controller('weaponsListController', function weaponsListCo
     $scope.query = {};
     $scope.queryBy = "";
     $scope.queryProperty = [];
+    $scope.sortVal = {
+        simpleMel: '',
+        simpleRan: '',
+        martialMel: '',
+        martialRan: ''
+    }
     
     //adding and removing to property from query
     //-------------------------

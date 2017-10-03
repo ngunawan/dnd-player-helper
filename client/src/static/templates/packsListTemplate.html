@@ -1,22 +1,22 @@
-<div class="md-padding">
-    <h3>Equipment Packs</h3>
+<h3 class="page-sub-title">Equipment Packs</h3>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-3 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="pack in packsList | filter:query | orderBy: sortVal: sortDir">
-        <md-card-content ng-click="description.show = !description.show" class="grid-column-3">
-            <span>{{pack.name}}</span>
-            <span>{{pack.cost | convertCurrency}}</span>
-            <md-button ng-click="editPurchase(pack);showAddEquipment(pack);$event.stopPropagation()" class="md-accent">Add Pack</md-button>
-            <div ng-if="description.show" style="grid-column-start:1;grid-column-end:4">
-                <md-divider></md-divider>
-                <div class="database-description-block" ng-bind-html="pack.description"></div>
-            </div>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div class="grid-column-3 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+        <span></span>
+    </div>
+    <div class="grid-column-3 list-item-card md-whiteframe-4dp" ng-repeat="pack in packsList | filter:query | orderBy: sortVal: sortDir" ng-click="description.show = !description.show">
+        <div class="list-item-card__property">{{pack.name}}</div>
+        <div class="list-item-card__property">{{pack.cost | convertCurrency}}</div>
+        <md-button ng-click="editPurchase(pack);showAddEquipment(pack);$event.stopPropagation()" class="md-accent">Add Pack</md-button>
+        <div ng-if="description.show" class="span-3">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="pack.description"></div>
+        </div>
+    </div>
 </div>

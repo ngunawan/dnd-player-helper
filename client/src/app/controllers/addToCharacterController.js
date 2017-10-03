@@ -27,10 +27,8 @@ angular.module('app').controller('addToCharacterController', function addToChara
         $mdDialog.cancel();
     };
     $scope.add = function (object, option) {
-        console.log("OBJECT IS");
-        console.log(object);
         if (option == 'buy') {
-            if (character.gold >= Purchase.total_cost) {
+            if (object.gold >= Purchase.total_cost) {
                 $mdDialog.hide({
                     object: object,
                     option: option

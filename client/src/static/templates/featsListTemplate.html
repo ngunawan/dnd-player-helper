@@ -1,34 +1,39 @@
-<md-input-container>
-    <label>Name</label>
-    <input ng-model="query['name']">
-</md-input-container>
+<h1 class="page-title">Feats</h1>
 
-<md-input-container>
-    <label>Search Keyword</label>
-    <input ng-model="search">
-</md-input-container>
+<div ng-show="!loading" class="input-row-wrap">
+    <md-input-container>
+        <label>Search Name</label>
+        <input ng-model="query['name']">
+    </md-input-container>
 
-<md-checkbox ng-model="showAll">
-    Expand All
-</md-checkbox>
+    <md-input-container>
+        <label>Search Keyword</label>
+        <input ng-model="search">
+    </md-input-container>
+
+    <md-checkbox ng-model="showAll">
+        Expand All
+    </md-checkbox>
+</div>
 
 
-<md-card class="transparent">
-    <md-card-content class="grid-column-2 strong-700">
-        <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div class="grid-column-2 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
         <!--        <span ng-click="sortVal = 'description'; sortDir = !sortDir">Description</span>-->
         <span></span>
-    </md-card-content>
-</md-card>
-<md-card ng-repeat="feat in featsList | filter: query | filter: search | orderBy: sortVal: sortDir">
-    <md-card-content class="grid-column-2" ng-click="feat.show = !feat.show">
-        <span>{{feat.name}}</span>
+    </div>
+    <div class="grid-column-2 list-item-card md-whiteframe-4dp" ng-repeat="feat in featsList | filter: query | filter: search | orderBy: sortVal: sortDir" ng-click="feat.show = !feat.show">
+        <div class="list-item-card__property">{{feat.name}}</div>
         <md-button ng-click="showAddFeat(feat);$event.stopPropagation()" class="md-accent">Add Feat</md-button>
 
-        <div style="grid-column-start: 1;
-  grid-column-end: 4;" ng-if="feat.show || showAll">
-            <md-divider></md-divider>
-            <div ng-bind-html="feat.description"></div>
+        <div class="span-2" ng-if="feat.show || showAll">
+            <md-divider class="list-item-card-divider"></md-divider>
+            <div class="list-item-card__description" ng-bind-html="feat.description"></div>
         </div>
-    </md-card-content>
-</md-card>
+    </div>
+</div>

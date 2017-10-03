@@ -1,42 +1,30 @@
-<md-content>
-    <md-tabs class="md-primary" md-dynamic-height md-border-bottom>
+<md-nav-bar class="md-primary" md-no-ink-bar="disableInkBar" md-selected-nav-item="currentEquipmentNav" nav-bar-aria-label="choose equipment type">
+    <md-nav-item md-nav-click="placeholder()" name="armors">
+        Armors
+    </md-nav-item>
+    <md-nav-item md-nav-click="placeholder()" name="weapons">
+        Weapons
+    </md-nav-item>
+    <md-nav-item md-nav-click="placeholder()" name="gear">
+        Adventuring Gear
+    </md-nav-item>
+    <md-nav-item md-nav-click="placeholder()" name="goods">
+        Trade Goods
+    </md-nav-item>
+    <md-nav-item md-nav-click="placeholder()" name="ridables">
+        Mounts and Vehicles
+    </md-nav-item>
+    <md-nav-item md-nav-click="placeholder()" name="tools">
+        Tools
+    </md-nav-item>
+</md-nav-bar>
 
-        <md-tab label="Armors">
-            <md-content class="md-padding">
-                <armors-list></armors-list>
-            </md-content>
-        </md-tab>
-
-        <md-tab label="Weapons">
-            <md-content class="md-padding">
-                <weapons-list></weapons-list>
-            </md-content>
-        </md-tab>
-
-        <md-tab label="Adventuring Gear">
-            <md-content class="md-padding">
-                <packs-list></packs-list>
-                <items-list></items-list>
-            </md-content>
-        </md-tab>
-
-        <md-tab label="Trade Goods">
-            <md-content class="md-padding">
-                <goods-list></goods-list>
-            </md-content>
-        </md-tab>
-
-        <md-tab label="Mounts and Vehicles">
-            <md-content class="md-padding">
-                <ridables-list></ridables-list>
-            </md-content>
-        </md-tab>
-
-        <md-tab label="Tools">
-            <md-content class="md-padding">
-                <tools-list></tools-list>
-            </md-content>
-        </md-tab>
-
-    </md-tabs>
-</md-content>
+<div class="md-padding" ng-switch="currentEquipmentNav">
+    <armors-list ng-switch-when="armors"></armors-list>
+    <weapons-list ng-switch-when="weapons"></weapons-list>
+    <packs-list ng-switch-when="gear"></packs-list>
+     <items-list ng-switch-when="gear"></items-list>
+    <goods-list ng-switch-when="goods"></goods-list>
+    <ridables-list ng-switch-when="ridables"></ridables-list>
+    <tools-list ng-switch-when="tools"></tools-list>
+</div>

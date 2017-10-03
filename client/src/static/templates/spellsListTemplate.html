@@ -1,10 +1,6 @@
 <h1 class="page-title">Spells List</h1>
 
-<div class="loader-wrapper" ng-show="loading">
-    <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
-</div>
-
-<div class="btn-row-wrapper">
+<div ng-if="!loading" class="btn-row-wrapper">
     <md-button ng-class="{'md-accent': query['class'] == ''}" ng-click="query = {};query['class'] = ''" class="md-raised md-primary">All Class</md-button>
     <md-button ng-class="{'md-accent': query['class'] == 'bard'}" ng-click="query = {};query['class'] = 'bard'" class="md-raised md-primary">Bard</md-button>
     <md-button ng-class="{'md-accent': query['class'] == 'cleric'}" ng-click="query = {};query['class'] = 'cleric' " class="md-raised md-primary">Cleric</md-button>
@@ -18,7 +14,7 @@
 
 
 
-<div class="input-row-wrapper">
+<div ng-if="!loading" class="input-row-wrapper">
     <md-input-container>
         <label>Search Name</label>
         <input ng-model="query['name']">
@@ -146,15 +142,19 @@
 </div>
 
 
-<div class="spells-list">
-    <div class="spells-list__head">
-        <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-        <span ng-click="sortVal = 'level'; sortDir = !sortDir">Level</span>
-        <span ng-click="sortVal = 'school'; sortDir = !sortDir">School</span>
-        <span ng-click="sortVal = 'casting_time'; sortDir = !sortDir">Casting Time</span>
-        <span ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
-        <span ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
-        <span ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
+<div class="spells-list list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="!loading" class="spells-list__head list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'level'; sortDir = !sortDir">Level</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'school'; sortDir = !sortDir">School</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'casting_time'; sortDir = !sortDir">Casting Time</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'range'; sortDir = !sortDir">Range</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'component'; sortDir = !sortDir">Component</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'duration'; sortDir = !sortDir">Duration</span>
         <span></span>
     </div>
 
@@ -170,7 +170,7 @@
             <md-button ng-click="showAddSpell(spell);$event.stopPropagation()" class="md-accent">Add Spell</md-button>
 
             <div class="span-8" ng-if="spell.show">
-                <md-divider></md-divider>
+                <md-divider class="list-item-card-divider"></md-divider>
                 <div class="list-item-card__description" ng-bind-html="spell.description"></div>
             </div>
         </div>

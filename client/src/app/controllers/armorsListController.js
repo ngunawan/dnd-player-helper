@@ -2,6 +2,13 @@ angular.module('app').controller('armorsListController', function armorsListCont
 
     $scope.query = {};
     $scope.queryBy = "";
+    $scope.loading = true;
+    $scope.sortVal = {
+        lightArmor: '',
+        medArmor: '',
+        heavyArmor: '',
+        shield: ''
+    }
 
     //get all armors
     //-------------------------
@@ -10,7 +17,9 @@ angular.module('app').controller('armorsListController', function armorsListCont
         url: '/armors'
     }).then(function successCallback(response) {
         $scope.armorsList = response.data;
-        console.log($scope.armorsList)
+        console.log($scope.armorsList);
+        
+        $scope.loading = false;
 
     }, function errorCallback(response) {
         console.log(response);

@@ -1,92 +1,85 @@
-<!-- mounts -->
-<div class="md-padding">
-    <h3>Mounts</h3>
+<h3 class="page-sub-title">Mounts</h3>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <div class="grid-column-5 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal.mounts = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.mounts = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.mounts = 'strength'; sortDir = !sortDir">Speed</span>
+        <span class="list-item-head__property" ng-click="sortVal.mounts = 'stealth'; sortDir = !sortDir">Carrying Capacity</span>
+        <span></span>
+    </div>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-5 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Speed</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Carrying Capacity</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-
-    <md-card ng-repeat="ridable in ridablesList | filter: {type: 'mount'} | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-5">
-            <span>{{ridable.name}}</span>
-            <span>{{ridable.cost | convertCurrency}}</span>
-            <span>{{ridable.speed}}</span>
-            <span>{{ridable.carrying_capacity}}</span>
-            <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Mount</md-button>
-        </md-card-content>
-    </md-card>
+    <div class="grid-column-5 list-item-card md-whiteframe-4dp" ng-repeat="ridable in ridablesList | filter: {type: 'mount'} | orderBy: sortVal.mounts: sortDir">
+        <div class="list-item-card__property">{{ridable.name}}</div>
+        <div class="list-item-card__property">{{ridable.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{ridable.speed}}</div>
+        <div class="list-item-card__property">{{ridable.carrying_capacity}}</div>
+        <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Mount</md-button>
+    </div>
 </div>
 
+<md-divider class="list-item-divider"></md-divider>
 
-<!-- land vehicles -->
-<div class="md-padding">
-    <h3>Land Vehicles</h3>
+<h3 class="page-sub-title">Land Vehicles</h3>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-4 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Weight</span>
-            <span></span>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
 
-        </md-card-content>
-    </md-card>
+    <div class="grid-column-4 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
 
-    <md-card ng-repeat="ridable in ridablesList | filter: {name: 'Barding'} | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-4">
-            <span>{{ridable.name}}</span>
-            <span>{{ridable.cost}}</span>
-            <span>{{ridable.weight}}</span>
-            <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
-        </md-card-content>
-    </md-card>
-    
-    <md-card class="transparent">
-        <md-card-content class="grid-column-4">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'stealth'; sortDir = !sortDir">Weight</span>
-            <span></span>
+    <div class="grid-column-4 list-item-card md-whiteframe-4dp" ng-repeat="ridable in ridablesList | filter: {name: 'Barding'} | orderBy: sortVal.landVeh: sortDir">
+        <div class="list-item-card__property">{{ridable.name}}</div>
+        <div class="list-item-card__property">{{ridable.cost}}</div>
+        <div class="list-item-card__property">{{ridable.weight}}</div>
+        <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
+    </div>
 
-        </md-card-content>
-    </md-card>
+    <div class="grid-column-4 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.landVeh = 'weight'; sortDir = !sortDir">Weight</span>
+        <span></span>
+    </div>
 
-    <md-card ng-repeat="ridable in ridablesList | filter: {type: 'land_vehicle', name: '!Barding'} | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-4">
-            <span>{{ridable.name}}</span>
-            <span>{{ridable.cost | convertCurrency}}</span>
-            <span>{{ridable.weight}}</span>
-            <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
-        </md-card-content>
-    </md-card>
+    <div class="grid-column-4 list-item-card md-whiteframe-4dp" ng-repeat="ridable in ridablesList | filter: {name: '!Barding'} | orderBy: sortVal.landVeh: sortDir">
+        <div class="list-item-card__property">{{ridable.name}}</div>
+        <div class="list-item-card__property">{{ridable.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{ridable.weight}}</div>
+        <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
+    </div>
+
 </div>
 
+<md-divider class="list-item-divider"></md-divider>
 
-<!-- water vehicles -->
-<div class="md-padding">
-    <h3>Waterborne Vehicles</h3>
+<h3 class="page-sub-title">Waterborne Vehicles</h3>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-4 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span ng-click="sortVal = 'strength'; sortDir = !sortDir">Speed</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
 
-    <md-card ng-repeat="ridable in ridablesList | filter: {type: 'water_vehicle'} | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-4">
-            <span>{{ridable.name}}</span>
-            <span>{{ridable.cost | convertCurrency}}</span>
-            <span>{{ridable.speed}}</span>
-            <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
-        </md-card-content>
-    </md-card>
+    <div class="grid-column-4 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal.waterVeh = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal.waterVeh = 'cost'; sortDir = !sortDir">Cost</span>
+        <span class="list-item-head__property" ng-click="sortVal.waterVeh = 'speed'; sortDir = !sortDir">Speed</span>
+        <span></span>
+    </div>
+
+    <div class="grid-column-4 list-item-card md-whiteframe-4dp" ng-repeat="ridable in ridablesList | filter: {type: 'water_vehicle'} | orderBy: sortVal.waterVeh: sortDir">
+        <div class="list-item-card__property">{{ridable.name}}</div>
+        <div class="list-item-card__property">{{ridable.cost | convertCurrency}}</div>
+        <div class="list-item-card__property">{{ridable.speed}}</div>
+        <md-button ng-click="editPurchase(ridable);showAddEquipment(ridable);$event.stopPropagation()" class="md-accent">Add Vehicle</md-button>
+    </div>
+
 </div>

@@ -1,18 +1,18 @@
-<div class="md-padding">
-    <h3>Trade Goods</h3>
+<h3 class="page-sub-title">Trade Goods</h3>
 
-    <md-card class="transparent">
-        <md-card-content class="grid-column-3 strong-700">
-            <span ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
-            <span ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
-            <span></span>
-        </md-card-content>
-    </md-card>
-    <md-card ng-repeat="good in goodsList | filter:query | orderBy: sortVal: sortDir">
-        <md-card-content class="grid-column-3">
-                <span>{{good.name}}</span>
-                <span>{{good.cost | convertCurrency}}</span>
-                <md-button ng-click="editPurchase(good);showAddEquipment(good);$event.stopPropagation()" class="md-accent">Add Good</md-button>
-        </md-card-content>
-    </md-card>
+<div class="list-item-wrapper">
+    <div class="loader-wrapper" ng-show="loading">
+        <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div class="grid-column-3 list-item-head">
+        <span class="list-item-head__property" ng-click="sortVal = 'name'; sortDir = !sortDir">Name</span>
+        <span class="list-item-head__property" ng-click="sortVal = 'cost'; sortDir = !sortDir">Cost</span>
+        <span></span>
+    </div>
+    <div class="grid-column-3 list-item-card md-whiteframe-4dp" ng-repeat="good in goodsList | filter:query | orderBy: sortVal: sortDir">
+        <div class="list-item-card__property">{{good.name}}</div>
+        <div class="list-item-card__property" an>{{good.cost | convertCurrency}}</div>
+        <md-button ng-click="editPurchase(good);showAddEquipment(good);$event.stopPropagation()" class="md-accent">Add Good</md-button>
+    </div>
 </div>

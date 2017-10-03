@@ -3,6 +3,7 @@ angular.module('app').controller('featsListController', function featsListContro
     $scope.search = "";
     $scope.query = {};
     $scope.showAll = false;
+    $scope.loading = true;
 
     //get all feats
     //-------------------------
@@ -11,7 +12,9 @@ angular.module('app').controller('featsListController', function featsListContro
         url: '/feats'
     }).then(function successCallback(response) {
         $scope.featsList = response.data;
-        console.log($scope.featsList)
+        console.log($scope.featsList);
+        
+        $scope.loading = false;
 
     }, function errorCallback(response) {
         console.log(response);

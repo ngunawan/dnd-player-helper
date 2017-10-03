@@ -2,6 +2,7 @@ angular.module('app').controller('packsListController', function packsListContro
 
     $scope.query = {};
     $scope.queryBy = "";
+    $scope.loading = true;
 
     //get all packs
     //-------------------------
@@ -10,7 +11,9 @@ angular.module('app').controller('packsListController', function packsListContro
         url: '/packs'
     }).then(function successCallback(response) {
         $scope.packsList = response.data;
-        console.log($scope.packsList)
+        console.log($scope.packsList);
+        
+        $scope.loading = false;
 
     }, function errorCallback(response) {
         console.log(response);

@@ -2,6 +2,12 @@ angular.module('app').controller('ridablesListController', function ridablesList
 
     $scope.query = {};
     $scope.queryBy = "";
+    $scope.sortVal = {
+        mounts: '',
+        landVeh: '',
+        waterVeh: ''
+    }
+    $scope.loading = true;
 
     //get all ridables
     //-------------------------
@@ -10,7 +16,9 @@ angular.module('app').controller('ridablesListController', function ridablesList
         url: '/ridables'
     }).then(function successCallback(response) {
         $scope.ridablesList = response.data;
-        console.log($scope.ridablesList)
+        console.log($scope.ridablesList);
+        
+        $scope.loading = false;
 
     }, function errorCallback(response) {
         console.log(response);

@@ -1,6 +1,6 @@
 <md-dialog>
     <form ng-cloak>
-        <md-toolbar>
+        <md-toolbar class="md-primary md-hue-2">
             <div class="md-toolbar-tools">
                 <h3>Add Spell</h3>
                 <span flex></span>
@@ -14,7 +14,7 @@
             <h3>Pick a Character</h3>
             
             <md-input-container class="one-input-block">
-                <label>Character</label>
+<!--                <label>Pick a Character</label>-->
                 <md-select ng-model="characterObj">
                     <md-option ng-repeat="character in charactersList" ng-value="character">
                         {{character.name}}

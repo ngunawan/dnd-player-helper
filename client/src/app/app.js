@@ -37,6 +37,7 @@ require('./controllers/mainController.js');
 require('./controllers/charactersListController.js');
 require('./controllers/characterController.js');
 require('./controllers/compendiumController.js');
+require('./controllers/equipmentsController.js');
 
 require('./controllers/spellsListController.js');
 require('./controllers/weaponsListController.js');
@@ -93,6 +94,7 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdP
         })
         .when("/equipments", {
             templateUrl: "equipments.html",
+            controller: "equipmentsController"
         })
         .when("/notes", {
             templateUrl: "notes.html",
