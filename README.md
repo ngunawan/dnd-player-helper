@@ -4,21 +4,22 @@
   <br>
 </h1>
 
-<p align="center">Experimental text</p>
+<h4 align="center">A web app for easilly creating/managing your D&D characters.</4>
 
 ![screenshot](https://raw.githubusercontent.com/ngunawan/dnd-player-helper/master/screenshots/addingSpellToCharacter.gif)
 
 
-# D&D Player Helper
+## Key Features
 
-Playing Dungeons and Dragons require a lot of reading from the Player's Handbook. This can be daunting for the inexperienced players. This web tool attempts at visualizing frequently used and relevant information for quick access and easy readability.
-
-### Features
-
-  * Character creation and management [in progress]
-  * Searchable spells, equipments, weapons, armors, and feats table
-  * Note editor to compile campaign notes
-  * Compendium to quickly look up information in the Player's Handbook
+* Easily create/manage characters
+* Quickly lookup frequently used information such as
+   - Spells
+   - Equipments
+   - Feats
+* Write notes about your campaign
+* Read about races/classes/backgrounds in the compendium
+* Add custom spells/equipments/armors/weapons to your character
+* Add homebrew spells or equipments to the database by easily changing JSON files
   
 ### Direction
 
