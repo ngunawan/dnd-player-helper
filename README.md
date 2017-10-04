@@ -7,13 +7,16 @@
 <p align="center">
     A web app for easily creating/managing your D&D characters.
     <br>
-    No more flipping through pages!
+    <br>
+    <strong>No more flipping through pages!</strong>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/ngunawan/dnd-player-helper/master/screenshots/addingSpellToCharacter.gif)
 
-## Intro
-"Hold on let me look that up right quick." D&D players waste countless hours flipping through the Player's Handbook. No doubt it is part of the tabletop experience, but 
+## About
+"Hold on let me look that up right quick."
+
+D&D players waste countless hours flipping through the Player's Handbook. Looking up spells. Wondering what features your class have. It is part of the tabletop experience but can be daunting/tedious for some people. If you still enjoy making characters and engaging your creativity in a fantasy world but hate that flipping through the D&D's Player Handbook to look up information, this app is for you. 
 
 ## Key Features
 
