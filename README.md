@@ -1,3 +1,14 @@
+<h1 align="center">
+  <br>
+  D&D Player Helper
+  <br>
+</h1>
+
+<p align="center">Experimental text</p>
+
+![screenshot](https://raw.githubusercontent.com/ngunawan/dnd-player-helper/master/screenshots/addingSpellToCharacter.gif)
+
+
 # D&D Player Helper
 
 Playing Dungeons and Dragons require a lot of reading from the Player's Handbook. This can be daunting for the inexperienced players. This web tool attempts at visualizing frequently used and relevant information for quick access and easy readability.
