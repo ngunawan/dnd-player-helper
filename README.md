@@ -5,10 +5,7 @@
 </h1>
 
 <p align="center">
-    A web app for easily creating/managing your D&D characters.
-    <br>
-    <br>
-    <strong>No more flipping through pages!</strong>
+    A web app for easily creating/managing your D&D characters. <strong>No more flipping through pages!</strong>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/ngunawan/dnd-player-helper/master/screenshots/addingSpellToCharacter.gif)
@@ -16,7 +13,7 @@
 ## About
 "Hold on let me look that up right quick."
 
-D&D players waste countless hours flipping through the Player's Handbook. Looking up spells. Wondering what features your class have. It is part of the tabletop experience but can be daunting/tedious for some people. If you still enjoy making characters and engaging your creativity in a fantasy world but hate that flipping through the D&D's Player Handbook to look up information, this app is for you. 
+D&D players waste countless hours flipping through the player's handbook. Looking up spells. Wondering what features a class have. Choosing the best combination of race, class, and background for your character. For some, it is part of the tabletop experience but can be intimidating/tedious for others. If you still enjoy making characters and engaging your creativity in a fantasy world but hate the tedious nature of looking up information in a book, this app is for you. 
 
 ## Key Features
 
@@ -33,17 +30,33 @@ D&D players waste countless hours flipping through the Player's Handbook. Lookin
 * Add custom spells/equipments to your character
 * Modify database by easily editing JSON files
   
-## Usage
+## How to Use
 
-Make sure the following is installed to run:
+This app creates a database locally on your computer. Make sure the following is installed to run:
 
-  * MongoDB
-  * Node.js
+  * [MongoDB] (https://docs.mongodb.com/manual/installation/)
+  * [Node.js] (https://nodejs.org/en/download/)
 
-To run:
+To run MongoDB:
 
-   1. Clone the Repo
-   2. Run MongoDB by running `mongod` in your command line
-   3. Navigate to 'server' folder and run `npm install`
-   4. To start app run `npm run start`
-   5. Access app at `http://localhost:3000`
+   1. Open up your command line/terminal
+   2. Type `mongod` and run
+   
+To run application:
+
+   1. Clone the repo/downlaod the zip file
+   2. Navigate to 'server' folder using the command line/terminal
+   3. Type `npm run start` and run
+
+To view application in your browser:
+
+   1. Open your browser
+   2. Navigate to `http://localhost:3000/`
+   
+## Credits
+
+* Node.js
+* AngularJS
+* Express.js
+* Angular Material
+* http://blog.onslow-web.co.uk/5e/
