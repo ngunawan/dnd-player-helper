@@ -72,7 +72,6 @@ module.exports = function (grunt) {
     })
 
     //Register an "alias task" or a task function.  
-    grunt.registerTask('default', ['browserify', 'watch']);
-    grunt.registerTask('min', ['uglify']);
+    grunt.registerTask('default', ['less', 'browserify', 'watch']);
 
 };

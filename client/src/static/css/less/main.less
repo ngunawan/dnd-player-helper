@@ -1,13 +1,42 @@
-@red: #D50000;
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Setup
+ * 2.0 - Layout
+ * 3.0 - General Styles
+ * 4.0 - Compendium Page
+ * 5.0 - Character Page
+ * 6.0 - Create New Character Page
+ * 7.0 - Database Pages (Spells, Equipments, Feats)
+ * 8.0 - Notes Page
+ * -----------------------------------------------------------------------------
+ */
 
-// setup
-// ----------------
+//colors are based off material color palette
+@red-a700: #D50000;
+@red-800: #C62828;
+@red-900: #B71C1C;
+@grey-800: #424242;
+@grey-700: #616161;
+@grey-900: #212121;
+
+@color-primary: @grey-800;
+@color-primary-hue-2: @grey-900;
+@color-accent: @red-a700;
+@color-accent-hue-2: @red-900;
+@color-warn: @red-900;
+
+
+/**
+ * 1.0 - Setup
+ * -----------------------------------------------------------------------------
+ */
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    //    font-family: 'Mukta', sans-serif;
     font-size: 10px;
 }
 
@@ -17,29 +46,137 @@ body {
 
 a {
     text-decoration: none;
-    color: #D50000;
+    color: @color-accent;
 }
 
 [contenteditable] {
     outline: none;
 }
 
-md-nav-bar .md-nav-bar {
-    background: black;
-}
-
-md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected,
-md-nav-bar .md-button._md-nav-button.md-unselected {
-    color: white;
-}
-
 md-input-container .md-errors-spacer {
     min-height: 0;
 }
 
-//label {
-//    font-weight: 700;
-//}
+
+
+/**
+ * 2.0 - Layout
+ * -----------------------------------------------------------------------------
+ */
+
+.generate-grid-column(@n, @i: 2) when (@i =< @n) {
+    .grid-column-@{i} {
+        display: grid;
+        grid-template-columns: repeat(@i, 100% / @i);
+        grid-template-rows: auto;
+    }
+    .generate-grid-column(@n, (@i + 1));
+}
+
+.generate-grid-column(9);
+
+.generate-span(@n, @i: 2) when (@i =< @n) {
+    .span-@{i} {
+        grid-column: span @i;
+    }
+    .generate-span(@n, (@i + 1));
+}
+
+.generate-span(9);
+
+
+
+/**
+ * 3.0 - General Styles
+ * -----------------------------------------------------------------------------
+ */
+
+.app-nav-bar .md-nav-bar {
+    background: black;
+}
+
+.app-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected,
+.app-nav-bar .md-button._md-nav-button.md-unselected {
+    color: white;
+}
+
+.md-extra-padding {
+    padding: 16px;
+    padding-top: 8px;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    color: @color-accent;
+}
+
+.page-sub-title {
+    font-size: 2.0rem;
+    color: @color-accent;
+}
+
+.btn-row-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .md-button {
+        margin: 6px 8px 6px 0px;
+    }
+}
+
+.input-row-wrapper {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    md-input-container {
+        margin-right: 16px;
+        min-width: 154px;
+    }
+}
+
+md-dialog-content {
+    h3 {
+        color: @color-accent;
+        margin-bottom: 20px;
+    }
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+md-dialog {
+    width: 40%;
+}
+
+.warning-msg {
+    color: #B71C1C;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dialog-input-block {
+    display: block;
+    margin: 40px 0;
+}
+
+
+
+/**
+ * 4.0 - Compendium Page
+ * -----------------------------------------------------------------------------
+ */
+
 .compendium-card {
     display: block;
     width: 100%;
@@ -51,7 +188,7 @@ md-input-container .md-errors-spacer {
         margin: 0;
         margin-bottom: 13px;
         font-size: 2.4rem;
-        color: #D50000;
+        color: @color-accent;
     }
 }
 
@@ -117,279 +254,25 @@ md-input-container .md-errors-spacer {
     }
 }
 
-.md-extra-padding {
-    padding: 16px;
-    padding-top: 8px;
-}
 
-.page-title {
-    font-size: 2.4rem;
-    color: #D50000;
-}
-
-.page-sub-title {
-    font-size: 2.0rem;
-    color: #D50000;
-}
-
-.btn-row-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-
-    .md-button {
-        margin: 6px 8px 6px 0px;
-    }
-}
-
-.spells-list__head,
-.spells-list__item-card {
-    display: grid;
-    grid-template-columns: 16% repeat(7, 12%);
-    grid-template-rows: auto;
-    min-width: 952px;
-}
-
-.list-item-head {
-    font-weight: 700;
-    padding: 16px;
-}
-
-.list-item-divider {
-    margin-top: 34px;
-    margin-bottom: 32px;
-}
-
-.spells-list__item-card {}
-
-.list-item-head__property,
-.list-item-card {
-    outline: 0;
-    cursor: pointer;
-}
-
-.list-item-card {
-    background: white;
-    padding: 16px;
-
-    .md-button {
-        margin: 0;
-    }
-}
-
-.list-item-card-divider {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
-.list-item-wrapper {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    min-height: 127px;
-
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-
-    font-size: 1.5rem;
-}
-
-.loader-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.list-item-card__property {
-    display: flex;
-    align-items: center;
-    padding-right: 4px;
-}
-
-.list-item-card__description {
-
-    table {
-        border-collapse: collapse;
-    }
-
-    table,
-    th,
-    td {
-        border: 1px solid black;
-    }
-
-    table td,
-    table th {
-        text-align: left;
-        padding: 10px;
-    }
-}
-
-.input-row-wrapper {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    md-input-container {
-        margin-right: 16px;
-        min-width: 154px;
-    }
-}
-
-md-dialog-content {
-    h3 {
-        color: #D50000;
-        margin-bottom: 20px;
-    }
-}
-
-.notes-list {
-    height: 100%;
-}
-
-.notes-list__sidenav {
-    width: 33%;
-    min-width: 234px;
-}
-
-.note-editor-wrapper {
-    width: 100%;
-
-    .md-button {
-        margin-left: 0;
-    }
-}
-
-.note-editor {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 324px;
-    padding: 16px;
-    background: white;
-}
-
-.note-editor__toolbar {
-    margin-bottom: 20px;
-}
-
-.note-editor__textbox {
-    min-height: 324px;
-}
-
-.note-editor__btn-wrapper {
-    margin-top: 16px;
-    float: right;
-}
-
-.btn--hover {
-    position: absolute;
-    z-index: 999;
-    right: 0;
-}
-
-md-list-item,
-md-list-item .md-list-item-inner {}
-
-md-list-item._md-button-wrap > div.md-button:first-child {
-    padding: 8px 16px;
-}
-
-.create-new-card {
-    min-width: 324px;
-}
-
-.create-new-card__body {
-    padding: 16px;
-}
-
-.create-new-card__title {
-    color: #D50000;
-    font-size: 1.8rem;
-}
-
-.create-new-card__info {
-    margin-bottom: 16px;
-}
-
-.create-new-card__info-label {
-    font-weight: 700;
-}
-
-.create-new-card__footer {
-    background-color: #EEE;
-    padding: 8px;
-
-    .md-button {
-        float: right;
-    }
-}
-
-.create-new__info-card {
-    background: white;
-    padding: 16px;
-}
-
-
-.character-card__label {
-    font-weight: 700;
-}
-
-
-
-.character-card__title {
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-top: 8px;
-    margin-bottom: 16px; //        color: @red;
-}
-
-.character-card__sub-title {
-    font-weight: 700;
-    margin-top: 8px;
-    margin-bottom: 16px;
-}
-
-.character-card__class {
-    padding: 8px 12px;
-    background: white;
-    display: grid;
-    grid-template-columns: 40% 20% 40%;
-    grid-gap: 8px;
-}
-
-.character-card__class-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
-    margin-bottom: 16px;
-}
-
-
-
-.character-card {
-    padding: 16px;
-    background: white;
-}
-
-.btn {
-    display: inline-block;
-    margin-bottom: 16px;
-}
+/**
+ * 5.0 - Character Page
+ * -----------------------------------------------------------------------------
+ */
 
 .character-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 18px;
-    grid-template-areas: ". ." "header header" "backstory backstory" "basic-info basic-info" "classes classes" "stats weapons" "stats spells" "feats-n-traits armors" "feats-n-traits equipments"
+    grid-template-areas:
+        ". ."
+        "header header"
+        "backstory backstory"
+        "basic-info basic-info"
+        "classes classes" "stats weapons"
+        "stats spells"
+        "feats-n-traits armors"
+        "feats-n-traits equipments"
 }
 
 .character-header {
@@ -453,6 +336,44 @@ md-list-item._md-button-wrap > div.md-button:first-child {
     grid-gap: 8px;
 }
 
+.character-card__label {
+    font-weight: 700;
+}
+
+.character-card__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.character-card__sub-title {
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.character-card__class {
+    padding: 8px 12px;
+    background: white;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-gap: 8px;
+}
+
+.character-card__class-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+}
+
+.character-card {
+    padding: 16px;
+    background: white;
+}
+
+
 .character-card__table-head {
     margin-bottom: 8px;
 }
@@ -462,11 +383,9 @@ md-list-item._md-button-wrap > div.md-button:first-child {
     font-size: 80%;
 }
 
-.character-card__table-body {}
-
 .character-card__table-item {
     margin-bottom: 8px;
-    
+
     .md-button {
         margin: 0;
         padding: 0 5px;
@@ -474,11 +393,11 @@ md-list-item._md-button-wrap > div.md-button:first-child {
         min-height: 0;
         min-width: 0;
     }
-    
+
     .md-button:hover {
         background: transparent;
     }
-    
+
     md-divider {
         margin: 8px 0;
     }
@@ -518,7 +437,6 @@ md-list-item._md-button-wrap > div.md-button:first-child {
 }
 
 .character-card__f .character-card__description {
-
     table {
         border-collapse: collapse;
     }
@@ -537,193 +455,11 @@ md-list-item._md-button-wrap > div.md-button:first-child {
 }
 
 
-
-
-
-// layouts
-// ----------------
-.grid-column-8 {
-    display: grid;
-    grid-template-columns: repeat(8, 12.5%);
-    grid-template-rows: auto;
-}
-
-.grid-column-7 {
-    display: grid;
-    grid-template-columns: repeat(7, 14.28%);
-    grid-template-rows: auto;
-}
-
-.grid-column-6 {
-    display: grid;
-    grid-template-columns: repeat(6, 16.66%);
-    grid-template-rows: auto;
-}
-
-.grid-column-5 {
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: auto;
-}
-
-.grid-column-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-}
-
-.grid-column-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 33.3%);
-    grid-template-rows: auto;
-}
-
-.grid-column-3-revised {
-    display: grid;
-    grid-template-columns: 60% repeat(2, 20%);
-    grid-template-rows: auto;
-}
-
-.grid-column-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: auto;
-}
-
-.grid-column-2-revised {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: auto;
-}
-
-.flex-row-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.span-2 {
-    grid-column: span 2;
-}
-
-.span-3 {
-    grid-column: span 3;
-}
-
-.span-4 {
-    grid-column: span 4;
-}
-
-.span-7 {
-    grid-column: span 7;
-}
-
-.span-8 {
-    grid-column: span 8;
-}
-
-.item1 {
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.item2 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.item3 {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-
-// alignments
-// ----------------
-.margin-top-30 {
-    margin-top: 30px;
-}
-
-.margin-right-30 {
-    margin-right: 30px;
-}
-
-.margin-bottom-30 {
-    margin-bottom: 30px;
-}
-
-.margin-bottom-18 {
-    margin-bottom: 18px;
-}
-
-//md-divider {
-//    margin-bottom: 16px;
-//    margin-top: 16px;
-//}
-.align-middle {
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-center-align {
-    display: flex;
-    align-content: center; //    justify-content: center;
-}
-
-
-// fonts
-// ----------------
-.small-80 {
-    font-size: 80%;
-}
-
-.small-90 {
-    font-size: 90%;
-}
-
-.strong-700 {
-    font-weight: 700;
-}
-
-.character-heading {
-    font-size: 75%;
-    margin-bottom: 12px;
-}
-
-
-// styling
-// ----------------
-.transparent {
-    background: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
-
-
-// blocks
-// ----------------
-md-dialog {
-    width: 40%;
-}
-
-.warning-msg {
-    color: #B71C1C;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.one-input-block {
-    display: block;
-    margin: 40px 0;
-}
-
 .stat-block {
     padding: 16px;
     margin-right: 4px;
     margin-bottom: 4px;
     min-width: 213px;
-
 
     input {
         font-size: 200%;
@@ -751,70 +487,12 @@ md-dialog {
     }
 }
 
-.character-item {
-    margin-bottom: 13px;
 
-    md-divider {
-        margin-bottom: 10px;
-    }
 
-    .md-button {
-        margin: 0;
-        padding: 0 5px;
-        line-height: 1.0;
-        min-height: 0;
-        min-width: 0;
-    }
-
-    .md-button:hover {
-        background: transparent;
-    }
-}
-
-.character-item-description {
-    //    font-size: 85%;
-    margin-bottom: 20px;
-}
-
-.database-description-block {
-    padding: 20px 0;
-}
-
-.database-statsblock-list {
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-
-.database-statsblock {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-width: 50%;
-    padding: 10px;
-}
-
-//.compendium-card {
-//    width: 20%;
-//}
-.chargrid {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-
-    #chargrid-class {
-        grid-column: span 2;
-    }
-
-    #chargrid-stats {
-        grid-row-end: span 2;
-    }
-
-    #chargrid-traitsfeatures {
-        grid-row-end: span 2;
-    }
-}
+/**
+ * 6.0 - Create New Character Page
+ * -----------------------------------------------------------------------------
+ */
 
 .create-new-grid {
     grid-template-columns: 1fr 1fr;
@@ -826,13 +504,179 @@ md-dialog {
     grid-gap: 20px;
 }
 
-.classgrid {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+.create-new-card {
+    min-width: 324px;
 }
 
-.statgrid {
+.create-new-card__body {
+    padding: 16px;
+}
+
+.create-new-card__title {
+    color: @color-accent;
+    font-size: 1.8rem;
+}
+
+.create-new-card__info {
+    margin-bottom: 16px;
+}
+
+.create-new-card__info-label {
+    font-weight: 700;
+}
+
+.create-new-card__footer {
+    background-color: #EEE;
+    padding: 8px;
+
+    .md-button {
+        float: right;
+    }
+}
+
+.create-new__info-card {
+    background: white;
+    padding: 16px;
+}
+
+
+
+
+/**
+ * 7.0 - Database Pages (Spells, Equipments, Feats)
+ * -----------------------------------------------------------------------------
+ */
+
+.spells-list__head,
+.spells-list__item-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 16% repeat(7, 12%);
+    grid-template-rows: auto;
+    min-width: 952px;
+}
+
+.list-item-head {
+    font-weight: 700;
+    padding: 16px;
+}
+
+.list-item-divider {
+    margin-top: 34px;
+    margin-bottom: 32px;
+}
+
+.list-item-head__property,
+.list-item-card {
+    outline: 0;
+    cursor: pointer;
+}
+
+.list-item-card {
+    background: white;
+    padding: 16px;
+
+    .md-button {
+        margin: 0;
+    }
+}
+
+.list-item-card-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.list-item-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 127px;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+
+    font-size: 1.5rem;
+}
+
+
+.list-item-card__property {
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+}
+
+.list-item-card__description {
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    table td,
+    table th {
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+
+
+/**
+ * 8.0 - Notes Page
+ * -----------------------------------------------------------------------------
+ */
+
+.notes-list {
+    height: 100%;
+}
+
+.notes-list__sidenav {
+    width: 33%;
+    min-width: 234px;
+}
+
+.note-editor-wrapper {
+    width: 100%;
+
+    .md-button {
+        margin-left: 0;
+    }
+}
+
+.note-editor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 324px;
+    padding: 16px;
+    background: white;
+}
+
+.note-editor__toolbar {
+    margin-bottom: 20px;
+}
+
+.note-editor__textbox {
+    min-height: 324px;
+}
+
+.note-editor__btn-wrapper {
+    margin-top: 16px;
+    float: right;
+}
+
+.btn--hover {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+}
+
+md-list-item._md-button-wrap > div.md-button:first-child {
+    padding: 8px 16px;
 }
