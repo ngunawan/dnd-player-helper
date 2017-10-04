@@ -5,7 +5,7 @@
 </h1>
 
 <h4 align="center">
-    A web app for easily creating/managing your D&D characters.
+    A web app for easily creating/managing your D&D characters and more.
 </h4>
 
 ![screenshot](https://raw.githubusercontent.com/ngunawan/dnd-player-helper/master/screenshots/addingSpellToCharacter.gif)
@@ -13,7 +13,7 @@
 # About
 *Hold on let me look that up right quick.*
 
-D&D players waste countless hours flipping through the player's handbook. Looking up spells. Wondering what features a class have. Choosing the best combination of race, class, and background for your character. For some, it is part of the tabletop experience but can be intimidating/tedious for others. If you still enjoy making characters and engaging your creativity in a fantasy world but hate the tedious nature of looking up information in a book, this app is for you. 
+D&D players waste countless hours flipping through the player's handbook. Looking up spells. Wondering what features a class have. Choosing the best combination of race, class, and background for your character. For some, it is part of the tabletop experience, but for others, it can be intimidating/tedious. If you still enjoy making characters and engaging your creativity in a fantasy world but hate the tedious nature of looking up information in a book, this app is for you. 
 
 ## Key Features
 
