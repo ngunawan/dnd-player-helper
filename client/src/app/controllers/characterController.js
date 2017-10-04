@@ -5,6 +5,7 @@ angular.module('app').controller('characterController', function characterContro
     $scope.racialTraits = [];
     $scope.proficiency_bonus = 0;
     $scope.query = {};
+    $scope.loading = true;
 
 
     //get all classes
@@ -48,34 +49,45 @@ angular.module('app').controller('characterController', function characterContro
 
     //get current character
     //-------------------------
-    $http({
-        method: 'GET',
-        url: '/characters/' + $routeParams.characterId
-    }).then(function successCallback(response) {
-        console.log(response);
-        $scope.currentCharacter = response.data;
-        $scope.cumulateTraits();
-        $scope.cumulateFeatures();
+    function getCurrentCharacter() {
+        $http({
+            method: 'GET',
+            url: '/characters/' + $routeParams.characterId
+        }).then(function successCallback(response) {
+            console.log(response);
+            $scope.currentCharacter = response.data;
+            $scope.cumulateTraits();
+            $scope.cumulateFeatures();
 
-    }, function errorCallback(response) {
-        console.log(response);
-    });
+            $scope.loading = false;
+
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    }
+    
+    getCurrentCharacter();
 
 
     //save character
     //-------------------------
     $scope.save = function () {
+        delete $scope.currentCharacter['_id'];
+
         $http({
             method: 'PUT',
             url: '/characters/' + $routeParams.characterId,
             data: $scope.currentCharacter
         }).then(function successCallback(response) {
+            console.log('SUCCESS updating character')
             console.log(response);
-            $scope.cumulateFeatures();
-            $scope.cumulateTraits();
+            $scope.loading = true;
+            
+            getCurrentCharacter();
 
-        }, function errorCallback(response) {
-            console.log(response);
+        }, function errorCallback(error) {
+            console.log('ERROR updating character');
+            console.log(error);
         });
     }
 

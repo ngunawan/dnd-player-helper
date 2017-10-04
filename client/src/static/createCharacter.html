@@ -149,7 +149,7 @@
 
 
         <md-tab label="Step 5: Stats"
-                ng-disabled="(Character.class[0] == undefined) || (Character.race == '') || (Character.background == '') || (Character.name == '')">
+                ng-disabled="(Character.class[0] == undefined) || (Character.race == '') || (Character.background == '') || (Character.name == '') || ($scope.Character.backstory == '')">
             <md-content class="md-padding">
                 <div class="create-new-stat-grid grid-column-4">
                     

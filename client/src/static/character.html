@@ -1,15 +1,9 @@
-<!--
-<md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-        <h2 md-truncate>{{currentCharacter.name}}</h2>
-        <span flex></span>
-        <md-button ng-click="save();cumulateFeatures();cumulateTraits()" class="md-raised md-accent">
-            Save &amp; Update
-        </md-button>
-    </div>
-</md-toolbar>
--->
-<div class="md-padding">
+<div class="loader-wrapper" ng-show="loading">
+    <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+</div>
+
+<div ng-if="!loading" class="md-padding character-wrapper">
+    <a href="/">Back</a>
     <div class="character-header">
         <h1 class="page-title">{{currentCharacter.name}}</h1>
         <div class="btn-row-wrapper">
@@ -19,476 +13,357 @@
         </div>
     </div>
 
-<!--
-    <md-input-container>
-        <textarea ng-model="currentCharacter.backstory"></textarea>
-    </md-input-container>
--->
+    <p class="character__backstory"
+       contenteditable
+       ng-model="currentCharacter.backstory"></p>
 
-</div>
-
-<div style="padding:20px; width: 100%;">
-
-    <div class="chargrid grid-column-2">
-        <!-- backstory -->
-        <div id="chargrid-bg" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Backstory</h2>
-                    <span flex></span>
-                </div>
-            </md-toolbar>
-
-            <md-content style="width:100%;height:100%" class="md-padding">
-                <md-input-container style="width:100%;height:100%">
-                    <label>Backstory</label>
-                    <textarea rows="10" placeholder="Write your backstory here..." ng-model="currentCharacter.backstory">
-                </textarea>
-                </md-input-container>
-            </md-content>
-        </div>
-
-
-
-        <!-- basic info -->
-        <div id="chargrid-basic" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Basic Info</h2>
-                    <span flex></span>
-                    <!--
-                    <md-button ng-click="cumulateTraits()" class="md-raised md-accent">
-                        Update Traits
-                    </md-button>
--->
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding" layout="column">
-                <label class="small-80">Race:</label>
-                <md-input-container>
-                    <md-select ng-model="currentCharacter.race">
-                        <md-option ng-repeat="raceType in racesList" ng-value="raceType.name">
-                            {{raceType.name}}
-                        </md-option>
-                    </md-select>
-                </md-input-container>
-                <label class="small-80">Background</label>
+    <div class="md-whiteframe-4dp character__basic-info character-card">
+        <h3 class="character-card__title">Basic Info</h3>
+        <div class="input-row-wrapper">
+            <md-input-container>
+                <label>Race</label>
+                <md-select ng-model="currentCharacter.race">
+                    <md-option ng-repeat="raceType in racesList" ng-value="raceType.name">
+                        {{raceType.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Background</label>
                 <md-select ng-model="currentCharacter.background">
                     <md-option ng-repeat="backgroundType in backgroundsList" ng-value="backgroundType.name">
                         {{backgroundType.name}}
                     </md-option>
                 </md-select>
-
-                <label class="small-80">Gold</label>
-                <md-input-container class="md-block">
-                    <input ng-value="currentCharacter.gold" type="number">
-                </md-input-container>
-            </md-content>
-        </div>
-
-
-
-        <!-- class  -->
-        <div id="chargrid-class" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Class</h2>
-                    <span flex></span>
-                    <!--
-                    <md-button ng-click="cumulateFeatures()" class="md-raised md-accent">
-                        Update Features
-                    </md-button>
--->
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding" layout="column">
-                <div class="grid-column-2 classgrid margin-bottom-30">
-                    <div class="md-whiteframe-4dp md-padding" ng-repeat="class in currentCharacter.class" layout="row">
-                        <md-input-container class="md-block">
-                            <label>Name</label>
-                            <md-select ng-model="class.name">
-                                <md-option ng-repeat="classType in classesList" ng-value="classType.name">
-                                    {{classType.name}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                        <md-input-container>
-                            <label>Level</label>
-                            <input ng-model="class.level" type="number" step="1">
-                        </md-input-container>
-                        <md-button ng-click="removeClass($index)" class="md-warn">Remove</md-button>
-                    </div>
-                </div>
-
-                <md-button ng-click="addClass()" class="md-accent">Add Class</md-button>
-            </md-content>
-        </div>
-
-
-
-        <!-- stats -->
-        <div id="chargrid-stats" style="background:white;" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Stats</h2>
-                    <span flex></span>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <div class="grid-column-2">
-                    <md-input-container class="md-block">
-                        <label>Hit Points</label>
-                        <input ng-model="currentCharacter.stats.hit_points" type="number" step="1">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <label>Hit Dices</label>
-                        <input ng-disabled=true value="4d10" type="text">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <label>Movement Speed (in ft)</label>
-                        <input ng-model="currentCharacter.stats.movement" type="number" step="1">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <label>AC</label>
-                        <input ng-model="currentCharacter.stats.ac" type="number" step="1">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <label>Passive Perception</label>
-                        <input ng-disabled="true" placeholder="{{10 + (currentCharacter.stats.wis | abilityMod)}}" type="number">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <label>Proficiency Bonus</label>
-                        <input ng-disabled="true" placeholder="{{currentCharacter.class | profBonus | addSign}}" type="text">
-                    </md-input-container>
-
-                    <div class="md-whiteframe-4dp md-padding stat-block">
-                        <label>STR</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.str" type="number" step="1">
-                        </md-input-container>
-                        <span>
-                            {{currentCharacter.stats.str | abilityMod | addSign}}
-                        </span>
-                        <md-divider></md-divider>
-                        <div class="stat-block-list flex-row-wrap">
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.athletics}" ng-click="currentCharacter.stats.skills.athletics = !currentCharacter.stats.skills.athletics">
-                                Athletics | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.athletics ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                        </div>
-                    </div>
-                    <div class="md-whiteframe-4dp md-padding stat-block"> <label>DEX</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.dex" type="number" step="1">
-                        </md-input-container>
-                        <span>{{currentCharacter.stats.dex | abilityMod | addSign}}</span>
-                        <md-divider></md-divider>
-                        <div class="stat-block-list flex-row-wrap">
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.sleight_of_hand}" ng-click="currentCharacter.stats.skills.sleight_of_hand = !currentCharacter.stats.skills.sleight_of_hand">
-                                Sleight of Hand | {{((currentCharacter.stats.dex | abilityMod) + (currentCharacter.stats.skills.sleight_of_hand ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.acrobatics}" ng-click="currentCharacter.stats.skills.acrobatics = !currentCharacter.stats.skills.acrobatics">
-                                Acrobatics | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.acrobatics ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.stealth}" ng-click="currentCharacter.stats.skills.stealth = !currentCharacter.stats.skills.stealth">
-                                Stealth | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.stealth ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                        </div>
-                    </div>
-                    <div class="md-whiteframe-4dp md-padding stat-block"> <label>CON</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.con" type="number" step="1">
-                        </md-input-container>
-                        <span>{{currentCharacter.stats.con | abilityMod | addSign}}</span>
-                    </div>
-                    <div class="md-whiteframe-4dp md-padding stat-block"> <label>WIS</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.wis" type="number" step="1">
-                        </md-input-container>
-                        <span>{{currentCharacter.stats.wis | abilityMod | addSign}}</span>
-                        <md-divider></md-divider>
-                        <div class="stat-block-list flex-row-wrap">
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.animal_handling}" ng-click="currentCharacter.stats.skills.animal_handling = !currentCharacter.stats.skills.animal_handling">
-                                Animal Handling | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.animal_handling ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.insight}" ng-click="currentCharacter.stats.skills.insight = !currentCharacter.stats.skills.insight">
-                                Insight | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.insight ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.medicine}" ng-click="currentCharacter.stats.skills.medicine = !currentCharacter.stats.skills.medicine">
-                                Medicine | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.medicine ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.survival}" ng-click="currentCharacter.stats.skills.survival = !currentCharacter.stats.skills.survival">
-                                Survival | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.survival ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                        </div>
-                    </div>
-                    <div class="md-whiteframe-4dp md-padding stat-block"> <label>INT</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.int" type="number" step="1">
-                        </md-input-container>
-                        <span>{{currentCharacter.stats.int | abilityMod | addSign}}</span>
-                        <md-divider></md-divider>
-                        <div class="stat-block-list flex-row-wrap">
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.arcana}" ng-click="currentCharacter.stats.skills.arcana = !currentCharacter.stats.skills.arcana">
-                                Arcana | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.arcana ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.history}" ng-click="currentCharacter.stats.skills.history = !currentCharacter.stats.skills.history">
-                                History | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.history ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.investigation}" ng-click="currentCharacter.stats.skills.investigation = !currentCharacter.stats.skills.investigation">
-                                Investigation | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.investigation ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.nature}" ng-click="currentCharacter.stats.skills.nature = !currentCharacter.stats.skills.nature">
-                                Nature | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.nature ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.religion}" ng-click="currentCharacter.stats.skills.religion = !currentCharacter.stats.skills.religion">
-                                Religion | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.religion ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-
-                        </div>
-                    </div>
-                    <div class="md-whiteframe-4dp md-padding stat-block"> <label>CHA</label>
-                        <md-input-container class="md-block">
-                            <input ng-model="currentCharacter.stats.cha" type="number" step="1">
-                        </md-input-container>
-                        <span>{{currentCharacter.stats.cha | abilityMod | addSign}}</span>
-                        <md-divider></md-divider>
-                        <div class="stat-block-list flex-row-wrap">
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.deception}" ng-click="currentCharacter.stats.skills.deception = !currentCharacter.stats.skills.deception">
-                                Deception | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.deception ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.intimidation}" ng-click="currentCharacter.stats.skills.intimidation = !currentCharacter.stats.skills.intimidation">
-                                Intimidation | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.intimidation ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.persuasion}" ng-click="currentCharacter.stats.skills.persuasion = !currentCharacter.stats.skills.persuasion">
-                                Persuasion | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.persuasion ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                            <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.skills.performance}" ng-click="currentCharacter.stats.skills.performance = !currentCharacter.stats.skills.performance">
-                                Performance | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.performance ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                            </md-button>
-                        </div>
-                    </div>
-                </div>
-
-                <md-divider></md-divider>
-
-                <h3 class="small-80">Saving Throws</h3>
-
-
-                <div class="stat-block-list flex-row-wrap">
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.str}" ng-click="currentCharacter.stats.saving_throws.str = !currentCharacter.stats.saving_throws.str">
-                        STR | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.saving_throws.str ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.con}" ng-click="currentCharacter.stats.saving_throws.con = !currentCharacter.stats.saving_throws.con">
-                        CON | {{((currentCharacter.stats.con | abilityMod) + (currentCharacter.stats.saving_throws.con ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.dex}" ng-click="currentCharacter.stats.saving_throws.dex = !currentCharacter.stats.saving_throws.dex">
-                        DEX | {{((currentCharacter.stats.dex | abilityMod) + (currentCharacter.stats.saving_throws.dex ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.int}" ng-click="currentCharacter.stats.saving_throws.int = !currentCharacter.stats.saving_throws.int">
-                        INT | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.saving_throws.int ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.wis}" ng-click="currentCharacter.stats.saving_throws.wis = !currentCharacter.stats.saving_throws.wis">
-                        WIS | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.saving_throws.wis ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                    <md-button class="md-raised" ng-class="{'md-primary': currentCharacter.stats.saving_throws.cha}" ng-click="currentCharacter.stats.saving_throws.cha = !currentCharacter.stats.saving_throws.cha">
-                        CHA | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.saving_throws.cha ? (currentCharacter.class | profBonus) : 0)) | addSign}}
-                    </md-button>
-                </div>
-            </md-content>
-        </div>
-
-
-
-        <!-- weapons  -->
-        <div id="chargrid-weapons" style="background:white" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Weapons</h2>
-                    <span flex></span>
-                    <md-button ng-click="showAddCustomWeapon(currentCharacter)" class="md-raised md-accent">
-                        Add Custom
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <div class="grid-column-3 character-heading">
-                    <strong>Name</strong>
-                    <strong>To Hit</strong>
-                    <strong>Damage</strong>
-                </div>
-
-                <div class="grid-column-3 character-item" ng-repeat="weapon in currentCharacter.weapons">
-                    <span>{{weapon.name}}</span>
-                    <span>{{weapon.damage | grabDice}} + 5</span>
-                    <span>{{weapon.damage | grabDice}} + 5 {{weapon.damage | grabDamage}}</span>
-                </div>
-            </md-content>
-        </div>
-
-
-
-        <!-- spells  -->
-        <div style="background:white" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Spells</h2>
-                    <span flex></span>
-                    <md-button ng-click="showAddCustomSpell(currentCharacter)" class="md-raised md-accent">
-                        Add Custom
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <div class="grid-column-3 character-heading">
-                    <strong>Name</strong>
-                    <strong>Casting Time</strong>
-                    <strong></strong>
-                </div>
-
-                <div class="grid-column-3 character-item align-middle" ng-repeat="spell in currentCharacter.spells">
-                    <span>{{spell.name}}</span>
-                    <span>{{spell.casting_time}}</span>
-                    <md-button class="md-accent">Expand</md-button>
-                </div>
-            </md-content>
-        </div>
-
-
-
-        <!-- traits and features -->
-        <div id="chargrid-traitsfeatures" style="background:white" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Traits and Features</h2>
-                    <span flex></span>
-                    <md-button ng-click="showAll = !showAll" class="md-raised">
-                        {{showAll | iif: 'Collapse All' : 'Expand All'}}
-                    </md-button>
-                    <md-button ng-click="cumulateFeatures();cumulateTraits()" class="md-raised md-accent">
-                        Update
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <h3>Racial Traits</h3>
-
-                <div class="small-90 grid-column-2-revised character-item align-middle" ng-repeat="trait in racialTraits">
-                    <span style="font-weight:700">{{trait.name}}</span>
-                    <md-button ng-click="trait.show = !trait.show" class="md-accent">{{trait.show | iif: '-' : '+'}}</md-button>
-
-                    <div ng-if="trait.show || showAll" class="span-2 character-item-description">
-                        <md-divider></md-divider>
-                        <div ng-bind-html="trait.description"></div>
-                    </div>
-                </div>
-
-                <md-divider></md-divider>
-
-                <h3>Class Features</h3>
-
-                <div class="small-90 grid-column-3-revised character-item align-middle" ng-repeat="feature in classFeatures">
-                    <span style="font-weight:700">{{feature.name}}</span>
-                    <span>{{feature.prereq}}</span>
-                    <md-button ng-click="feature.show = !feature.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
-
-                    <div ng-if="feature.show || showAll" class="span-3 character-item-description">
-                        <md-divider></md-divider>
-                        <div ng-bind-html="feature.description"></div>
-                    </div>
-                </div>
-
-                <md-divider></md-divider>
-
-                <h3>Feats</h3>
-
-                <div class="small-90 grid-column-2-revised character-item align-middle" ng-repeat="feat in currentCharacter.feats">
-                    <span style="font-weight:700">{{feat.name}}</span>
-                    <md-button ng-click="feat.show = !feat.show" class="md-accent">{{feat.show | iif: '-' : '+'}}</md-button>
-
-                    <div ng-if="feat.show || showAll" class="span-2 character-item-description">
-                        <md-divider></md-divider>
-                        <div ng-bind-html="feat.description"></div>
-                    </div>
-                </div>
-
-            </md-content>
-        </div>
-
-
-
-        <!-- armors -->
-        <div id="chargrid-armors" style="background:white" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Armors</h2>
-                    <span flex></span>
-                    <md-button ng-click="showAddCustomArmor(currentCharacter)" class="md-raised md-accent">
-                        Add Custom
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <h3>Armors</h3>
-
-                <div class="grid-column-2 character-heading">
-                    <strong>Name</strong>
-                    <strong>Armor Class</strong>
-                </div>
-
-                <div class="grid-column-2 character-item align-middle" ng-repeat="armor in currentCharacter.armors">
-                    <span>{{armor.name}}</span>
-                    <span>{{armor.ac}}</span>
-                </div>
-            </md-content>
-        </div>
-
-
-
-        <!-- equipments -->
-        <div id="chargrid-equipments" style="background:white" class="md-whiteframe-4dp" layout="column">
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 md-truncate>Equipments</h2>
-                    <span flex></span>
-                    <md-button ng-click="showAddCustomEquipment(currentCharacter)" class="md-raised md-accent">
-                        Add Custom
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <md-content class="md-padding">
-                <h3>Equipments</h3>
-
-                <div class="grid-column-2 character-heading">
-                    <strong>Name</strong>
-                </div>
-
-                <div class="grid-column-2 character-item align-middle" ng-repeat="equipment in currentCharacter.equipments">
-                    <span>{{equipment.name}}</span>
-                    <md-button ng-click="equipment.show = !equipment.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
-                    <md-divider ng-if="equipment.show" class="span-2 character-item-description"></md-divider>
-                    <div ng-if="equipment.show" ng-bind-html="equipment.description" class="span-2 character-item-description">
-                    </div>
-                </div>
-            </md-content>
+            </md-input-container>
+            <md-input-container>
+                <label>Gold</label>
+                <input ng-model="currentCharacter.gold" type="number">
+            </md-input-container>
         </div>
     </div>
-    <!--
 
-    <md-button ng-click="save()" style="width:100%;" class="margin-top-30 margin-bottom-30 md-accent md-raised">Save</md-button>
--->
+    <div class="md-whiteframe-4dp character__classes character-card">
+        <h3 class="character-card__title">Classes</h3>
+        <a href="#" class="btn" ng-click="addClass()">Add Class</a>
 
+        <div class="character-card__class-wrapper">
+            <div class="md-whiteframe-4dp character-card__class" ng-repeat="class in currentCharacter.class" layout="row">
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <md-select ng-model="class.name">
+                        <md-option ng-repeat="classType in classesList" ng-value="classType.name">
+                            {{classType.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container>
+                    <label>Level</label>
+                    <input ng-model="class.level" type="number" step="1">
+                </md-input-container>
+                <md-button ng-click="removeClass($index)" class="md-warn">Remove</md-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="character__stats character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Stats</h3>
+        <div class="character-card__stats-table">
+            <md-input-container class="md-block">
+                <label>Hit Points</label>
+                <input ng-model="currentCharacter.stats.hit_points" type="number" step="1">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Hit Dices</label>
+                <input ng-disabled=true value="4d10" type="text">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Movement Speed (in ft)</label>
+                <input ng-model="currentCharacter.stats.movement" type="number" step="1">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>AC</label>
+                <input ng-model="currentCharacter.stats.ac" type="number" step="1">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Passive Perception</label>
+                <input ng-disabled="true" placeholder="{{10 + (currentCharacter.stats.wis | abilityMod)}}" type="number">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Proficiency Bonus</label>
+                <input ng-disabled="true" placeholder="{{currentCharacter.class | profBonus | addSign}}" type="text">
+            </md-input-container>
+
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">STR</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.str" type="number" step="1">
+                </md-input-container>
+                <span>
+                            {{currentCharacter.stats.str | abilityMod | addSign}}
+                        </span>
+                <md-divider class="list-item-card-divider"></md-divider>
+                <div class="stat-block__list btn-row-wrapper">
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.athletics}" ng-click="currentCharacter.stats.skills.athletics = !currentCharacter.stats.skills.athletics">
+                        Athletics | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.athletics ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">DEX</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.dex" type="number" step="1">
+                </md-input-container>
+                <span>{{currentCharacter.stats.dex | abilityMod | addSign}}</span>
+                <md-divider class="list-item-card-divider"></md-divider>
+                <div class="stat-block__list btn-row-wrapper">
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.sleight_of_hand}" ng-click="currentCharacter.stats.skills.sleight_of_hand = !currentCharacter.stats.skills.sleight_of_hand">
+                        Sleight of Hand | {{((currentCharacter.stats.dex | abilityMod) + (currentCharacter.stats.skills.sleight_of_hand ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.acrobatics}" ng-click="currentCharacter.stats.skills.acrobatics = !currentCharacter.stats.skills.acrobatics">
+                        Acrobatics | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.acrobatics ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.stealth}" ng-click="currentCharacter.stats.skills.stealth = !currentCharacter.stats.skills.stealth">
+                        Stealth | {{((currentCharacter.stats.str | abilityMod) + (currentCharacter.stats.skills.stealth ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">CON</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.con" type="number" step="1">
+                </md-input-container>
+                <span>{{currentCharacter.stats.con | abilityMod | addSign}}</span>
+                <md-divider class="list-item-card-divider"></md-divider>
+            </div>
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">WIS</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.wis" type="number" step="1">
+                </md-input-container>
+                <span>{{currentCharacter.stats.wis | abilityMod | addSign}}</span>
+                <md-divider class="list-item-card-divider"></md-divider>
+                <div class="stat-block__list btn-row-wrapper">
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.animal_handling}" ng-click="currentCharacter.stats.skills.animal_handling = !currentCharacter.stats.skills.animal_handling">
+                        Animal Handling | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.animal_handling ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.insight}" ng-click="currentCharacter.stats.skills.insight = !currentCharacter.stats.skills.insight">
+                        Insight | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.insight ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.medicine}" ng-click="currentCharacter.stats.skills.medicine = !currentCharacter.stats.skills.medicine">
+                        Medicine | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.medicine ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.survival}" ng-click="currentCharacter.stats.skills.survival = !currentCharacter.stats.skills.survival">
+                        Survival | {{((currentCharacter.stats.wis | abilityMod) + (currentCharacter.stats.skills.survival ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">INT</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.int" type="number" step="1">
+                </md-input-container>
+                <span>{{currentCharacter.stats.int | abilityMod | addSign}}</span>
+                <md-divider class="list-item-card-divider"></md-divider>
+                <div class="stat-block__list btn-row-wrapper">
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.arcana}" ng-click="currentCharacter.stats.skills.arcana = !currentCharacter.stats.skills.arcana">
+                        Arcana | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.arcana ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.history}" ng-click="currentCharacter.stats.skills.history = !currentCharacter.stats.skills.history">
+                        History | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.history ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.investigation}" ng-click="currentCharacter.stats.skills.investigation = !currentCharacter.stats.skills.investigation">
+                        Investigation | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.investigation ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.nature}" ng-click="currentCharacter.stats.skills.nature = !currentCharacter.stats.skills.nature">
+                        Nature | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.nature ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.religion}" ng-click="currentCharacter.stats.skills.religion = !currentCharacter.stats.skills.religion">
+                        Religion | {{((currentCharacter.stats.int | abilityMod) + (currentCharacter.stats.skills.religion ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="md-whiteframe-4dp stat-block">
+                <label class="stat-block__label">CHA</label>
+                <md-input-container class="md-block">
+                    <input ng-model="currentCharacter.stats.cha" type="number" step="1">
+                </md-input-container>
+                <span>{{currentCharacter.stats.cha | abilityMod | addSign}}</span>
+                <md-divider class="list-item-card-divider"></md-divider>
+                <div class="stat-block__list btn-row-wrapper">
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.deception}" ng-click="currentCharacter.stats.skills.deception = !currentCharacter.stats.skills.deception">
+                        Deception | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.deception ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.intimidation}" ng-click="currentCharacter.stats.skills.intimidation = !currentCharacter.stats.skills.intimidation">
+                        Intimidation | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.intimidation ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.persuasion}" ng-click="currentCharacter.stats.skills.persuasion = !currentCharacter.stats.skills.persuasion">
+                        Persuasion | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.persuasion ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                    <md-button class="md-raised" ng-class="{'md-accent': currentCharacter.stats.skills.performance}" ng-click="currentCharacter.stats.skills.performance = !currentCharacter.stats.skills.performance">
+                        Performance | {{((currentCharacter.stats.cha | abilityMod) + (currentCharacter.stats.skills.performance ? (currentCharacter.class | profBonus) : 0)) | addSign}}
+                    </md-button>
+                </div>
+            </div>
+
+            <md-divider class="list-item-card-divider span-2"></md-divider>
+
+            <label class="stat-block__label span-2">Saving Throws</label>
+
+            <div class="stat-block__list btn-row-wrapper span-2">
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.str}" ng-click="Character.stats.saving_throws.str = !Character.stats.saving_throws.str">
+                    STR | {{((Character.stats.str | abilityMod) + (Character.stats.saving_throws.str ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.con}" ng-click="Character.stats.saving_throws.con = !Character.stats.saving_throws.con">
+                    CON | {{((Character.stats.con | abilityMod) + (Character.stats.saving_throws.con ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.dex}" ng-click="Character.stats.saving_throws.dex = !Character.stats.saving_throws.dex">
+                    DEX | {{((Character.stats.dex | abilityMod) + (Character.stats.saving_throws.dex ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.int}" ng-click="Character.stats.saving_throws.int = !Character.stats.saving_throws.int">
+                    INT | {{((Character.stats.int | abilityMod) + (Character.stats.saving_throws.int ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.wis}" ng-click="Character.stats.saving_throws.wis = !Character.stats.saving_throws.wis">
+                    WIS | {{((Character.stats.wis | abilityMod) + (Character.stats.saving_throws.wis ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+                <md-button class="md-raised" ng-class="{'md-accent': Character.stats.saving_throws.cha}" ng-click="Character.stats.saving_throws.cha = !Character.stats.saving_throws.cha">
+                    CHA | {{((Character.stats.cha | abilityMod) + (Character.stats.saving_throws.cha ? (Character.class | profBonus) : 0)) | addSign}}
+                </md-button>
+            </div>
+        </div>
+        <!--end stats-table-->
+    </div>
+    <!--end character__stats-->
+
+
+    <div class="character__weapons character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Weapons</h3>
+        <a href="#" ng-click="showAddCustomWeapon(currentCharacter)" class="btn">Add Custom</a>
+
+        <div class="character-card__table-head grid-column-3">
+            <span class="character-card__table-head-property">Name</span>
+            <span class="character-card__table-head-property">To Hit</span>
+            <span class="character-card__table-head-property">Damage</span>
+        </div>
+
+        <div class="character-card__table-body">
+            <div class="character-card__table-item grid-column-3" ng-repeat="weapon in currentCharacter.weapons">
+                <span class="character-card__table-item-property">{{weapon.name}}</span>
+                <span class="character-card__table-item-property">{{weapon.damage | grabDice}} + 5</span>
+                <span class="character-card__table-item-property">{{weapon.damage | grabDice}} + 5 {{weapon.damage | grabDamage}}</span>
+            </div>
+        </div>
+    </div>
+    <!--end character__weapons-->
+
+    <div class="character__spells character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Spells</h3>
+        <a href="#" ng-click="showAddCustomSpell(currentCharacter)" class="btn">Add Custom</a>
+
+        <div class="character-card__table-head grid-column-3">
+            <span class="character-card__table-head-property">Name</span>
+            <span class="character-card__table-head-property">Casting Time</span>
+            <span></span>
+        </div>
+
+        <div class="character-card__table-body">
+            <div class="character-card__table-item grid-column-3" ng-repeat="spell in currentCharacter.spells">
+                <span class="character-card__table-item-property">{{spell.name}}</span>
+                <span class="character-card__table-item-property">{{spell.casting_time}}</span>
+                <span class="character-card__table-item-property"><a href="#">Show Details</a></span>
+            </div>
+        </div>
+    </div>
+    <!--end character__spells-->
+
+
+    <div class="character__feats-n-traits character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Features and Traits</h3>
+        <a href="#" ng-click="showAll = !showAll" class="btn">{{showAll | iif: 'Collapse All' : 'Expand All'}}</a>
+
+        <h3 class="character-card__sub-title">Racial Traits</h3>
+        <div class="character-card__feats-n-traits-list-item  character-card__racial-traits-list-item" ng-repeat="trait in racialTraits">
+            <span class="character-card__label">{{trait.name}}</span>
+            <md-button ng-click="trait.show = !trait.show" class="md-accent">{{trait.show | iif: '-' : '+'}}</md-button>
+
+            <div ng-if="trait.show || showAll" class="span-2 character-card__description">
+                <md-divider></md-divider>
+                <div ng-bind-html="trait.description"></div>
+            </div>
+        </div>
+
+        <md-divider class="list-item-divider"></md-divider>
+
+        <h3 class="character-card__sub-title">Class Features</h3>
+        <div class="character-card__feats-n-traits-list-item  character-card__class-features-list-item" ng-repeat="feature in classFeatures">
+            <span class="character-card__label">{{feature.name}}</span>
+            <span>{{feature.prereq}}</span>
+            <md-button ng-click="feature.show = !feature.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
+
+            <div ng-if="feature.show || showAll" class="span-3 character-card__description">
+                <md-divider></md-divider>
+                <div ng-bind-html="feature.description"></div>
+            </div>
+        </div>
+
+        <md-divider class="list-item-divider"></md-divider>
+
+        <h3 class="character-card__sub-title">Feats</h3>
+        <div class="character-card__feats-n-traits-list-item character-card__feats-list-item" ng-repeat="feat in currentCharacter.feats">
+            <span class="character-card__label">{{feat.name}}</span>
+            <md-button ng-click="feat.show = !feat.show" class="md-accent">{{feat.show | iif: '-' : '+'}}</md-button>
+
+            <div ng-if="feat.show || showAll" class="span-2 character-card__description">
+                <md-divider></md-divider>
+                <div ng-bind-html="feat.description"></div>
+            </div>
+        </div>
+    </div>
+    <!--end character__feats-n-traits-->
+
+    <div class="character__armors character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Armors</h3>
+        <a href="#" ng-click="showAddCustomArmor(currentCharacter)" class="btn">Add Custom</a>
+
+        <div class="character-card__table-head grid-column-2">
+            <span class="character-card__table-head-property">Name</span>
+            <span class="character-card__table-head-property">Armor Class</span>
+        </div>
+
+        <div class="character-card__table-body">
+            <div class="character-card__table-item grid-column-2" ng-repeat="armor in currentCharacter.armors">
+                <span class="character-card__table-item-property">{{armor.name}}</span>
+                <span class="character-card__table-item-property">{{armor.ac}}</span>
+            </div>
+        </div>
+    </div>
+    <!--end character__armors-->
+
+    <div class="character__equipments character-card md-whiteframe-4dp">
+        <h3 class="character-card__title">Equipments</h3>
+        <a href="#" ng-click="showAddCustomEquipment(currentCharacter)" class="btn">Add Custom</a>
+
+        <div class="character-card__table-head grid-column-2">
+            <span class="character-card__table-head-property">Name</span>
+            <span></span>
+        </div>
+
+        <div class="character-card__table-body">
+            <div class="character-card__table-item grid-column-2" ng-repeat="equipment in currentCharacter.equipments">
+                <span class="character-card__table-item-property">{{equipment.name}}</span>
+                <md-button ng-click="equipment.show = !equipment.show" class="md-accent">{{feature.show | iif: '-' : '+'}}</md-button>
+                <md-divider ng-if="equipment.show" class="span-2"></md-divider>
+                <div ng-if="equipment.show" ng-bind-html="equipment.description" class="span-2 character-card__description">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end equipments-->
 
 </div>

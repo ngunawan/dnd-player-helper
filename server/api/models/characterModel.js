@@ -70,37 +70,37 @@ const CharacterSchema = new Schema({
             nature: Boolean,
             religion: Boolean
         }
-},
-class: [{
-    name: String,
-    level: {
+    },
+    class: [{
+        name: String,
+        level: {
+            type: Number,
+            default: 1
+        }
+    }],
+    race: String,
+    background: String,
+    spells: [{
+        name: String,
+        level: String,
+        school: String,
+        casting_time: String,
+        range: String,
+        component: String,
+        duration: String,
+        description: String,
+        class: Array
+    }],
+    armors: [Schema.Types.Mixed],
+    weapons: [Schema.Types.Mixed],
+    equipments: [Schema.Types.Mixed],
+    gold: {
         type: Number,
-        default: 1
-    }
-    }],
-race: String,
-background: String,
-spells: [{
-    name: String,
-    level: String,
-    school: String,
-    casting_time: String,
-    range: String,
-    component: String,
-    duration: String,
-    description: String,
-    class: Array
-    }],
-armors: [Schema.Types.Mixed],
-weapons: [Schema.Types.Mixed],
-equipments: [Schema.Types.Mixed],
-gold: {
-    type: Number,
-    default: 0
-},
-feats: [{
-    name: String,
-    description: String
+        default: 0
+    },
+    feats: [{
+        name: String,
+        description: String
     }]
 });
 

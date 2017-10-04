@@ -78,7 +78,7 @@ angular.module('app').controller('createCharacterController', function createCha
     //create new character
     //-------------------------
     $scope.createNew = function () {
-        if(($scope.Character.class[0] == undefined) || ($scope.Character.race == '') || ($scope.Character.background == '') || ($scope.Character.name == '')) {
+        if(($scope.Character.class[0] == undefined) || ($scope.Character.race == '') || ($scope.Character.background == '') || ($scope.Character.name == '') || ($scope.Character.backstory == '')) {
             let alert = $mdDialog.alert()
                 .clickOutsideToClose(true)
                 .title('Please complete all the steps.')
