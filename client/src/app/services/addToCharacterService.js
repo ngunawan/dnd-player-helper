@@ -2,6 +2,14 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
 
     let character, option;
 
+    function alert(msg) {
+        let alert = $mdDialog.alert()
+            .clickOutsideToClose(true)
+            .title(msg)
+            .ok('Ok')
+        $mdDialog.show(alert);
+    }
+
     //when option is 'buy' make purchase
     //-------------------------
     var makePurchase = function (character, cost) {
@@ -22,8 +30,10 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
             url: '/characters/' + character._id + '/spells',
             data: spell
         }).then(function successCallback(response) {
+            alert('Added spell to character!')
             console.log("added spell to character");
         }, function errorCallback(response) {
+            alert('Error adding spell to character.');
             console.log("error adding spell to character");
         });
     }
@@ -45,7 +55,7 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
                     console.log("spell not added")
                 });
     }
-    
+
     this.showAddCustomSpell = function (character) {
         this.character = character;
 
@@ -76,8 +86,10 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
             url: '/characters/' + character._id + '/feats',
             data: feat
         }).then(function successCallback(response) {
+            alert('Added feat to character!');
             console.log("added feat to character");
         }, function errorCallback(response) {
+            alert("Error adding feat to character.");
             console.log("error adding feat to character");
         });
     }
@@ -113,8 +125,10 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
             url: '/characters/' + character._id + '/equipments',
             data: purchase_array
         }).then(function successCallback(response) {
+            alert("Added equipment to character!");
             console.log("added equipment to character");
         }, function errorCallback(response) {
+            alert("Error adding equipment to character.")
             console.log("error adding equipment to character");
         });
     }
@@ -177,17 +191,16 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
         for (let i = 1; i <= amount; i++) {
             purchase_array.push(weapon);
         }
-
-        console.log("PURCHASE ARRAY IS");
-        console.log(purchase_array);
-
+        
         $http({
             method: 'POST',
             url: '/characters/' + character._id + '/weapons',
             data: purchase_array
         }).then(function successCallback(response) {
+            alert("Added weapon to character!");
             console.log("added weapon to character");
         }, function errorCallback(response) {
+            alert("Error adding weapon to character.")
             console.log("error adding weapon to character");
         });
     }
@@ -257,9 +270,10 @@ angular.module('app').service('addToCharacterService', function addToCharacterSe
             url: '/characters/' + character._id + '/armors',
             data: purchase_array
         }).then(function successCallback(response) {
-            console.log(response);
+            alert("Added armor to character!");
             console.log("added armor to character");
         }, function errorCallback(response) {
+            alert("Error adding armor to character.")
             console.log("error adding armor to character");
         });
     }
